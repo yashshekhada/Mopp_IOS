@@ -1,0 +1,6 @@
+framework module Pods_Mopp {
+  umbrella header "Pods-Mopp-umbrella.h"
+
+  export *
+  module * { export * }
+}

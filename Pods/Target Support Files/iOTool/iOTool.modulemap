@@ -1,0 +1,6 @@
+framework module iOTool {
+  umbrella header "iOTool-umbrella.h"
+
+  export *
+  module * { export * }
+}

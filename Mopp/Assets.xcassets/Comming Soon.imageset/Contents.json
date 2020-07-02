@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "finance-non-bank-financial-institution-business-financial-services-png-favpng-z5iRDNyaXUEEQ6Mfig1pMzzHJ.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
