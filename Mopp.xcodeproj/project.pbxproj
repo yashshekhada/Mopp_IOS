@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B4299A177901A5322DB23CF /* Pods_MoppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E258436F72C129B182E00D8 /* Pods_MoppTests.framework */; };
+		7D905BEC24CAA63A0047B0AF /* IPUtill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D905BEB24CAA63A0047B0AF /* IPUtill.swift */; };
 		A604610324AD98F900034CAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604610224AD98F900034CAB /* AppDelegate.swift */; };
 		A604610524AD98F900034CAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604610424AD98F900034CAB /* SceneDelegate.swift */; };
 		A604610724AD98F900034CAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604610624AD98F900034CAB /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		157DA5B29283EA9A5DA22438 /* Pods-MoppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoppTests.release.xcconfig"; path = "Target Support Files/Pods-MoppTests/Pods-MoppTests.release.xcconfig"; sourceTree = "<group>"; };
 		33CECD04D33ED50AA3A1FE2E /* Pods-Mopp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mopp.debug.xcconfig"; path = "Target Support Files/Pods-Mopp/Pods-Mopp.debug.xcconfig"; sourceTree = "<group>"; };
 		5C1826A36D8EB26A1310EA8B /* Pods-Mopp-MoppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mopp-MoppUITests.release.xcconfig"; path = "Target Support Files/Pods-Mopp-MoppUITests/Pods-Mopp-MoppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7D905BEB24CAA63A0047B0AF /* IPUtill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPUtill.swift; sourceTree = "<group>"; };
 		7E258436F72C129B182E00D8 /* Pods_MoppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8125BFC1CB8A0E1122964210 /* Pods_Mopp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mopp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8361E6FF88284BED15C4C8D0 /* Pods-MoppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoppTests.debug.xcconfig"; path = "Target Support Files/Pods-MoppTests/Pods-MoppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7D905BEA24CA9F4E0047B0AF /* Utill */ = {
+			isa = PBXGroup;
+			children = (
+				7D905BEB24CAA63A0047B0AF /* IPUtill.swift */,
+			);
+			path = Utill;
+			sourceTree = "<group>";
+		};
 		A60460F624AD98F900034CAB = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +139,7 @@
 		A604610124AD98F900034CAB /* Mopp */ = {
 			isa = PBXGroup;
 			children = (
+				7D905BEA24CA9F4E0047B0AF /* Utill */,
 				A604610224AD98F900034CAB /* AppDelegate.swift */,
 				A604610424AD98F900034CAB /* SceneDelegate.swift */,
 				A604610624AD98F900034CAB /* ViewController.swift */,
@@ -180,6 +191,7 @@
 				A60460FC24AD98F900034CAB /* Frameworks */,
 				A60460FD24AD98F900034CAB /* Resources */,
 				F0DC60D3BDAA8C3941D24575 /* [CP] Embed Pods Frameworks */,
+				7FC3BF26E577CFC66D8CE858 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +230,7 @@
 				A604611D24AD98FD00034CAB /* Frameworks */,
 				A604611E24AD98FD00034CAB /* Resources */,
 				83F7C5EE27F5D890705855F1 /* [CP] Embed Pods Frameworks */,
+				8E658F333A36D590E828BFBA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -344,6 +357,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7FC3BF26E577CFC66D8CE858 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mopp/Pods-Mopp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mopp/Pods-Mopp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mopp/Pods-Mopp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		83F7C5EE27F5D890705855F1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,6 +389,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mopp-MoppUITests/Pods-Mopp-MoppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E658F333A36D590E828BFBA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mopp-MoppUITests/Pods-Mopp-MoppUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mopp-MoppUITests/Pods-Mopp-MoppUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mopp-MoppUITests/Pods-Mopp-MoppUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C21695675FE9041A997B6675 /* [CP] Check Pods Manifest.lock */ = {
@@ -410,6 +457,7 @@
 				A604610724AD98F900034CAB /* ViewController.swift in Sources */,
 				A604610324AD98F900034CAB /* AppDelegate.swift in Sources */,
 				A604610524AD98F900034CAB /* SceneDelegate.swift in Sources */,
+				7D905BEC24CAA63A0047B0AF /* IPUtill.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +625,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Mopp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -595,6 +644,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Mopp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

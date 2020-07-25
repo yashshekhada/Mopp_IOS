@@ -1,16 +1,57 @@
 PODS:
+  - Alamofire (5.2.2)
+  - GoogleMaps (3.9.0):
+    - GoogleMaps/Maps (= 3.9.0)
+  - GoogleMaps/Base (3.9.0)
+  - GoogleMaps/Maps (3.9.0):
+    - GoogleMaps/Base
+  - GooglePlaces (3.9.0):
+    - GoogleMaps/Base (= 3.9.0)
   - iOTool (1.0.2)
+  - IQKeyboardManagerSwift (6.5.5)
+  - KeychainSwift (19.0.0)
+  - KSToastView (0.5.7)
+  - MMDrawController (5.0.0)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
+  - Alamofire
+  - GoogleMaps
+  - GooglePlaces
   - iOTool
+  - IQKeyboardManagerSwift
+  - KeychainSwift
+  - KSToastView
+  - MMDrawController
+  - SVProgressHUD
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - GoogleMaps
+    - GooglePlaces
     - iOTool
+    - IQKeyboardManagerSwift
+    - KeychainSwift
+    - KSToastView
+    - MMDrawController
+    - SVProgressHUD
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
+  GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
   iOTool: 8adfe40e49e971cd2391114aff23354ddc37683d
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
+  KSToastView: aeb0ca50b44e9568b6f95b2d1ec53a3f016b50fc
+  MMDrawController: 90ac344934d1944a664239b487d907e1ecf46754
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: ec8929b40c38e28b426478eab4b587105b53810e
+PODFILE CHECKSUM: b1ed48a2e591b276b25669be8bb8c405e84c1538
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.9.1
