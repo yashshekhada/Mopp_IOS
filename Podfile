@@ -15,6 +15,8 @@ pod 'GoogleMaps'
 pod 'GooglePlaces'
 pod 'Alamofire'
 pod 'SwiftyJSON'
+pod 'iOSDropDown'
+pod 'JGProgressHUD'
   # Pods for Mopp
 
   target 'MoppTests' do

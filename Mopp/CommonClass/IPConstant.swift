@@ -11,14 +11,13 @@ import UIKit
 typealias Utill        = IPUtill
 typealias Text         = IPText
 
-typealias Prefix = CommonParameter
+
 
 
 let Application                      = UIApplication.shared.delegate as! AppDelegate
 
 let Global:             IPGlobal     = IPGlobal.global
-let QuickReport:             BCQuickAllRecord     = BCQuickAllRecord.shared
-let SelectedRoue:             BCSelectedRoute     = BCSelectedRoute.shared
+
 let UserDefault                      = UserDefaults.standard
 let Screen                           = UIScreen.main.bounds.size
 let UserKey                          = "UserKey"

@@ -18,23 +18,10 @@ class IPGlobal {
     /// Global Drawer for application level
 
     /// User object for application level
-    var user:                   User?
+
     var pageSize:Int = 0
     var gcmToken:String = ""
     var loginNavigation: UINavigationController?
     var uniqDeviceid:String = ""
-    var AdminUser : AdminLoginUser?
-    
-    
-    
-    
-    
-    var arrToCityDetail = [BCCity]()
-    var arrAgent = [BCAgent]()
-    var arrBusNoDetail = [BCBusNoDetail]()
-    var arrDriverConductorDetail = [BCDriverConductorDetail]()
-    var arrPickUpManDetail = [BCPickUpManDetail]()
-    var arrBookSelectionType = [BCBookSelectionType]()
-    var arrBranchMaster = [BCBranchMaster]()
-    var arrBookingType = [BCBookingType]()
+
 }

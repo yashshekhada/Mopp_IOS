@@ -7,14 +7,21 @@
 //
 
 import UIKit
-
+import SwiftyJSON
+ 
+import Alamofire
 class SelectUniversity: UIViewController {
-
+    //var networkcall=NetWorkCall.self
     override func viewDidLoad() {
         super.viewDidLoad()
+        //_ = NetWorkCall.getUnivercitylist()
+        
         // Do any additional setup after loading the view.
     }
-
+    
 
 }
+
+
+
 

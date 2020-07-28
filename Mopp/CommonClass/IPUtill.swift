@@ -19,15 +19,7 @@ import SwiftyJSON
 
 class IPUtill {
 
-    class func prepareApplication() {
-//      UserDefault[ISMOBILEVERIFIED] = true
-        setDeviceID()
-        prepareBaseApplication()
-        Utill.prepareUser()
-        Utill.checkVersion(FromLoginCall: false)
-        GMSServices.provideAPIKey(ClS.mapApiKey)
-        GMSPlacesClient.provideAPIKey(ClS.mapApiKey)
-    }
+    
     class func setDeviceID()  {
         let keyChain = KeychainSwift()
         if let deviceid = keyChain.get("UniqDeviceId") {
@@ -139,28 +131,8 @@ class IPUtill {
             drawer.showLeftSlider(isShow: value)
         }
     }
-    class func setCenterViewController(_ viewController: UIViewController) {
-        
-        /**
-         Condition checks whether topViewController of navigationController is same which is in center now
-         */
-        if Global.navigationController!.topViewController!.isKind(of: viewController.classForCoder) {
-           // Utill.toggleDrawer(from: Global.navigationController!.topViewController!)
-            if Global.navigationController!.topViewController! is HomeViewController {
-                (Global.navigationController!.topViewController! as! HomeViewController).resetData()
-            }
-        } else {
-            Global.navigationController!.setViewControllers([viewController], animated: false)
-            // Utill.toggleDrawer(from: viewController)
-        }
-    }
-    class func reachable() -> Bool {
-        let reachability = Reachability.forInternetConnection()
-        if (reachability?.isReachableViaWiFi())! || (reachability?.isReachableViaWWAN())!{
-            return true
-        }
-        return false
-    }
+ 
+
     class func uuid() -> String {
         let uniqueString: CFUUID = CFUUIDCreate(nil)
         let isString: CFString = CFUUIDCreateString(nil, uniqueString)
@@ -169,12 +141,7 @@ class IPUtill {
     class func showToastWith(_ message:String) {
         KSToastView.ks_showToast(message, duration: 1.5)
     }
-    class func prepareUser() {
-        //initialize User object if it is logged In
-        if let userData = UserDefault[UserKey] as! Data? {
-            Global.user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? User
-        }
-    }
+    
     
     class func showVersionAlert()  {
         let alertController =  UIAlertController(title: AppName, message: "There is a newer version of this application available.Update now.", preferredStyle: UIAlertController.Style.alert)
@@ -191,192 +158,22 @@ class IPUtill {
         }
     }
     
-    class func alertOptionalUpdate(LoginCall:Bool) {
-        let alertController =  UIAlertController(title: AppName, message: "There is a newer version of this application available.Update now.", preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { (ACTION :UIAlertAction!)in
-            DispatchQueue.main.async {
-                if UIApplication.shared.canOpenURL(URL.init(string: "https://itunes.apple.com/in/app/its-busconnect/id1196236795?mt=8")!) {
-                    UIApplication.shared.open(URL.init(string: "https://itunes.apple.com/in/app/its-busconnect/id1196236795?mt=8")!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-                }
-            }
-            alertController.dismiss(animated: true, completion: nil)
-        }))
-        alertController.addAction(UIAlertAction(title: "Not Now", style: .destructive, handler: { (UIAlertAction) in
-            if LoginCall == false {
-                IPUtill.checkUserRegistration()
-            }
-        }))
-        if let vc = UIApplication.shared.keyWindow?.rootViewController {
-            vc.present(alertController, animated: true, completion: nil)
-        }
+   
+    class func reachable() -> Bool {
+    let reachability = Reachability.forInternetConnection()
+    if (reachability?.isReachableViaWiFi())! || (reachability?.isReachableViaWWAN())!{
+    return true
     }
+    return false
+    }
+
     
-    class func checkVersion(FromLoginCall:Bool) {
-        if Utill.reachable() {
-            let url =  URL(string: ClS.baseUrl+ClS.checkVersionInfo_V2Tag)!
-            Utill.showProgress()
-            let param = ["android_id": Global.uniqDeviceid,
-                         "version_name": Bundle.main.releaseVersionNumber!,
-                         "version_code": Bundle.main.buildVersionNumber!,
-                         "update_severity": "0",
-                         "AppName": APIAppName] as [String : Any]
-            
-            Alamofire.request(url, method: .post, parameters: param, encoding: JSONEncoding.default, headers: ClS.head).responseJSON { (response) -> Void in
-                Utill.dismissProgress()
-                switch(response.result) {
-                case .success(_):
-                    DispatchQueue.main.async {
-                        if let dataa = response.result.value {
-                            let json = JSON(dataa)
-                            if json["status"].stringValue == "1"  {
-                                if let appversion = Int(Bundle.main.buildVersionNumber!) {
-                                    if let apiVersion = Int(json["data"][0]["version_code"].stringValue) {
-                                        if apiVersion > appversion {
-                                            if json["data"][0]["update_severity"].stringValue ==  "1" {
-                                                IPUtill.alertOptionalUpdate(LoginCall: FromLoginCall)
-                                            } else if json["data"][0]["update_severity"].stringValue ==  "2" {
-                                                Utill.showVersionAlert()
-                                            } else {
-                                                if FromLoginCall == false {
-                                                    IPUtill.checkUserRegistration()
-                                                }
-                                            }
-                                        }else{
-                                            if FromLoginCall == false {
-                                                IPUtill.checkUserRegistration()
-                                            }
-                                        }
-                                    }
-                                }
-                            }else{
-                                Utill.showToastWith(json["message"].stringValue)
-                            }
-                        }
-                    }
-                case .failure(_):
-                    Utill.showToastWith("Error")
-                    break
-                }
-            }
-        }
-    }
     
-    class func checkUserRegistration(){
-        Utill.showProgress()
-        let param = ["TDRM_OSDeviceID" : Global.uniqDeviceid,
-                     "TDRM_OSVerifyCall":VerifyCall]
-        ClSApi.AlamofireRequest(completion: { (MData:JSCheckUserRegi) in
-            Utill.dismissProgress()
-            if MData.data[0].loginStatus == 1 {
-                prepareInitialStoryboard(isthroughLogin: false,isAlreadyReg:true)
-            }else{
-                prepareInitialStoryboard(isthroughLogin: false,isAlreadyReg:false)
-            }
-        }, Tag: ClS.CheckRegistrationTag, Prams: param, Method: ClS.post)
-    }
+    
     /// This function set root storyboard from condition
-    class func prepareInitialStoryboard(isthroughLogin:Bool,isAlreadyReg:Bool) {
-        DispatchQueue.main.async {
-            if let _ = UserDefault[ISMOBILEVERIFIED] {
-                if isthroughLogin == false {
-                    if isAlreadyReg {
-                        let navigationVC = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginNavigationViewController") as! UINavigationController
-                        let loginVC = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginViewController")
-                        navigationVC.viewControllers = [loginVC]
-                        Application.window?.rootViewController = navigationVC
-                    }else{
-                        let navigationVC = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginNavigationViewController") as! UINavigationController
-                        let loginVC = UIStoryboard.main.instantiateViewController(withIdentifier: "RegisterUserViewController")
-                        navigationVC.viewControllers = [loginVC]
-                        Application.window?.rootViewController = navigationVC
-                     
-                    }
-                } else {
-                    
-                    Application.window?.rootViewController = UIStoryboard.dashboard.instantiateViewController(withIdentifier: "DrawerViewController") as! DrawerViewController
-                }
-//                if let _ = Global.user {
-//                    if isthroughLogin == false {
-//                        getLoginDetails()
-//                    }
-//                    Application.window?.rootViewController = UIStoryboard.dashboard.instantiateViewController(withIdentifier: "DrawerViewController") as! DrawerViewController
-//                    
-//                } else {
-//                    let navigationVC = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginNavigationViewController") as! UINavigationController
-//                    let loginVC = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginViewController")
-//                    navigationVC.viewControllers = [loginVC]
-//                    Application.window?.rootViewController = navigationVC
-//                }
-            } else if let _ = UserDefault[TDRM_IDKey] {
-                let navigationVC = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginNavigationViewController") as! UINavigationController
-                let verifyVC = UIStoryboard.main.instantiateViewController(withIdentifier: "VerifyNumberViewController")
-                navigationVC.viewControllers = [verifyVC]
-                Application.window?.rootViewController = navigationVC
-            } else {
-                
-                if isAlreadyReg  {
-                    let navigationVC = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginNavigationViewController") as! UINavigationController
-                    let loginVC = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginViewController")
-                    navigationVC.viewControllers = [loginVC]
-                    Application.window?.rootViewController = navigationVC
-                }else{
-                    let navigationVC = UIStoryboard.main.instantiateViewController(withIdentifier: "LoginNavigationViewController") as! UINavigationController
-                    let loginVC = UIStoryboard.main.instantiateViewController(withIdentifier: "RegisterUserViewController")
-                    navigationVC.viewControllers = [loginVC]
-                    Application.window?.rootViewController = navigationVC
-                }
-                
-               // Application.window?.rootViewController = UIStoryboard.main.instantiateInitialViewController()
-            }
-        }
-    }
-    class func prepareUserForLogout(frmoVC:UINavigationController) {
-        
-        let alertController =  UIAlertController(title: AppName, message: Text.Message.logout, preferredStyle: UIAlertController.Style.alert)
-        
-        alertController.addAction(UIAlertAction(title: Text.Label.logout, style: UIAlertAction.Style.default, handler: { (ACTION :UIAlertAction!)in
-            Utill.logOut()
-        }))
-        
-        alertController.addAction(UIAlertAction(title: Text.Label.cancel, style: UIAlertAction.Style.cancel, handler: { (ACTION :UIAlertAction!)in
-            alertController.dismiss(animated: true, completion: nil)
-        }))
-        
-        frmoVC.present(alertController, animated: true, completion: nil)
-    }
-    class func logOut()  {
-        Global.user?.logout()
-        prepareInitialStoryboard(isthroughLogin: false,isAlreadyReg:true)
-    }
-    
-    class func registerGCMOnserver()  {
-        if let _ = Global.user {
-           /* PushNotificationRegistration.init().pushnotification(registerid: Global.gcmToken) { (json, status, message) in
-            }*/
-        }
-    }
-    class func getLoginDetails() {
-        if Utill.reachable() {
-            Utill.showProgress()
-            let parameter = UserDefault[LOGINVALUES]
-            LoginService.init().login(parameter: parameter as! [String : Any]) { (user, status, message) in
-                Utill.dismissProgress()
-                if status {
-                    Global.user = user
-                    user?.saveInUserDefaults()
-                    UserDefault[LOGINVALUES] = parameter
-                    DispatchQueue.main.async {
-                        NotificationCenter.default.post(name: .downloadedCities, object: nil)
-                    }
-                } else {
-                    Utill.showToastWith(message)
-                }
-            }
-        }
-        else {
-            Utill.showToastWith(Text.Message.noInternet)
-        }
-    }
+ 
+   
+   
     class func isiPhoneX() -> Bool {
         if UIDevice().userInterfaceIdiom == .phone {
             switch UIScreen.main.nativeBounds.height {
@@ -462,28 +259,7 @@ class IPUtill {
         UserDefault["RecentBooking"] = arrSeacrh
     }
     
-    class func setRecentSearch()  {
-        var arrSeacrh = [[String:String]]()
-        var dictSearch = [String:String]()
-        dictSearch["From"] = SelectedRoue.source.CM_CityName
-        dictSearch["Fromid"] = SelectedRoue.source.CM_CityID
-        dictSearch["To"] = SelectedRoue.destination.CM_CityName
-        dictSearch["Toid"] = SelectedRoue.destination.CM_CityID
-        dictSearch["Date"] = Utill.getStringFromDate("EEE MMM dd,yyyy", date: SelectedRoue.routeDate)
-        arrSeacrh.append(dictSearch)
-        if let arr = UserDefault["RecentSearch"] as? [[String:String]] {
-            for dict in arr {
-                if (dict["Fromid"] == SelectedRoue.source.CM_CityID && dict["Toid"] == SelectedRoue.destination.CM_CityID) {
-                    
-                } else  if (dict["Fromid"] == SelectedRoue.destination.CM_CityID && dict["Toid"] == SelectedRoue.source.CM_CityID) {
-                    
-                } else {
-                    arrSeacrh.append(dict)
-                }
-            }
-        }
-        UserDefault["RecentSearch"] = arrSeacrh
-    }
+   
 }
 
 // Helper function inserted by Swift 4.2 migrator.

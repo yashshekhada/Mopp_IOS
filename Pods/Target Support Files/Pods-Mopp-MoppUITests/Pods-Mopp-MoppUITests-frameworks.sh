@@ -199,21 +199,25 @@ fi
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KSToastView/KSToastView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MMDrawController/MMDrawController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/iOTool/iOTool.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KSToastView/KSToastView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MMDrawController/MMDrawController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/iOTool/iOTool.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
