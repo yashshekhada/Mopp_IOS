@@ -19,6 +19,9 @@
 		041A395724CBF3CA009CD443 /* NetWorkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A395624CBF3CA009CD443 /* NetWorkCall.swift */; };
 		0424975624CFFB610094D4F9 /* LoginVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424975524CFFB610094D4F9 /* LoginVc.swift */; };
 		0454C44E24CC358500AB50EB /* TestCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454C44D24CC358500AB50EB /* TestCV.swift */; };
+		0463E6F824D148BE00CBD0DA /* UserData_m.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6F724D148BE00CBD0DA /* UserData_m.swift */; };
+		0463E6FA24D18D1B00CBD0DA /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6F924D18D1B00CBD0DA /* ForgotPassword.swift */; };
+		0463E6FC24D190EE00CBD0DA /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6FB24D190EE00CBD0DA /* StatusModel.swift */; };
 		04B6C2C424D0044400F76360 /* SplVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6C2C324D0044300F76360 /* SplVC.swift */; };
 		04B6C2C624D016AA00F76360 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6C2C524D016AA00F76360 /* SceneDelegate.swift */; };
 		1B4299A177901A5322DB23CF /* Pods_MoppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E258436F72C129B182E00D8 /* Pods_MoppTests.framework */; };
@@ -65,6 +68,9 @@
 		041A395624CBF3CA009CD443 /* NetWorkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkCall.swift; sourceTree = "<group>"; };
 		0424975524CFFB610094D4F9 /* LoginVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVc.swift; sourceTree = "<group>"; };
 		0454C44D24CC358500AB50EB /* TestCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCV.swift; sourceTree = "<group>"; };
+		0463E6F724D148BE00CBD0DA /* UserData_m.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData_m.swift; sourceTree = "<group>"; };
+		0463E6F924D18D1B00CBD0DA /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		0463E6FB24D190EE00CBD0DA /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
 		04B6C2C324D0044300F76360 /* SplVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplVC.swift; sourceTree = "<group>"; };
 		04B6C2C524D016AA00F76360 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		157DA5B29283EA9A5DA22438 /* Pods-MoppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoppTests.release.xcconfig"; path = "Target Support Files/Pods-MoppTests/Pods-MoppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				041A394D24CBED04009CD443 /* GetUnivercity.swift */,
+				0463E6F724D148BE00CBD0DA /* UserData_m.swift */,
+				0463E6FB24D190EE00CBD0DA /* StatusModel.swift */,
 			);
 			path = ModleClass;
 			sourceTree = "<group>";
@@ -157,6 +165,7 @@
 			children = (
 				0424975524CFFB610094D4F9 /* LoginVc.swift */,
 				04B6C2C324D0044300F76360 /* SplVC.swift */,
+				0463E6F924D18D1B00CBD0DA /* ForgotPassword.swift */,
 			);
 			path = VCGroup;
 			sourceTree = "<group>";
@@ -520,12 +529,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0454C44E24CC358500AB50EB /* TestCV.swift in Sources */,
+				0463E6FC24D190EE00CBD0DA /* StatusModel.swift in Sources */,
 				041A394724CBECB8009CD443 /* IPUtill.swift in Sources */,
 				04B6C2C424D0044400F76360 /* SplVC.swift in Sources */,
 				A604610724AD98F900034CAB /* SelectUniversity.swift in Sources */,
 				041A395724CBF3CA009CD443 /* NetWorkCall.swift in Sources */,
 				041A394824CBECB8009CD443 /* MReservationChartAreaWise.swift in Sources */,
 				04B6C2C624D016AA00F76360 /* SceneDelegate.swift in Sources */,
+				0463E6F824D148BE00CBD0DA /* UserData_m.swift in Sources */,
 				041A394A24CBECB8009CD443 /* IPGlobal.swift in Sources */,
 				A604610324AD98F900034CAB /* AppDelegate.swift in Sources */,
 				041A394924CBECB8009CD443 /* IPExtension.swift in Sources */,
@@ -535,6 +546,7 @@
 				041A395024CBEF70009CD443 /* ClSData.swift in Sources */,
 				041A395424CBF0A9009CD443 /* Reachability.m in Sources */,
 				0424975624CFFB610094D4F9 /* LoginVc.swift in Sources */,
+				0463E6FA24D18D1B00CBD0DA /* ForgotPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

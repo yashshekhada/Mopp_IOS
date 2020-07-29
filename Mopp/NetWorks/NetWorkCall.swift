@@ -15,10 +15,10 @@ public class NetWorkCall{
     
     
     
-    public static func get_Api_Call_university (completion: @escaping ([GetUnivercity]) -> ()) {
+    public static func get_Api_Call<T:Decodable>(completion: @escaping (T) -> (),BaseUrl:String, ApiName: String, Prams: [String:Any]) {
         
         
-        var Array=[GetUnivercity]()
+     //   var Array=[GetUnivercity]()
         if Utill.reachable() {
             let url =  URL(string: ClS.baseUrl+ClS.getunivercity)!
             // Utill.showProgress()
@@ -28,26 +28,46 @@ public class NetWorkCall{
                 //   Utill.dismissProgress()
                 switch(response.result) {
                 case .success(_):
-                    DispatchQueue.main.async {
-                        if let dataa = response.value {
-                            let json = JSON(dataa)
-                            if json["statusCode"].stringValue == "1"  {
-                                let Datas = json["data"].array
-                                for point in Datas! {
-                                    Array.append(GetUnivercity(parameter: point))
-                                }
-                            
-                               
-                                //    Utill.showToastWith(json["message"].stringValue)
-                            }
-                        }
-                    }
+                    if response.response?.statusCode == 200 || response.response?.statusCode == 201 {
+                                       
+                                       guard let data = response.data else {
+                                           
+                                           print("Error: No data to decode")
+                                           
+                                           return
+                                           
+                                       }
+                                       
+                                       guard let blog = try? JSONDecoder().decode(T.self, from: data) else {
+                                           
+                                           print("Errors: Couldn't decode data into Blog")
+                                           
+                                           return
+                                           
+                                       }
+                                       
+                                       completion(blog)
+                                       
+                                   }
+                                       
+                                   else if response.response?.statusCode == 0{
+                                       
+                                   }
+                                       
+                                   else  {
+                                       
+                                       if let _ = response.value as? Error {
+                                           
+                                       }
+                                       
+                                   }
+                
                 case .failure(_):
                     //     Utill.showToastWith("Error")
                     break
                 }
             }
-             completion(Array)
+             //completion(Array)
         }
         
       //  return Array
