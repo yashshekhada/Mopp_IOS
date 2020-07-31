@@ -16,7 +16,13 @@ pod 'GooglePlaces'
 pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'iOSDropDown'
-pod 'JGProgressHUD'
+pod 'JGProgressHUD','~>2.0.3'
+pod 'Firebase/Auth'
+pod 'Firebase/Core'
+pod 'Firebase/Storage'
+pod 'Firebase/Firestore'
+pod 'SDWebImage','~>4.4.2'
+
   # Pods for Mopp
 
   target 'MoppTests' do

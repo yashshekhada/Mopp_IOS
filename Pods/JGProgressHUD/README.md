@@ -28,9 +28,6 @@ Download the source code and open the <a href="Examples">Examples</a> project to
 [![GitHub license](https://img.shields.io/github/license/JonasGessner/JGProgressHUD.svg)](https://github.com/JonasGessner/JGProgressHUD/blob/master/LICENSE.txt)
 [![CocoaPods](https://img.shields.io/cocoapods/v/JGProgressHUD.svg)](https://cocoapods.org/pods/JGProgressHUD)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Carthage compatible](https://img.shields.io/badge/SwiftPM-Compatible-brightgreen)](https://swift.org/package-manager)
-
-
 
 Examples
 --------------
@@ -121,15 +118,12 @@ To dim the content behind the HUD set your dim color as `backgroundColor` of you
 
 Installation
 --------------
+### CocoaPods:
+In your `Podfile` add:
 
-### Swift Package Manager:
-
-Add `JGProgressHUD` as a dependency in your `Package.swift` file:
-
-```swift
-.package(url: "https://github.com/JonasGessner/JGProgressHUD", .upToNextMajor(from: "2.0.0"))
 ```
-
+pod 'JGProgressHUD'
+```
 
 ### Carthage:
 In your `Cartfile` add:
@@ -138,20 +132,12 @@ In your `Cartfile` add:
 github "JonasGessner/JGProgressHUD"
 ```
 
-### CocoaPods:
-In your `Podfile` add:
-
-```
-pod 'JGProgressHUD'
-```
-
-### Manual Installation:
+### Manual Installation (Framework):
 
 1. Drag the `JGProgressHUD.xcodeproj` file into your Xcode project.
 2. Add `JGProgressHUD.framework` to "Embedded Binaries" in the "General" tab of your target.
 
--------
-After installing import the module where you want to use it:
+Then import the module where you want to use it:
 
 ```objc
 @import JGProgressHUD;
