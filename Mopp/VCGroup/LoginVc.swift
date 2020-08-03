@@ -36,7 +36,7 @@ class LoginVc: UIViewController {
         
         let username=EmailAddreshTxt.text
         let password=PswTxt.text
-        LoginApi(username: username!, password: password!, UniversityType:String(GetUnivercityData[SelectUniDrp.selectedIndex!].id) )
+        LoginApi(username: username!, password: password!, UniversityType:String(GetUnivercityData[SelectUniDrp.selectedIndex!].id!) )
     }
     @IBAction func SelectRmemberMe(_ sender: Any) {
         
@@ -71,10 +71,10 @@ class LoginVc: UIViewController {
           //  VerifyLoginApiData = T;
             //var views = self.storyboard?.instantiateViewController(identifier: "TabbWindow") as? UITabBarController
             // self.navigationController?.pu(views, animated: true)
-            self.GetUnivercityData=T.data
+            self.GetUnivercityData=T.data!
             var arraySS=[String]()
             for point in self.GetUnivercityData{
-                arraySS.append(point.name)
+                arraySS.append(point.name!)
             }
             self.SelectUniDrp.optionArray=arraySS
           

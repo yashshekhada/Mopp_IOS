@@ -23,21 +23,32 @@
                                     <constraint firstAttribute="width" constant="120" id="rLC-di-sVt"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Patterns" translatesAutoresizingMaskIntoConstraints="NO" id="KSj-vA-WBw">
-                                <rect key="frame" x="0.0" y="-142" width="414" height="695"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Patterns" translatesAutoresizingMaskIntoConstraints="NO" id="QQv-lh-8Vl">
+                                <rect key="frame" x="-7" y="0.0" width="421" height="323"/>
+                                <color key="tintColor" red="0.30588235289999999" green="0.48627450979999998" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="695" id="OzJ-yL-1HI"/>
-                                    <constraint firstAttribute="width" constant="414" id="Z41-te-x2s"/>
+                                    <constraint firstAttribute="width" secondItem="QQv-lh-8Vl" secondAttribute="height" multiplier="211:166" constant="10.439759036144551" id="Rp5-a5-BCv"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="pfA-gT-IsY">
+                                <rect key="frame" x="0.0" y="567" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="onO-UU-2UI"/>
+                                </constraints>
+                                <color key="color" red="0.3322034478" green="0.56572538610000001" blue="0.94747370480000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="bZv-LX-uFk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="59V-R0-IbA"/>
-                            <constraint firstItem="KSj-vA-WBw" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-142" id="Jqp-7D-4Eb"/>
-                            <constraint firstItem="KSj-vA-WBw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="auU-DL-CfC"/>
+                            <constraint firstItem="pfA-gT-IsY" firstAttribute="top" secondItem="bZv-LX-uFk" secondAttribute="bottom" constant="70.5" id="DnP-29-MFA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pfA-gT-IsY" secondAttribute="trailing" id="FPY-wh-Kdj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QQv-lh-8Vl" secondAttribute="trailing" id="U7Q-W1-xgz"/>
+                            <constraint firstItem="QQv-lh-8Vl" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Yoy-VE-nC7"/>
+                            <constraint firstItem="QQv-lh-8Vl" firstAttribute="width" secondItem="QQv-lh-8Vl" secondAttribute="height" multiplier="211:166" constant="10.439759036144551" id="Z3F-15-O9I"/>
                             <constraint firstItem="bZv-LX-uFk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gFg-g7-RXi"/>
-                            <constraint firstItem="KSj-vA-WBw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j8B-Fp-qTX"/>
+                            <constraint firstItem="pfA-gT-IsY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kF1-rC-sL9"/>
+                            <constraint firstItem="QQv-lh-8Vl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-7" id="mGE-Pc-PFZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -48,7 +59,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="120" height="97.5"/>
-        <image name="Patterns" width="378" height="420"/>
+        <image name="Logo" width="57" height="45.5"/>
+        <image name="Patterns" width="378" height="299"/>
     </resources>
 </document>
