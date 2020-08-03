@@ -1,0 +1,44 @@
+//
+//  JobListVC.swift
+//  Mopp
+//
+//  Created by mac on 8/3/20.
+//  Copyright © 2020 yash shekhada. All rights reserved.
+//
+
+import UIKit
+
+class JobListVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 8
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "JonCell", for: indexPath) as! JonCell
+        
+        return cell
+    }
+    
+
+    @IBOutlet weak var JobList: UITableView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+class JonCell: UITableViewCell {
+    
+}
