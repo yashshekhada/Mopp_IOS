@@ -18,7 +18,13 @@ class JobListVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         DispatchQueue.main.async(execute: {
+                   //var page
+                   let page = self.storyboard?.instantiateViewController(withIdentifier: "JobDetailVC") as! JobDetailVC
+                   self.navigationController?.pushViewController(page, animated: true)
+               })
+    }
 
     @IBOutlet weak var JobList: UITableView!
     override func viewDidLoad() {
@@ -37,6 +43,9 @@ class JobListVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func Back(_ sender: Any) {
+       self.tabBarController?.selectedIndex=0
+        }
 
 }
 class JonCell: UITableViewCell {

@@ -18,6 +18,12 @@
 		041A395424CBF0A9009CD443 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A395324CBF0A9009CD443 /* Reachability.m */; };
 		041A395724CBF3CA009CD443 /* NetWorkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A395624CBF3CA009CD443 /* NetWorkCall.swift */; };
 		0424975624CFFB610094D4F9 /* LoginVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424975524CFFB610094D4F9 /* LoginVc.swift */; };
+		0449D3F424D953340032D253 /* JobDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449D3F324D953340032D253 /* JobDetailVC.swift */; };
+		0449D3F624D95BAC0032D253 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449D3F524D95BAC0032D253 /* ProductDetailVC.swift */; };
+		0449D3F824D96D8D0032D253 /* GrantDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449D3F724D96D8D0032D253 /* GrantDetailVC.swift */; };
+		044F7E1824D914080042B507 /* NotificationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F7E1724D914080042B507 /* NotificationList.swift */; };
+		044F7E1A24D929D90042B507 /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F7E1924D929D90042B507 /* ColumnFlowLayout.swift */; };
+		044F7E1C24D92A800042B507 /* MarketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F7E1B24D92A800042B507 /* MarketList.swift */; };
 		0454C44E24CC358500AB50EB /* TestCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454C44D24CC358500AB50EB /* TestCV.swift */; };
 		045894C624D86AAE00A6025D /* GrantsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045894C524D86AAE00A6025D /* GrantsList.swift */; };
 		0463E6F824D148BE00CBD0DA /* UserData_m.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6F724D148BE00CBD0DA /* UserData_m.swift */; };
@@ -85,6 +91,12 @@
 		041A395324CBF0A9009CD443 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		041A395624CBF3CA009CD443 /* NetWorkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkCall.swift; sourceTree = "<group>"; };
 		0424975524CFFB610094D4F9 /* LoginVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVc.swift; sourceTree = "<group>"; };
+		0449D3F324D953340032D253 /* JobDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailVC.swift; sourceTree = "<group>"; };
+		0449D3F524D95BAC0032D253 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
+		0449D3F724D96D8D0032D253 /* GrantDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantDetailVC.swift; sourceTree = "<group>"; };
+		044F7E1724D914080042B507 /* NotificationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationList.swift; sourceTree = "<group>"; };
+		044F7E1924D929D90042B507 /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
+		044F7E1B24D92A800042B507 /* MarketList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketList.swift; sourceTree = "<group>"; };
 		0454C44D24CC358500AB50EB /* TestCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCV.swift; sourceTree = "<group>"; };
 		045894C524D86AAE00A6025D /* GrantsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantsList.swift; sourceTree = "<group>"; };
 		0463E6F724D148BE00CBD0DA /* UserData_m.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData_m.swift; sourceTree = "<group>"; };
@@ -205,6 +217,11 @@
 				04698A0D24D3F2DD001B38A7 /* SignUpVC.swift */,
 				04B0223624D81A8100605ED0 /* JobListVC.swift */,
 				045894C524D86AAE00A6025D /* GrantsList.swift */,
+				044F7E1724D914080042B507 /* NotificationList.swift */,
+				044F7E1B24D92A800042B507 /* MarketList.swift */,
+				0449D3F324D953340032D253 /* JobDetailVC.swift */,
+				0449D3F524D95BAC0032D253 /* ProductDetailVC.swift */,
+				0449D3F724D96D8D0032D253 /* GrantDetailVC.swift */,
 			);
 			path = VCGroup;
 			sourceTree = "<group>";
@@ -226,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				04698A0924D3D1AC001B38A7 /* Extensions.swift */,
+				044F7E1924D929D90042B507 /* ColumnFlowLayout.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -671,14 +689,20 @@
 				0463E6F824D148BE00CBD0DA /* UserData_m.swift in Sources */,
 				041A394A24CBECB8009CD443 /* IPGlobal.swift in Sources */,
 				A604610324AD98F900034CAB /* AppDelegate.swift in Sources */,
+				0449D3F824D96D8D0032D253 /* GrantDetailVC.swift in Sources */,
+				044F7E1C24D92A800042B507 /* MarketList.swift in Sources */,
 				041A394924CBECB8009CD443 /* IPExtension.swift in Sources */,
 				04698A0A24D3D1AC001B38A7 /* Extensions.swift in Sources */,
+				0449D3F424D953340032D253 /* JobDetailVC.swift in Sources */,
 				04698A0E24D3F2DD001B38A7 /* SignUpVC.swift in Sources */,
 				041A394E24CBED04009CD443 /* GetUnivercity.swift in Sources */,
 				041A394624CBECB8009CD443 /* IPConstant.swift in Sources */,
 				041A394B24CBECB8009CD443 /* IPText.swift in Sources */,
 				041A395024CBEF70009CD443 /* ClSData.swift in Sources */,
+				044F7E1824D914080042B507 /* NotificationList.swift in Sources */,
 				041A395424CBF0A9009CD443 /* Reachability.m in Sources */,
+				0449D3F624D95BAC0032D253 /* ProductDetailVC.swift in Sources */,
+				044F7E1A24D929D90042B507 /* ColumnFlowLayout.swift in Sources */,
 				04B0223724D81A8100605ED0 /* JobListVC.swift in Sources */,
 				0424975624CFFB610094D4F9 /* LoginVc.swift in Sources */,
 				045894C624D86AAE00A6025D /* GrantsList.swift in Sources */,
