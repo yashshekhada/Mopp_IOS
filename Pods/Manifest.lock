@@ -352,6 +352,7 @@ PODS:
   - SDWebImage (4.4.8):
     - SDWebImage/Core (= 4.4.8)
   - SDWebImage/Core (4.4.8)
+  - SideMenu (6.4.9)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.0)
 
@@ -371,6 +372,7 @@ DEPENDENCIES:
   - KSToastView
   - MMDrawController
   - SDWebImage (~> 4.4.2)
+  - SideMenu
   - SVProgressHUD
   - SwiftyJSON
 
@@ -406,6 +408,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SDWebImage
+    - SideMenu
     - SVProgressHUD
     - SwiftyJSON
 
@@ -440,9 +443,10 @@ SPEC CHECKSUMS:
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
+  SideMenu: 8ef57a3cfc024a2d3fc1c036c7fe98537baec9e0
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: e52d1d53b70c5dc08c8ddfc9246e718c38e315c2
+PODFILE CHECKSUM: ab2f50aecf210fa5abaa41c45ba72ed49ddd5962
 
 COCOAPODS: 1.9.3

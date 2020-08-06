@@ -7,7 +7,7 @@
 //
 
 import Foundation
-public class ClS{
+public  class ClS{
     public static let head = ["Content-Type": "application/json"]
     public static var baseUrl="http://mopp.virenmshah.com/api/";
     public static var getunivercity="getunivercity?";
@@ -18,5 +18,14 @@ public class ClS{
     public static var Email_pts="Email_pts"
     public static var Univercity_pts="Univercity_pts"
     public static var RememberMe_status="RememberMe_status"
+    
+    
+    
+    // SF Data
+    public static var sf_Token = "Token"
+      public static var sf_Name = "Name"
+      public static var sf_Email = "Email"
+     
+    
     
 }

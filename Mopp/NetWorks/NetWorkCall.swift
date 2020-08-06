@@ -20,7 +20,7 @@ public class NetWorkCall{
         
      //   var Array=[GetUnivercity]()
         if Utill.reachable() {
-            let url =  URL(string: ClS.baseUrl+ClS.getunivercity)!
+            let url =  URL(string: ClS.baseUrl+ApiName)!
             // Utill.showProgress()
             
             

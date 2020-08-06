@@ -92,10 +92,12 @@ class LoginVc: UIViewController {
                hud.dismiss()
              
             _ =  T
-              
+            iOTool.SavePref(Name: ClS.sf_Token, Value: T.data.apiToken)
+              iOTool.SavePref(Name: ClS.sf_Name, Value: T.data.name)
+              iOTool.SavePref(Name: ClS.sf_Email, Value: T.data.email)
              
               
-           }, BaseUrl:ClS.baseUrl , ApiName: ClS.login+"logintype=0&university_id="+UniversityType+"&email="+username+"&password="+username, Prams: parameter)
+           }, BaseUrl:ClS.baseUrl , ApiName: ClS.login+"logintype=0&university_id="+UniversityType+"&email="+username+"&password="+username+"&device_token=", Prams: parameter)
          
        }
        

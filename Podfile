@@ -22,7 +22,7 @@ pod 'Firebase/Core'
 pod 'Firebase/Storage'
 pod 'Firebase/Firestore'
 pod 'SDWebImage','~>4.4.2'
-
+pod 'SideMenu'
   # Pods for Mopp
 
   target 'MoppTests' do
