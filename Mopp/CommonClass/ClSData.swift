@@ -9,6 +9,8 @@
 import Foundation
 public  class ClS{
     public static let head = ["Content-Type": "application/json"]
+    
+    public static var App_Name = "Mopp: Only What Matters"
     public static var baseUrl="http://mopp.virenmshah.com/api/";
     public static var getunivercity="getunivercity?";
     public static var login="login?";
@@ -25,6 +27,9 @@ public  class ClS{
     public static var sf_Token = "Token"
       public static var sf_Name = "Name"
       public static var sf_Email = "Email"
+    public static var sf_Status = "Status"
+      public static var sf_password = "password"
+      
      
     
     

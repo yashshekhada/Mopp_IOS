@@ -8,13 +8,21 @@
 
 import UIKit
 
-
+import iOTool
 
 class SplVC: UIViewController {
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+//        let status = iOTool.GetPref(Name: ClS.sf_Status)
+//                    if status == "1"
+//                    {
+//                       let story = UIStoryboard(name: "Main", bundle:nil)
+//                        let vc = story.instantiateViewController(withIdentifier: "navHome")
+//                        UIApplication.shared.windows.first?.rootViewController = vc
+//                        UIApplication.shared.windows.first?.makeKeyAndVisible()
+//                    }
         // Do any additional setup after loading the view.
     }
     

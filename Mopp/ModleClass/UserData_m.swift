@@ -11,7 +11,7 @@ import Foundation
 struct UserData_m: Codable {
     let statusCode: Int
     let statusMsg: String
-    let data: DataClass
+    let data: DataClass?
 }
 
 // MARK: - DataClass

@@ -91,13 +91,30 @@ class LoginVc: UIViewController {
            NetWorkCall.get_Api_Call(completion: { (T: UserData_m) in
                hud.dismiss()
              
-            _ =  T
-            iOTool.SavePref(Name: ClS.sf_Token, Value: T.data.apiToken)
-              iOTool.SavePref(Name: ClS.sf_Name, Value: T.data.name)
-              iOTool.SavePref(Name: ClS.sf_Email, Value: T.data.email)
+            if (T.statusCode == 1){
+                iOTool.SavePref(Name: ClS.sf_Token, Value: T.data!.apiToken)
+              iOTool.SavePref(Name: ClS.sf_Name, Value: T.data!.name)
+              iOTool.SavePref(Name: ClS.sf_Email, Value: T.data!.email)
+                  iOTool.SavePref(Name: ClS.sf_Status, Value: T.data!.email)
+                if self.RememberMeBtn.currentImage == #imageLiteral(resourceName: "check-box"){
+                      iOTool.SavePref(Name: ClS.sf_password, Value: password)
+                }
+                    
+                let story = UIStoryboard(name: "Main", bundle:nil)
+                           let vc = story.instantiateViewController(withIdentifier: "navHome")
+                           UIApplication.shared.windows.first?.rootViewController = vc
+                           UIApplication.shared.windows.first?.makeKeyAndVisible()
+            }
+            else{
+                let alertController = UIAlertController(title: ClS.App_Name, message:
+                      T.statusMsg  , preferredStyle: .alert)
+                   alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+                   self.present(alertController, animated: true, completion: nil)
+            }
              
               
-           }, BaseUrl:ClS.baseUrl , ApiName: ClS.login+"logintype=0&university_id="+UniversityType+"&email="+username+"&password="+username+"&device_token=", Prams: parameter)
+           }, BaseUrl:ClS.baseUrl , ApiName: ClS.login+"logintype=0&university_id="+UniversityType+"&email="+username+"&password="+password+"&device_token=0", Prams: parameter)
          
        }
        

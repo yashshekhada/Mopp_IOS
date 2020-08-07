@@ -30,6 +30,7 @@
 		0463E6FC24D190EE00CBD0DA /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6FB24D190EE00CBD0DA /* StatusModel.swift */; };
 		04698A0C24D3D365001B38A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04698A0B24D3D365001B38A7 /* GoogleService-Info.plist */; };
 		04698A0E24D3F2DD001B38A7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04698A0D24D3F2DD001B38A7 /* SignUpVC.swift */; };
+		048EEF5224DD951300BA4F68 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EEF5124DD951300BA4F68 /* NavigationController.swift */; };
 		04B0222A24D8178C00605ED0 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0221E24D8178600605ED0 /* Roboto-Black.ttf */; };
 		04B0222B24D8178C00605ED0 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0221F24D8178700605ED0 /* Roboto-BlackItalic.ttf */; };
 		04B0222C24D8178C00605ED0 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0222024D8178800605ED0 /* Roboto-BoldItalic.ttf */; };
@@ -44,7 +45,6 @@
 		04B0223524D8178C00605ED0 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0222924D8178C00605ED0 /* Roboto-Regular.ttf */; };
 		04B0223724D81A8100605ED0 /* JobListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B0223624D81A8100605ED0 /* JobListVC.swift */; };
 		04B6C2C424D0044400F76360 /* SplVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6C2C324D0044300F76360 /* SplVC.swift */; };
-		04B6C2C624D016AA00F76360 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6C2C524D016AA00F76360 /* SceneDelegate.swift */; };
 		04CB147E24DBFC6900F5B81D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB147D24DBFC6900F5B81D /* HomeVC.swift */; };
 		04CB148024DC2FDF00F5B81D /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB147F24DC2FDF00F5B81D /* ColumnFlowLayout.swift */; };
 		1B4299A177901A5322DB23CF /* Pods_MoppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E258436F72C129B182E00D8 /* Pods_MoppTests.framework */; };
@@ -102,6 +102,7 @@
 		0463E6FB24D190EE00CBD0DA /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
 		04698A0B24D3D365001B38A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04698A0D24D3F2DD001B38A7 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		048EEF5124DD951300BA4F68 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		04B0221E24D8178600605ED0 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		04B0221F24D8178700605ED0 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		04B0222024D8178800605ED0 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -116,7 +117,6 @@
 		04B0222924D8178C00605ED0 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		04B0223624D81A8100605ED0 /* JobListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListVC.swift; sourceTree = "<group>"; };
 		04B6C2C324D0044300F76360 /* SplVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplVC.swift; sourceTree = "<group>"; };
-		04B6C2C524D016AA00F76360 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		04CB147D24DBFC6900F5B81D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		04CB147F24DC2FDF00F5B81D /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		157DA5B29283EA9A5DA22438 /* Pods-MoppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoppTests.release.xcconfig"; path = "Target Support Files/Pods-MoppTests/Pods-MoppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		7E258436F72C129B182E00D8 /* Pods_MoppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8125BFC1CB8A0E1122964210 /* Pods_Mopp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mopp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8361E6FF88284BED15C4C8D0 /* Pods-MoppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoppTests.debug.xcconfig"; path = "Target Support Files/Pods-MoppTests/Pods-MoppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A60460FF24AD98F900034CAB /* Mopp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mopp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A60460FF24AD98F900034CAB /* Mopp: Only What Matters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mopp: Only What Matters.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A604610224AD98F900034CAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A604610624AD98F900034CAB /* SelectUniversity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUniversity.swift; sourceTree = "<group>"; };
 		A604610B24AD98FD00034CAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -222,6 +222,7 @@
 				0449D3F524D95BAC0032D253 /* ProductDetailVC.swift */,
 				0449D3F724D96D8D0032D253 /* GrantDetailVC.swift */,
 				04CB147D24DBFC6900F5B81D /* HomeVC.swift */,
+				048EEF5124DD951300BA4F68 /* NavigationController.swift */,
 			);
 			path = VCGroup;
 			sourceTree = "<group>";
@@ -273,7 +274,7 @@
 		A604610024AD98F900034CAB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A60460FF24AD98F900034CAB /* Mopp.app */,
+				A60460FF24AD98F900034CAB /* Mopp: Only What Matters.app */,
 				A604611524AD98FD00034CAB /* MoppTests.xctest */,
 				A604612024AD98FD00034CAB /* MoppUITests.xctest */,
 			);
@@ -290,7 +291,6 @@
 				041A393F24CBECB8009CD443 /* CommonClass */,
 				A604610224AD98F900034CAB /* AppDelegate.swift */,
 				A604610624AD98F900034CAB /* SelectUniversity.swift */,
-				04B6C2C524D016AA00F76360 /* SceneDelegate.swift */,
 				A604613224AD9A3100034CAB /* Main.storyboard */,
 				A604610B24AD98FD00034CAB /* Assets.xcassets */,
 				A604610D24AD98FD00034CAB /* LaunchScreen.storyboard */,
@@ -349,7 +349,7 @@
 			);
 			name = Mopp;
 			productName = Mopp;
-			productReference = A60460FF24AD98F900034CAB /* Mopp.app */;
+			productReference = A60460FF24AD98F900034CAB /* Mopp: Only What Matters.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A604611424AD98FD00034CAB /* MoppTests */ = {
@@ -627,7 +627,6 @@
 				041A395724CBF3CA009CD443 /* NetWorkCall.swift in Sources */,
 				04CB147E24DBFC6900F5B81D /* HomeVC.swift in Sources */,
 				041A394824CBECB8009CD443 /* MReservationChartAreaWise.swift in Sources */,
-				04B6C2C624D016AA00F76360 /* SceneDelegate.swift in Sources */,
 				0463E6F824D148BE00CBD0DA /* UserData_m.swift in Sources */,
 				041A394A24CBECB8009CD443 /* IPGlobal.swift in Sources */,
 				A604610324AD98F900034CAB /* AppDelegate.swift in Sources */,
@@ -641,6 +640,7 @@
 				041A394B24CBECB8009CD443 /* IPText.swift in Sources */,
 				041A395024CBEF70009CD443 /* ClSData.swift in Sources */,
 				044F7E1824D914080042B507 /* NotificationList.swift in Sources */,
+				048EEF5224DD951300BA4F68 /* NavigationController.swift in Sources */,
 				041A395424CBF0A9009CD443 /* Reachability.m in Sources */,
 				0449D3F624D95BAC0032D253 /* ProductDetailVC.swift in Sources */,
 				04B0223724D81A8100605ED0 /* JobListVC.swift in Sources */,
@@ -821,10 +821,10 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masa.mopp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mopp: Only What Matters";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mopp/CommonClass/Mopp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -843,9 +843,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masa.mopp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Mopp: Only What Matters";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mopp/CommonClass/Mopp-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
