@@ -11,7 +11,7 @@ import UIKit
 import SwiftyJSON
 import Foundation
 
-struct GetUnivercity:  Codable {
+struct GetUnivercity:  Codable  {
     let statusCode : Int?
     let statusMsg : String?
     let data : [GetUnivercity_Data]?
@@ -29,9 +29,7 @@ struct GetUnivercity:  Codable {
         statusMsg = try values.decodeIfPresent(String.self, forKey: .statusMsg)
         data = try values.decodeIfPresent([GetUnivercity_Data].self, forKey: .data)
     }
-    
 }
-
 // MARK: - Datum
 
 
@@ -44,15 +42,15 @@ struct GetUnivercity_Data : Codable {
     let username : String?
     let password : String?
     let postfix : String?
-    let status : Int?
+    let status : String?
     let forgotforgotkey : String?
     let created_by : String?
     let updated_by : String?
     let created_at : String?
     let updated_at : String?
-    
+
     enum CodingKeys: String, CodingKey {
-        
+
         case id = "id"
         case user_type = "user_type"
         case name = "name"
@@ -68,7 +66,7 @@ struct GetUnivercity_Data : Codable {
         case created_at = "created_at"
         case updated_at = "updated_at"
     }
-    
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decodeIfPresent(Int.self, forKey: .id)
@@ -79,12 +77,12 @@ struct GetUnivercity_Data : Codable {
         username = try values.decodeIfPresent(String.self, forKey: .username)
         password = try values.decodeIfPresent(String.self, forKey: .password)
         postfix = try values.decodeIfPresent(String.self, forKey: .postfix)
-        status = try values.decodeIfPresent(Int.self, forKey: .status)
+        status = try values.decodeIfPresent(String.self, forKey: .status)
         forgotforgotkey = try values.decodeIfPresent(String.self, forKey: .forgotforgotkey)
         created_by = try values.decodeIfPresent(String.self, forKey: .created_by)
         updated_by = try values.decodeIfPresent(String.self, forKey: .updated_by)
         created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
         updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
     }
-    
+
 }

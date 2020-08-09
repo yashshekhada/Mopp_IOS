@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class GrantsList: UIViewController,UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,11 +30,35 @@ class GrantsList: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        GetGrants()
         
         // Do any additional setup after loading the view.
     }
     
-    
+    func GetGrants() {
+           let hud = JGProgressHUD(style: .light)
+           hud.textLabel.text = "Loading"
+           hud.show(in: self.view)
+    //   var GetUnivercityData:GetUnivercity
+           let parameter:[String:Any]=["":""]
+           NetWorkCall.get_Api_Call(completion: { (T: GrantsModel) in
+               hud.dismiss()
+             
+            if (T.statusCode == 1){
+            
+            }
+            else{
+                let alertController = UIAlertController(title: ClS.App_Name, message:
+                      T.statusMsg  , preferredStyle: .alert)
+                   alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+                   self.present(alertController, animated: true, completion: nil)
+            }
+             
+              
+           }, BaseUrl:ClS.baseUrl , ApiName: ClS.getscholarshiplist+"session_token="+ClS.Token+"&univercity_id="+ClS.University_id, Prams: parameter)
+         
+    }
     /*
      // MARK: - Navigation
      

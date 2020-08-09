@@ -31,42 +31,14 @@ class JobListVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var JobList: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    //    LoginApi()
+        var datasdas=ClS.Token
+        ClS.Token=ClS.Token
         // Do any additional setup after loading the view.
     }
     
-   // func GetJobList() {
-//           let hud = JGProgressHUD(style: .light)
-//           hud.textLabel.text = "Loading"
-//           hud.show(in: self.view)
-//    //   var GetUnivercityData:GetUnivercity
-//           let parameter:[String:Any]=["":""]
-//           NetWorkCall.get_Api_Call(completion: { (T: GetUnivercity) in
-//               hud.dismiss()
-//             //  VerifyLoginApiData = T;
-//               //var views = self.storyboard?.instantiateViewController(identifier: "TabbWindow") as? UITabBarController
-//               // self.navigationController?.pu(views, animated: true)
-////               self.GetUnivercityData=T.data!
-////               var arraySS=[String]()
-////               for point in self.GetUnivercityData{
-////                   arraySS.append(point.name!)
-////               }
-////               self.SelectUniDrp.optionArray=arraySS
-//
-//
-//           }, BaseUrl:ClS.baseUrl , ApiName: ClS.getunivercity, Prams: parameter)
-//
-//       }
-    /*
-     
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+ 
+    
     @IBAction func Back(_ sender: Any) {
         self.tabBarController?.selectedIndex=0
     }

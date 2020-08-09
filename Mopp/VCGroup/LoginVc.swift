@@ -71,10 +71,12 @@ class LoginVc: UIViewController {
           //  VerifyLoginApiData = T;
             //var views = self.storyboard?.instantiateViewController(identifier: "TabbWindow") as? UITabBarController
             // self.navigationController?.pu(views, animated: true)
-            self.GetUnivercityData=T.data!
+            self.GetUnivercityData = T.data!
             var arraySS=[String]()
+            var arraySSid = [String]()
             for point in self.GetUnivercityData{
                 arraySS.append(point.name!)
+                 arraySSid.append(point.name!)
             }
             self.SelectUniDrp.optionArray=arraySS
           
@@ -95,15 +97,17 @@ class LoginVc: UIViewController {
                 iOTool.SavePref(Name: ClS.sf_Token, Value: T.data!.apiToken)
               iOTool.SavePref(Name: ClS.sf_Name, Value: T.data!.name)
               iOTool.SavePref(Name: ClS.sf_Email, Value: T.data!.email)
-                  iOTool.SavePref(Name: ClS.sf_Status, Value: T.data!.email)
+                  iOTool.SavePref(Name: ClS.sf_Email, Value: T.data!.email)
+                  iOTool.SavePref(Name: ClS.sf_Status, Value: "1")
                 if self.RememberMeBtn.currentImage == #imageLiteral(resourceName: "check-box"){
                       iOTool.SavePref(Name: ClS.sf_password, Value: password)
-                }
+                
                     
                 let story = UIStoryboard(name: "Main", bundle:nil)
                            let vc = story.instantiateViewController(withIdentifier: "navHome")
                            UIApplication.shared.windows.first?.rootViewController = vc
                            UIApplication.shared.windows.first?.makeKeyAndVisible()
+                }
             }
             else{
                 let alertController = UIAlertController(title: ClS.App_Name, message:
@@ -118,6 +122,10 @@ class LoginVc: UIViewController {
          
        }
        
+    @IBAction func SinupPage(_ sender: UIButton) {
+        var page = self.storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
+        self.navigationController?.pushViewController(page, animated: true)
+    }
     
     @IBAction func Selected_Univercity(_ sender: DropDown)
     {
