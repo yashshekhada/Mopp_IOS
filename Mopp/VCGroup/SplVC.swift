@@ -23,10 +23,10 @@ class SplVC: UIViewController {
            UIApplication.shared.windows.first?.rootViewController = vc
            UIApplication.shared.windows.first?.makeKeyAndVisible()
        }
-        let story = UIStoryboard(name: "Main", bundle:nil)
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
-                 UIApplication.shared.windows.first?.rootViewController = UINavigationController(rootViewController: MessagesController())
-        
+//        let story = UIStoryboard(name: "Main", bundle:nil)
+//        UIApplication.shared.windows.first?.makeKeyAndVisible()
+//                 UIApplication.shared.windows.first?.rootViewController = UINavigationController(rootViewController: MessagesController())
+//        
       
     }
     
