@@ -89,8 +89,12 @@ class LoginVc: UIViewController {
            hud.textLabel.text = "Loading"
            hud.show(in: self.view)
     //   var GetUnivercityData:GetUnivercity
-           let parameter:[String:Any]=["":""]
-           NetWorkCall.get_Api_Call(completion: { (T: UserData_m) in
+           let parameter:[String:Any]=["logintype":"0",
+        "university_id":UniversityType,
+        "email":username,
+        "password":password,
+        "device_token":"0"]
+           NetWorkCall.get_Post_Api_Call(completion: { (T: UserData_m) in
                hud.dismiss()
              
             if (T.statusCode == 1){
@@ -119,7 +123,7 @@ class LoginVc: UIViewController {
             }
              
               
-           }, BaseUrl:ClS.baseUrl , ApiName: ClS.login+"logintype=0&university_id="+UniversityType+"&email="+username+"&password="+password+"&device_token=0", Prams: parameter)
+           },  BaseUrl:ClS.baseUrl , ApiName: ClS.login, Prams: parameter)
          
        }
        

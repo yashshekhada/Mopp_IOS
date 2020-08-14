@@ -13,6 +13,7 @@ public  class ClS{
     
     public static var App_Name = "Mopp: Only What Matters"
     public static var baseUrl="http://mopp.virenmshah.com/api/";
+    public static var ImageUrl="http://mopp.virenmshah.com/images/";
     public static var getunivercity="getunivercity?";
     public static var login="login?";
     public static var campusjob="campusjob?";

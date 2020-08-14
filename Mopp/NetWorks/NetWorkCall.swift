@@ -90,7 +90,7 @@ public class NetWorkCall{
               let str = String(data: data, encoding: .utf8) {
               
            
-              
+                
           }
           
               AF.request(url, method: .post,parameters: Prams, encoding: JSONEncoding.default).responseJSON { (response) -> Void in

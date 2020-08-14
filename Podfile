@@ -27,6 +27,10 @@ pod 'SDWebImage','~>4.4.2'
 pod 'SideMenu'
 pod 'YYCalendar'
 pod 'RealmSwift'
+pod 'ImageSlideshow'
+pod 'ImageSlideshow/Alamofire'
+pod 'ImageSlideShowSwift'
+pod 'SDWebImage'
 
 
   # Pods for Mopp
