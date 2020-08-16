@@ -16,22 +16,62 @@ struct UserData_m: Codable {
 
 // MARK: - DataClass
 struct DataClass: Codable {
-    let id: Int
-    let email, name, lName, image: String
-    let username, dob, state, city: String
-    let country, gender, qualification, phoneNumber: String
-    let apiToken: String
-    let univercityID: Int
-    let univercityName, sessionToken: String
+ 
+        let id : Int?
+        let email : String?
+        let name : String?
+        let l_name : String?
+        let image : String?
+        let username : String?
+        let dob : String?
+        let city : String?
+        let country : String?
+        let gender : String?
+        let qualification : String?
+        let phone_number : String?
+        let api_token : String?
+        let univercity_id : Int?
+        let univercity_name : String?
+        let session_token : String?
 
-    enum CodingKeys: String, CodingKey {
-        case id, email, name
-        case lName = "l_name"
-        case image, username, dob, state, city, country, gender, qualification
-        case phoneNumber = "phone_number"
-        case apiToken = "api_token"
-        case univercityID = "univercity_id"
-        case univercityName = "univercity_name"
-        case sessionToken = "session_token"
+        enum CodingKeys: String, CodingKey {
+
+            case id = "id"
+            case email = "email"
+            case name = "name"
+            case l_name = "l_name"
+            case image = "image"
+            case username = "username"
+            case dob = "dob"
+            case city = "city"
+            case country = "country"
+            case gender = "gender"
+            case qualification = "qualification"
+            case phone_number = "phone_number"
+            case api_token = "api_token"
+            case univercity_id = "univercity_id"
+            case univercity_name = "univercity_name"
+            case session_token = "session_token"
+        }
+
+        init(from decoder: Decoder) throws {
+            let values = try decoder.container(keyedBy: CodingKeys.self)
+            id = try values.decodeIfPresent(Int.self, forKey: .id)
+            email = try values.decodeIfPresent(String.self, forKey: .email)
+            name = try values.decodeIfPresent(String.self, forKey: .name)
+            l_name = try values.decodeIfPresent(String.self, forKey: .l_name)
+            image = try values.decodeIfPresent(String.self, forKey: .image)
+            username = try values.decodeIfPresent(String.self, forKey: .username)
+            dob = try values.decodeIfPresent(String.self, forKey: .dob)
+            city = try values.decodeIfPresent(String.self, forKey: .city)
+            country = try values.decodeIfPresent(String.self, forKey: .country)
+            gender = try values.decodeIfPresent(String.self, forKey: .gender)
+            qualification = try values.decodeIfPresent(String.self, forKey: .qualification)
+            phone_number = try values.decodeIfPresent(String.self, forKey: .phone_number)
+            api_token = try values.decodeIfPresent(String.self, forKey: .api_token)
+            univercity_id = try values.decodeIfPresent(Int.self, forKey: .univercity_id)
+            univercity_name = try values.decodeIfPresent(String.self, forKey: .univercity_name)
+            session_token = try values.decodeIfPresent(String.self, forKey: .session_token)
+        }
+
     }
-}

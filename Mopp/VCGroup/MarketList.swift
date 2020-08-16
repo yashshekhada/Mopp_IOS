@@ -7,8 +7,9 @@
 //
 
 import UIKit
-
+import JGProgressHUD
 class MarketList: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
+ var ProductLis_Data=[GetproductModel_Data]()
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          return 59
     }
@@ -25,7 +26,31 @@ class MarketList: UIViewController, UICollectionViewDataSource,UICollectionViewD
             self.navigationController?.pushViewController(page, animated: true)
         })
     }
+    func GetGrants() {
+              let hud = JGProgressHUD(style: .light)
+              hud.textLabel.text = "Loading"
+              hud.show(in: self.view)
+       //   var GetUnivercityData:GetUnivercity
+           let parameter:[String:Any]=["session_token":ClS.Token,"univercity_id":ClS.University_id]
+              NetWorkCall.get_Post_Api_Call(completion: { (T: GetproductModel) in
+                  hud.dismiss()
+                
+               if (T.statusCode == 1){
+            //    self.ProductLis_Data=T.data!
+              //      self.GrantList.reloadData()
+               }
+               else{
+                   let alertController = UIAlertController(title: ClS.App_Name, message:
+                         T.statusMsg  , preferredStyle: .alert)
+                      alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
 
+                      self.present(alertController, animated: true, completion: nil)
+               }
+                
+                 
+              }, BaseUrl:ClS.baseUrl , ApiName: ClS.getscholarshiplist+"session_token="+ClS.Token+"&univercity_id="+ClS.University_id, Prams: parameter)
+            
+       }
     @IBOutlet weak var ProductList: UICollectionView!
     
     let columnLayout = ColumnFlowLayout(

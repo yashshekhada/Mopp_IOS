@@ -48,6 +48,13 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
                   page.ImageCounter.isHidden=false
               }
         DispatchQueue.main.async {
+            
+            page.CommentSug={
+                () in
+                var page = self.storyboard?.instantiateViewController(withIdentifier: "CommentVC") as! CommentVC
+                page.post_id=String(self.GetNewsFeedArry[indexPath.row].id!)
+                self.navigationController?.pushViewController(page, animated: true)
+            }
         //    let url = URL(string: ClS.ImageUrl+self.GetNewsFeedArry[indexPath.row].image!)
       //             let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
       //            page.ImageViewProfile.image = UIImage(data: data!)
@@ -160,12 +167,17 @@ class NewsFeedPost: UITableViewCell,ImageSlideshowDelegate {
         ImageCounter.text=" "+String(page+1)+"/"+String(totalImgCount)+" "
         
     }
+    var CommentSug:(()->())?
     var totalImgCount=0
     @IBOutlet weak var slideshow: ImageSlideshow!
     @IBOutlet weak var Description: UILabel!
     @IBOutlet weak var NameLbl: UILabel!
     @IBOutlet weak var ImageViewProfile: UIImageView!
     
+    @IBAction func CkickEventForComment(_ sender: UIButton) {
+        CommentSug?()
+        
+    }
     @IBOutlet weak var ImageCounter: UILabel!
     @IBOutlet weak var Hightconstraints: NSLayoutConstraint!
 }

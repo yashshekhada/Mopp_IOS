@@ -23,6 +23,7 @@
 		0449D3F424D953340032D253 /* JobDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449D3F324D953340032D253 /* JobDetailVC.swift */; };
 		0449D3F624D95BAC0032D253 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449D3F524D95BAC0032D253 /* ProductDetailVC.swift */; };
 		0449D3F824D96D8D0032D253 /* GrantDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449D3F724D96D8D0032D253 /* GrantDetailVC.swift */; };
+		044BF41D24E822CD00628B83 /* GetproductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044BF41C24E822CD00628B83 /* GetproductModel.swift */; };
 		044F7E1824D914080042B507 /* NotificationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F7E1724D914080042B507 /* NotificationList.swift */; };
 		044F7E1C24D92A800042B507 /* MarketList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F7E1B24D92A800042B507 /* MarketList.swift */; };
 		0450863F24DE667C00C3ACB3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450863E24DE667C00C3ACB3 /* TabBarController.swift */; };
@@ -36,6 +37,8 @@
 		04698A0C24D3D365001B38A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04698A0B24D3D365001B38A7 /* GoogleService-Info.plist */; };
 		04698A0E24D3F2DD001B38A7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04698A0D24D3F2DD001B38A7 /* SignUpVC.swift */; };
 		048EEF5224DD951300BA4F68 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EEF5124DD951300BA4F68 /* NavigationController.swift */; };
+		049ABF6B24E94C710006DD5B /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABF6A24E94C710006DD5B /* CommentVC.swift */; };
+		049ABF6D24E951860006DD5B /* getcommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABF6C24E951860006DD5B /* getcommentModel.swift */; };
 		04B0222A24D8178C00605ED0 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0221E24D8178600605ED0 /* Roboto-Black.ttf */; };
 		04B0222B24D8178C00605ED0 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0221F24D8178700605ED0 /* Roboto-BlackItalic.ttf */; };
 		04B0222C24D8178C00605ED0 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0222024D8178800605ED0 /* Roboto-BoldItalic.ttf */; };
@@ -100,6 +103,7 @@
 		0449D3F324D953340032D253 /* JobDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailVC.swift; sourceTree = "<group>"; };
 		0449D3F524D95BAC0032D253 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
 		0449D3F724D96D8D0032D253 /* GrantDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantDetailVC.swift; sourceTree = "<group>"; };
+		044BF41C24E822CD00628B83 /* GetproductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetproductModel.swift; sourceTree = "<group>"; };
 		044F7E1724D914080042B507 /* NotificationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationList.swift; sourceTree = "<group>"; };
 		044F7E1B24D92A800042B507 /* MarketList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketList.swift; sourceTree = "<group>"; };
 		0450863E24DE667C00C3ACB3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 		04698A0B24D3D365001B38A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04698A0D24D3F2DD001B38A7 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		048EEF5124DD951300BA4F68 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		049ABF6A24E94C710006DD5B /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
+		049ABF6C24E951860006DD5B /* getcommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getcommentModel.swift; sourceTree = "<group>"; };
 		04B0221E24D8178600605ED0 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		04B0221F24D8178700605ED0 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		04B0222024D8178800605ED0 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -207,6 +213,8 @@
 				0463E6FB24D190EE00CBD0DA /* StatusModel.swift */,
 				041902D124DF2FF800C47922 /* GrantsModel.swift */,
 				04622B5F24E15CDD0083E700 /* GetNewsFeed.swift */,
+				044BF41C24E822CD00628B83 /* GetproductModel.swift */,
+				049ABF6C24E951860006DD5B /* getcommentModel.swift */,
 			);
 			path = ModleClass;
 			sourceTree = "<group>";
@@ -237,6 +245,7 @@
 				04CB147D24DBFC6900F5B81D /* HomeVC.swift */,
 				048EEF5124DD951300BA4F68 /* NavigationController.swift */,
 				0450863E24DE667C00C3ACB3 /* TabBarController.swift */,
+				049ABF6A24E94C710006DD5B /* CommentVC.swift */,
 			);
 			path = VCGroup;
 			sourceTree = "<group>";
@@ -647,6 +656,7 @@
 				041A395724CBF3CA009CD443 /* NetWorkCall.swift in Sources */,
 				04CB147E24DBFC6900F5B81D /* HomeVC.swift in Sources */,
 				041A394824CBECB8009CD443 /* MReservationChartAreaWise.swift in Sources */,
+				044BF41D24E822CD00628B83 /* GetproductModel.swift in Sources */,
 				0463E6F824D148BE00CBD0DA /* UserData_m.swift in Sources */,
 				041A394A24CBECB8009CD443 /* IPGlobal.swift in Sources */,
 				A604610324AD98F900034CAB /* AppDelegate.swift in Sources */,
@@ -654,6 +664,7 @@
 				044F7E1C24D92A800042B507 /* MarketList.swift in Sources */,
 				041A394924CBECB8009CD443 /* IPExtension.swift in Sources */,
 				0449D3F424D953340032D253 /* JobDetailVC.swift in Sources */,
+				049ABF6D24E951860006DD5B /* getcommentModel.swift in Sources */,
 				04698A0E24D3F2DD001B38A7 /* SignUpVC.swift in Sources */,
 				041A394E24CBED04009CD443 /* GetUnivercity.swift in Sources */,
 				041A394624CBECB8009CD443 /* IPConstant.swift in Sources */,
@@ -662,6 +673,7 @@
 				044F7E1824D914080042B507 /* NotificationList.swift in Sources */,
 				048EEF5224DD951300BA4F68 /* NavigationController.swift in Sources */,
 				041A395424CBF0A9009CD443 /* Reachability.m in Sources */,
+				049ABF6B24E94C710006DD5B /* CommentVC.swift in Sources */,
 				0449D3F624D95BAC0032D253 /* ProductDetailVC.swift in Sources */,
 				04B0223724D81A8100605ED0 /* JobListVC.swift in Sources */,
 				0424975624CFFB610094D4F9 /* LoginVc.swift in Sources */,

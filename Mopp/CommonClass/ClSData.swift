@@ -12,8 +12,8 @@ public  class ClS{
     public static let head = ["Content-Type": "application/json"]
     
     public static var App_Name = "Mopp: Only What Matters"
-    public static var baseUrl="http://mopp.virenmshah.com/api/";
-    public static var ImageUrl="http://mopp.virenmshah.com/images/";
+    public static var baseUrl="http://mopp.impm.in/api/"//"http://mopp.virenmshah.com/api/";
+    public static var ImageUrl="http://mopp.impm.in/images/";
     public static var getunivercity="getunivercity?";
     public static var login="login?";
     public static var campusjob="campusjob?";
@@ -24,6 +24,7 @@ public  class ClS{
     public static var Email_pts="Email_pts"
     public static var Univercity_pts="Univercity_pts"
     public static var RememberMe_status="RememberMe_status"
+    public static var getcomment="getcomment"
     
     
     
@@ -40,4 +41,23 @@ public  class ClS{
      
     
     
+}
+extension StringProtocol {
+    var html2AttributedString: NSAttributedString? {
+        Data(utf8).html2AttributedString
+    }
+    var html2String: String {
+        html2AttributedString?.string ?? ""
+    }
+}
+extension Data {
+    var html2AttributedString: NSAttributedString? {
+        do {
+            return try NSAttributedString(data: self, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            print("error:", error)
+            return  nil
+        }
+    }
+    var html2String: String { html2AttributedString?.string ?? "" }
 }
