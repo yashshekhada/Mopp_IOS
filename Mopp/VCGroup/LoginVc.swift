@@ -102,6 +102,7 @@ class LoginVc: UIViewController {
                 iOTool.SavePref(Name: ClS.sf_Name, Value: T.data!.name!)
                 iOTool.SavePref(Name: ClS.sf_Email, Value: T.data!.email!)
                 iOTool.SavePref(Name: ClS.sf_Email, Value: T.data!.email!)
+                       iOTool.SavePref(Name: ClS.sf_User_id, Value: String(T.data!.id!))
                   iOTool.SavePref(Name: ClS.sf_Status, Value: "1")
                 iOTool.SavePref(Name: ClS.sf_University_id, Value: String(T.data!.univercity_id!))
                 if self.RememberMeBtn.currentImage == #imageLiteral(resourceName: "check-box"){

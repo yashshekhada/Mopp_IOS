@@ -2883,11 +2883,23 @@ your post: «Awesome 🔥» </string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWm-f1-REK">
                                         <rect key="frame" x="0.0" y="101" width="375" height="566"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roundCorner" translatesAutoresizingMaskIntoConstraints="NO" id="vqS-qz-aUt">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vqS-qz-aUt">
                                                 <rect key="frame" x="0.0" y="-25" width="375" height="591"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="proRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="customRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hlf-a9-zAI">
-                                                <rect key="frame" x="0.0" y="-9" width="375" height="575"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="511"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CommentCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentCell" rowHeight="92" id="hRi-nw-mmJ" customClass="CommentCell" customModule="Mopp__Only_What_Matters" customModuleProvider="target">
@@ -2962,6 +2974,7 @@ your post: «Awesome 🔥» </string>
                                                         <connections>
                                                             <outlet property="Descriptionlbl" destination="ycA-T1-7QJ" id="BfW-Fv-3JS"/>
                                                             <outlet property="NameOfSender" destination="tZ9-pa-Fhm" id="T7p-We-5pw"/>
+                                                            <outlet property="Profileimage" destination="yeF-z8-jfO" id="f1D-jS-TD9"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
@@ -2970,17 +2983,53 @@ your post: «Awesome 🔥» </string>
                                                     <outlet property="delegate" destination="36U-o4-o5q" id="Su4-0V-ezp"/>
                                                 </connections>
                                             </tableView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gb3-0e-GQf">
+                                                <rect key="frame" x="0.0" y="511" width="375" height="55"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dhh-dJ-DDa">
+                                                        <rect key="frame" x="20" y="7" width="335" height="41"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpA-i1-zAQ">
+                                                        <rect key="frame" x="313" y="0.0" width="49" height="55"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="49" id="tDy-9w-C7Q"/>
+                                                        </constraints>
+                                                        <state key="normal" image="SendComment"/>
+                                                        <connections>
+                                                            <action selector="SendCommentAction:" destination="36U-o4-o5q" eventType="touchUpInside" id="Yz2-1m-Z8J"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="PpA-i1-zAQ" firstAttribute="top" secondItem="Gb3-0e-GQf" secondAttribute="top" id="0oq-pf-grF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Dhh-dJ-DDa" secondAttribute="trailing" constant="20" id="3sk-Lo-48a"/>
+                                                    <constraint firstAttribute="trailing" secondItem="PpA-i1-zAQ" secondAttribute="trailing" constant="13" id="W4g-lo-JXz"/>
+                                                    <constraint firstAttribute="height" constant="55" id="XLc-Ym-8c4"/>
+                                                    <constraint firstItem="Dhh-dJ-DDa" firstAttribute="leading" secondItem="Gb3-0e-GQf" secondAttribute="leading" constant="20" id="YHQ-Ls-rIg"/>
+                                                    <constraint firstAttribute="bottom" secondItem="PpA-i1-zAQ" secondAttribute="bottom" id="c65-iW-cJB"/>
+                                                    <constraint firstAttribute="bottom" secondItem="PpA-i1-zAQ" secondAttribute="bottom" id="jYm-Y6-t6X"/>
+                                                    <constraint firstItem="Dhh-dJ-DDa" firstAttribute="top" secondItem="Gb3-0e-GQf" secondAttribute="top" constant="7" id="ndM-3C-Z5K"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Dhh-dJ-DDa" secondAttribute="bottom" constant="7" id="xl1-YE-twf"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="vqS-qz-aUt" secondAttribute="trailing" id="0LY-fx-Aac"/>
                                             <constraint firstAttribute="bottom" secondItem="vqS-qz-aUt" secondAttribute="bottom" id="612-Cq-rdg"/>
                                             <constraint firstItem="hlf-a9-zAI" firstAttribute="leading" secondItem="MWm-f1-REK" secondAttribute="leading" id="EiZ-jb-SWu"/>
-                                            <constraint firstItem="hlf-a9-zAI" firstAttribute="top" secondItem="MWm-f1-REK" secondAttribute="top" constant="-9" id="Pdo-8j-9MN"/>
+                                            <constraint firstItem="hlf-a9-zAI" firstAttribute="top" secondItem="MWm-f1-REK" secondAttribute="top" id="Pdo-8j-9MN"/>
                                             <constraint firstItem="vqS-qz-aUt" firstAttribute="leading" secondItem="MWm-f1-REK" secondAttribute="leading" id="TS3-mk-02w"/>
+                                            <constraint firstAttribute="trailing" secondItem="Gb3-0e-GQf" secondAttribute="trailing" id="a6O-Vi-o9u"/>
+                                            <constraint firstItem="Gb3-0e-GQf" firstAttribute="top" secondItem="hlf-a9-zAI" secondAttribute="bottom" id="cva-dF-Xfz"/>
                                             <constraint firstAttribute="trailing" secondItem="hlf-a9-zAI" secondAttribute="trailing" id="e1v-Q4-jZ2"/>
+                                            <constraint firstAttribute="bottom" secondItem="Gb3-0e-GQf" secondAttribute="bottom" id="gqz-w1-qJR"/>
                                             <constraint firstItem="vqS-qz-aUt" firstAttribute="top" secondItem="MWm-f1-REK" secondAttribute="top" constant="-25" id="jbK-tw-iLC"/>
-                                            <constraint firstAttribute="bottom" secondItem="hlf-a9-zAI" secondAttribute="bottom" id="tVe-Hm-o6T"/>
+                                            <constraint firstItem="Gb3-0e-GQf" firstAttribute="leading" secondItem="MWm-f1-REK" secondAttribute="leading" id="my4-qf-LKr"/>
+                                            <constraint firstItem="Gb3-0e-GQf" firstAttribute="top" secondItem="hlf-a9-zAI" secondAttribute="bottom" id="qzZ-KL-hLv"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2D-cV-4fo">
@@ -3022,6 +3071,7 @@ your post: «Awesome 🔥» </string>
                     </view>
                     <connections>
                         <outlet property="CommentTableView" destination="hlf-a9-zAI" id="qXd-IK-eKj"/>
+                        <outlet property="Comment_Txt" destination="Dhh-dJ-DDa" id="Z78-Cg-PjW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kMN-Eh-5yp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3368,6 +3418,7 @@ your post: «Awesome 🔥» </string>
         <image name="ProductBackGround" width="375" height="450"/>
         <image name="Search" width="24" height="24"/>
         <image name="SearchBtn" width="21" height="20"/>
+        <image name="SendComment" width="26" height="26"/>
         <image name="Thumb_like" width="15.5" height="15.5"/>
         <image name="Welcome to App" width="221" height="39"/>
         <image name="checkbox" width="24" height="24"/>

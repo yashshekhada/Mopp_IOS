@@ -25,20 +25,23 @@ public  class ClS{
     public static var Univercity_pts="Univercity_pts"
     public static var RememberMe_status="RememberMe_status"
     public static var getcomment="getcomment"
-    
+    public static var postcomment="postcomment"
     
     
     // SF Data
     public static var sf_Token = "Token"
-      public static var sf_Name = "Name"
-      public static var sf_Email = "Email"
+    public static var sf_User_id = "User_id"
+    public static var sf_Name = "Name"
+    public static var sf_Email = "Email"
     public static var sf_Status = "Status"
-        public static var sf_University_id = "University_id"
-      public static var sf_password = "password"
+    public static var sf_University_id = "University_id"
+    
+    public static var sf_password = "password"
     public static var Token = iOTool.GetPref(Name: ClS.sf_Token)
     public static var University_id = iOTool.GetPref(Name: ClS.sf_University_id)
-      
-     
+    public static var user_id = iOTool.GetPref(Name: ClS.sf_User_id)
+    
+    
     
     
 }
