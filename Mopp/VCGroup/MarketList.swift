@@ -27,6 +27,7 @@ class MarketList: UIViewController, UICollectionViewDataSource,UICollectionViewD
         DispatchQueue.main.async(execute: {
             //var page
             let page = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailVC") as! ProductDetailVC
+            page.datas=[self.ProductLis_Data[indexPath.row]]
             self.navigationController?.pushViewController(page, animated: true)
         })
     }
