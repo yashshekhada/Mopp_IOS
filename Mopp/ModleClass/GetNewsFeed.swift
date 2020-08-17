@@ -87,5 +87,23 @@ struct GetNewsFeed_Data : Codable {
         image = try values.decodeIfPresent(String.self, forKey: .image)
         is_like = try values.decodeIfPresent(Int.self, forKey: .is_like)
     }
-
+    init(id:Int?,description:String?,post_images_array:String?,likes: Int?,comments:Int?,numberofimages:Int?,code:String?,s_id:Int?,u_id:Int?,status:String?,created_by:String?,updated_by:String?,created_at:String?,updated_at:String?,name:String?,image:String?,is_like:Int?){
+        self.id = id
+            self.description = description
+            self.post_images_array = post_images_array
+            self.likes = likes
+            self.comments = comments
+            self.numberofimages = numberofimages
+            self.code = code
+            self.s_id = s_id
+            self.u_id = u_id
+            self.status = status
+            self.created_by = created_by
+            self.updated_by = updated_by
+            self.created_at = created_at
+            self.updated_at = updated_at
+            self.name = name
+            self.image = image
+            self.is_like = is_like
+    }
 }

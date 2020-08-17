@@ -617,7 +617,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlk-E5-gJt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="424.80000000000001" y="-1498.2008995502249"/>
+            <point key="canvasLocation" x="815" y="-1498"/>
         </scene>
         <!--Grants-->
         <scene sceneID="i0b-aP-OdW">
@@ -2416,6 +2416,21 @@ your post: «Awesome 🔥» </string>
             </objects>
             <point key="canvasLocation" x="-3215.1999999999998" y="-2275.4122938530736"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="2hc-Sj-TO1">
+            <objects>
+                <viewController id="eJ9-ti-vP1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tXl-EN-vcr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="gNY-66-KPk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k3q-Tt-noS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4845" y="-1568"/>
+        </scene>
         <!--Drawer View Controller-->
         <scene sceneID="t9Q-2L-DG8">
             <objects>
@@ -2482,6 +2497,9 @@ your post: «Awesome 🔥» </string>
                                         <state key="normal" title="My Post">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="eJ9-ti-vP1" kind="showDetail" id="YN0-Av-iSv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5s-NJ-3PD">
                                         <rect key="frame" x="0.0" y="100" width="154" height="32"/>
@@ -2516,7 +2534,6 @@ your post: «Awesome 🔥» </string>
                             <constraint firstItem="tgK-d7-n2w" firstAttribute="leading" secondItem="F2n-ZF-WYA" secondAttribute="leading" constant="23" id="BrN-wv-IKO"/>
                             <constraint firstItem="tgK-d7-n2w" firstAttribute="top" secondItem="YKm-5F-vXE" secondAttribute="bottom" constant="30" id="LMb-I1-8bn"/>
                             <constraint firstItem="YKm-5F-vXE" firstAttribute="top" secondItem="zxa-1t-xoG" secondAttribute="top" constant="30" id="MEo-z1-XjU"/>
-                            <constraint firstAttribute="trailing" secondItem="tgK-d7-n2w" secondAttribute="trailing" constant="50" id="NLz-vQ-oxQ"/>
                             <constraint firstItem="YKm-5F-vXE" firstAttribute="leading" secondItem="zxa-1t-xoG" secondAttribute="leading" constant="23" id="bC4-ak-ldL"/>
                             <constraint firstItem="8yB-Na-qkp" firstAttribute="leading" secondItem="zxa-1t-xoG" secondAttribute="leading" constant="23" id="exC-j1-lvc"/>
                             <constraint firstItem="8yB-Na-qkp" firstAttribute="top" secondItem="tgK-d7-n2w" secondAttribute="bottom" constant="26" id="fj3-uH-DJk"/>
@@ -2650,14 +2667,14 @@ your post: «Awesome 🔥» </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfs-ng-22U">
-                                <rect key="frame" x="35" y="401" width="305" height="87.5"/>
+                                <rect key="frame" x="35" y="401" width="305" height="88"/>
                                 <string key="text">In publishing and graphic design, Lorem ipsum is a the placeholder text commonly used to demonstrate the a visual form of a document or a typeface without relying on meaningful content.</string>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                 <color key="textColor" red="0.34901960780000002" green="0.3411764706" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9X-w1-55z">
-                                <rect key="frame" x="35" y="513.5" width="305" height="50"/>
+                                <rect key="frame" x="35" y="514" width="305" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="nQM-01-7Em"/>
                                 </constraints>
@@ -2732,7 +2749,7 @@ your post: «Awesome 🔥» </string>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roundCorner" translatesAutoresizingMaskIntoConstraints="NO" id="0Bf-nW-W25">
                                                 <rect key="frame" x="0.0" y="-25" width="375" height="542"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for Product" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XgG-IR-Nwe" customClass="DropDown" customModule="iOSDropDown">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for Product" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XgG-IR-Nwe">
                                                 <rect key="frame" x="20" y="10" width="335" height="50"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -2762,6 +2779,9 @@ your post: «Awesome 🔥» </string>
                                                     <constraint firstAttribute="width" constant="37" id="jMP-49-t5p"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="SearchBtn"/>
+                                                <connections>
+                                                    <action selector="SearchbtnAction:" destination="Xn8-aK-IpD" eventType="touchUpInside" id="UHf-Wl-Aqa"/>
+                                                </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="726-yl-kQq">
                                                 <rect key="frame" x="20" y="68" width="335" height="449"/>
@@ -2780,8 +2800,8 @@ your post: «Awesome 🔥» </string>
                                                             <rect key="frame" x="0.0" y="0.0" width="173" height="234"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultProductImage" translatesAutoresizingMaskIntoConstraints="NO" id="kYj-hA-dSi">
-                                                                    <rect key="frame" x="5" y="8" width="160" height="165"/>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultProductImage" translatesAutoresizingMaskIntoConstraints="NO" id="kYj-hA-dSi">
+                                                                    <rect key="frame" x="5" y="8" width="160" height="147"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="proRadius">
                                                                             <real key="value" value="8"/>
@@ -2789,7 +2809,7 @@ your post: «Awesome 🔥» </string>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUS-nr-AWd">
-                                                                    <rect key="frame" x="8" y="181" width="165" height="18"/>
+                                                                    <rect key="frame" x="8" y="163" width="165" height="18"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="CqC-I6-ZEp"/>
                                                                     </constraints>
@@ -2798,9 +2818,9 @@ your post: «Awesome 🔥» </string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue Sea Lamp with table" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlh-4m-Tob">
-                                                                    <rect key="frame" x="8" y="204" width="157" height="22"/>
+                                                                    <rect key="frame" x="8" y="186" width="157" height="40"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="22" id="kbY-sY-6tb"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="kbY-sY-6tb"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="13"/>
                                                                     <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2827,6 +2847,11 @@ your post: «Awesome 🔥» </string>
                                                                 <real key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="Descriptontxt" destination="Mlh-4m-Tob" id="dJY-Y1-EWN"/>
+                                                            <outlet property="Nametxt" destination="qUS-nr-AWd" id="ckc-Mw-4xL"/>
+                                                            <outlet property="ProductImageView" destination="kYj-hA-dSi" id="eNj-0b-cgC"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                                 <connections>
@@ -2900,6 +2925,7 @@ your post: «Awesome 🔥» </string>
                     <tabBarItem key="tabBarItem" title="Market" image="Market" selectedImage="MarketSelected" id="0lq-pW-zN9"/>
                     <connections>
                         <outlet property="ProductList" destination="726-yl-kQq" id="GBv-Jg-CjS"/>
+                        <outlet property="searchtxt" destination="XgG-IR-Nwe" id="Yq6-3b-nNT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3k-nB-EAh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3062,7 +3088,7 @@ your post: «Awesome 🔥» </string>
                                                                             <color key="textColor" red="0.08235294118" green="0.1137254902" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-icon" translatesAutoresizingMaskIntoConstraints="NO" id="yeF-z8-jfO">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-icon" translatesAutoresizingMaskIntoConstraints="NO" id="yeF-z8-jfO">
                                                                             <rect key="frame" x="10" y="10" width="44" height="44"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="44" id="1Fd-gb-23f"/>
@@ -3070,7 +3096,7 @@ your post: «Awesome 🔥» </string>
                                                                             </constraints>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="proRadius">
-                                                                                    <real key="value" value="22"/>
+                                                                                    <real key="value" value="20"/>
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
                                                                         </imageView>
@@ -3260,7 +3286,7 @@ your post: «Awesome 🔥» </string>
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="249"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-icon" translatesAutoresizingMaskIntoConstraints="NO" id="evQ-bV-caI">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-icon" translatesAutoresizingMaskIntoConstraints="NO" id="evQ-bV-caI">
                                                                     <rect key="frame" x="15" y="15" width="44" height="44"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="44" id="NfV-9j-nFn"/>
@@ -3268,7 +3294,7 @@ your post: «Awesome 🔥» </string>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="proRadius">
-                                                                            <real key="value" value="22"/>
+                                                                            <real key="value" value="20"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
@@ -3297,8 +3323,15 @@ your post: «Awesome 🔥» </string>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9cd-KG-5dO">
                                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                                                             <subviews>
-                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpe-ug-OXg">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="40"/>
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3y-8G-J7h">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="40"/>
+                                                                                    <color key="tintColor" red="0.27051568030000001" green="0.36388129000000002" blue="0.51957291360000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <state key="normal" title=" 0" image="hand.thumbsup.fill" catalog="system">
+                                                                                        <color key="titleColor" red="0.45657014849999999" green="0.45657014849999999" blue="0.45657014849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    </state>
+                                                                                </button>
+                                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpe-ug-OXg">
+                                                                                    <rect key="frame" x="125" y="0.0" width="125" height="40"/>
                                                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                                                     <color key="tintColor" red="0.62352941179999999" green="0.64705882349999999" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <state key="normal" title="  Like" image="Thumb_like">
@@ -3309,7 +3342,7 @@ your post: «Awesome 🔥» </string>
                                                                                     </connections>
                                                                                 </button>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qy-gR-6by">
-                                                                                    <rect key="frame" x="187.5" y="0.0" width="187.5" height="40"/>
+                                                                                    <rect key="frame" x="250" y="0.0" width="125" height="40"/>
                                                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                                                     <color key="tintColor" red="0.62352941179999999" green="0.64705882349999999" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <state key="normal" title="  Comment" image="Comment_img">
@@ -3391,6 +3424,7 @@ your post: «Awesome 🔥» </string>
                                                             <outlet property="ImageViewProfile" destination="evQ-bV-caI" id="qnF-NX-9jG"/>
                                                             <outlet property="LikeBtn" destination="xpe-ug-OXg" id="GlN-HW-ccf"/>
                                                             <outlet property="NameLbl" destination="Ck7-KQ-rH5" id="xZb-MD-ey8"/>
+                                                            <outlet property="ThumbCount" destination="J3y-8G-J7h" id="piC-m4-Ly4"/>
                                                             <outlet property="slideshow" destination="CA1-bq-Dck" id="C2K-yD-AKm"/>
                                                         </connections>
                                                     </tableViewCell>
@@ -3587,6 +3621,7 @@ your post: «Awesome 🔥» </string>
         <image name="Welcome to App" width="221" height="39"/>
         <image name="checkbox" width="24" height="24"/>
         <image name="frameView" width="72" height="72"/>
+        <image name="hand.thumbsup.fill" catalog="system" width="128" height="124"/>
         <image name="person.circle.fill" catalog="system" width="32" height="32"/>
         <image name="roundCorner" width="375" height="685"/>
         <image name="textbox" width="305" height="50"/>

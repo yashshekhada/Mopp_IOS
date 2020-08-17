@@ -10,7 +10,7 @@ import Foundation
 struct GetproductModel : Codable {
     let statusCode : Int?
     let statusMsg : String?
-    let data : GetproductModel_Data?
+    let data : [GetproductModel_Data]?
 
     enum CodingKeys: String, CodingKey {
 
@@ -23,7 +23,7 @@ struct GetproductModel : Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         statusCode = try values.decodeIfPresent(Int.self, forKey: .statusCode)
         statusMsg = try values.decodeIfPresent(String.self, forKey: .statusMsg)
-        data = try values.decodeIfPresent(GetproductModel_Data.self, forKey: .data)
+        data = try values.decodeIfPresent([GetproductModel_Data].self, forKey: .data)
     }
 
 }

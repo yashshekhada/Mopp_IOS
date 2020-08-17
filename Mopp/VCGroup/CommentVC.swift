@@ -21,15 +21,8 @@ class CommentVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
         cell.NameOfSender.text=CommentListData[indexPath.row].name
         cell.Descriptionlbl.text = CommentListData[indexPath.row].comment
-        let url = URL(string: ClS.ImageUrl+CommentListData[indexPath.row].image!)!
-
-           // Create Data Task
-        _ = URLSession.shared.dataTask(with: url) { [weak self] (data, _, _) in
-               if let data = data {
-                   // Create Image and Update Image View
-                   cell.Profileimage.image = UIImage(data: data)
-               }
-           }
+     
+              cell.Profileimage.sd_setImage(with: URL(string: ClS.ImageUrl+CommentListData[indexPath.row].image!), placeholderImage: UIImage(named: "user-icon"))
         return cell
     }
     

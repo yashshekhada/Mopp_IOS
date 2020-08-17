@@ -27,6 +27,7 @@ public  class ClS{
     public static var getcomment="getcomment"
     public static var postcomment="postcomment"
     public static var getproduct="getproduct"
+    public static var postlike="postlike"
     
     
     // SF Data

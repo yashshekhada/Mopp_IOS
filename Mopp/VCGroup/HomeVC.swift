@@ -43,10 +43,22 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
             page.ImageCounter.isHidden=true
         }
         else if (dataPoint?.count != 0 || dataPoint != "")
-              {
-                  page.Hightconstraints.constant=300
-                  page.ImageCounter.isHidden=false
-              }
+        {
+            page.Hightconstraints.constant=300
+            page.ImageCounter.isHidden=false
+        }
+        if self.GetNewsFeedArry[indexPath.row].is_like == 0
+        {
+            page.LikeBtn.setImage(UIImage.init(named: "Thumb_like"), for: .normal)//818181
+            page.LikeBtn.setTitleColor(UIColor.init(named: "unselectedTextColor"), for: .normal)
+        }
+        else{
+            
+            page.LikeBtn.setImage(UIImage.init(named: "Selectedthumb"), for: .normal)
+            page.LikeBtn.setTitleColor(UIColor.init(named: "SelectedColor"), for: .normal)
+        }
+          page.ImageViewProfile.sd_setImage(with: URL(string: ClS.ImageUrl+GetNewsFeedArry[indexPath.row].image!), placeholderImage: UIImage(named: "user-icon"))
+        page.ThumbCount.setTitle(" "+String(self.GetNewsFeedArry[indexPath.row].likes!), for: .normal)
         DispatchQueue.main.async {
             
             page.CommentSug={
@@ -56,15 +68,31 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
                 self.navigationController?.pushViewController(page, animated: true)
             }
             page.likeSug={
-                           () in
-                        
-                       }
-        //    let url = URL(string: ClS.ImageUrl+self.GetNewsFeedArry[indexPath.row].image!)
-      //             let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-      //            page.ImageViewProfile.image = UIImage(data: data!)
+                () in
+                
+                var EventModel=self.GetNewsFeedArry[indexPath.row]
+                if self.GetNewsFeedArry[indexPath.row].is_like == 0{
+                    
+                    
+                    self.GetNewsFeedArry[indexPath.row]=GetNewsFeed_Data.init(id: EventModel.id, description: EventModel.description, post_images_array: EventModel.post_images_array, likes: EventModel.likes! + 1, comments: EventModel.comments, numberofimages: EventModel.numberofimages, code: EventModel.code, s_id: EventModel.s_id, u_id: EventModel.u_id, status: EventModel.status, created_by: EventModel.created_by, updated_by: EventModel.updated_by, created_at: EventModel.created_at, updated_at: EventModel.updated_at, name: EventModel.name, image: EventModel.image, is_like: 1)
+                    page.ThumbCount.setTitle(" "+String(self.GetNewsFeedArry[indexPath.row].likes!), for: .normal)
+                    page.LikeBtn.setImage(UIImage.init(named: "Selectedthumb"), for: .normal)
+                    page.LikeBtn.setTitleColor(UIColor.init(named: "SelectedColor"), for: .normal)
+                    self.PostLike(post_id: String(EventModel.id!),like: "1")
+                }else{
+                    self.GetNewsFeedArry[indexPath.row]=GetNewsFeed_Data.init(id: EventModel.id, description: EventModel.description, post_images_array: EventModel.post_images_array, likes: EventModel.likes! - 1, comments: EventModel.comments, numberofimages: EventModel.numberofimages, code: EventModel.code, s_id: EventModel.s_id, u_id: EventModel.u_id, status: EventModel.status, created_by: EventModel.created_by, updated_by: EventModel.updated_by, created_at: EventModel.created_at, updated_at: EventModel.updated_at, name: EventModel.name, image: EventModel.image, is_like: 0)
+                    page.ThumbCount.setTitle(" "+String(self.GetNewsFeedArry[indexPath.row].likes!), for: .normal)
+                    page.LikeBtn.setImage(UIImage.init(named: "Thumb_like"), for: .normal)//818181
+                    page.LikeBtn.setTitleColor(UIColor.init(named: "unselectedTextColor"), for: .normal)
+                      self.PostLike(post_id: String(EventModel.id!),like: "0")
+                }
+            }
+            //    let url = URL(string: ClS.ImageUrl+self.GetNewsFeedArry[indexPath.row].image!)
+            //             let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            //            page.ImageViewProfile.image = UIImage(data: data!)
         }
-       
-       // page.ImageViewProfile.image = AlamofireSource(urlString: )
+        
+        // page.ImageViewProfile.image = AlamofireSource(urlString: )
         page.totalImgCount = PotoArry.count
         let pageControl = UIPageControl()
         pageControl.currentPageIndicatorTintColor = UIColor.blue
@@ -124,7 +152,7 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
             if (T.statusCode == 1){
                 self.GetNewsFeedArry=T.data!
                 self.MyPortListView.reloadData()
-             
+                
             }
             else{
                 let alertController = UIAlertController(title: ClS.App_Name, message:
@@ -141,6 +169,24 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
         }, BaseUrl:ClS.baseUrl , ApiName: ClS.getpostlist, Prams: parameter)
         
     }
+    func PostLike(post_id:String,like:String) {
+           let hud = JGProgressHUD(style: .light)
+           hud.textLabel.text = "Loading"
+          // hud.show(in: self.view)
+           //   var GetUnivercityData:GetUnivercity"
+           let  University_id = iOTool.GetPref(Name: ClS.sf_University_id)
+        let parameter:[String:Any]=["post_id":post_id,"likeby": ClS.user_id,"like":like,"session_token":ClS.Token]
+           
+           NetWorkCall.get_Post_Api_Call(completion: { (T: StatusModel2) in
+            //   hud.dismiss()
+               
+               
+             
+               
+               
+           }, BaseUrl:ClS.baseUrl , ApiName: ClS.postlike, Prams: parameter)
+           
+       }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -175,7 +221,7 @@ class NewsFeedPost: UITableViewCell,ImageSlideshowDelegate {
     var CommentSug:(()->())?
     var likeSug:(()->())?
     var totalImgCount=0
-      var totalLike=0
+    var totalLike=0
     @IBOutlet weak var slideshow: ImageSlideshow!
     @IBOutlet weak var Description: UILabel!
     @IBOutlet weak var NameLbl: UILabel!
@@ -191,4 +237,7 @@ class NewsFeedPost: UITableViewCell,ImageSlideshowDelegate {
     @IBOutlet weak var LikeBtn: UIButton!
     @IBOutlet weak var ImageCounter: UILabel!
     @IBOutlet weak var Hightconstraints: NSLayoutConstraint!
+    
+    @IBOutlet weak var ThumbCount: UIButton!
+    
 }
