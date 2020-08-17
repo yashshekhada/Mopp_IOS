@@ -26,5 +26,11 @@ class DrawerViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func LogoutBtnAction(_ sender: Any) {
+        let story = UIStoryboard(name: "Main", bundle:nil)
+        let vc = story.instantiateViewController(withIdentifier: "NavLogin")
+        UIApplication.shared.windows.first?.rootViewController = vc
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
+    }
+    
 }

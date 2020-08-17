@@ -19,10 +19,13 @@ class CommentVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
+        if CommentListData[indexPath.row].name != nil {
         cell.NameOfSender.text=CommentListData[indexPath.row].name
+        }
         cell.Descriptionlbl.text = CommentListData[indexPath.row].comment
-     
+      if CommentListData[indexPath.row].image != nil {
               cell.Profileimage.sd_setImage(with: URL(string: ClS.ImageUrl+CommentListData[indexPath.row].image!), placeholderImage: UIImage(named: "user-icon"))
+        }
         return cell
     }
     
@@ -99,7 +102,7 @@ class CommentVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                  
                  
                  if (T.statusCode == 1){
-                    self.Comment_Txt.text!=""
+                    self.Comment_Txt.text != ""
                     self.GetComment(post_id:post_id)
                     // self.CommentListData = T.data!
                   //   self.CommentTableView.reloadData()

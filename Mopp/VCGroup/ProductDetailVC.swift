@@ -14,7 +14,7 @@ var datas=[GetproductModel_Data]()
         super.viewDidLoad()
 
         Descriptionlbl.text=datas[0].desc
-        ProductPrice.text = String(datas[0].price!)
+        ProductPrice.text = "$ "+String(datas[0].price!)
         ProductName.text=datas[0].title
         Productimage.sd_setImage(with: URL(string: ClS.ImageUrl+datas[0].image!), placeholderImage: UIImage(named: "DefaultProductDetailPage"))
         // Do any additional setup after loading the view.

@@ -110,7 +110,7 @@ class LoginVc: UIViewController {
                 
                     
                 let story = UIStoryboard(name: "Main", bundle:nil)
-                           let vc = story.instantiateViewController(withIdentifier: "navHome")
+                           let vc = story.instantiateViewController(withIdentifier: "DrawerControllers")
                            UIApplication.shared.windows.first?.rootViewController = vc
                            UIApplication.shared.windows.first?.makeKeyAndVisible()
                 }
