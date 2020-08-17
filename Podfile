@@ -31,7 +31,8 @@ pod 'ImageSlideshow'
 pod 'ImageSlideshow/Alamofire'
 pod 'ImageSlideShowSwift'
 pod 'SDWebImage'
-
+pod 'KWDrawerController', '~> 4.2'
+pod 'KWDrawerController/RxSwift'  
 
   # Pods for Mopp
 

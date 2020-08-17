@@ -26,6 +26,7 @@ public  class ClS{
     public static var RememberMe_status="RememberMe_status"
     public static var getcomment="getcomment"
     public static var postcomment="postcomment"
+    public static var getproduct="getproduct"
     
     
     // SF Data

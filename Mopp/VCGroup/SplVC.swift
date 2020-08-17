@@ -9,6 +9,7 @@
 import UIKit
 
 import iOTool
+import KWDrawerController
 
 class SplVC: UIViewController {
 
@@ -18,8 +19,18 @@ class SplVC: UIViewController {
         let status = iOTool.GetPref(Name: ClS.sf_Status)
        if status == "1"
        {
+        let mainViewController = HomeNavBar()
+            // let leftViewController   = DrawerViewController()
+            
+             
+          //   let drawerController     = DrawerController()
+
+      //  drawerController.setViewController(mainViewController, for: .none)
+      //  drawerController.setViewController(leftViewController, for: .left)
+             
+              
           let story = UIStoryboard(name: "Main", bundle:nil)
-           let vc = story.instantiateViewController(withIdentifier: "navHome")
+           let vc = story.instantiateViewController(withIdentifier: "DrawerControllers")
            UIApplication.shared.windows.first?.rootViewController = vc
            UIApplication.shared.windows.first?.makeKeyAndVisible()
        }

@@ -27,6 +27,8 @@ struct GetproductModel : Codable {
     }
 
 }
+
+
 struct GetproductModel_Data : Codable {
     let id : Int?
     let title : String?

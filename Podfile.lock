@@ -356,6 +356,13 @@ PODS:
   - JGProgressHUD (2.0.4)
   - KeychainSwift (19.0.0)
   - KSToastView (0.5.7)
+  - KWDrawerController (4.2):
+    - KWDrawerController/Core (= 4.2)
+  - KWDrawerController/Core (4.2)
+  - KWDrawerController/RxSwift (4.2):
+    - KWDrawerController/Core
+    - RxCocoa (>= 4.0.0)
+    - RxSwift (>= 4.0.0)
   - leveldb-library (1.22)
   - MMDrawController (5.0.0)
   - nanopb (1.30905.0):
@@ -369,6 +376,12 @@ PODS:
   - Realm/Headers (5.3.3)
   - RealmSwift (5.3.3):
     - Realm (= 5.3.3)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
   - SDWebImage (4.4.8):
     - SDWebImage/Core (= 4.4.8)
   - SDWebImage/Core (4.4.8)
@@ -395,6 +408,8 @@ DEPENDENCIES:
   - JGProgressHUD (~> 2.0.3)
   - KeychainSwift
   - KSToastView
+  - KWDrawerController (~> 4.2)
+  - KWDrawerController/RxSwift
   - MMDrawController
   - RealmSwift
   - SDWebImage
@@ -435,12 +450,16 @@ SPEC REPOS:
     - JGProgressHUD
     - KeychainSwift
     - KSToastView
+    - KWDrawerController
     - leveldb-library
     - MMDrawController
     - nanopb
     - PromisesObjC
     - Realm
     - RealmSwift
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SDWebImage
     - SideMenu
     - SVProgressHUD
@@ -477,18 +496,22 @@ SPEC CHECKSUMS:
   JGProgressHUD: 62658b14e72cccf179efc7a13bcb54d30b92fc22
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
   KSToastView: aeb0ca50b44e9568b6f95b2d1ec53a3f016b50fc
+  KWDrawerController: 244ecb42378bd13a56826458647b76758db5cb67
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   MMDrawController: 90ac344934d1944a664239b487d907e1ecf46754
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   Realm: 2d57ea355bf8ca2a0964d6bfb38d28d7ff2addf6
   RealmSwift: 0a709536ecea30eea1d3c514f6ade2ed078dee3c
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
   SideMenu: 8ef57a3cfc024a2d3fc1c036c7fe98537baec9e0
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   YYCalendar: 1a6bbbd2190392edf9209da898b029ce4e5e734b
 
-PODFILE CHECKSUM: c6ed3a4d57702ed298b833fd46257caed59f928e
+PODFILE CHECKSUM: 2e91928f6292af05ce0524c679310ce5d98b4392
 
 COCOAPODS: 1.9.3

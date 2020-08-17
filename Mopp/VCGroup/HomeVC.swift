@@ -55,6 +55,10 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
                 page.post_id=String(self.GetNewsFeedArry[indexPath.row].id!)
                 self.navigationController?.pushViewController(page, animated: true)
             }
+            page.likeSug={
+                           () in
+                        
+                       }
         //    let url = URL(string: ClS.ImageUrl+self.GetNewsFeedArry[indexPath.row].image!)
       //             let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
       //            page.ImageViewProfile.image = UIImage(data: data!)
@@ -120,6 +124,7 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
             if (T.statusCode == 1){
                 self.GetNewsFeedArry=T.data!
                 self.MyPortListView.reloadData()
+             
             }
             else{
                 let alertController = UIAlertController(title: ClS.App_Name, message:
@@ -168,7 +173,9 @@ class NewsFeedPost: UITableViewCell,ImageSlideshowDelegate {
         
     }
     var CommentSug:(()->())?
+    var likeSug:(()->())?
     var totalImgCount=0
+      var totalLike=0
     @IBOutlet weak var slideshow: ImageSlideshow!
     @IBOutlet weak var Description: UILabel!
     @IBOutlet weak var NameLbl: UILabel!
@@ -178,6 +185,10 @@ class NewsFeedPost: UITableViewCell,ImageSlideshowDelegate {
         CommentSug?()
         
     }
+    @IBAction func LikeBtnClick(_ sender: UIButton) {
+        likeSug?()
+    }
+    @IBOutlet weak var LikeBtn: UIButton!
     @IBOutlet weak var ImageCounter: UILabel!
     @IBOutlet weak var Hightconstraints: NSLayoutConstraint!
 }

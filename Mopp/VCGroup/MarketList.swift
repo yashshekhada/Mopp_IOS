@@ -11,7 +11,7 @@ import JGProgressHUD
 class MarketList: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
  var ProductLis_Data=[GetproductModel_Data]()
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return 59
+        return ProductLis_Data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -26,7 +26,7 @@ class MarketList: UIViewController, UICollectionViewDataSource,UICollectionViewD
             self.navigationController?.pushViewController(page, animated: true)
         })
     }
-    func GetGrants() {
+    func GetProductList() {
               let hud = JGProgressHUD(style: .light)
               hud.textLabel.text = "Loading"
               hud.show(in: self.view)
@@ -36,7 +36,7 @@ class MarketList: UIViewController, UICollectionViewDataSource,UICollectionViewD
                   hud.dismiss()
                 
                if (T.statusCode == 1){
-            //    self.ProductLis_Data=T.data!
+               // self.ProductLis_Data=T.data
               //      self.GrantList.reloadData()
                }
                else{
@@ -48,7 +48,7 @@ class MarketList: UIViewController, UICollectionViewDataSource,UICollectionViewD
                }
                 
                  
-              }, BaseUrl:ClS.baseUrl , ApiName: ClS.getscholarshiplist+"session_token="+ClS.Token+"&univercity_id="+ClS.University_id, Prams: parameter)
+              }, BaseUrl:ClS.baseUrl , ApiName: ClS.getproduct, Prams: parameter)
             
        }
     @IBOutlet weak var ProductList: UICollectionView!

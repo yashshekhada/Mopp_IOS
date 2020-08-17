@@ -12,3 +12,20 @@ struct StatusModel: Codable {
     let statusCode: Int = 0
     let statusMsg: String = ""
 }
+struct StatusModel2:  Codable {
+    let statusCode : Int?
+    let statusMsg : String?
+
+    enum CodingKeys: String, CodingKey {
+
+        case statusCode = "statusCode"
+        case statusMsg = "statusMsg"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        statusCode = try values.decodeIfPresent(Int.self, forKey: .statusCode)
+        statusMsg = try values.decodeIfPresent(String.self, forKey: .statusMsg)
+    }
+
+}

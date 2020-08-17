@@ -39,6 +39,8 @@
 		048EEF5224DD951300BA4F68 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EEF5124DD951300BA4F68 /* NavigationController.swift */; };
 		049ABF6B24E94C710006DD5B /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABF6A24E94C710006DD5B /* CommentVC.swift */; };
 		049ABF6D24E951860006DD5B /* getcommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABF6C24E951860006DD5B /* getcommentModel.swift */; };
+		049ABF7324EA38FE0006DD5B /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABF7224EA38FE0006DD5B /* DrawerViewController.swift */; };
+		049ABF7524EA3C5F0006DD5B /* HomeNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABF7424EA3C5F0006DD5B /* HomeNavBar.swift */; };
 		04B0222A24D8178C00605ED0 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0221E24D8178600605ED0 /* Roboto-Black.ttf */; };
 		04B0222B24D8178C00605ED0 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0221F24D8178700605ED0 /* Roboto-BlackItalic.ttf */; };
 		04B0222C24D8178C00605ED0 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0222024D8178800605ED0 /* Roboto-BoldItalic.ttf */; };
@@ -119,6 +121,8 @@
 		048EEF5124DD951300BA4F68 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		049ABF6A24E94C710006DD5B /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
 		049ABF6C24E951860006DD5B /* getcommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getcommentModel.swift; sourceTree = "<group>"; };
+		049ABF7224EA38FE0006DD5B /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
+		049ABF7424EA3C5F0006DD5B /* HomeNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavBar.swift; sourceTree = "<group>"; };
 		04B0221E24D8178600605ED0 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		04B0221F24D8178700605ED0 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		04B0222024D8178800605ED0 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -246,6 +250,8 @@
 				048EEF5124DD951300BA4F68 /* NavigationController.swift */,
 				0450863E24DE667C00C3ACB3 /* TabBarController.swift */,
 				049ABF6A24E94C710006DD5B /* CommentVC.swift */,
+				049ABF7224EA38FE0006DD5B /* DrawerViewController.swift */,
+				049ABF7424EA3C5F0006DD5B /* HomeNavBar.swift */,
 			);
 			path = VCGroup;
 			sourceTree = "<group>";
@@ -655,6 +661,7 @@
 				04CB148024DC2FDF00F5B81D /* ColumnFlowLayout.swift in Sources */,
 				041A395724CBF3CA009CD443 /* NetWorkCall.swift in Sources */,
 				04CB147E24DBFC6900F5B81D /* HomeVC.swift in Sources */,
+				049ABF7524EA3C5F0006DD5B /* HomeNavBar.swift in Sources */,
 				041A394824CBECB8009CD443 /* MReservationChartAreaWise.swift in Sources */,
 				044BF41D24E822CD00628B83 /* GetproductModel.swift in Sources */,
 				0463E6F824D148BE00CBD0DA /* UserData_m.swift in Sources */,
@@ -663,6 +670,7 @@
 				0449D3F824D96D8D0032D253 /* GrantDetailVC.swift in Sources */,
 				044F7E1C24D92A800042B507 /* MarketList.swift in Sources */,
 				041A394924CBECB8009CD443 /* IPExtension.swift in Sources */,
+				049ABF7324EA38FE0006DD5B /* DrawerViewController.swift in Sources */,
 				0449D3F424D953340032D253 /* JobDetailVC.swift in Sources */,
 				049ABF6D24E951860006DD5B /* getcommentModel.swift in Sources */,
 				04698A0E24D3F2DD001B38A7 /* SignUpVC.swift in Sources */,

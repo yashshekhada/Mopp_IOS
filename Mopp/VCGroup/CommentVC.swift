@@ -57,6 +57,8 @@ class CommentVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
               if (T.statusCode == 1){
                   self.CommentListData = T.data!
                   self.CommentTableView.reloadData()
+                let indexPath = NSIndexPath(row: self.CommentListData.count-1, section: 0)
+                               self.CommentTableView.scrollToRow(at: indexPath as IndexPath, at: .bottom, animated: true)
               }
               else{
                   let alertController = UIAlertController(title: ClS.App_Name, message:
@@ -99,11 +101,12 @@ class CommentVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
           
         let parameter:[String:Any]=["session_token":ClS.Token,"post_id": String(post_id),"comment":Comment_string,"commentby":ClS.user_id]
              
-             NetWorkCall.get_Post_Api_Call(completion: { (T: StatusModel) in
+             NetWorkCall.get_Post_Api_Call(completion: { (T: StatusModel2) in
                  hud.dismiss()
                  
                  
                  if (T.statusCode == 1){
+                    self.Comment_Txt.text!=""
                     self.GetComment(post_id:post_id)
                     // self.CommentListData = T.data!
                   //   self.CommentTableView.reloadData()
