@@ -27,10 +27,16 @@ public  class ClS{
     public static var getcomment="getcomment"
     public static var postcomment="postcomment"
     public static var getproduct="getproduct"
+<<<<<<< HEAD
     public static var postlike="postlike"
     public static var getmyproduct="getmyproduct"
     public static var createproduct="createproduct"
     public static var deleteproduct="deleteproduct"
+=======
+    public static var register="register"
+    public static var otpvarification="otpvarification"
+    public static var logout="logout"
+>>>>>>> master
     
     // SF Data
     public static var sf_Token = "Token"

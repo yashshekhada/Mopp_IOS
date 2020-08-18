@@ -212,8 +212,15 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
         
     }
     
+<<<<<<< HEAD
     @IBAction func PosBtnClick(_ sender: UIButton) {
         //let page = self.storyboard?.instantiateViewController(withIdentifier: <#T##String#>)
+=======
+    @IBAction func btnMsgTapped(_ sender: UIButton)
+    {
+        let vc = mainStoryBrd.instantiateViewController(withIdentifier: "MessagesVC") as! MessagesVC
+        self.navigationController?.pushViewController(vc, animated: true)
+>>>>>>> master
     }
 }
 class NewsFeedPost: UITableViewCell,ImageSlideshowDelegate {
