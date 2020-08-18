@@ -213,7 +213,7 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
     }
     
     @IBAction func PosBtnClick(_ sender: UIButton) {
-        let page = self.storyboard?.instantiateViewController(withIdentifier: <#T##String#>)
+        //let page = self.storyboard?.instantiateViewController(withIdentifier: <#T##String#>)
     }
 }
 class NewsFeedPost: UITableViewCell,ImageSlideshowDelegate {
