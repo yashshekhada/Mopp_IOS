@@ -3662,10 +3662,6 @@ your post: «Awesome 🔥» </string>
                                                                     <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="ContactLinkTxt:" destination="pB4-mp-s88" eventType="editingDidEnd" id="HT3-bs-Tq8"/>
-                                                                <action selector="Selected_Univercity:" destination="sF3-we-JXq" eventType="editingDidEnd" id="jLx-X2-04h"/>
-                                                            </connections>
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1JK-An-nh9">
                                                             <rect key="frame" x="14" y="290" width="347" height="17"/>
@@ -3847,6 +3843,7 @@ your post: «Awesome 🔥» </string>
                         <viewLayoutGuide key="safeArea" id="i7v-1X-aJS"/>
                     </view>
                     <connections>
+                        <outlet property="ContactLinkTxt" destination="Fx7-Zq-aIt" id="VSH-nv-kdx"/>
                         <outlet property="DescriptionTxt" destination="N6B-fj-04G" id="5x8-Ag-3NF"/>
                         <outlet property="ImageViewProduct" destination="dMy-jq-8fe" id="OTR-PX-s2l"/>
                         <outlet property="PriceTxt" destination="k0G-h3-8PA" id="7wZ-KX-jN6"/>

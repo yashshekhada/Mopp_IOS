@@ -8,6 +8,7 @@
 
 import UIKit
 import  Alamofire
+import JGProgressHUD
 class PostProDuctVC: UIViewController {
 
     override func viewDidLoad() {
@@ -19,9 +20,9 @@ class PostProDuctVC: UIViewController {
 //                 }
      
     }
+    @IBOutlet weak var ContactLinkTxt: UITextField!
     
-    @IBAction func ContactLinkTxt(_ sender: UITextField) {
-    }
+  
     @IBOutlet weak var DescriptionTxt: UITextField!
     @IBOutlet weak var nametxt: UITextField!
     
@@ -38,23 +39,62 @@ class PostProDuctVC: UIViewController {
        */
     @IBOutlet weak var ImageViewProduct: UIImageView!
     @IBAction func AddProduct(_ sender: Any) {
-    
+        let hud = JGProgressHUD(style: .light)
+           hud.textLabel.text = "Loading"
+           hud.show(in: self.view)
+        let ImageData = self.ImageViewProduct.image!.pngData()
       let parameters = [
-      "station_id" :        "1000",
-      "title":      "Murat Akdeniz",
-      "body":        "xxxxxx"]
-        
-       AF.upload(multipartFormData: { multipart in
-            multipart.append(fileData, withName: "payload", fileName: "someFile.jpg", mimeType: "image/jpeg")
-            multipart.append("comment".data(using: .utf8)!, withName :"comment")
-        }, to: "endPointURL", method: .post, headers: nil) { encodingResult in
-            
-           switch(encodingResult) {
-           case encodingResult.su
-            case .failure(let encodingError):
-                print("multipart upload encodingError: \(encodingError)")
-            }
-        }
+        "title" :        nametxt.text,
+      "price":      PriceTxt.text,
+      "desc":        DescriptionTxt.text,
+      "s_id" :       ClS.user_id,
+      "u_id":      ClS.University_id,
+      "session_token":         ClS.Token,
+      "contact_link" :        ContactLinkTxt.text,
+        ] as [String : Any]
+        let timestamp = NSDate().timeIntervalSince1970
+        let url =  URL(string: ClS.baseUrl+ClS.createproduct)!
+        let urlString = ClS.baseUrl+ClS.createproduct
+           let headers: HTTPHeaders =
+               ["Content-type": "multipart/form-data",
+               "Accept": "application/json"]
+           AF.upload(
+               multipartFormData: { multipartFormData in
+                   for (key, value) in parameters {
+                       if let temp = value as? String {
+               multipartFormData.append(temp.data(using: .utf8)!, withName: key)}
+
+           if let temp = value as? Int {
+           multipartFormData.append("(temp)".data(using: .utf8)!, withName: key)}
+
+           if let temp = value as? NSArray {
+               temp.forEach({ element in
+                   let keyObj = key + "[]"
+                   if let string = element as? String {
+                       multipartFormData.append(string.data(using: .utf8)!, withName: keyObj)
+                   } else
+                       if let num = element as? Int {
+                           let value = "(num)"
+                           multipartFormData.append(value.data(using: .utf8)!, withName: keyObj)
+                   }
+               })
+           }
+       }
+                  
+
+                multipartFormData.append(ImageData!, withName: "image", fileName: String(timestamp)+".png", mimeType: "image/png")
+           },
+               to: urlString, //URL Here
+               method: .post,
+               headers: headers)
+               .responseJSON { (resp) in
+                   defer{
+                    hud.dismiss()
+                    
+                    
+                }
+                   print("resp is \(resp)")
+           }
         
     }
     
@@ -64,6 +104,7 @@ class PostProDuctVC: UIViewController {
        
         ImagePickerManager().pickImage(self){ image in
                  //here is the image
+           // image.url
             self.ImageViewProduct.image=image
              }
         }
