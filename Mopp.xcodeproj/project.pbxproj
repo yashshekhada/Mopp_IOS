@@ -54,6 +54,9 @@
 		04B0223424D8178C00605ED0 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0222824D8178B00605ED0 /* Roboto-Bold.ttf */; };
 		04B0223524D8178C00605ED0 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04B0222924D8178C00605ED0 /* Roboto-Regular.ttf */; };
 		04B0223724D81A8100605ED0 /* JobListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B0223624D81A8100605ED0 /* JobListVC.swift */; };
+		04B02F2824EB279F0020D48C /* MyproductVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B02F2724EB279E0020D48C /* MyproductVc.swift */; };
+		04B02F2A24EB2E950020D48C /* PostProDuctVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B02F2924EB2E950020D48C /* PostProDuctVC.swift */; };
+		04B02F2C24EB35970020D48C /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B02F2B24EB35970020D48C /* ImagePickerManager.swift */; };
 		04B6C2C424D0044400F76360 /* SplVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6C2C324D0044300F76360 /* SplVC.swift */; };
 		04CB147E24DBFC6900F5B81D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB147D24DBFC6900F5B81D /* HomeVC.swift */; };
 		04CB148024DC2FDF00F5B81D /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB147F24DC2FDF00F5B81D /* ColumnFlowLayout.swift */; };
@@ -136,6 +139,9 @@
 		04B0222824D8178B00605ED0 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		04B0222924D8178C00605ED0 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		04B0223624D81A8100605ED0 /* JobListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListVC.swift; sourceTree = "<group>"; };
+		04B02F2724EB279E0020D48C /* MyproductVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyproductVc.swift; sourceTree = "<group>"; };
+		04B02F2924EB2E950020D48C /* PostProDuctVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProDuctVC.swift; sourceTree = "<group>"; };
+		04B02F2B24EB35970020D48C /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
 		04B6C2C324D0044300F76360 /* SplVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplVC.swift; sourceTree = "<group>"; };
 		04CB147D24DBFC6900F5B81D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		04CB147F24DC2FDF00F5B81D /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
@@ -205,6 +211,7 @@
 				041A394F24CBEF70009CD443 /* ClSData.swift */,
 				041A395124CBF0A8009CD443 /* Mopp-Bridging-Header.h */,
 				041902CF24DF219D00C47922 /* SlideInTransition.swift */,
+				04B02F2B24EB35970020D48C /* ImagePickerManager.swift */,
 			);
 			path = CommonClass;
 			sourceTree = "<group>";
@@ -252,6 +259,8 @@
 				049ABF6A24E94C710006DD5B /* CommentVC.swift */,
 				049ABF7224EA38FE0006DD5B /* DrawerViewController.swift */,
 				049ABF7424EA3C5F0006DD5B /* HomeNavBar.swift */,
+				04B02F2724EB279E0020D48C /* MyproductVc.swift */,
+				04B02F2924EB2E950020D48C /* PostProDuctVC.swift */,
 			);
 			path = VCGroup;
 			sourceTree = "<group>";
@@ -653,6 +662,7 @@
 				0450864124DE6AB000C3ACB3 /* SceneDelegate.swift in Sources */,
 				041A394724CBECB8009CD443 /* IPUtill.swift in Sources */,
 				0450863F24DE667C00C3ACB3 /* TabBarController.swift in Sources */,
+				04B02F2A24EB2E950020D48C /* PostProDuctVC.swift in Sources */,
 				041902D024DF219D00C47922 /* SlideInTransition.swift in Sources */,
 				041902D224DF2FF800C47922 /* GrantsModel.swift in Sources */,
 				04622B6024E15CDD0083E700 /* GetNewsFeed.swift in Sources */,
@@ -660,6 +670,7 @@
 				A604610724AD98F900034CAB /* SelectUniversity.swift in Sources */,
 				04CB148024DC2FDF00F5B81D /* ColumnFlowLayout.swift in Sources */,
 				041A395724CBF3CA009CD443 /* NetWorkCall.swift in Sources */,
+				04B02F2824EB279F0020D48C /* MyproductVc.swift in Sources */,
 				04CB147E24DBFC6900F5B81D /* HomeVC.swift in Sources */,
 				049ABF7524EA3C5F0006DD5B /* HomeNavBar.swift in Sources */,
 				041A394824CBECB8009CD443 /* MReservationChartAreaWise.swift in Sources */,
@@ -669,6 +680,7 @@
 				A604610324AD98F900034CAB /* AppDelegate.swift in Sources */,
 				0449D3F824D96D8D0032D253 /* GrantDetailVC.swift in Sources */,
 				044F7E1C24D92A800042B507 /* MarketList.swift in Sources */,
+				04B02F2C24EB35970020D48C /* ImagePickerManager.swift in Sources */,
 				041A394924CBECB8009CD443 /* IPExtension.swift in Sources */,
 				049ABF7324EA38FE0006DD5B /* DrawerViewController.swift in Sources */,
 				0449D3F424D953340032D253 /* JobDetailVC.swift in Sources */,

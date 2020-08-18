@@ -51,7 +51,7 @@ class CommentVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
               
               
               if (T.statusCode == 1){
-                  self.CommentListData = T.data!
+                self.CommentListData = T.data!
                   self.CommentTableView.reloadData()
                 let indexPath = NSIndexPath(row: self.CommentListData.count-1, section: 0)
                                self.CommentTableView.scrollToRow(at: indexPath as IndexPath, at: .bottom, animated: true)
@@ -102,7 +102,7 @@ class CommentVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                  
                  
                  if (T.statusCode == 1){
-                    self.Comment_Txt.text != ""
+                    self.Comment_Txt.text! = ""
                     self.GetComment(post_id:post_id)
                     // self.CommentListData = T.data!
                   //   self.CommentTableView.reloadData()

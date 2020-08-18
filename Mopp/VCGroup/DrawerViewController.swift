@@ -24,8 +24,12 @@ class DrawerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }
-    */
+ */
+     @IBAction func Myproduct(_ sender: UIButton) {
+        let page = storyboard?.instantiateViewController(withIdentifier: "MyproductVc") as! MyproductVc
+        self.navigationController?.pushViewController(page, animated: true)
+     }
+    
     @IBAction func LogoutBtnAction(_ sender: Any) {
         let story = UIStoryboard(name: "Main", bundle:nil)
         let vc = story.instantiateViewController(withIdentifier: "NavLogin")
