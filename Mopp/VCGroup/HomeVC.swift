@@ -165,6 +165,12 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
         //   fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
         
     }
+    
+    @IBAction func btnMsgTapped(_ sender: UIButton)
+    {
+        let vc = mainStoryBrd.instantiateViewController(withIdentifier: "MessagesVC") as! MessagesVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 class NewsFeedPost: UITableViewCell,ImageSlideshowDelegate {
     func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {
