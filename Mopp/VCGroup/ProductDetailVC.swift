@@ -35,8 +35,59 @@ var datas=[GetproductModel_Data]()
     }
     */
     @IBAction func CommunicateAction(_ sender: UIButton) {
+        
+//        if((datas[0].contact_link?.isEmail)){
+//            if let url = URL(string: "mailto:\(datas[0].contact_link)") {
+//                if #available(iOS 10.0, *) {
+//                UIApplication.shared.open(url)
+//              } else {
+//                UIApplication.shared.openURL(url)
+//              }
+//            }
+//        }else if ((datas[0].contact_link?.isValidContact) != nil){
+            if let url = URL(string: "\(datas[0].contact_link!)"),
+            UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+//        }else{
+//            guard let url = URL(string: datas[0].contact_link!) else { return }
+//            UIApplication.shared.open(url)
+//        }
     }
     @IBAction func Back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+}
+extension String {
+
+    //To check text field or String is blank or not
+    var isBlank: Bool {
+        get {
+            let trimmed = trimmingCharacters(in: CharacterSet.whitespaces)
+            return trimmed.isEmpty
+        }
+    }
+
+    //Validate Email
+
+    var isEmail: Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}", options: .caseInsensitive)
+            return regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count)) != nil
+        } catch {
+            return false
+        }
+    }
+
+    var isAlphanumeric: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+    }
+    var isValidContact: Bool {
+           let phoneNumberRegex = "^[6-9]\\d{9}$"
+           let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneNumberRegex)
+           let isValidPhone = phoneTest.evaluate(with: self)
+           return isValidPhone
+       }
+    //validate Password
+   
 }

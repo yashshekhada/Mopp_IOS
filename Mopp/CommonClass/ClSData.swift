@@ -30,6 +30,7 @@ public  class ClS{
     public static var postlike="postlike"
     public static var getmyproduct="getmyproduct"
     public static var createproduct="createproduct"
+    public static var deleteproduct="deleteproduct"
     
     // SF Data
     public static var sf_Token = "Token"

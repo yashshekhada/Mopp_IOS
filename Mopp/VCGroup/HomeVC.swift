@@ -211,6 +211,10 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
         //   fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
         
     }
+    
+    @IBAction func PosBtnClick(_ sender: UIButton) {
+        let page = self.storyboard?.instantiateViewController(withIdentifier: <#T##String#>)
+    }
 }
 class NewsFeedPost: UITableViewCell,ImageSlideshowDelegate {
     func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {
