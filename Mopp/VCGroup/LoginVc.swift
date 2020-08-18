@@ -19,7 +19,9 @@ class LoginVc: UIViewController {
     @IBOutlet weak var ForgotPasw_Btn: UIButton!
     @IBOutlet weak var RememberMeBtn: UIButton!
     @IBOutlet weak var SelectUniDrp: DropDown!
-    override func viewDidLoad() {
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         SetStatusofRememberme()
         GetUniverSity()
@@ -30,13 +32,35 @@ class LoginVc: UIViewController {
                    }
     
         // Do any additional setup after loading the view.
+        
+        self.PswTxt.isSecureTextEntry = true
+        
     }
 
+    
+    @IBAction func btnPasswordShowHideTapped(_ sender: UIButton)
+    {
+        if self.PswTxt.isSecureTextEntry {
+            self.PswTxt.isSecureTextEntry = false
+            sender.setImage(#imageLiteral(resourceName: "eye"), for: .normal)
+        } else {
+            self.PswTxt.isSecureTextEntry = true
+            sender.setImage(#imageLiteral(resourceName: "hide"), for: .normal)
+        }
+    }
+    
     @IBAction func LoginAction(_ sender: UIButton) {
         
-        let username=EmailAddreshTxt.text
-        let password=PswTxt.text
-        LoginApi(username: username!, password: password!, UniversityType:String(GetUnivercityData[SelectUniDrp.selectedIndex!].id!) )
+        if EmailAddreshTxt.text != "" && PswTxt.text != ""
+        {
+            let username=EmailAddreshTxt.text
+            let password=PswTxt.text
+            LoginApi(username: username!, password: password!, UniversityType:String(GetUnivercityData[SelectUniDrp.selectedIndex!].id!) )
+        }
+        else
+        {
+            self.view.makeToast("Please Enter Email & Password")
+        }
     }
     @IBAction func SelectRmemberMe(_ sender: Any) {
         
@@ -93,7 +117,7 @@ class LoginVc: UIViewController {
         "university_id":UniversityType,
         "email":username,
         "password":password,
-        "device_token":"0"]
+        "device_token":ud.value(forKey: "deviceToken") as? String ?? ""]
            NetWorkCall.get_Post_Api_Call(completion: { (T: UserData_m) in
                hud.dismiss()
              
@@ -106,13 +130,24 @@ class LoginVc: UIViewController {
                   iOTool.SavePref(Name: ClS.sf_Status, Value: "1")
                 iOTool.SavePref(Name: ClS.sf_University_id, Value: String(T.data!.univercity_id!))
                 if self.RememberMeBtn.currentImage == #imageLiteral(resourceName: "check-box"){
-                      iOTool.SavePref(Name: ClS.sf_password, Value: password)
+                    iOTool.SavePref(Name: ClS.sf_password, Value: password)
                 
+<<<<<<< HEAD
                     
                 let story = UIStoryboard(name: "Main", bundle:nil)
                            let vc = story.instantiateViewController(withIdentifier: "DrawerControllers")
                            UIApplication.shared.windows.first?.rootViewController = vc
                            UIApplication.shared.windows.first?.makeKeyAndVisible()
+=======
+                    /*let vc = mainStoryBrd.instantiateViewController(withIdentifier: "HomeNavBar")
+                    UIApplication.shared.windows.first?.rootViewController = vc
+                    UIApplication.shared.windows.first?.makeKeyAndVisible()*/
+                    let mainViewController = HomeNavBar()
+                    let story = UIStoryboard(name: "Main", bundle:nil)
+                    let vc = story.instantiateViewController(withIdentifier: "DrawerControllers")
+                    UIApplication.shared.windows.first?.rootViewController = vc
+                    UIApplication.shared.windows.first?.makeKeyAndVisible()
+>>>>>>> master
                 }
             }
             else{
@@ -129,7 +164,7 @@ class LoginVc: UIViewController {
        }
        
     @IBAction func SinupPage(_ sender: UIButton) {
-        var page = self.storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
         self.navigationController?.pushViewController(page, animated: true)
     }
     
