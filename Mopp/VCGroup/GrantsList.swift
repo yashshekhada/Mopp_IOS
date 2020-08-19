@@ -14,6 +14,13 @@ class GrantsList: UIViewController,UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return   self.GrantValue.count
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+          if indexPath.section == tableView.numberOfSections - 1 &&
+              indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+          Count+=1
+                    GetGrants(searchby:SearchTxt.text!)
+          }
+      }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GrantCell", for: indexPath) as! GrantCell
@@ -38,30 +45,30 @@ class GrantsList: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        GetGrants()
+        GetGrants(searchby:"")
         
         // Do any additional setup after loading the view.
     }
-    
-    func GetGrants() {
+    var Count=1
+    func GetGrants(searchby:String) {
            let hud = JGProgressHUD(style: .light)
            hud.textLabel.text = "Loading"
            hud.show(in: self.view)
     //   var GetUnivercityData:GetUnivercity
-        let parameter:[String:Any]=["session_token":ClS.Token,"univercity_id":ClS.University_id]
+        let parameter:[String:Any]=["session_token":ClS.Token,"univercity_id":ClS.University_id,"issearch":"1","page":String(Count),"paginate":String(ClS.PageSize),"searchby":searchby]
            NetWorkCall.get_Post_Api_Call(completion: { (T: GrantsModel) in
                hud.dismiss()
              
             if (T.statusCode == 1){
-                self.GrantValue=T.GrantsModel_data!
+                self.GrantValue+=T.GrantsModel_data!
                 self.GrantList.reloadData()
             }
             else{
-                let alertController = UIAlertController(title: ClS.App_Name, message:
-                      T.statusMsg  , preferredStyle: .alert)
-                   alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-
-                   self.present(alertController, animated: true, completion: nil)
+//                let alertController = UIAlertController(title: ClS.App_Name, message:
+//                      T.statusMsg  , preferredStyle: .alert)
+//                   alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+//
+//                   self.present(alertController, animated: true, completion: nil)
             }
              
               
@@ -78,10 +85,30 @@ class GrantsList: UIViewController,UITableViewDataSource, UITableViewDelegate {
      }
      */
     
+    @IBAction func ShowOrhideView(_ sender: Any) {
+        if TxtCstHight.constant == 0
+        {
+            BtnHightcst.constant = 36
+            TxtCstHight.constant = 50
+        }else{
+            BtnHightcst.constant = 0
+                       TxtCstHight.constant = 0
+        }
+    }
+    @IBOutlet weak var SearchTxt: UITextField!
+    @IBOutlet weak var TxtCstHight: NSLayoutConstraint!
+    @IBOutlet weak var BtnHightcst: NSLayoutConstraint!
     @IBAction func Back(_ sender: Any) {
        self.tabBarController?.selectedIndex=0
         }
 
+    @IBAction func SearchActionBtn(_ sender: UIButton) {
+        Count=1
+        self.GrantValue.removeAll()
+        self.GrantList.reloadData()
+        GetGrants(searchby:SearchTxt.text!)
+       
+    }
 }
 class GrantCell:UITableViewCell
 {

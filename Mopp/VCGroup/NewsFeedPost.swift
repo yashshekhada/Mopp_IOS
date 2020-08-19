@@ -14,6 +14,7 @@ import OpalImagePicker
 import Alamofire
 import Photos
 class NewsFeedPostx: UIViewController {
+    var Acklogo:(()->())?
 var curruntImageIndex=0
     var ImageResource = [InputSource]()
        var UIImageResource = [UIImage]()
@@ -83,9 +84,9 @@ var curruntImageIndex=0
             select: { (assets) in
                 self.ImageResource = self.getAssetThumbnail(asset: assets)
                 self.SliderView.setImageInputs(self.ImageResource)
-                self.UIImageResource = self.getAssetUIimage(asset: assets)
+                self.UIImageResource = self.getAssetThumbnailUI(assets: assets)
                 self.SliderView.reloadInputViews()
-
+             
             imagePicker.dismiss(animated: true, completion: nil)
             }, cancel: {
                 //Cancel
@@ -106,25 +107,25 @@ var curruntImageIndex=0
         }
         return imganeth
     }
-    func getAssetUIimage(asset: [PHAsset]) -> [UIImage] {
-        var imganeth = [UIImage]()
-          for point  in asset {
-          let manager = PHImageManager.default()
-          let option = PHImageRequestOptions()
-          var thumbnail = UIImage()
-          option.isSynchronous = true
-          manager.requestImage(for: point, targetSize: CGSize(width: 512, height: 512), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
-                  thumbnail = result!
-          })
-           
-              imganeth.append(thumbnail)
-          }
-          return imganeth
-      }
+      func getAssetThumbnailUI(assets: [PHAsset]) -> [UIImage] {
+         var arrayOfImages = [UIImage]()
+         for asset in assets {
+             let manager = PHImageManager.default()
+             let option = PHImageRequestOptions()
+             var image = UIImage()
+             option.isSynchronous = true
+             manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+                 image = result!
+                 arrayOfImages.append(image)
+             })
+         }
+
+         return arrayOfImages
+     }
     @IBAction func BackBtn(_ sender: UIButton) {
     }
     func randomString(length: Int) -> String {
-      let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+      let letters = "abcdefghijklmnopqrstuvwxyz"
       return String((0..<length).map{ _ in letters.randomElement()! })
     }
     
@@ -134,15 +135,16 @@ var curruntImageIndex=0
                hud.textLabel.text = "Loading"
                hud.show(in: self.view)
                //let ImageData = resizeImage(image: self.ImageViewProduct.image!).pngData()
-        var rendomeKey=randomString(length: 6)
+        let rendomeKey=randomString(length: 6)
                let parameters = [
-                "description" : CommentText.text,
+                "description" : CommentText.text ?? "",
                    "numberofimages": ImageResource.count,
                    "code":   rendomeKey,
                    "s_id" : ClS.user_id,
                    "u_id":  ClS.University_id,
                    "session_token": ClS.Token,
-                   
+                "post_images_array":"",
+                "id":""
                    ] as [String : Any]
                let timestamp = NSDate().timeIntervalSince1970
                let url =  URL(string: ClS.baseUrl+ClS.createpost)!
@@ -172,9 +174,11 @@ var curruntImageIndex=0
                                })
                            }
                        }
-                    var count = 0
+                    var count = 1
                     for point in self.UIImageResource{
-                        multipartFormData.append(point.pngData()!, withName: "image_", fileName: String(timestamp)+".png", mimeType: "image/png")
+                          self.BackView.image = point
+                    multipartFormData.append(self.UIImageResource[0].pngData()!, withName: "image_"+String(count), fileName: "image_"+String(count)+".png", mimeType: "image/png")
+                        count+=1
                     }
                },
                    to: urlString, //URL Here
@@ -183,12 +187,20 @@ var curruntImageIndex=0
                    .responseJSON { (resp) in
                        defer{
                            hud.dismiss()
+                        self.Acklogo?()
                            //self.statusClose!()
                            self.navigationController?.popViewController(animated: true)
                        }
                        print("resp is \(resp)")
                }
     }
+    
+    
+    @IBAction func PostImgeBtnAction(_ sender: UIButton) {
+        postimage()
+    }
+    
+    @IBOutlet weak var BackView: UIImageView!
 }
 extension NewsFeedPostx: ImageSlideshowDelegate {
     func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {

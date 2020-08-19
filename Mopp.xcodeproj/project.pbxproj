@@ -32,6 +32,7 @@
 		0454C44E24CC358500AB50EB /* TestCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454C44D24CC358500AB50EB /* TestCV.swift */; };
 		045894C624D86AAE00A6025D /* GrantsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045894C524D86AAE00A6025D /* GrantsList.swift */; };
 		04622B6024E15CDD0083E700 /* GetNewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04622B5F24E15CDD0083E700 /* GetNewsFeed.swift */; };
+		0462382024EDE336008C6530 /* JoblistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462381F24EDE336008C6530 /* JoblistModel.swift */; };
 		0463E6F824D148BE00CBD0DA /* UserData_m.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6F724D148BE00CBD0DA /* UserData_m.swift */; };
 		0463E6FA24D18D1B00CBD0DA /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6F924D18D1B00CBD0DA /* ForgotPassword.swift */; };
 		0463E6FC24D190EE00CBD0DA /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6FB24D190EE00CBD0DA /* StatusModel.swift */; };
@@ -122,6 +123,7 @@
 		0454C44D24CC358500AB50EB /* TestCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCV.swift; sourceTree = "<group>"; };
 		045894C524D86AAE00A6025D /* GrantsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantsList.swift; sourceTree = "<group>"; };
 		04622B5F24E15CDD0083E700 /* GetNewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNewsFeed.swift; sourceTree = "<group>"; };
+		0462381F24EDE336008C6530 /* JoblistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoblistModel.swift; sourceTree = "<group>"; };
 		0463E6F724D148BE00CBD0DA /* UserData_m.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData_m.swift; sourceTree = "<group>"; };
 		0463E6F924D18D1B00CBD0DA /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		0463E6FB24D190EE00CBD0DA /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				04622B5F24E15CDD0083E700 /* GetNewsFeed.swift */,
 				044BF41C24E822CD00628B83 /* GetproductModel.swift */,
 				049ABF6C24E951860006DD5B /* getcommentModel.swift */,
+				0462381F24EDE336008C6530 /* JoblistModel.swift */,
 			);
 			path = ModleClass;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				0450864124DE6AB000C3ACB3 /* SceneDelegate.swift in Sources */,
 				041A394724CBECB8009CD443 /* IPUtill.swift in Sources */,
 				0450863F24DE667C00C3ACB3 /* TabBarController.swift in Sources */,
+				0462382024EDE336008C6530 /* JoblistModel.swift in Sources */,
 				04B02F2A24EB2E950020D48C /* PostProDuctVC.swift in Sources */,
 				041902D024DF219D00C47922 /* SlideInTransition.swift in Sources */,
 				041902D224DF2FF800C47922 /* GrantsModel.swift in Sources */,

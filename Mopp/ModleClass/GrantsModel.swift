@@ -43,6 +43,8 @@ struct GrantsModel_Data : Codable {
     let updated_by : String?
     let created_at : String?
     let updated_at : String?
+    let isapply: String?
+    
 
     enum CodingKeys: String, CodingKey {
 
@@ -61,6 +63,7 @@ struct GrantsModel_Data : Codable {
         case updated_by = "updated_by"
         case created_at = "created_at"
         case updated_at = "updated_at"
+         case isapply = "isapply"
     }
 
     init(from decoder: Decoder) throws {
@@ -80,6 +83,7 @@ struct GrantsModel_Data : Codable {
         updated_by = try values.decodeIfPresent(String.self, forKey: .updated_by)
         created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
         updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
+           isapply = try values.decodeIfPresent(String.self, forKey: .isapply)
     }
 
 }

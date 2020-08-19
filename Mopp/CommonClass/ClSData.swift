@@ -35,7 +35,7 @@ public  class ClS{
     public static var otpvarification="otpvarification"
     public static var logout="logout"
     public static var createpost="createpost"
-    
+    public static var scholarshipapply="scholarshipapply"
     // SF Data
     public static var sf_Token = "Token"
     public static var sf_User_id = "User_id"
@@ -50,7 +50,7 @@ public  class ClS{
     public static var user_id = iOTool.GetPref(Name: ClS.sf_User_id)
     
     
-    
+    public static var PageSize = 10
     
 }
 extension StringProtocol {

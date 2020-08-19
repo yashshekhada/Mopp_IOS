@@ -20,18 +20,18 @@ class CommentVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
         if CommentListData[indexPath.row].name != nil {
-        cell.NameOfSender.text=CommentListData[indexPath.row].name
+            cell.NameOfSender.text=CommentListData[indexPath.row].name
         }
         cell.Descriptionlbl.text = CommentListData[indexPath.row].comment
-      if CommentListData[indexPath.row].image != nil {
-              cell.Profileimage.sd_setImage(with: URL(string: ClS.ImageUrl+CommentListData[indexPath.row].image!), placeholderImage: UIImage(named: "user-icon"))
+        if CommentListData[indexPath.row].image != nil {
+            cell.Profileimage.sd_setImage(with: URL(string: ClS.ImageUrl+CommentListData[indexPath.row].image!), placeholderImage: UIImage(named: "user-icon"))
         }
         return cell
     }
     
     @IBOutlet weak var CommentTableView: UITableView!
     override func viewDidLoad() {
-            super.viewDidLoad()
+        super.viewDidLoad()
         GetComment(post_id:post_id)
         
     }
@@ -46,32 +46,36 @@ class CommentVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         //   var GetUnivercityData:GetUnivercity"
         //let University_id = iOTool.GetPref(Name: ClS.sf_University_id)
         let parameter:[String:Any]=["session_token":ClS.Token,"post_id": String(post_id)]
-          
-          NetWorkCall.get_Post_Api_Call(completion: { (T: getcommentModel) in
-              hud.dismiss()
-              
-              
-              if (T.statusCode == 1){
+        
+        NetWorkCall.get_Post_Api_Call(completion: { (T: getcommentModel) in
+            hud.dismiss()
+            
+            
+            if (T.statusCode == 1){
                 self.CommentListData = T.data!
-                  self.CommentTableView.reloadData()
-                let indexPath = NSIndexPath(row: self.CommentListData.count-1, section: 0)
-                               self.CommentTableView.scrollToRow(at: indexPath as IndexPath, at: .bottom, animated: true)
-              }
-              else{
-                  let alertController = UIAlertController(title: ClS.App_Name, message:
-                      T.statusMsg  , preferredStyle: .alert)
-                  alertController.addAction(UIAlertAction(title: "OK", style: .default))
-                  
-                  self.present(alertController, animated: true, completion: nil)
-                  
-               //   iOTool.SavePref(Name: ClS.sf_Status, Value: "0")
-                  
-              }
-              
-              
-          }, BaseUrl:ClS.baseUrl , ApiName: ClS.getcomment, Prams: parameter)
-          
-      }
+                self.CommentTableView.reloadData()
+                if  self.CommentListData.count > 0{
+                    let indexPath = NSIndexPath(row: self.CommentListData.count-1, section: 0)
+                    self.CommentTableView.scrollToRow(at: indexPath as IndexPath, at: .bottom, animated: true)
+                    
+                }
+                
+            }
+            else{
+                let alertController = UIAlertController(title: ClS.App_Name, message:
+                    T.statusMsg  , preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .default))
+                
+                self.present(alertController, animated: true, completion: nil)
+                
+                //   iOTool.SavePref(Name: ClS.sf_Status, Value: "0")
+                
+            }
+            
+            
+        }, BaseUrl:ClS.baseUrl , ApiName: ClS.getcomment, Prams: parameter)
+        
+    }
     
     
     @IBOutlet weak var Comment_Txt: UITextField!
@@ -81,50 +85,50 @@ class CommentVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             PostComment(post_id: post_id, Comment_string: Comment_Txt.text!)
         }else{
             let alertController = UIAlertController(title: ClS.App_Name, message:
-                              "Please Enter Your Comment" , preferredStyle: .alert)
-                           alertController.addAction(UIAlertAction(title: "OK", style: .default))
-                           
-                           self.present(alertController, animated: true, completion: nil)
-                           
-                          
-
+                "Please Enter Your Comment" , preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default))
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            
+            
         }
     }
     func PostComment(post_id:String,Comment_string:String) {
-             let hud = JGProgressHUD(style: .light)
-             hud.textLabel.text = "Loading"
-             hud.show(in: self.view)
-             //   var GetUnivercityData:GetUnivercity"
-          
+        let hud = JGProgressHUD(style: .light)
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
+        //   var GetUnivercityData:GetUnivercity"
+        
         let parameter:[String:Any]=["session_token":ClS.Token,"post_id": String(post_id),"comment":Comment_string,"commentby":ClS.user_id]
-             
-             NetWorkCall.get_Post_Api_Call(completion: { (T: StatusModel2) in
-                 hud.dismiss()
-                 
-                 
-                 if (T.statusCode == 1){
-                    self.Comment_Txt.text! = ""
-                    self.GetComment(post_id:post_id)
-                    // self.CommentListData = T.data!
-                  //   self.CommentTableView.reloadData()
-                 }
-                 else{
-                     let alertController = UIAlertController(title: ClS.App_Name, message:
-                         T.statusMsg  , preferredStyle: .alert)
-                     alertController.addAction(UIAlertAction(title: "OK", style: .default))
-                     
-                     self.present(alertController, animated: true, completion: nil)
-                     
-                     iOTool.SavePref(Name: ClS.sf_Status, Value: "0")
-                     
-                 }
-                 
-                 
-             }, BaseUrl:ClS.baseUrl , ApiName: ClS.postcomment, Prams: parameter)
-             
-         }
-       
-      
+        
+        NetWorkCall.get_Post_Api_Call(completion: { (T: StatusModel2) in
+            hud.dismiss()
+            
+            
+            if (T.statusCode == 1){
+                self.Comment_Txt.text! = ""
+                self.GetComment(post_id:post_id)
+                // self.CommentListData = T.data!
+                //   self.CommentTableView.reloadData()
+            }
+            else{
+                let alertController = UIAlertController(title: ClS.App_Name, message:
+                    T.statusMsg  , preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .default))
+                
+                self.present(alertController, animated: true, completion: nil)
+                
+                iOTool.SavePref(Name: ClS.sf_Status, Value: "0")
+                
+            }
+            
+            
+        }, BaseUrl:ClS.baseUrl , ApiName: ClS.postcomment, Prams: parameter)
+        
+    }
+    
+    
 }
 class CommentCell: UITableViewCell{
     

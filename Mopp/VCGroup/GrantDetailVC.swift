@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import JGProgressHUD
 class GrantDetailVC: UIViewController {
 
   //  @IBOutlet weak var Descript_txt: UITextView!
@@ -23,11 +23,15 @@ class GrantDetailVC: UIViewController {
         let Grantdata=Detail[0]
         Job_name.text=Grantdata.s_title
         Department_lbl.text=Grantdata.s_department
-        DeadLine_lbl.text=Grantdata.s_enddate
+        DeadLine_lbl.text="Deadline : "+Grantdata.s_enddate!
         Ammount_lbl.text=Grantdata.s_money
        Contact_info_lbl.text=Grantdata.s_contact
         Mailaddresh_lbl.text=Grantdata.s_contact
         Description_lbl.text=Grantdata.s_desc?.html2String
+        if Grantdata.isapply != "0"{
+            AplayBtnLbl.isEnabled=false
+            AplayBtnLbl.setTitle("Applied", for: .normal)
+        }
         
         
         // Do any additional setup after loading the view.
@@ -36,8 +40,37 @@ class GrantDetailVC: UIViewController {
     
     @IBOutlet weak var Mailaddresh_lbl: UILabel!
     
+    @IBOutlet weak var AplayBtnLbl: UIButton!
     @IBAction func Apply_btn(_ sender: Any) {
+        applayGrantPost()
     }
+    func applayGrantPost() {
+                 let hud = JGProgressHUD(style: .light)
+                 hud.textLabel.text = "Loading"
+                 hud.show(in: self.view)
+        let Grantdata=String(Detail[0].id!)
+          //   var GetUnivercityData:GetUnivercity
+           let parameter:[String:Any]=["session_token":ClS.Token,"univercity_id":ClS.University_id,"student_id":ClS.user_id,"scholarship_id":Grantdata]
+                 NetWorkCall.get_Post_Api_Call(completion: { (T: StatusModel2) in
+                     hud.dismiss()
+                   
+                  if (T.statusCode == 1){
+                    self.AplayBtnLbl.isEnabled=false
+                       self.AplayBtnLbl.setTitle("Applied", for: .normal)
+                  }
+                  else{
+                      let alertController = UIAlertController(title: ClS.App_Name, message:
+                            T.statusMsg  , preferredStyle: .alert)
+                         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+                         self.present(alertController, animated: true, completion: nil)
+                   
+                  }
+                   
+                    
+                 }, BaseUrl:ClS.baseUrl , ApiName: ClS.scholarshipapply, Prams: parameter)
+               
+          }
     /*
     // MARK: - Navigation
 

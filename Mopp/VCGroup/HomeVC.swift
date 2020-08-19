@@ -19,7 +19,14 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  GetNewsFeedArry.count
     }
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section == tableView.numberOfSections - 1 &&
+            indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+            // Notify interested parties that end has been reached
+            CurruntPage+=1
+            GetPost()
+        }
+    }
     @IBOutlet weak var Searchview: UIView!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let page = tableView.dequeueReusableCell(withIdentifier: "NewsFeedPost", for: indexPath) as! NewsFeedPost
@@ -137,31 +144,32 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
         }
         //  PostBarHight.constant=CGFloat(size)
     }
+    var CurruntPage=1
     func GetPost() {
         let hud = JGProgressHUD(style: .light)
         hud.textLabel.text = "Loading"
         hud.show(in: self.view)
         //   var GetUnivercityData:GetUnivercity"
-        let  University_id = iOTool.GetPref(Name: ClS.sf_University_id)
-        let parameter:[String:Any]=["issearch":"0","univercity_id": String(University_id),"session_token":ClS.Token]
+         let  University_id = iOTool.GetPref(Name: ClS.sf_University_id)
+        let parameter:[String:Any]=["issearch":"0","univercity_id": String(University_id),"session_token":ClS.Token,"paginate": ClS.PageSize,"page":CurruntPage]
         
         NetWorkCall.get_Post_Api_Call(completion: { (T: GetNewsFeed) in
             hud.dismiss()
             
             
             if (T.statusCode == 1){
-                self.GetNewsFeedArry=T.data!
+                self.GetNewsFeedArry+=T.data!
                 self.MyPortListView.reloadData()
                 
             }
             else{
-                let alertController = UIAlertController(title: ClS.App_Name, message:
-                    T.statusMsg  , preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: .default))
+//                let alertController = UIAlertController(title: ClS.App_Name, message:
+//                    T.statusMsg  , preferredStyle: .alert)
+//                alertController.addAction(UIAlertAction(title: "OK", style: .default))
+//                
+//                self.present(alertController, animated: true, completion: nil)
                 
-                self.present(alertController, animated: true, completion: nil)
-                
-                iOTool.SavePref(Name: ClS.sf_Status, Value: "0")
+          //      iOTool.SavePref(Name: ClS.sf_Status, Value: "0")
                 
             }
             
@@ -214,6 +222,10 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
     
     @IBAction func PosBtnClick(_ sender: UIButton) {
         let page = self.storyboard?.instantiateViewController(withIdentifier: "NewsFeedPostx") as! NewsFeedPostx
+        page.Acklogo={
+            () in
+            self.GetPost()
+        }
         self.navigationController?.pushViewController(page, animated: true)
     }
 }
