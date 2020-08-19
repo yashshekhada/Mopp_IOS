@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+import ImageSlideshow
+import JGProgressHUD
+import ImageSlideShowSwift
 class NewsFeedPostx: UIViewController {
 
     override func viewDidLoad() {
