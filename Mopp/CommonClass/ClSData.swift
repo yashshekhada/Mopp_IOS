@@ -34,6 +34,7 @@ public  class ClS{
     public static var register="register"
     public static var otpvarification="otpvarification"
     public static var logout="logout"
+    public static var createpost="createpost"
     
     // SF Data
     public static var sf_Token = "Token"

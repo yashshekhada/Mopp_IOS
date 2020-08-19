@@ -11,17 +11,19 @@ import ImageSlideshow
 import JGProgressHUD
 import ImageSlideShowSwift
 import OpalImagePicker
-
+import Alamofire
 import Photos
 class NewsFeedPostx: UIViewController {
-
+var curruntImageIndex=0
+    var ImageResource = [InputSource]()
+       var UIImageResource = [UIImage]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    SliderView.slideshowInterval = 5.0
+    //SliderView.slideshowInterval = 5.0
              SliderView.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
-             SliderView.contentScaleMode = UIViewContentMode.scaleAspectFill
+        SliderView.contentScaleMode = UIViewContentMode.scaleAspectFit
 
              let pageControl = UIPageControl()
              pageControl.currentPageIndicatorTintColor = UIColor.lightGray
@@ -44,15 +46,13 @@ class NewsFeedPostx: UIViewController {
              fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
          }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+ 
+    @IBAction func DeleteImage(_ sender: UIButton) {
+        ImageResource.remove(at: curruntImageIndex)
+        UIImageResource.remove(at: curruntImageIndex)
+        self.SliderView.setImageInputs(ImageResource)
+                       self.SliderView.reloadInputViews()
     }
-    */
     @IBOutlet weak var SliderView: ImageSlideshow!
     @IBAction func ImagePick(_ sender: UIButton) {
        let imagePicker = OpalImagePickerController()
@@ -70,7 +70,7 @@ class NewsFeedPostx: UIViewController {
         imagePicker.statusBarPreference = UIStatusBarStyle.lightContent
 
         //Limit maximum allowed selections to 5
-        imagePicker.maximumSelectionsAllowed = 5
+        imagePicker.maximumSelectionsAllowed = 10
 
         //Only allow image media type assets
         imagePicker.allowedMediaTypes = Set([PHAssetMediaType.image])
@@ -81,8 +81,9 @@ class NewsFeedPostx: UIViewController {
         imagePicker.configuration = configuration
         presentOpalImagePickerController(imagePicker, animated: true,
             select: { (assets) in
-                var data = self.getAssetThumbnail(asset: assets)
-                self.SliderView.setImageInputs(data)
+                self.ImageResource = self.getAssetThumbnail(asset: assets)
+                self.SliderView.setImageInputs(self.ImageResource)
+                self.UIImageResource = self.getAssetUIimage(asset: assets)
                 self.SliderView.reloadInputViews()
 
             imagePicker.dismiss(animated: true, completion: nil)
@@ -105,11 +106,93 @@ class NewsFeedPostx: UIViewController {
         }
         return imganeth
     }
+    func getAssetUIimage(asset: [PHAsset]) -> [UIImage] {
+        var imganeth = [UIImage]()
+          for point  in asset {
+          let manager = PHImageManager.default()
+          let option = PHImageRequestOptions()
+          var thumbnail = UIImage()
+          option.isSynchronous = true
+          manager.requestImage(for: point, targetSize: CGSize(width: 512, height: 512), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+                  thumbnail = result!
+          })
+           
+              imganeth.append(thumbnail)
+          }
+          return imganeth
+      }
     @IBAction func BackBtn(_ sender: UIButton) {
+    }
+    func randomString(length: Int) -> String {
+      let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+      return String((0..<length).map{ _ in letters.randomElement()! })
+    }
+    
+    @IBOutlet weak var CommentText: UITextView!
+    func postimage(){
+        let hud = JGProgressHUD(style: .light)
+               hud.textLabel.text = "Loading"
+               hud.show(in: self.view)
+               //let ImageData = resizeImage(image: self.ImageViewProduct.image!).pngData()
+        var rendomeKey=randomString(length: 6)
+               let parameters = [
+                "description" : CommentText.text,
+                   "numberofimages": ImageResource.count,
+                   "code":   rendomeKey,
+                   "s_id" : ClS.user_id,
+                   "u_id":  ClS.University_id,
+                   "session_token": ClS.Token,
+                   
+                   ] as [String : Any]
+               let timestamp = NSDate().timeIntervalSince1970
+               let url =  URL(string: ClS.baseUrl+ClS.createpost)!
+               let urlString = ClS.baseUrl+ClS.createpost
+               let headers: HTTPHeaders =
+                   ["Content-type": "multipart/form-data",
+                    "Accept": "application/json"]
+               AF.upload(
+                   multipartFormData: { multipartFormData in
+                       for (key, value) in parameters {
+                           if let temp = value as? String {
+                               multipartFormData.append(temp.data(using: .utf8)!, withName: key)}
+                           
+                           if let temp = value as? Int {
+                               multipartFormData.append("(temp)".data(using: .utf8)!, withName: key)}
+                           
+                           if let temp = value as? NSArray {
+                               temp.forEach({ element in
+                                   let keyObj = key + "[]"
+                                   if let string = element as? String {
+                                       multipartFormData.append(string.data(using: .utf8)!, withName: keyObj)
+                                   } else
+                                       if let num = element as? Int {
+                                           let value = "(num)"
+                                           multipartFormData.append(value.data(using: .utf8)!, withName: keyObj)
+                                   }
+                               })
+                           }
+                       }
+                    var count = 0
+                    for point in self.UIImageResource{
+                        multipartFormData.append(point.pngData()!, withName: "image_", fileName: String(timestamp)+".png", mimeType: "image/png")
+                    }
+               },
+                   to: urlString, //URL Here
+                   method: .post,
+                   headers: headers)
+                   .responseJSON { (resp) in
+                       defer{
+                           hud.dismiss()
+                           //self.statusClose!()
+                           self.navigationController?.popViewController(animated: true)
+                       }
+                       print("resp is \(resp)")
+               }
     }
 }
 extension NewsFeedPostx: ImageSlideshowDelegate {
     func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {
         print("current page:", page)
+        curruntImageIndex=page
     }
 }

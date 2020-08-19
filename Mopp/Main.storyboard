@@ -3087,17 +3087,35 @@ your post: «Awesome 🔥» </string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMG-Uo-naO">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="566"/>
                                                         <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ADv-j8-Nfk">
+                                                                <rect key="frame" x="10" y="20" width="355" height="212"/>
+                                                                <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="tintColor" red="0.2156862745" green="0.23137254900000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="212" id="xpR-g7-ABc"/>
+                                                                </constraints>
+                                                            </imageView>
                                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="11z-Ps-I6P" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                                                <rect key="frame" x="35" y="20" width="305" height="212"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                <rect key="frame" x="10" y="20" width="355" height="212"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="212" id="BrY-k2-Y1q"/>
                                                                 </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="proRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="customRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="31o-9c-clj">
-                                                                <rect key="frame" x="35" y="262" width="305" height="197"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                                <rect key="frame" x="35" y="247" width="305" height="232"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -3109,7 +3127,7 @@ your post: «Awesome 🔥» </string>
                                                                         <real key="value" value="20"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                        <real key="value" value="20"/>
+                                                                        <real key="value" value="5"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                         <real key="value" value="0.5"/>
@@ -3123,19 +3141,36 @@ your post: «Awesome 🔥» </string>
                                                                 <rect key="frame" x="35" y="489" width="305" height="50"/>
                                                                 <state key="normal" title="Post" backgroundImage="BtNBackGround"/>
                                                             </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHC-6Q-k9v">
+                                                                <rect key="frame" x="325" y="27" width="40" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="40" id="9IM-1U-wWo"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="QXj-mW-Tif"/>
+                                                                </constraints>
+                                                                <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <state key="normal" image="delete"/>
+                                                                <connections>
+                                                                    <action selector="DeleteImage:" destination="j4m-BL-c5C" eventType="touchUpInside" id="5oj-eH-sYY"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="SHC-6Q-k9v" secondAttribute="trailing" constant="10" id="3qU-jL-vyD"/>
                                                             <constraint firstItem="11z-Ps-I6P" firstAttribute="top" secondItem="uMG-Uo-naO" secondAttribute="top" constant="20" id="9fS-Fn-mMt"/>
+                                                            <constraint firstItem="SHC-6Q-k9v" firstAttribute="top" secondItem="uMG-Uo-naO" secondAttribute="top" constant="27" id="Dc4-jv-fga"/>
                                                             <constraint firstAttribute="trailing" secondItem="31o-9c-clj" secondAttribute="trailing" constant="35" id="HP6-NC-kn3"/>
                                                             <constraint firstItem="31o-9c-clj" firstAttribute="leading" secondItem="uMG-Uo-naO" secondAttribute="leading" constant="35" id="HWR-4o-RQk"/>
                                                             <constraint firstAttribute="bottom" secondItem="iOz-wM-OZe" secondAttribute="bottom" constant="27" id="JJv-ug-jLz"/>
-                                                            <constraint firstItem="11z-Ps-I6P" firstAttribute="leading" secondItem="uMG-Uo-naO" secondAttribute="leading" constant="35" id="oUO-2a-L4h"/>
+                                                            <constraint firstItem="ADv-j8-Nfk" firstAttribute="top" secondItem="uMG-Uo-naO" secondAttribute="top" constant="20" id="anJ-eA-gJH"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ADv-j8-Nfk" secondAttribute="trailing" constant="10" id="jDa-lR-FRh"/>
+                                                            <constraint firstItem="ADv-j8-Nfk" firstAttribute="leading" secondItem="uMG-Uo-naO" secondAttribute="leading" constant="10" id="jKA-8S-Jye"/>
+                                                            <constraint firstItem="11z-Ps-I6P" firstAttribute="leading" secondItem="uMG-Uo-naO" secondAttribute="leading" constant="10" id="oUO-2a-L4h"/>
                                                             <constraint firstItem="iOz-wM-OZe" firstAttribute="leading" secondItem="uMG-Uo-naO" secondAttribute="leading" constant="35" id="p6m-bq-fyF"/>
-                                                            <constraint firstItem="31o-9c-clj" firstAttribute="top" secondItem="11z-Ps-I6P" secondAttribute="bottom" constant="30" id="psU-IT-hr5"/>
+                                                            <constraint firstItem="31o-9c-clj" firstAttribute="top" secondItem="11z-Ps-I6P" secondAttribute="bottom" constant="15" id="psU-IT-hr5"/>
                                                             <constraint firstAttribute="trailing" secondItem="iOz-wM-OZe" secondAttribute="trailing" constant="35" id="qyZ-0q-x9t"/>
-                                                            <constraint firstAttribute="trailing" secondItem="11z-Ps-I6P" secondAttribute="trailing" constant="35" id="vdN-ww-arN"/>
-                                                            <constraint firstItem="iOz-wM-OZe" firstAttribute="top" secondItem="31o-9c-clj" secondAttribute="bottom" constant="30" id="vr1-j5-urf"/>
+                                                            <constraint firstAttribute="trailing" secondItem="11z-Ps-I6P" secondAttribute="trailing" constant="10" id="vdN-ww-arN"/>
+                                                            <constraint firstItem="iOz-wM-OZe" firstAttribute="top" secondItem="31o-9c-clj" secondAttribute="bottom" constant="10" id="vr1-j5-urf"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -3220,6 +3255,7 @@ your post: «Awesome 🔥» </string>
                         <viewLayoutGuide key="safeArea" id="qeB-5B-qmt"/>
                     </view>
                     <connections>
+                        <outlet property="CommentText" destination="31o-9c-clj" id="PlP-GJ-J5o"/>
                         <outlet property="SliderView" destination="11z-Ps-I6P" id="pGW-n1-S7M"/>
                     </connections>
                 </viewController>
@@ -4658,6 +4694,7 @@ Please check your email for OTP.</string>
         <image name="Welcome to App" width="221" height="39"/>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
         <image name="checkbox" width="24" height="24"/>
+        <image name="delete" width="24" height="24"/>
         <image name="frameView" width="72" height="72"/>
         <image name="hand.thumbsup.fill" catalog="system" width="128" height="124"/>
         <image name="hide" width="170.5" height="170.5"/>

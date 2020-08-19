@@ -69,7 +69,7 @@ class DrawerViewController: UIViewController
                         {
                             if statusCode == 1
                             {
-                                let vc = mainStoryBrd.instantiateViewController(withIdentifier: "LoginVc") as! LoginVc
+                                let vc = mainStoryBrd.instantiateViewController(withIdentifier: "NavLogin") as! NavigationController
                                 self.navigationController?.pushViewController(vc, animated: true)
                             }
                             else
