@@ -38,12 +38,13 @@ class CommentVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBAction func BackView(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    func GetComment(post_id:String) {
-          let hud = JGProgressHUD(style: .light)
-          hud.textLabel.text = "Loading"
-          hud.show(in: self.view)
-          //   var GetUnivercityData:GetUnivercity"
-          let University_id = iOTool.GetPref(Name: ClS.sf_University_id)
+    func GetComment(post_id:String)
+    {
+        let hud = JGProgressHUD(style: .light)
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
+        //   var GetUnivercityData:GetUnivercity"
+        //let University_id = iOTool.GetPref(Name: ClS.sf_University_id)
         let parameter:[String:Any]=["session_token":ClS.Token,"post_id": String(post_id)]
           
           NetWorkCall.get_Post_Api_Call(completion: { (T: getcommentModel) in
