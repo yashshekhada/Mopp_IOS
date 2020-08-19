@@ -80,8 +80,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
             endingLineNumber = "75"
-            landmarkName = "GetUniverSity()"
-            landmarkType = "7">
+            landmarkName = "LoginVc"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -96,7 +96,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
             endingLineNumber = "84"
-            landmarkName = "GetUniverSity()"
+            landmarkName = "SetStatusofRememberme()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -144,7 +144,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
             endingLineNumber = "97"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            landmarkName = "SetStatusofRememberme()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -192,7 +192,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
             endingLineNumber = "98"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            landmarkName = "SetStatusofRememberme()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -208,8 +208,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
             endingLineNumber = "99"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
-            landmarkType = "7">
+            landmarkName = "LoginVc"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "35092B1C-FFB9-4DD4-8ED4-1D0CDD90E967 - b690c0c27795a56"
@@ -256,7 +256,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
             endingLineNumber = "100"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            landmarkName = "GetUniverSity()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -272,7 +272,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
             endingLineNumber = "101"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            landmarkName = "GetUniverSity()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -288,7 +288,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
             endingLineNumber = "74"
-            landmarkName = "GetUniverSity()"
+            landmarkName = "Selected_Univercity(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -480,7 +480,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
             endingLineNumber = "102"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            landmarkName = "GetUniverSity()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -496,7 +496,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
             endingLineNumber = "106"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            landmarkName = "GetUniverSity()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -512,7 +512,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            landmarkName = "GetUniverSity()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -528,7 +528,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "114"
             endingLineNumber = "114"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            landmarkName = "GetUniverSity()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -544,7 +544,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            landmarkName = "GetUniverSity()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

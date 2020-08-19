@@ -144,11 +144,13 @@ class LoginVc: UIViewController {
                 iOTool.SavePref(Name: ClS.sf_University_id, Value: String(T.data!.univercity_id!))
                 if self.RememberMeBtn.currentImage == #imageLiteral(resourceName: "check-box"){
                       iOTool.SavePref(Name: ClS.sf_password, Value: password)
-                                    
+                    DispatchQueue.main.async {
+                  
                     let story = UIStoryboard(name: "Main", bundle:nil)
                     let vc = story.instantiateViewController(withIdentifier: "DrawerControllers")
                     UIApplication.shared.windows.first?.rootViewController = vc
                     UIApplication.shared.windows.first?.makeKeyAndVisible()
+                    }
                 }
             }
             else{

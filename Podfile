@@ -32,8 +32,8 @@ pod 'ImageSlideshow/Alamofire'
 pod 'ImageSlideShowSwift'
 pod 'SDWebImage'
 pod 'KWDrawerController', '~> 4.2'
-pod 'KWDrawerController/RxSwift'  
-
+pod 'KWDrawerController/RxSwift'
+pod 'OpalImagePicker'
   # Pods for Mopp
 
   target 'MoppTests' do

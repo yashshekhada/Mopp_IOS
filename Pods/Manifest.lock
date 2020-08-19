@@ -370,6 +370,7 @@ PODS:
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
+  - OpalImagePicker (3.0.0)
   - PromisesObjC (1.2.9)
   - Realm (5.3.3):
     - Realm/Headers (= 5.3.3)
@@ -411,6 +412,7 @@ DEPENDENCIES:
   - KWDrawerController (~> 4.2)
   - KWDrawerController/RxSwift
   - MMDrawController
+  - OpalImagePicker
   - RealmSwift
   - SDWebImage
   - SDWebImage (~> 4.4.2)
@@ -454,6 +456,7 @@ SPEC REPOS:
     - leveldb-library
     - MMDrawController
     - nanopb
+    - OpalImagePicker
     - PromisesObjC
     - Realm
     - RealmSwift
@@ -500,6 +503,7 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   MMDrawController: 90ac344934d1944a664239b487d907e1ecf46754
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
+  OpalImagePicker: 38e772dd93a54431fc516b33e1f337c50f745834
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   Realm: 2d57ea355bf8ca2a0964d6bfb38d28d7ff2addf6
   RealmSwift: 0a709536ecea30eea1d3c514f6ade2ed078dee3c
@@ -512,6 +516,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   YYCalendar: 1a6bbbd2190392edf9209da898b029ce4e5e734b
 
-PODFILE CHECKSUM: 2e91928f6292af05ce0524c679310ce5d98b4392
+PODFILE CHECKSUM: 1f0cb2de12d6102e25dd752732d875ec97a17bde
 
 COCOAPODS: 1.9.3
