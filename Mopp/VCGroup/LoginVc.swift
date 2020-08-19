@@ -15,11 +15,13 @@ class LoginVc: UIViewController {
     
     @IBOutlet weak var EmailAddreshTxt: UITextField!
     @IBOutlet weak var PswTxt: UITextField!
-   //
     @IBOutlet weak var ForgotPasw_Btn: UIButton!
     @IBOutlet weak var RememberMeBtn: UIButton!
     @IBOutlet weak var SelectUniDrp: DropDown!
-    override func viewDidLoad() {
+    
+    //MARK: - LifeCycle Methods
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         SetStatusofRememberme()
         GetUniverSity()
@@ -28,22 +30,57 @@ class LoginVc: UIViewController {
                 //  self.SelectUniDrp.hideList()()
                       //self.SelectUniDrp.hideList()
                    }
-    
-        // Do any additional setup after loading the view.
     }
 
-    @IBAction func LoginAction(_ sender: UIButton) {
-        
-        let username=EmailAddreshTxt.text
-        let password=PswTxt.text
-        LoginApi(username: username!, password: password!, UniversityType:String(GetUnivercityData[SelectUniDrp.selectedIndex!].id!) )
+    //MARK: - IBAction Methods
+    @IBAction func btnPasswordShowHideTapped(_ sender: UIButton)
+    {
+        if self.PswTxt.isSecureTextEntry {
+            self.PswTxt.isSecureTextEntry = false
+            sender.setImage(#imageLiteral(resourceName: "eye"), for: .normal)
+        } else {
+            self.PswTxt.isSecureTextEntry = true
+            sender.setImage(#imageLiteral(resourceName: "hide"), for: .normal)
+        }
     }
+    
+    @IBAction func LoginAction(_ sender: UIButton)
+    {
+        if EmailAddreshTxt.text != "" && PswTxt.text != ""
+        {
+            let username=EmailAddreshTxt.text
+            let password=PswTxt.text
+            LoginApi(username: username!, password: password!, UniversityType:String(GetUnivercityData[SelectUniDrp.selectedIndex!].id!) )
+        }
+        else
+        {
+            self.view.makeToast("Please Enter Email & Password")
+        }
+    }
+    
     @IBAction func SelectRmemberMe(_ sender: Any) {
         
         SetStatusofRememberme()
     }
     
-    func SetStatusofRememberme(){
+    @IBAction func SinupPage(_ sender: UIButton) {
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
+        self.navigationController?.pushViewController(page, animated: true)
+    }
+    
+    @IBAction func Selected_Univercity(_ sender: DropDown)
+    {
+        // SelectUniDrp.hideList()()
+    }
+    
+    @IBAction func MovetoForgotPsw(_ sender: Any) {
+        let page = storyboard?.instantiateViewController(withIdentifier: "ForgotPassword") as! ForgotPassword
+        self.navigationController?.pushViewController(page, animated: true)
+    }
+    
+    //MARK: - Custome Methods
+    func SetStatusofRememberme()
+    {
         let status = iOTool.GetPref(Name:  ClS.RememberMe_status)
         if (status == "0" || status == "") {
             iOTool.SavePref(Name:  ClS.RememberMe_status, Value: "1")
@@ -107,12 +144,11 @@ class LoginVc: UIViewController {
                 iOTool.SavePref(Name: ClS.sf_University_id, Value: String(T.data!.univercity_id!))
                 if self.RememberMeBtn.currentImage == #imageLiteral(resourceName: "check-box"){
                       iOTool.SavePref(Name: ClS.sf_password, Value: password)
-                
-                    
-                let story = UIStoryboard(name: "Main", bundle:nil)
-                           let vc = story.instantiateViewController(withIdentifier: "DrawerControllers")
-                           UIApplication.shared.windows.first?.rootViewController = vc
-                           UIApplication.shared.windows.first?.makeKeyAndVisible()
+                                    
+                    let story = UIStoryboard(name: "Main", bundle:nil)
+                    let vc = story.instantiateViewController(withIdentifier: "DrawerControllers")
+                    UIApplication.shared.windows.first?.rootViewController = vc
+                    UIApplication.shared.windows.first?.makeKeyAndVisible()
                 }
             }
             else{
@@ -127,20 +163,4 @@ class LoginVc: UIViewController {
            },  BaseUrl:ClS.baseUrl , ApiName: ClS.login, Prams: parameter)
          
        }
-       
-    @IBAction func SinupPage(_ sender: UIButton) {
-        var page = self.storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
-        self.navigationController?.pushViewController(page, animated: true)
-    }
-    
-    @IBAction func Selected_Univercity(_ sender: DropDown)
-    {
-        // SelectUniDrp.hideList()()
-    }
-    
-    @IBAction func MovetoForgotPsw(_ sender: Any) {
-        let page = storyboard?.instantiateViewController(withIdentifier: "ForgotPassword") as! ForgotPassword
-        self.navigationController?.pushViewController(page, animated: true)
-    }
-    
 }

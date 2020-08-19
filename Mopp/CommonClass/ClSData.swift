@@ -31,6 +31,9 @@ public  class ClS{
     public static var getmyproduct="getmyproduct"
     public static var createproduct="createproduct"
     public static var deleteproduct="deleteproduct"
+    public static var register="register"
+    public static var otpvarification="otpvarification"
+    public static var logout="logout"
     
     // SF Data
     public static var sf_Token = "Token"

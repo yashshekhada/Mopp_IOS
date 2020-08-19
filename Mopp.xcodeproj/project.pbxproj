@@ -36,7 +36,6 @@
 		0463E6FA24D18D1B00CBD0DA /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6F924D18D1B00CBD0DA /* ForgotPassword.swift */; };
 		0463E6FC24D190EE00CBD0DA /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6FB24D190EE00CBD0DA /* StatusModel.swift */; };
 		04698A0C24D3D365001B38A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04698A0B24D3D365001B38A7 /* GoogleService-Info.plist */; };
-		04698A0E24D3F2DD001B38A7 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04698A0D24D3F2DD001B38A7 /* SignUpVC.swift */; };
 		048EEF5224DD951300BA4F68 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EEF5124DD951300BA4F68 /* NavigationController.swift */; };
 		049ABF6B24E94C710006DD5B /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABF6A24E94C710006DD5B /* CommentVC.swift */; };
 		049ABF6D24E951860006DD5B /* getcommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABF6C24E951860006DD5B /* getcommentModel.swift */; };
@@ -61,6 +60,11 @@
 		04B6C2C424D0044400F76360 /* SplVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6C2C324D0044300F76360 /* SplVC.swift */; };
 		04CB147E24DBFC6900F5B81D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB147D24DBFC6900F5B81D /* HomeVC.swift */; };
 		04CB148024DC2FDF00F5B81D /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB147F24DC2FDF00F5B81D /* ColumnFlowLayout.swift */; };
+		182AE3D024ECD56100DA1FE0 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182AE3CF24ECD56100DA1FE0 /* MessagesVC.swift */; };
+		182AE3D224ECD69D00DA1FE0 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182AE3D124ECD69D00DA1FE0 /* SignUpVC.swift */; };
+		182AE3D424ECD6F200DA1FE0 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182AE3D324ECD6F200DA1FE0 /* Util.swift */; };
+		182AE3D824ECD71600DA1FE0 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182AE3D724ECD71600DA1FE0 /* Toast.swift */; };
+		182AE3DA24ECDAD200DA1FE0 /* VerifyOTPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182AE3D924ECDAD200DA1FE0 /* VerifyOTPVC.swift */; };
 		1B4299A177901A5322DB23CF /* Pods_MoppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E258436F72C129B182E00D8 /* Pods_MoppTests.framework */; };
 		A604610324AD98F900034CAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604610224AD98F900034CAB /* AppDelegate.swift */; };
 		A604610724AD98F900034CAB /* SelectUniversity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604610624AD98F900034CAB /* SelectUniversity.swift */; };
@@ -122,7 +126,6 @@
 		0463E6F924D18D1B00CBD0DA /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		0463E6FB24D190EE00CBD0DA /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
 		04698A0B24D3D365001B38A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		04698A0D24D3F2DD001B38A7 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		048EEF5124DD951300BA4F68 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		049ABF6A24E94C710006DD5B /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
 		049ABF6C24E951860006DD5B /* getcommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getcommentModel.swift; sourceTree = "<group>"; };
@@ -148,6 +151,11 @@
 		04CB147D24DBFC6900F5B81D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		04CB147F24DC2FDF00F5B81D /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		157DA5B29283EA9A5DA22438 /* Pods-MoppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoppTests.release.xcconfig"; path = "Target Support Files/Pods-MoppTests/Pods-MoppTests.release.xcconfig"; sourceTree = "<group>"; };
+		182AE3CF24ECD56100DA1FE0 /* MessagesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
+		182AE3D124ECD69D00DA1FE0 /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		182AE3D324ECD6F200DA1FE0 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		182AE3D724ECD71600DA1FE0 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		182AE3D924ECDAD200DA1FE0 /* VerifyOTPVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyOTPVC.swift; sourceTree = "<group>"; };
 		33CECD04D33ED50AA3A1FE2E /* Pods-Mopp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mopp.debug.xcconfig"; path = "Target Support Files/Pods-Mopp/Pods-Mopp.debug.xcconfig"; sourceTree = "<group>"; };
 		5C1826A36D8EB26A1310EA8B /* Pods-Mopp-MoppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mopp-MoppUITests.release.xcconfig"; path = "Target Support Files/Pods-Mopp-MoppUITests/Pods-Mopp-MoppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7E258436F72C129B182E00D8 /* Pods_MoppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,7 +255,8 @@
 				0424975524CFFB610094D4F9 /* LoginVc.swift */,
 				04B6C2C324D0044300F76360 /* SplVC.swift */,
 				0463E6F924D18D1B00CBD0DA /* ForgotPassword.swift */,
-				04698A0D24D3F2DD001B38A7 /* SignUpVC.swift */,
+				182AE3D124ECD69D00DA1FE0 /* SignUpVC.swift */,
+				182AE3D924ECDAD200DA1FE0 /* VerifyOTPVC.swift */,
 				04B0223624D81A8100605ED0 /* JobListVC.swift */,
 				045894C524D86AAE00A6025D /* GrantsList.swift */,
 				044F7E1724D914080042B507 /* NotificationList.swift */,
@@ -287,6 +296,30 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		182AE3CE24ECD56100DA1FE0 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				182AE3CF24ECD56100DA1FE0 /* MessagesVC.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		182AE3D524ECD71600DA1FE0 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				182AE3D624ECD71600DA1FE0 /* ToastMessage */,
+			);
+			path = "Third Party";
+			sourceTree = "<group>";
+		};
+		182AE3D624ECD71600DA1FE0 /* ToastMessage */ = {
+			isa = PBXGroup;
+			children = (
+				182AE3D724ECD71600DA1FE0 /* Toast.swift */,
+			);
+			path = ToastMessage;
+			sourceTree = "<group>";
+		};
 		1FD5952896E58DBF6573BD46 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				A604610124AD98F900034CAB /* Mopp */,
+				182AE3D524ECD71600DA1FE0 /* Third Party */,
 				A604611824AD98FD00034CAB /* MoppTests */,
 				A604612324AD98FD00034CAB /* MoppUITests */,
 				A604610024AD98F900034CAB /* Products */,
@@ -330,6 +364,7 @@
 				041A395524CBF3B5009CD443 /* NetWorks */,
 				041A394C24CBECE2009CD443 /* ModleClass */,
 				041A393F24CBECB8009CD443 /* CommonClass */,
+				182AE3CE24ECD56100DA1FE0 /* Messages */,
 				A604610224AD98F900034CAB /* AppDelegate.swift */,
 				A604610624AD98F900034CAB /* SelectUniversity.swift */,
 				A604613224AD9A3100034CAB /* Main.storyboard */,
@@ -339,6 +374,7 @@
 				A604611024AD98FD00034CAB /* Info.plist */,
 				04698A0B24D3D365001B38A7 /* GoogleService-Info.plist */,
 				0454C44D24CC358500AB50EB /* TestCV.swift */,
+				182AE3D324ECD6F200DA1FE0 /* Util.swift */,
 			);
 			path = Mopp;
 			sourceTree = "<group>";
@@ -672,6 +708,7 @@
 				04B6C2C424D0044400F76360 /* SplVC.swift in Sources */,
 				A604610724AD98F900034CAB /* SelectUniversity.swift in Sources */,
 				04CB148024DC2FDF00F5B81D /* ColumnFlowLayout.swift in Sources */,
+				182AE3D024ECD56100DA1FE0 /* MessagesVC.swift in Sources */,
 				041A395724CBF3CA009CD443 /* NetWorkCall.swift in Sources */,
 				04B02F2824EB279F0020D48C /* MyproductVc.swift in Sources */,
 				04CB147E24DBFC6900F5B81D /* HomeVC.swift in Sources */,
@@ -680,6 +717,7 @@
 				044BF41D24E822CD00628B83 /* GetproductModel.swift in Sources */,
 				0463E6F824D148BE00CBD0DA /* UserData_m.swift in Sources */,
 				041A394A24CBECB8009CD443 /* IPGlobal.swift in Sources */,
+				182AE3D824ECD71600DA1FE0 /* Toast.swift in Sources */,
 				A604610324AD98F900034CAB /* AppDelegate.swift in Sources */,
 				0449D3F824D96D8D0032D253 /* GrantDetailVC.swift in Sources */,
 				044F7E1C24D92A800042B507 /* MarketList.swift in Sources */,
@@ -688,7 +726,6 @@
 				049ABF7324EA38FE0006DD5B /* DrawerViewController.swift in Sources */,
 				0449D3F424D953340032D253 /* JobDetailVC.swift in Sources */,
 				049ABF6D24E951860006DD5B /* getcommentModel.swift in Sources */,
-				04698A0E24D3F2DD001B38A7 /* SignUpVC.swift in Sources */,
 				041A394E24CBED04009CD443 /* GetUnivercity.swift in Sources */,
 				041A394624CBECB8009CD443 /* IPConstant.swift in Sources */,
 				041A394B24CBECB8009CD443 /* IPText.swift in Sources */,
@@ -696,9 +733,12 @@
 				044F7E1824D914080042B507 /* NotificationList.swift in Sources */,
 				044FD69C24EC150000E96A76 /* NewsFeedPost.swift in Sources */,
 				048EEF5224DD951300BA4F68 /* NavigationController.swift in Sources */,
+				182AE3D224ECD69D00DA1FE0 /* SignUpVC.swift in Sources */,
+				182AE3D424ECD6F200DA1FE0 /* Util.swift in Sources */,
 				041A395424CBF0A9009CD443 /* Reachability.m in Sources */,
 				049ABF6B24E94C710006DD5B /* CommentVC.swift in Sources */,
 				0449D3F624D95BAC0032D253 /* ProductDetailVC.swift in Sources */,
+				182AE3DA24ECDAD200DA1FE0 /* VerifyOTPVC.swift in Sources */,
 				04B0223724D81A8100605ED0 /* JobListVC.swift in Sources */,
 				0424975624CFFB610094D4F9 /* LoginVc.swift in Sources */,
 				045894C624D86AAE00A6025D /* GrantsList.swift in Sources */,
