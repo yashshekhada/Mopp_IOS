@@ -18,11 +18,14 @@ class LoginVc: UIViewController {
     @IBOutlet weak var ForgotPasw_Btn: UIButton!
     @IBOutlet weak var RememberMeBtn: UIButton!
     @IBOutlet weak var SelectUniDrp: DropDown!
+    @IBOutlet weak var btnPwHideShow: UIButton!
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        self.btnPwHideShow.setImage(#imageLiteral(resourceName: "hide"), for: .normal)
         SetStatusofRememberme()
         GetUniverSity()
         self.SelectUniDrp.didSelect{(selectedText , index ,id) in
@@ -142,6 +145,10 @@ class LoginVc: UIViewController {
                        iOTool.SavePref(Name: ClS.sf_User_id, Value: String(T.data!.id!))
                   iOTool.SavePref(Name: ClS.sf_Status, Value: "1")
                 iOTool.SavePref(Name: ClS.sf_University_id, Value: String(T.data!.univercity_id!))
+                
+                ud.set(String(T.data!.univercity_id!), forKey: "uni_id")
+                ud.synchronize()
+                
                 if self.RememberMeBtn.currentImage == #imageLiteral(resourceName: "check-box"){
                       iOTool.SavePref(Name: ClS.sf_password, Value: password)
                     DispatchQueue.main.async {

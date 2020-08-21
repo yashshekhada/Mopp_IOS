@@ -220,6 +220,12 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
         
     }
     
+    @IBAction func btnMsgTapped(_ sender: UIButton)
+    {
+        let vc = mainStoryBrd.instantiateViewController(withIdentifier: "MessagesVC") as! MessagesVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func PosBtnClick(_ sender: UIButton) {
         let page = self.storyboard?.instantiateViewController(withIdentifier: "NewsFeedPostx") as! NewsFeedPostx
         page.Acklogo={
