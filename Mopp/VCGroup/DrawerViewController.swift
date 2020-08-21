@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 import JGProgressHUD
-
+import iOTool
 class DrawerViewController: UIViewController
 {
     var reachability:Reachability?
@@ -67,10 +67,21 @@ class DrawerViewController: UIViewController
                         
                         if let statusCode = dict["statusCode"] as? NSNumber
                         {
-                            if statusCode == 1
+                            if statusCode == 0
                             {
-                                let vc = mainStoryBrd.instantiateViewController(withIdentifier: "NavLogin") as! NavigationController
-                                self.navigationController?.pushViewController(vc, animated: true)
+                           //     let vc = mainStoryBrd.instantiateViewController(withIdentifier: "NavLogin") as! NavigationController
+                             //   self.navigationController?.pushViewController(vc, animated: true)
+                                iOTool.SavePref(Name: ClS.sf_Token, Value: "")
+                                              iOTool.SavePref(Name: ClS.sf_Name, Value:"")
+                                              iOTool.SavePref(Name: ClS.sf_Email, Value: "")
+                                              iOTool.SavePref(Name: ClS.sf_Email, Value:"")
+                                                     iOTool.SavePref(Name: ClS.sf_User_id, Value: "")
+                                                iOTool.SavePref(Name: ClS.sf_Status, Value: "0")
+                                              iOTool.SavePref(Name: ClS.sf_University_id, Value: "")
+                                let story = UIStoryboard(name: "Main", bundle:nil)
+                                 let vc = story.instantiateViewController(withIdentifier: "NavigationController") as! NavigationController
+                                 UIApplication.shared.windows.first?.rootViewController = vc
+                                 UIApplication.shared.windows.first?.makeKeyAndVisible()
                             }
                             else
                             {

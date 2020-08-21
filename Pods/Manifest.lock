@@ -235,6 +235,9 @@ PODS:
   - Firebase/Firestore (6.29.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 1.16.3)
+  - Firebase/Messaging (6.29.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 4.6.1)
   - Firebase/Storage (6.29.0):
     - Firebase/CoreOnly
     - FirebaseStorage (~> 3.8.0)
@@ -281,6 +284,19 @@ PODS:
     - GoogleUtilities/Environment (~> 6.7)
     - GoogleUtilities/UserDefaults (~> 6.7)
     - PromisesObjC (~> 1.2)
+  - FirebaseInstanceID (4.5.1):
+    - FirebaseCore (~> 6.8)
+    - FirebaseInstallations (~> 1.0)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/UserDefaults (~> 6.7)
+  - FirebaseMessaging (4.6.1):
+    - FirebaseCore (~> 6.8)
+    - FirebaseInstanceID (~> 4.3)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/Reachability (~> 6.7)
+    - GoogleUtilities/UserDefaults (~> 6.7)
+    - Protobuf (>= 3.9.2, ~> 3.9)
   - FirebaseStorage (3.8.0):
     - FirebaseCore (~> 6.8)
     - GTMSessionFetcher/Core (~> 1.1)
@@ -372,6 +388,7 @@ PODS:
   - nanopb/encode (1.30905.0)
   - OpalImagePicker (3.0.0)
   - PromisesObjC (1.2.9)
+  - Protobuf (3.12.0)
   - Realm (5.3.3):
     - Realm/Headers (= 5.3.3)
   - Realm/Headers (5.3.3)
@@ -397,6 +414,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Firestore
+  - Firebase/Messaging
   - Firebase/Storage
   - GoogleMaps
   - GooglePlaces
@@ -435,6 +453,8 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseFirestore
     - FirebaseInstallations
+    - FirebaseInstanceID
+    - FirebaseMessaging
     - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleDataTransport
@@ -458,6 +478,7 @@ SPEC REPOS:
     - nanopb
     - OpalImagePicker
     - PromisesObjC
+    - Protobuf
     - Realm
     - RealmSwift
     - RxCocoa
@@ -482,6 +503,8 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 55e69fe802ccb438d9c6ee51eb32fd425d5409d3
   FirebaseFirestore: 5ea7b0878363f9ec66bdcee0c29ad875d1b511ac
   FirebaseInstallations: 3c520c951305cbf9ca54eb891ff9e6d1fd384881
+  FirebaseInstanceID: c4ad474b87787afd27d09541800620993b457d6f
+  FirebaseMessaging: 942cfe05b4f53c95ab8959395ca35c200398b2f0
   FirebaseStorage: 3ef81ca5fa7817f85451ca09d516a34d2c7542a7
   GoogleAppMeasurement: 345d365fd105e6682bf5084783a5352a3db26820
   GoogleDataTransport: af0c79193dc59acd37630b4833d0dc6912ae6bd5
@@ -505,6 +528,7 @@ SPEC CHECKSUMS:
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   OpalImagePicker: 38e772dd93a54431fc516b33e1f337c50f745834
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
+  Protobuf: 2793fcd0622a00b546c60e7cbbcc493e043e9bb9
   Realm: 2d57ea355bf8ca2a0964d6bfb38d28d7ff2addf6
   RealmSwift: 0a709536ecea30eea1d3c514f6ade2ed078dee3c
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
@@ -516,6 +540,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   YYCalendar: 1a6bbbd2190392edf9209da898b029ce4e5e734b
 
-PODFILE CHECKSUM: 1f0cb2de12d6102e25dd752732d875ec97a17bde
+PODFILE CHECKSUM: a155100c241246ee2db830a2fa250e65bbdf9cc8
 
 COCOAPODS: 1.9.3

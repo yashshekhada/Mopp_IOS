@@ -130,7 +130,7 @@ class LoginVc: UIViewController {
         "university_id":UniversityType,
         "email":username,
         "password":password,
-        "device_token":"0"]
+        "device_token":ClS.FCMtoken]
            NetWorkCall.get_Post_Api_Call(completion: { (T: UserData_m) in
                hud.dismiss()
              

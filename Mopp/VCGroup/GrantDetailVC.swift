@@ -55,6 +55,11 @@ class GrantDetailVC: UIViewController {
                      hud.dismiss()
                    
                   if (T.statusCode == 1){
+                    let alertController = UIAlertController(title: ClS.App_Name, message:
+                                                         T.statusMsg  , preferredStyle: .alert)
+                                                      alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+                                                      self.present(alertController, animated: true, completion: nil)
                     self.AplayBtnLbl.isEnabled=false
                        self.AplayBtnLbl.setTitle("Applied", for: .normal)
                   }

@@ -21,17 +21,17 @@
 	<key>STORAGE_BUCKET</key>
 	<string>mopp-mcolledge.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:198740477059:ios:465529713dce3f4e4247b6</string>
+	<string>1:198740477059:ios:7c80efa1dcde07d34247b6</string>
 	<key>DATABASE_URL</key>
 	<string>https://mopp-mcolledge.firebaseio.com</string>
 </dict>

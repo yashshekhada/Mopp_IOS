@@ -279,6 +279,7 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
 -(void)stopNotifier
 {
     // First stop, any callbacks!
+
     SCNetworkReachabilitySetCallback(self.reachabilityRef, NULL, NULL);
     
     // Unregister target from the GCD serial dispatch queue.

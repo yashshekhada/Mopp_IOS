@@ -33,10 +33,11 @@
 		045894C624D86AAE00A6025D /* GrantsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045894C524D86AAE00A6025D /* GrantsList.swift */; };
 		04622B6024E15CDD0083E700 /* GetNewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04622B5F24E15CDD0083E700 /* GetNewsFeed.swift */; };
 		0462382024EDE336008C6530 /* JoblistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462381F24EDE336008C6530 /* JoblistModel.swift */; };
+		0462382224EED2FF008C6530 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0462382124EED2FF008C6530 /* PushNotificationManager.swift */; };
+		0462382724EF1281008C6530 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0462382624EF1280008C6530 /* GoogleService-Info.plist */; };
 		0463E6F824D148BE00CBD0DA /* UserData_m.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6F724D148BE00CBD0DA /* UserData_m.swift */; };
 		0463E6FA24D18D1B00CBD0DA /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6F924D18D1B00CBD0DA /* ForgotPassword.swift */; };
 		0463E6FC24D190EE00CBD0DA /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6FB24D190EE00CBD0DA /* StatusModel.swift */; };
-		04698A0C24D3D365001B38A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04698A0B24D3D365001B38A7 /* GoogleService-Info.plist */; };
 		048EEF5224DD951300BA4F68 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EEF5124DD951300BA4F68 /* NavigationController.swift */; };
 		049ABF6B24E94C710006DD5B /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABF6A24E94C710006DD5B /* CommentVC.swift */; };
 		049ABF6D24E951860006DD5B /* getcommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABF6C24E951860006DD5B /* getcommentModel.swift */; };
@@ -124,10 +125,12 @@
 		045894C524D86AAE00A6025D /* GrantsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantsList.swift; sourceTree = "<group>"; };
 		04622B5F24E15CDD0083E700 /* GetNewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNewsFeed.swift; sourceTree = "<group>"; };
 		0462381F24EDE336008C6530 /* JoblistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoblistModel.swift; sourceTree = "<group>"; };
+		0462382124EED2FF008C6530 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		0462382324EEDD57008C6530 /* Mopp: Only What Matters.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mopp: Only What Matters.entitlements"; sourceTree = "<group>"; };
+		0462382624EF1280008C6530 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0463E6F724D148BE00CBD0DA /* UserData_m.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData_m.swift; sourceTree = "<group>"; };
 		0463E6F924D18D1B00CBD0DA /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		0463E6FB24D190EE00CBD0DA /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
-		04698A0B24D3D365001B38A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		048EEF5124DD951300BA4F68 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		049ABF6A24E94C710006DD5B /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
 		049ABF6C24E951860006DD5B /* getcommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getcommentModel.swift; sourceTree = "<group>"; };
@@ -224,6 +227,7 @@
 				041A395124CBF0A8009CD443 /* Mopp-Bridging-Header.h */,
 				041902CF24DF219D00C47922 /* SlideInTransition.swift */,
 				04B02F2B24EB35970020D48C /* ImagePickerManager.swift */,
+				0462382124EED2FF008C6530 /* PushNotificationManager.swift */,
 			);
 			path = CommonClass;
 			sourceTree = "<group>";
@@ -362,6 +366,7 @@
 		A604610124AD98F900034CAB /* Mopp */ = {
 			isa = PBXGroup;
 			children = (
+				0462382324EEDD57008C6530 /* Mopp: Only What Matters.entitlements */,
 				04B0221D24D8176C00605ED0 /* Resources */,
 				0424975424CFFB430094D4F9 /* VCGroup */,
 				041A395524CBF3B5009CD443 /* NetWorks */,
@@ -375,7 +380,7 @@
 				A604610B24AD98FD00034CAB /* Assets.xcassets */,
 				A604610D24AD98FD00034CAB /* LaunchScreen.storyboard */,
 				A604611024AD98FD00034CAB /* Info.plist */,
-				04698A0B24D3D365001B38A7 /* GoogleService-Info.plist */,
+				0462382624EF1280008C6530 /* GoogleService-Info.plist */,
 				0454C44D24CC358500AB50EB /* TestCV.swift */,
 				182AE3D324ECD6F200DA1FE0 /* Util.swift */,
 			);
@@ -532,7 +537,7 @@
 				04B0223224D8178C00605ED0 /* Roboto-Italic.ttf in Resources */,
 				A604610C24AD98FD00034CAB /* Assets.xcassets in Resources */,
 				04B0222A24D8178C00605ED0 /* Roboto-Black.ttf in Resources */,
-				04698A0C24D3D365001B38A7 /* GoogleService-Info.plist in Resources */,
+				0462382724EF1281008C6530 /* GoogleService-Info.plist in Resources */,
 				04B0223124D8178C00605ED0 /* Roboto-Thin.ttf in Resources */,
 				04B0223324D8178C00605ED0 /* Roboto-ThinItalic.ttf in Resources */,
 				04B0222C24D8178C00605ED0 /* Roboto-BoldItalic.ttf in Resources */,
@@ -713,6 +718,7 @@
 				A604610724AD98F900034CAB /* SelectUniversity.swift in Sources */,
 				04CB148024DC2FDF00F5B81D /* ColumnFlowLayout.swift in Sources */,
 				182AE3D024ECD56100DA1FE0 /* MessagesVC.swift in Sources */,
+				0462382224EED2FF008C6530 /* PushNotificationManager.swift in Sources */,
 				041A395724CBF3CA009CD443 /* NetWorkCall.swift in Sources */,
 				04B02F2824EB279F0020D48C /* MyproductVc.swift in Sources */,
 				04CB147E24DBFC6900F5B81D /* HomeVC.swift in Sources */,
@@ -913,8 +919,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = "Mopp/Mopp: Only What Matters.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T99W6J9WZ2;
 				INFOPLIST_FILE = Mopp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -924,7 +931,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.masa.mopp;
 				PRODUCT_NAME = "Mopp: Only What Matters";
-				PROVISIONING_PROFILE_SPECIFIER = Development_Mopp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mopp/CommonClass/Mopp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -938,6 +945,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Mopp/Mopp: Only What Matters.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T99W6J9WZ2;

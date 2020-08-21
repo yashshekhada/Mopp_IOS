@@ -23,6 +23,8 @@ pod 'Firebase/Core'
 pod 'Firebase/Storage'
 pod 'Firebase/Firestore'
   pod 'Firebase/Database'
+  pod 'Firebase/Messaging'
+  
 pod 'SDWebImage','~>4.4.2'
 pod 'SideMenu'
 pod 'YYCalendar'
@@ -34,6 +36,7 @@ pod 'SDWebImage'
 pod 'KWDrawerController', '~> 4.2'
 pod 'KWDrawerController/RxSwift'
 pod 'OpalImagePicker'
+
   # Pods for Mopp
 
   target 'MoppTests' do

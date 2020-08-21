@@ -35,6 +35,7 @@ public  class ClS{
     public static var otpvarification="otpvarification"
     public static var logout="logout"
     public static var createpost="createpost"
+    public static var jobapply="jobapply"
     public static var scholarshipapply="scholarshipapply"
     // SF Data
     public static var sf_Token = "Token"
@@ -48,6 +49,7 @@ public  class ClS{
     public static var Token = iOTool.GetPref(Name: ClS.sf_Token)
     public static var University_id = iOTool.GetPref(Name: ClS.sf_University_id)
     public static var user_id = iOTool.GetPref(Name: ClS.sf_User_id)
+    public static var FCMtoken=""// = iOTool.GetPref(Name: ClS.sf_Token)
     
     
     public static var PageSize = 10

@@ -37,7 +37,7 @@ class JobListVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
         DispatchQueue.main.async(execute: {
             //var page
             let page = self.storyboard?.instantiateViewController(withIdentifier: "JobDetailVC") as! JobDetailVC
-            
+            page.Job_Data=[self.JoblValue[indexPath.row]]
             self.navigationController?.pushViewController(page, animated: true)
         })
     }
