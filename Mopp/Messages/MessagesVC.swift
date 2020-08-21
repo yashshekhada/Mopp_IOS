@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseDatabase
 class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource,  UICollectionViewDelegate
 {
     @IBOutlet weak var cvSegment: UICollectionView!
@@ -16,12 +16,14 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     var arrMsgs:NSMutableArray = []
     
     var arrSegment:NSMutableArray = [["name":"Chat","isSelect":1],["name":"Request","isSelect":0],["name":"Find","isSelect":0]]
-    
+    var ref: DatabaseReference!
+
+   
     //MARK: - LifeCycle Methods
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+         ref = Database.database().reference()
         self.cvSegment.dataSource = self
         self.cvSegment.delegate = self
         
@@ -39,7 +41,40 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         self.tvMsgList.rowHeight = UITableView.automaticDimension
         self.tvMsgList.tableFooterView = UIView()
         self.tvMsgList.backgroundColor = .clear
+      ref.child("FriendRequests").child(ClS.Uid).observeSingleEvent(of: .value) { datasnapshot in
+            
+            
+            
+            if datasnapshot.exists() {
+                
+                print("Like Deals - \(datasnapshot.key)")
+                let snap = datasnapshot.value as! NSDictionary
+                for child in snap {
+                   
+                    let key = child.key
+                    let value = child.value
+                    print("key = \(key)  value = \(value)")
+//                    self.ref.child("FriendRequests").child(ClS.Uid).observeSingleEvent(of: .value) { datasnapshot in
+//
+//
+//
+//                        if datasnapshot.exists() {
+//                        }
+//                    }
+                }
+            }else{
+                    
+                    print("Liked data is not available")
+                }
+            
+               
+        }
+                
+                
+            
+       
     }
+    
     
     //MARK: - UITableViewDelegate & UITableViewDataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -94,7 +129,7 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-                
+        
         let img = cell.viewWithTag(101) as! UIImageView
         let lblName = cell.viewWithTag(102) as! UILabel
         
@@ -121,7 +156,7 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     {
         let dict = arrSegment[indexPath.row] as! NSDictionary
         let name = dict["name"] as! String
-                
+        
         for i in 0..<arrSegment.count
         {
             let dictInner = arrSegment[i] as! NSDictionary
@@ -149,7 +184,7 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     @IBAction func btnSearchTapped(_ sender: UIButton)
     {
-           
+        
     }
     
     //MARK: - APICalling For Messages

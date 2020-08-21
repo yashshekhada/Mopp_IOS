@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         
         let token = Messaging.messaging().fcmToken
         print("FCM token: \(token ?? "")")
-        ClS.FCMtoken = token!
+        ClS.FCMtoken = token ?? ""
         
         
         //Added Code to display notification when app is in Foreground

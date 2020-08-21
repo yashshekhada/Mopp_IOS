@@ -11,6 +11,7 @@ import iOTool
 import Alamofire
 import iOSDropDown
 import JGProgressHUD
+import FirebaseAuth
 class LoginVc: UIViewController {
     
     @IBOutlet weak var EmailAddreshTxt: UITextField!
@@ -29,12 +30,12 @@ class LoginVc: UIViewController {
         SetStatusofRememberme()
         GetUniverSity()
         self.SelectUniDrp.didSelect{(selectedText , index ,id) in
-               self.SelectUniDrp.text = (selectedText)
-                //  self.SelectUniDrp.hideList()()
-                      //self.SelectUniDrp.hideList()
-                   }
+            self.SelectUniDrp.text = (selectedText)
+            //  self.SelectUniDrp.hideList()()
+            //self.SelectUniDrp.hideList()
+        }
     }
-
+    
     //MARK: - IBAction Methods
     @IBAction func btnPasswordShowHideTapped(_ sender: UIButton)
     {
@@ -104,11 +105,11 @@ class LoginVc: UIViewController {
         let hud = JGProgressHUD(style: .light)
         hud.textLabel.text = "Loading"
         hud.show(in: self.view)
- //   var GetUnivercityData:GetUnivercity
+        //   var GetUnivercityData:GetUnivercity
         let parameter:[String:Any]=["":""]
         NetWorkCall.get_Api_Call(completion: { (T: GetUnivercity) in
             hud.dismiss()
-          //  VerifyLoginApiData = T;
+            //  VerifyLoginApiData = T;
             //var views = self.storyboard?.instantiateViewController(identifier: "TabbWindow") as? UITabBarController
             // self.navigationController?.pu(views, animated: true)
             self.GetUnivercityData = T.data!
@@ -116,60 +117,74 @@ class LoginVc: UIViewController {
             var arraySSid = [String]()
             for point in self.GetUnivercityData{
                 arraySS.append(point.name!)
-                 arraySSid.append(point.name!)
+                arraySSid.append(point.name!)
             }
             self.SelectUniDrp.optionArray=arraySS
-          
-           
+            
+            
         }, BaseUrl:ClS.baseUrl , ApiName: ClS.getunivercity, Prams: parameter)
-     
+        
     }
     func LoginApi(username:String,password:String,UniversityType:String ) {
-           let hud = JGProgressHUD(style: .light)
-           hud.textLabel.text = "Loading"
-           hud.show(in: self.view)
-    //   var GetUnivercityData:GetUnivercity
-           let parameter:[String:Any]=["logintype":"0",
-        "university_id":UniversityType,
-        "email":username,
-        "password":password,
-        "device_token":ClS.FCMtoken]
-           NetWorkCall.get_Post_Api_Call(completion: { (T: UserData_m) in
-               hud.dismiss()
-             
+        let hud = JGProgressHUD(style: .light)
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
+        //   var GetUnivercityData:GetUnivercity
+        let parameter:[String:Any]=["logintype":"0",
+                                    "university_id":UniversityType,
+                                    "email":username,
+                                    "password":password,
+                                    "device_token":ClS.FCMtoken]
+        NetWorkCall.get_Post_Api_Call(completion: { (T: UserData_m) in
+            hud.dismiss()
+            
             if (T.statusCode == 1){
-                iOTool.SavePref(Name: ClS.sf_Token, Value: T.data!.api_token!)
-                iOTool.SavePref(Name: ClS.sf_Name, Value: T.data!.name!)
-                iOTool.SavePref(Name: ClS.sf_Email, Value: T.data!.email!)
-                iOTool.SavePref(Name: ClS.sf_Email, Value: T.data!.email!)
-                       iOTool.SavePref(Name: ClS.sf_User_id, Value: String(T.data!.id!))
-                  iOTool.SavePref(Name: ClS.sf_Status, Value: "1")
-                iOTool.SavePref(Name: ClS.sf_University_id, Value: String(T.data!.univercity_id!))
-                
-                ud.set(String(T.data!.univercity_id!), forKey: "uni_id")
-                ud.synchronize()
-                
-                if self.RememberMeBtn.currentImage == #imageLiteral(resourceName: "check-box"){
-                      iOTool.SavePref(Name: ClS.sf_password, Value: password)
-                    DispatchQueue.main.async {
-                  
-                    let story = UIStoryboard(name: "Main", bundle:nil)
-                    let vc = story.instantiateViewController(withIdentifier: "DrawerControllers")
-                    UIApplication.shared.windows.first?.rootViewController = vc
-                    UIApplication.shared.windows.first?.makeKeyAndVisible()
+                Auth.auth().signIn(withEmail: username, password: password, completion: { (authResult, error) in
+                    if error == nil {
+                        if let user = authResult?.user {
+                            
+                            let uisd = user.uid
+                            iOTool.SavePref(Name: ClS.sf_Uid, Value: uisd)
+                            iOTool.SavePref(Name: ClS.sf_Token, Value: T.data!.api_token!)
+                            iOTool.SavePref(Name: ClS.sf_Name, Value: T.data!.name!)
+                            iOTool.SavePref(Name: ClS.sf_Email, Value: T.data!.email!)
+                            iOTool.SavePref(Name: ClS.sf_Email, Value: T.data!.email!)
+                            iOTool.SavePref(Name: ClS.sf_User_id, Value: String(T.data!.id!))
+                            iOTool.SavePref(Name: ClS.sf_Status, Value: "1")
+                            iOTool.SavePref(Name: ClS.sf_University_id, Value: String(T.data!.univercity_id!))
+                            
+                            ud.set(String(T.data!.univercity_id!), forKey: "uni_id")
+                            ud.synchronize()
+                            
+                            if self.RememberMeBtn.currentImage == #imageLiteral(resourceName: "check-box"){
+                                iOTool.SavePref(Name: ClS.sf_password, Value: password)
+                                DispatchQueue.main.async {
+                                    
+                                    let story = UIStoryboard(name: "Main", bundle:nil)
+                                    let vc = story.instantiateViewController(withIdentifier: "DrawerControllers")
+                                    UIApplication.shared.windows.first?.rootViewController = vc
+                                    UIApplication.shared.windows.first?.makeKeyAndVisible()
+                                }
+                            }
+                        }
+                        print("Email user authenticated with firebase")
+                        
+                        self.dismiss(animated: true, completion: nil)
+                    }else {
                     }
-                }
+                })
+                
             }
             else{
                 let alertController = UIAlertController(title: ClS.App_Name, message:
-                      T.statusMsg  , preferredStyle: .alert)
-                   alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-
-                   self.present(alertController, animated: true, completion: nil)
+                    T.statusMsg  , preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+                
+                self.present(alertController, animated: true, completion: nil)
             }
-             
-              
-           },  BaseUrl:ClS.baseUrl , ApiName: ClS.login, Prams: parameter)
-         
-       }
+            
+            
+        },  BaseUrl:ClS.baseUrl , ApiName: ClS.login, Prams: parameter)
+        
+    }
 }
