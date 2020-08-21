@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         
         let token = Messaging.messaging().fcmToken
         print("FCM token: \(token ?? "")")
-        ClS.Token = token ?? ""
+        ClS.FCMtoken = token!
         
         
         //Added Code to display notification when app is in Foreground
@@ -77,10 +77,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         Messaging.messaging().apnsToken = deviceToken as Data
     }
     
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        // Print full message.
-        print(userInfo)
-        
+//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+//        // Print full message.
+//        print(userInfo)
+//        
+//    }
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+      if application.applicationState == .active {
+        if let aps = userInfo["aps"] as? NSDictionary {
+          if let alertMessage = aps["alert"] as? String {
+            let alert = UIAlertController(title: "Notification", message: alertMessage, preferredStyle: UIAlertController.Style.alert)
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(action)
+            self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+          }
+        }
+      }
+      completionHandler(.newData)
     }
     
     // This method will be called when app received push notifications in foreground
@@ -97,7 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
                 print("Error fetching remote instange ID: \(error)")
             } else if let result = result {
                 print("Remote instance ID token: \(result.token)")
-                  ClS.Token = result.token ?? ""
+                  ClS.FCMtoken = result.token
             }
         }
     }
