@@ -10,6 +10,7 @@ import UIKit
 
 class ProductDetailVC: UIViewController {
 var datas=[GetproductModel_Data]()
+    var ChatCommunicateKey = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +18,7 @@ var datas=[GetproductModel_Data]()
         ProductPrice.text = "$ "+String(datas[0].price!)
         ProductName.text=datas[0].title
         Productimage.sd_setImage(with: URL(string: ClS.ImageUrl+datas[0].image!), placeholderImage: UIImage(named: "DefaultProductDetailPage"))
+        ChatCommunicateKey=datas[0].contact_link!    
         // Do any additional setup after loading the view.
     }
     
@@ -36,23 +38,9 @@ var datas=[GetproductModel_Data]()
     */
     @IBAction func CommunicateAction(_ sender: UIButton) {
         
-//        if((datas[0].contact_link?.isEmail)){
-//            if let url = URL(string: "mailto:\(datas[0].contact_link)") {
-//                if #available(iOS 10.0, *) {
-//                UIApplication.shared.open(url)
-//              } else {
-//                UIApplication.shared.openURL(url)
-//              }
-//            }
-//        }else if ((datas[0].contact_link?.isValidContact) != nil){
-            if let url = URL(string: "\(datas[0].contact_link!)"),
-            UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
-//        }else{
-//            guard let url = URL(string: datas[0].contact_link!) else { return }
-//            UIApplication.shared.open(url)
-//        }
+      let vc = mainStoryBrd.instantiateViewController(withIdentifier: "ChatVC") as! ChatVC
+         vc.selectedUSer=ChatCommunicateKey
+     self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func Back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

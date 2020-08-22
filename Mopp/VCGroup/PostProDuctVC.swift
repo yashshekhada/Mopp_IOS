@@ -87,7 +87,7 @@ class PostProDuctVC: UIViewController {
             "s_id" : ClS.user_id,
             "u_id":  ClS.University_id,
             "session_token": ClS.Token,
-            "contact_link" : ContactLinkTxt.text,
+            "contact_link" : ClS.Uid,
             ] as [String : Any]
         let timestamp = NSDate().timeIntervalSince1970
         let url =  URL(string: ClS.baseUrl+ClS.createproduct)!

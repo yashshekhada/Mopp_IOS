@@ -7,23 +7,26 @@
 //
 
 import UIKit
+import JGProgressHUD
 import FirebaseDatabase
 class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource,  UICollectionViewDelegate
 {
     @IBOutlet weak var cvSegment: UICollectionView!
     @IBOutlet weak var tvMsgList: UITableView!
-    
+    var MessagesDict = [String: Messagesx]()
+    var MyFraend=[Messagesx]()
     var arrMsgs:NSMutableArray = []
     
-    var arrSegment:NSMutableArray = [["name":"Chat","isSelect":1],["name":"Request","isSelect":0],["name":"Find","isSelect":0]]
+    var arrSegment:NSMutableArray = [["name":"Chat","isSelect":1],["name":"Find","isSelect":0]]
     var ref: DatabaseReference!
-
-   
+    
+    var SelectedFragment = 0
     //MARK: - LifeCycle Methods
+    var FindUser = [Messagesx]()
     override func viewDidLoad()
     {
         super.viewDidLoad()
-         ref = Database.database().reference()
+        ref = Database.database().reference()
         self.cvSegment.dataSource = self
         self.cvSegment.delegate = self
         
@@ -41,45 +44,100 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         self.tvMsgList.rowHeight = UITableView.automaticDimension
         self.tvMsgList.tableFooterView = UIView()
         self.tvMsgList.backgroundColor = .clear
-      ref.child("FriendRequests").child(ClS.Uid).observeSingleEvent(of: .value) { datasnapshot in
-            
-            
-            
-            if datasnapshot.exists() {
-                
-                print("Like Deals - \(datasnapshot.key)")
-                let snap = datasnapshot.value as! NSDictionary
-                for child in snap {
-                   
-                    let key = child.key
-                    let value = child.value
-                    print("key = \(key)  value = \(value)")
-//                    self.ref.child("FriendRequests").child(ClS.Uid).observeSingleEvent(of: .value) { datasnapshot in
-//
-//
-//
-//                        if datasnapshot.exists() {
-//                        }
-//                    }
-                }
-            }else{
-                    
-                    print("Liked data is not available")
-                }
-            
-               
-        }
-                
-                
-            
-       
+        observeUserMessages(value : 0)
     }
+    func observeUserMessages(value : Int) {
+        
+        self.FindUser=[Messagesx]()
+                          
+                                           self.tvMsgList.reloadData()
+           let hud = JGProgressHUD(style: .light)
+                     hud.textLabel.text = "Loading"
+                     hud.show(in: self.view)
+     
+        
+        if value == 1{
+            let ref = Database.database().reference().child("Students")
+                 let query = ref.queryOrdered(byChild: "uni_id").queryEqual(toValue: ClS.University_id)
+            query.observe(.value, with: { (snapshot) in
+                
+                if let dict = snapshot.value as? [String: AnyObject] {
+                  
+                    for point in dict{
+                        
+                        var msg = Messagesx()
+                        msg.email = String(point.value["email"] as! String)
+                        msg.online = point.value["online"] as? Bool
+                        msg.uni_id = String(point.value["uni_id"] as! String)
+                        msg.name = String(point.value["name"] as! String)
+                        msg.last_name = String(point.value["last_name"] as! String)
+                        msg.photo = String(point.value["photo"] as! String)
+                             msg.Key_ID = point.key
+                        self.FindUser.append(msg)
+                        self.FindUser=self.FindUser.unique()
+                        self.tvMsgList.reloadData()
+                    }
+                    
+                }
+                  hud.dismiss()
+            })
+           // self.FindUser.append(msg)
+                                 
+        }
+        else if value == 0{
+            
+            let ref2 = Database.database().reference().child("FriendRequests").child(ClS.Uid)
+            let query2 = ref2.queryOrdered(byChild: "request_type").queryEqual(toValue: "accepted")
+            query2.observe(.value, with: { (snapshot) in
+                if let dict = snapshot.value as? [String: AnyObject] {
+                    self.FindUser=[Messagesx]()
+                     self.tvMsgList.reloadData()
+                    for point in dict{
+                        let ChatStudent = Database.database().reference().child("Students").child(point.key)
+                   
+                            
+                     ChatStudent.observe(.value, with: { (snapshot) in
+                        let StudentData = snapshot.value as? [String:AnyObject]
+                       
+                    // for studPoint in StudentData{
+                        var msg = Messagesx()
+                        msg.email = StudentData!["email"] as! String
+                        msg.online = StudentData!["online"] as! Bool
+                        msg.uni_id = StudentData!["uni_id"] as! String
+                        msg.name = StudentData!["name"] as! String
+                        msg.last_name = StudentData!["last_name"] as! String
+                        msg.photo = StudentData!["photo"] as! String
+                        msg.Key_ID = point.key
+                                self.FindUser.append(msg)
+                           self.FindUser=self.FindUser.unique()
+                           self.tvMsgList.reloadData()
+                       //     }
+                          
+                        })
+                        
+                    }
+
+                    
+                }
+                hud.dismiss()
+                
+            })
+          
+            
+             // self.tvMsgList.reloadData()
+        }
+    }
+    
+    
+    
+    
+    
     
     
     //MARK: - UITableViewDelegate & UITableViewDataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 10//self.arrMsgs.count
+        return  self.FindUser.count///self.arrMsgs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -92,7 +150,18 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         let lblMsg = cell.viewWithTag(105) as! UILabel
         let lblTime = cell.viewWithTag(106) as! UILabel
         let lblCounter = cell.viewWithTag(107) as! UILabel
+        //let dict = arrSegment[2] as! NSDictionary
         
+        
+        //  let isSelected = dict["isSelect"] as! Int
+        //  if isSelected == 1
+        //   {//
+        lblName.text=self.FindUser[indexPath.row].name
+        if self.FindUser[indexPath.row].online == false{
+            lblGreenDot.backgroundColor = UIColor.gray
+            lblTime.text=""
+        }
+        // }
         imgProfile.layer.cornerRadius = imgProfile.frame.size.height / 2
         imgProfile.layer.masksToBounds = true
         
@@ -111,8 +180,49 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        if SelectedFragment == 0{
         let vc = mainStoryBrd.instantiateViewController(withIdentifier: "ChatVC") as! ChatVC
+            vc.selectedUSer=self.FindUser[indexPath.row].Key_ID!
         self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else{
+        
+            let StudentData = ["request_type":"accepted"]
+                //Database.database().reference().child("FriendRequests").setValue(ClS.Uid)
+         // Database.database().reference().child("FriendRequests").child(ClS.Uid).setValue( self.FindUser[indexPath.row].Key_ID)
+            Database.database().reference().child("FriendRequests").child(ClS.Uid).child(self.FindUser[indexPath.row].Key_ID!).setValue(StudentData)
+           
+            
+            let dict = arrSegment[0] as! NSDictionary
+            let name = dict["name"] as! String
+            
+            for i in 0..<arrSegment.count
+            {
+                let dictInner = arrSegment[i] as! NSDictionary
+                let innerName = dictInner["name"] as! String
+                let updatedInnerDict = dictInner.mutableCopy() as! NSMutableDictionary
+                
+                if name == innerName
+                {
+                    updatedInnerDict["isSelect"] = 1
+                }
+                else
+                {
+                    updatedInnerDict["isSelect"] = 0
+                }
+                arrSegment.replaceObject(at: i, with: updatedInnerDict.mutableCopy() as! NSDictionary)
+            }
+            SelectedFragment=0
+            observeUserMessages(value:0)
+//             let selectedIndexPath = IndexPath(item: 0, section: 0)
+//                                cvSegment.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .left)
+            cvSegment.reloadData()
+         
+           
+           
+        }
+        
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -173,6 +283,9 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             }
             arrSegment.replaceObject(at: i, with: updatedInnerDict.mutableCopy() as! NSDictionary)
         }
+        //print(indexPath.row)
+        SelectedFragment=indexPath.row
+        observeUserMessages(value:indexPath.row)
         self.cvSegment.reloadData()
     }
     
@@ -202,7 +315,7 @@ extension MessagesVC : UICollectionViewDelegateFlowLayout
     {
         var collectionViewSize = UIScreen.main.bounds.size
         
-        collectionViewSize.width = (collectionViewSize.width/3.01)
+        collectionViewSize.width = (collectionViewSize.width/2.01)
         collectionViewSize.height = 45
         return collectionViewSize
     }
@@ -215,5 +328,13 @@ extension MessagesVC : UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat
     {
         return 0
+    }
+}
+
+
+extension Sequence where Iterator.Element: Hashable {
+    func unique() -> [Iterator.Element] {
+        var seen: Set<Iterator.Element> = []
+        return filter { seen.insert($0).inserted }
     }
 }

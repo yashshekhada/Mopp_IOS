@@ -75,22 +75,17 @@ public class NetWorkCall{
         
     }
     public static func get_Post_Api_Call<T:Decodable>(completion: @escaping (T) -> (),BaseUrl:String, ApiName: String, Prams: [String:Any]) {
-          
-          
-          //   var Array=[GetUnivercity]()
-          if Utill.reachable() {
+   
+        if Utill.reachable() {
               let url =  URL(string: ClS.baseUrl+ApiName)!
-              // Utill.showProgress()
+              //0.
+          //  Utill.showProgress()
           let headers = ["Content-Type": "application/json"]
-          
-          
-          
+       
           if let data = try? JSONSerialization.data(withJSONObject: Prams, options: .prettyPrinted),
               
               let str = String(data: data, encoding: .utf8) {
-              
-           
-                
+          
           }
           
               AF.request(url, method: .post,parameters: Prams, encoding: JSONEncoding.default).responseJSON { (response) -> Void in

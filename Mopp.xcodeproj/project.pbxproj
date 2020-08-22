@@ -38,6 +38,7 @@
 		0463E6F824D148BE00CBD0DA /* UserData_m.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6F724D148BE00CBD0DA /* UserData_m.swift */; };
 		0463E6FA24D18D1B00CBD0DA /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6F924D18D1B00CBD0DA /* ForgotPassword.swift */; };
 		0463E6FC24D190EE00CBD0DA /* StatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463E6FB24D190EE00CBD0DA /* StatusModel.swift */; };
+		04704D3B24EFF9EA00703F0D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04704D3A24EFF9EA00703F0D /* Message.swift */; };
 		048EEF5224DD951300BA4F68 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048EEF5124DD951300BA4F68 /* NavigationController.swift */; };
 		049ABF6B24E94C710006DD5B /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABF6A24E94C710006DD5B /* CommentVC.swift */; };
 		049ABF6D24E951860006DD5B /* getcommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049ABF6C24E951860006DD5B /* getcommentModel.swift */; };
@@ -133,6 +134,7 @@
 		0463E6F724D148BE00CBD0DA /* UserData_m.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData_m.swift; sourceTree = "<group>"; };
 		0463E6F924D18D1B00CBD0DA /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		0463E6FB24D190EE00CBD0DA /* StatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModel.swift; sourceTree = "<group>"; };
+		04704D3A24EFF9EA00703F0D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		048EEF5124DD951300BA4F68 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		049ABF6A24E94C710006DD5B /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
 		049ABF6C24E951860006DD5B /* getcommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getcommentModel.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				044BF41C24E822CD00628B83 /* GetproductModel.swift */,
 				049ABF6C24E951860006DD5B /* getcommentModel.swift */,
 				0462381F24EDE336008C6530 /* JoblistModel.swift */,
+				04704D3A24EFF9EA00703F0D /* Message.swift */,
 			);
 			path = ModleClass;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				04B02F2A24EB2E950020D48C /* PostProDuctVC.swift in Sources */,
 				041902D024DF219D00C47922 /* SlideInTransition.swift in Sources */,
 				041902D224DF2FF800C47922 /* GrantsModel.swift in Sources */,
+				04704D3B24EFF9EA00703F0D /* Message.swift in Sources */,
 				04622B6024E15CDD0083E700 /* GetNewsFeed.swift in Sources */,
 				04B6C2C424D0044400F76360 /* SplVC.swift in Sources */,
 				A604610724AD98F900034CAB /* SelectUniversity.swift in Sources */,
