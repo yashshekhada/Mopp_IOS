@@ -13,49 +13,72 @@ import ImageSlideShowSwift
 import OpalImagePicker
 import Alamofire
 import Photos
-class NewsFeedPostx: UIViewController {
+
+class NewsFeedPostx: UIViewController
+{
+    @IBOutlet weak var SliderView: ImageSlideshow!
+    @IBOutlet weak var CommentText: UITextView!
+    @IBOutlet weak var BackView: UIImageView!
+    @IBOutlet weak var switchAno: UISwitch!
+    
     var Acklogo:(()->())?
-var curruntImageIndex=0
+    var curruntImageIndex=0
     var ImageResource = [InputSource]()
-       var UIImageResource = [UIImage]()
-    override func viewDidLoad() {
+    var UIImageResource = [UIImage]()
+    
+    var anonymous:Int = 0
+    
+    //MARK: - LifeCycle Methods
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    //SliderView.slideshowInterval = 5.0
-             SliderView.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
+        SliderView.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
         SliderView.contentScaleMode = UIViewContentMode.scaleAspectFit
 
-             let pageControl = UIPageControl()
-             pageControl.currentPageIndicatorTintColor = UIColor.lightGray
-             pageControl.pageIndicatorTintColor = UIColor.black
-             SliderView.pageIndicator = pageControl
+        let pageControl = UIPageControl()
+        pageControl.currentPageIndicatorTintColor = UIColor.lightGray
+        pageControl.pageIndicatorTintColor = UIColor.black
+        SliderView.pageIndicator = pageControl
 
-             // optional way to show activity indicator during image load (skipping the line will show no activity indicator)
-             SliderView.activityIndicator = DefaultActivityIndicator()
-             SliderView.delegate = self
+        // optional way to show activity indicator during image load (skipping the line will show no activity indicator)
+        SliderView.activityIndicator = DefaultActivityIndicator()
+        SliderView.delegate = self
 
-             
-          
-            let recognizer = UITapGestureRecognizer(target: self, action: #selector(NewsFeedPostx.didTap))
-             //SliderView.addGestureRecognizer(recognizer)
-         }
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(NewsFeedPostx.didTap))
+            //SliderView.addGestureRecognizer(recognizer)
+        
+        self.switchAno.isOn = true
+        self.anonymous = 1
+    }
 
-         @objc func didTap() {
-             let fullScreenController = SliderView.presentFullScreenController(from: self)
-             // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
-             fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
-         }
-
- 
-    @IBAction func DeleteImage(_ sender: UIButton) {
+    @objc func didTap()
+    {
+        let fullScreenController = SliderView.presentFullScreenController(from: self)
+        // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
+        fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
+    }
+    
+    //MARK: - IBAction Methods
+    @IBAction func switchAno(_ sender: UISwitch)
+    {
+        if switchAno.isOn == true {
+            self.anonymous = 1
+        } else {
+            self.anonymous = 0
+        }
+    }
+    
+    @IBAction func DeleteImage(_ sender: UIButton)
+    {
         ImageResource.remove(at: curruntImageIndex)
         UIImageResource.remove(at: curruntImageIndex)
         self.SliderView.setImageInputs(ImageResource)
-                       self.SliderView.reloadInputViews()
+        self.SliderView.reloadInputViews()
     }
-    @IBOutlet weak var SliderView: ImageSlideshow!
-    @IBAction func ImagePick(_ sender: UIButton) {
+    
+    @IBAction func ImagePick(_ sender: UIButton)
+    {
        let imagePicker = OpalImagePickerController()
 
         //Change color of selection overlay to white
@@ -92,8 +115,21 @@ var curruntImageIndex=0
                 //Cancel
             })
     }
-    func getAssetThumbnail(asset: [PHAsset]) -> [InputSource] {
-      var imganeth = [InputSource]()
+    
+    @IBAction func BackBtn(_ sender: UIButton)
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func PostImgeBtnAction(_ sender: UIButton) {
+        //postimage()
+        self.APICallingAddPost()
+    }
+    
+    //MARK: - Custom Methods
+    func getAssetThumbnail(asset: [PHAsset]) -> [InputSource]
+    {
+        var imganeth = [InputSource]()
         for point  in asset {
         let manager = PHImageManager.default()
         let option = PHImageRequestOptions()
@@ -107,34 +143,36 @@ var curruntImageIndex=0
         }
         return imganeth
     }
-      func getAssetThumbnailUI(assets: [PHAsset]) -> [UIImage] {
-         var arrayOfImages = [UIImage]()
-         for asset in assets {
-             let manager = PHImageManager.default()
-             let option = PHImageRequestOptions()
-             var image = UIImage()
-             option.isSynchronous = true
-             manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+    
+    func getAssetThumbnailUI(assets: [PHAsset]) -> [UIImage]
+    {
+        var arrayOfImages = [UIImage]()
+        for asset in assets {
+            let manager = PHImageManager.default()
+            let option = PHImageRequestOptions()
+            var image = UIImage()
+            option.isSynchronous = true
+            manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
                  image = result!
                  arrayOfImages.append(image)
-             })
-         }
-
-         return arrayOfImages
+            })
+        }
+        return arrayOfImages
      }
-    @IBAction func BackBtn(_ sender: UIButton) {
-    }
-    func randomString(length: Int) -> String {
-      let letters = "abcdefghijklmnopqrstuvwxyz"
-      return String((0..<length).map{ _ in letters.randomElement()! })
+    
+    func randomString(length: Int) -> String
+    {
+        let letters = "abcdefghijklmnopqrstuvwxyz"
+        return String((0..<length).map{ _ in letters.randomElement()! })
     }
     
-    @IBOutlet weak var CommentText: UITextView!
-    func postimage(){
+    func postimage()
+    {
         let hud = JGProgressHUD(style: .light)
-               hud.textLabel.text = "Loading"
-               hud.show(in: self.view)
-               //let ImageData = resizeImage(image: self.ImageViewProduct.image!).pngData()
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
+        //let ImageData = resizeImage(image: self.ImageViewProduct.image!).pngData()
+        
         let rendomeKey=randomString(length: 6)
                let parameters = [
                 "description" : CommentText.text ?? "",
@@ -144,10 +182,9 @@ var curruntImageIndex=0
                    "u_id":  ClS.University_id,
                    "session_token": ClS.Token,
                 "post_images_array":"",
-                "id":""
+                "id":"",
+                "isanonymous":"0"
                    ] as [String : Any]
-               let timestamp = NSDate().timeIntervalSince1970
-               let url =  URL(string: ClS.baseUrl+ClS.createpost)!
                let urlString = ClS.baseUrl+ClS.createpost
                let headers: HTTPHeaders =
                    ["Content-type": "multipart/form-data",
@@ -195,14 +232,108 @@ var curruntImageIndex=0
                }
     }
     
-    
-    @IBAction func PostImgeBtnAction(_ sender: UIButton) {
-        postimage()
+    //MARK: - AICalling Methods
+    func APICallingAddPost()
+    {
+        let hud = JGProgressHUD(style: .light)
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
+        
+        let rendomeKey=randomString(length: 6)
+        
+        let param:NSMutableDictionary = [
+                 "session_token":ClS.Token,
+                 "u_id":ClS.University_id,
+                 "s_id":ClS.user_id,
+                 "code":rendomeKey,
+                 "description":CommentText.text ?? "",
+                 "numberofimages": "\(ImageResource.count)",
+            "isanonymous":"\(self.anonymous)"]
+        
+        for i in 0..<ImageResource.count {
+            param["image_\(i + 1)"] = "Need:\(i)"
+        }
+        print(param)
+        
+        if Utill.reachable()
+        {
+            let strUrl = ClS.baseUrl+ClS.createpost
+            let strEncoded:String = strUrl
+            
+            AF.upload(multipartFormData: { (multipartFormData) in
+                
+                for (key, value) in (param.mutableCopy() as! NSDictionary) {
+                    
+                    if (((value as? String) != nil)) && (value as! String).hasPrefix("Need:")
+                    {
+                        let v = (value as! String).dropFirst(5)
+                        
+                        if Int(v)! >= 0
+                        {
+                            let img = self.UIImageResource[Int(v)!]
+                            multipartFormData.append(img.pngData()!, withName: key as! String, fileName: "picture.png", mimeType: "image/png")
+                        }
+                    }
+                    else
+                    {
+                        multipartFormData.append("\(value)".data(using: .utf8)!, withName: key as! String)
+                    }
+                }
+                
+            },to: strEncoded, usingThreshold: UInt64.init(),
+            method: .post,
+            headers: nil).response{ response in
+            
+                hud.dismiss()
+                print(response)
+                
+                if((response.error == nil))
+                {
+                    do
+                    {
+                        if let jsonData = response.data
+                        {
+                            let dict = try JSONSerialization.jsonObject(with: jsonData) as! Dictionary<String, AnyObject>
+                            
+                            let statusMsg = dict["statusMsg"] as? String ?? ""
+                            print("add_Post : \(statusMsg)")
+                            
+                            if let statusCode = dict["statusCode"] as? NSNumber
+                            {
+                                if statusCode == 1
+                                {
+                                    print(statusMsg)
+                                    self.Acklogo?()
+                                    self.navigationController?.popViewController(animated: true)
+                                }
+                                else
+                                {
+                                    var alertController = UIAlertController()
+                                    alertController = UIAlertController(title: ClS.App_Name, message: statusMsg, preferredStyle: .alert)
+                                    alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+                                    self.present(alertController, animated: true, completion: nil)
+                                }
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        print(" encodingError is \(response.error ?? "Error" as! Error)")
+                        hud.dismiss()
+                    }
+                }
+                else
+                {
+                    hud.dismiss()
+                }
+            }
+        }
     }
-    
-    @IBOutlet weak var BackView: UIImageView!
 }
-extension NewsFeedPostx: ImageSlideshowDelegate {
+
+extension NewsFeedPostx: ImageSlideshowDelegate
+{
     func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {
         print("current page:", page)
         curruntImageIndex=page

@@ -26,6 +26,7 @@ class LoginVc: UIViewController {
     {
         super.viewDidLoad()
         
+        self.PswTxt.isSecureTextEntry = true
         self.btnPwHideShow.setImage(#imageLiteral(resourceName: "hide"), for: .normal)
         SetStatusofRememberme()
         GetUniverSity()
@@ -34,6 +35,26 @@ class LoginVc: UIViewController {
             //  self.SelectUniDrp.hideList()()
             //self.SelectUniDrp.hideList()
         }
+        
+        if ud.value(forKey: "email") != nil && ud.value(forKey: "password") != nil
+        {
+            self.EmailAddreshTxt.text = ud.value(forKey: "email") as? String
+            self.PswTxt.text = ud.value(forKey: "password") as? String
+            RememberMeBtn.setImage(#imageLiteral(resourceName: "check-box"), for: .normal)
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool)
+    {
+        print("viewDidDisappear")
+        if RememberMeBtn.currentImage == #imageLiteral(resourceName: "check-box") {
+            ud.set(self.EmailAddreshTxt.text!, forKey: "email")
+            ud.set(self.PswTxt.text!, forKey: "password")
+        }else {
+            ud.removeObject(forKey: "email")
+            ud.removeObject(forKey: "password")
+        }
+         ud.synchronize()
     }
     
     //MARK: - IBAction Methods
@@ -89,15 +110,12 @@ class LoginVc: UIViewController {
         if (status == "0" || status == "") {
             iOTool.SavePref(Name:  ClS.RememberMe_status, Value: "1")
             RememberMeBtn.setImage(#imageLiteral(resourceName: "check-box"), for: .normal)
-            
         }
         
         if status == "1" {
             iOTool.SavePref(Name:  ClS.RememberMe_status, Value: "0")
             RememberMeBtn.setImage(#imageLiteral(resourceName: "checkbox"), for: .normal)
-            
-            //  RememberMeBtn.setImage(uiima, for: .normal)
-            
+            //  RememberMeBtn.setImage(uiima, for: .normal)            
         }
     }
     var GetUnivercityData=[GetUnivercity_Data]()

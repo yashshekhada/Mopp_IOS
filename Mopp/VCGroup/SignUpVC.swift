@@ -27,7 +27,7 @@ class SignUpVC: UIViewController
     @IBOutlet weak var txtConfirmPassword: UITextField!
     
     var GetUnivercityData=[GetUnivercity_Data]()
-    var reachability:Reachability?
+   
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad()
@@ -225,10 +225,7 @@ class SignUpVC: UIViewController
         hud.textLabel.text = "Loading"
         hud.show(in: self.view)
         
-        let reachbility = Reachability.init()
-        self.reachability = reachbility
-        
-        if ((reachability?.isReachable) != nil)
+        if Utill.reachable()
         {
             var param = [String:String]()
             param = ["f_name":self.txtFirstName.text!,

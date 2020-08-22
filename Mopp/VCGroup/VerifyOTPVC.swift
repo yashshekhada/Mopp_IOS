@@ -19,7 +19,6 @@ class VerifyOTPVC: UIViewController
     var timeRemaining:Int = 120
     var timerOTP = Timer()
     
-    var reachability:Reachability?
     var dictRegData:NSDictionary?
     
     //MARK: - LifeCycle Method
@@ -83,10 +82,7 @@ class VerifyOTPVC: UIViewController
         hud.textLabel.text = "Loading"
         hud.show(in: self.view)
         
-        let reachbility = Reachability.init()
-        self.reachability = reachbility
-        
-        if ((reachability?.isReachable) != nil)
+        if Utill.reachable()
         {
             var param = [String:String]()
             let email = self.dictRegData!["email"] as? String ?? ""
@@ -140,10 +136,7 @@ class VerifyOTPVC: UIViewController
         hud.textLabel.text = "Loading"
         hud.show(in: self.view)
         
-        let reachbility = Reachability.init()
-        self.reachability = reachbility
-        
-        if ((reachability?.isReachable) != nil)
+        if Utill.reachable()
         {
             var param = [String:String]()
             let email = self.dictRegData!["email"] as? String ?? ""
@@ -197,10 +190,7 @@ class VerifyOTPVC: UIViewController
         hud.textLabel.text = "Loading"
         hud.show(in: self.view)
         
-        let reachbility = Reachability.init()
-        self.reachability = reachbility
-        
-        if ((reachability?.isReachable) != nil)
+        if Utill.reachable()
         {
             var param = [String:String]()
             param = self.dictRegData! as! [String : String]

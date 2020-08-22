@@ -70,6 +70,13 @@
 		182AE3DA24ECDAD200DA1FE0 /* VerifyOTPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182AE3D924ECDAD200DA1FE0 /* VerifyOTPVC.swift */; };
 		18312D4724EFAC32001A93D0 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18312D4524EFAC32001A93D0 /* ChatVC.swift */; };
 		18312D4824EFAC32001A93D0 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18312D4624EFAC32001A93D0 /* ChatCell.swift */; };
+		1867C62524F1613000F9486F /* MyPostTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867C62324F1613000F9486F /* MyPostTVCell.swift */; };
+		1867C62624F1613000F9486F /* MyPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867C62424F1613000F9486F /* MyPostVC.swift */; };
+		1867C62D24F1619000F9486F /* DGElasticPullToRefreshLoadingViewCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867C62824F1619000F9486F /* DGElasticPullToRefreshLoadingViewCircle.swift */; };
+		1867C62E24F1619000F9486F /* DGElasticPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867C62924F1619000F9486F /* DGElasticPullToRefreshView.swift */; };
+		1867C62F24F1619000F9486F /* DGElasticPullToRefreshConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867C62A24F1619000F9486F /* DGElasticPullToRefreshConstants.swift */; };
+		1867C63024F1619000F9486F /* DGElasticPullToRefreshExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867C62B24F1619000F9486F /* DGElasticPullToRefreshExtensions.swift */; };
+		1867C63124F1619000F9486F /* DGElasticPullToRefreshLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867C62C24F1619000F9486F /* DGElasticPullToRefreshLoadingView.swift */; };
 		1B4299A177901A5322DB23CF /* Pods_MoppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E258436F72C129B182E00D8 /* Pods_MoppTests.framework */; };
 		A604610324AD98F900034CAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604610224AD98F900034CAB /* AppDelegate.swift */; };
 		A604610724AD98F900034CAB /* SelectUniversity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604610624AD98F900034CAB /* SelectUniversity.swift */; };
@@ -167,6 +174,13 @@
 		182AE3D924ECDAD200DA1FE0 /* VerifyOTPVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyOTPVC.swift; sourceTree = "<group>"; };
 		18312D4524EFAC32001A93D0 /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		18312D4624EFAC32001A93D0 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		1867C62324F1613000F9486F /* MyPostTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostTVCell.swift; sourceTree = "<group>"; };
+		1867C62424F1613000F9486F /* MyPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostVC.swift; sourceTree = "<group>"; };
+		1867C62824F1619000F9486F /* DGElasticPullToRefreshLoadingViewCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshLoadingViewCircle.swift; sourceTree = "<group>"; };
+		1867C62924F1619000F9486F /* DGElasticPullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshView.swift; sourceTree = "<group>"; };
+		1867C62A24F1619000F9486F /* DGElasticPullToRefreshConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshConstants.swift; sourceTree = "<group>"; };
+		1867C62B24F1619000F9486F /* DGElasticPullToRefreshExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshExtensions.swift; sourceTree = "<group>"; };
+		1867C62C24F1619000F9486F /* DGElasticPullToRefreshLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshLoadingView.swift; sourceTree = "<group>"; };
 		33CECD04D33ED50AA3A1FE2E /* Pods-Mopp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mopp.debug.xcconfig"; path = "Target Support Files/Pods-Mopp/Pods-Mopp.debug.xcconfig"; sourceTree = "<group>"; };
 		5C1826A36D8EB26A1310EA8B /* Pods-Mopp-MoppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mopp-MoppUITests.release.xcconfig"; path = "Target Support Files/Pods-Mopp-MoppUITests/Pods-Mopp-MoppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7E258436F72C129B182E00D8 /* Pods_MoppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -321,6 +335,7 @@
 		182AE3D524ECD71600DA1FE0 /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				1867C62724F1619000F9486F /* DGElasticPullToRefresh */,
 				182AE3D624ECD71600DA1FE0 /* ToastMessage */,
 			);
 			path = "Third Party";
@@ -341,6 +356,27 @@
 				18312D4624EFAC32001A93D0 /* ChatCell.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		1867C62224F1613000F9486F /* MyPost */ = {
+			isa = PBXGroup;
+			children = (
+				1867C62424F1613000F9486F /* MyPostVC.swift */,
+				1867C62324F1613000F9486F /* MyPostTVCell.swift */,
+			);
+			path = MyPost;
+			sourceTree = "<group>";
+		};
+		1867C62724F1619000F9486F /* DGElasticPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				1867C62824F1619000F9486F /* DGElasticPullToRefreshLoadingViewCircle.swift */,
+				1867C62924F1619000F9486F /* DGElasticPullToRefreshView.swift */,
+				1867C62A24F1619000F9486F /* DGElasticPullToRefreshConstants.swift */,
+				1867C62B24F1619000F9486F /* DGElasticPullToRefreshExtensions.swift */,
+				1867C62C24F1619000F9486F /* DGElasticPullToRefreshLoadingView.swift */,
+			);
+			path = DGElasticPullToRefresh;
 			sourceTree = "<group>";
 		};
 		1FD5952896E58DBF6573BD46 /* Pods */ = {
@@ -390,6 +426,7 @@
 				041A393F24CBECB8009CD443 /* CommonClass */,
 				182AE3CE24ECD56100DA1FE0 /* Messages */,
 				18312D4424EFAC32001A93D0 /* Chat */,
+				1867C62224F1613000F9486F /* MyPost */,
 				A604610224AD98F900034CAB /* AppDelegate.swift */,
 				A604610624AD98F900034CAB /* SelectUniversity.swift */,
 				A604613224AD9A3100034CAB /* Main.storyboard */,
@@ -726,8 +763,10 @@
 				0450864124DE6AB000C3ACB3 /* SceneDelegate.swift in Sources */,
 				041A394724CBECB8009CD443 /* IPUtill.swift in Sources */,
 				0450863F24DE667C00C3ACB3 /* TabBarController.swift in Sources */,
+				1867C62F24F1619000F9486F /* DGElasticPullToRefreshConstants.swift in Sources */,
 				0462382024EDE336008C6530 /* JoblistModel.swift in Sources */,
 				04B02F2A24EB2E950020D48C /* PostProDuctVC.swift in Sources */,
+				1867C63024F1619000F9486F /* DGElasticPullToRefreshExtensions.swift in Sources */,
 				041902D024DF219D00C47922 /* SlideInTransition.swift in Sources */,
 				041902D224DF2FF800C47922 /* GrantsModel.swift in Sources */,
 				04704D3B24EFF9EA00703F0D /* Message.swift in Sources */,
@@ -743,12 +782,16 @@
 				049ABF7524EA3C5F0006DD5B /* HomeNavBar.swift in Sources */,
 				041A394824CBECB8009CD443 /* MReservationChartAreaWise.swift in Sources */,
 				18312D4824EFAC32001A93D0 /* ChatCell.swift in Sources */,
+				1867C62624F1613000F9486F /* MyPostVC.swift in Sources */,
 				044BF41D24E822CD00628B83 /* GetproductModel.swift in Sources */,
+				1867C62D24F1619000F9486F /* DGElasticPullToRefreshLoadingViewCircle.swift in Sources */,
 				0463E6F824D148BE00CBD0DA /* UserData_m.swift in Sources */,
+				1867C62E24F1619000F9486F /* DGElasticPullToRefreshView.swift in Sources */,
 				041A394A24CBECB8009CD443 /* IPGlobal.swift in Sources */,
 				182AE3D824ECD71600DA1FE0 /* Toast.swift in Sources */,
 				A604610324AD98F900034CAB /* AppDelegate.swift in Sources */,
 				0449D3F824D96D8D0032D253 /* GrantDetailVC.swift in Sources */,
+				1867C62524F1613000F9486F /* MyPostTVCell.swift in Sources */,
 				044F7E1C24D92A800042B507 /* MarketList.swift in Sources */,
 				04B02F2C24EB35970020D48C /* ImagePickerManager.swift in Sources */,
 				041A394924CBECB8009CD443 /* IPExtension.swift in Sources */,
@@ -764,6 +807,7 @@
 				044FD69C24EC150000E96A76 /* NewsFeedPost.swift in Sources */,
 				048EEF5224DD951300BA4F68 /* NavigationController.swift in Sources */,
 				182AE3D224ECD69D00DA1FE0 /* SignUpVC.swift in Sources */,
+				1867C63124F1619000F9486F /* DGElasticPullToRefreshLoadingView.swift in Sources */,
 				182AE3D424ECD6F200DA1FE0 /* Util.swift in Sources */,
 				041A395424CBF0A9009CD443 /* Reachability.m in Sources */,
 				049ABF6B24E94C710006DD5B /* CommentVC.swift in Sources */,

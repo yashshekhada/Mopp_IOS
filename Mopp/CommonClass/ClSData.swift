@@ -19,6 +19,7 @@ public  class ClS{
     public static var campusjob="campusjob?";
     public static var forgotpassword="forgotpassword?";
     public static var getpostlist="getpostlist"
+    public static var postdelete="postdelete"
     public static var getscholarshiplist="getscholarshiplist?"
     public static var Password_pts="Password_pts"
     public static var Email_pts="Email_pts"

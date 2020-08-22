@@ -12,7 +12,6 @@ import JGProgressHUD
 import iOTool
 class DrawerViewController: UIViewController
 {
-    var reachability:Reachability?
     
     //MARK: - LifeCycle Methods
     override func viewDidLoad()
@@ -25,6 +24,16 @@ class DrawerViewController: UIViewController
     @IBAction func btnLogoutTapped(_ sender: UIButton)
     {
         APICallingLogout()
+    }
+    
+    @IBAction func btnProfileTapped(_ sender: UIButton)
+    {
+    }
+    
+    @IBAction func btnMyPostTapped(_ sender: UIButton)
+    {
+        let page = mainStoryBrd.instantiateViewController(withIdentifier: "MyPostVC") as! MyPostVC
+        self.navigationController?.pushViewController(page, animated: true)
     }
     
     @IBAction func Myproduct(_ sender: UIButton)
@@ -40,10 +49,7 @@ class DrawerViewController: UIViewController
         //hud.textLabel.text = "Loading"
         hud.show(in: self.view)
         
-        let reachbility = Reachability.init()
-        self.reachability = reachbility
-        
-        if ((reachability?.isReachable) != nil)
+        if Utill.reachable()
         {
             var param = [String:String]()
             param = ["session_token": ClS.Token]

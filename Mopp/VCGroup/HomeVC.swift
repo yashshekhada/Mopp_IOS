@@ -13,13 +13,35 @@ import JGProgressHUD
 import ImageSlideShowSwift
 
 
-class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate, ImageSlideshowDelegate {
+class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate, ImageSlideshowDelegate
+{
+    @IBOutlet weak var Searchview: UIView!
+    @IBOutlet weak var MyPortListView: UITableView!
+    @IBOutlet weak var PostBarHight: NSLayoutConstraint!
+    
+    var size=0.0
+    var CurruntPage=1
     var GetNewsFeedArry=[GetNewsFeed_Data]()
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //MARK: - LifeCycle Methods
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        self.SetLayout()
+    }
+    override func viewWillAppear(_ animated: Bool)
+    {
+        GetPost()
+    }
+    
+    //MARK: - UITableViewDataSource & UITableViewDelegate Methods
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         return  GetNewsFeedArry.count
     }
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    {
         if indexPath.section == tableView.numberOfSections - 1 &&
             indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
             // Notify interested parties that end has been reached
@@ -27,8 +49,9 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
             GetPost()
         }
     }
-    @IBOutlet weak var Searchview: UIView!
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         let page = tableView.dequeueReusableCell(withIdentifier: "NewsFeedPost", for: indexPath) as! NewsFeedPost
         // page.slideshow.slideshowInterval = 5.0
         page.NameLbl.text = GetNewsFeedArry[indexPath.row].name
@@ -118,12 +141,9 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
         return page
     }
     
-    
-    @IBOutlet weak var MyPortListView: UITableView!
-    
-    
-    var size=0.0
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    //MARK: - Scrollview Delegate Methods
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+    {
         print(scrollView.contentOffset.y)
         
         if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0)
@@ -137,15 +157,43 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
             Searchview.isHidden=true
             PostBarHight.constant=0
             
-            
-            
-            
-            
         }
         //  PostBarHight.constant=CGFloat(size)
     }
-    var CurruntPage=1
-    func GetPost() {
+    
+    //MARK: - Custome Methods
+    func SetLayout()
+    {
+        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
+        loadingView.tintColor = UIColor.gray
+        
+        self.MyPortListView.scrollsToTop = true
+        self.MyPortListView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
+            
+            DispatchQueue.global(qos: .background).async {
+                
+                DispatchQueue.main.async {
+                   
+                    self!.GetPost()
+                    self?.MyPortListView.dg_stopLoading()
+                    
+                }
+            }
+            
+            }, loadingView: loadingView)
+        
+        self.MyPortListView.dg_setPullToRefreshFillColor(UIColor.clear)
+        self.MyPortListView.dg_setPullToRefreshBackgroundColor(self.MyPortListView.backgroundColor!)
+
+        self.MyPortListView.alwaysBounceVertical = true
+        self.MyPortListView.bounces  = true
+        
+        //self.scrollView.delegate = self
+        
+    }
+    
+    func GetPost()
+    {
         let hud = JGProgressHUD(style: .light)
         hud.textLabel.text = "Loading"
         hud.show(in: self.view)
@@ -155,9 +203,8 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
         
         NetWorkCall.get_Post_Api_Call(completion: { (T: GetNewsFeed) in
             hud.dismiss()
-            
-            
-            if (T.statusCode == 1){
+            if (T.statusCode == 1)
+            {
                 self.GetNewsFeedArry+=T.data!
                 self.MyPortListView.reloadData()
                 
@@ -166,7 +213,7 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
 //                let alertController = UIAlertController(title: ClS.App_Name, message:
 //                    T.statusMsg  , preferredStyle: .alert)
 //                alertController.addAction(UIAlertAction(title: "OK", style: .default))
-//                
+//
 //                self.present(alertController, animated: true, completion: nil)
                 
           //      iOTool.SavePref(Name: ClS.sf_Status, Value: "0")
@@ -177,7 +224,9 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
         }, BaseUrl:ClS.baseUrl , ApiName: ClS.getpostlist, Prams: parameter)
         
     }
-    func PostLike(post_id:String,like:String) {
+    
+    func PostLike(post_id:String,like:String)
+    {
            let hud = JGProgressHUD(style: .light)
            hud.textLabel.text = "Loading"
           // hud.show(in: self.view)
@@ -188,45 +237,27 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
            NetWorkCall.get_Post_Api_Call(completion: { (T: StatusModel2) in
             //   hud.dismiss()
                
-               
-             
-               
-               
            }, BaseUrl:ClS.baseUrl , ApiName: ClS.postlike, Prams: parameter)
            
        }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        GetPost()
-        // Do any additional setup after loading the view.
-    }
-    
-    @IBOutlet weak var PostBarHight: NSLayoutConstraint!
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    @objc func didTap(gesture : UITapGestureRecognizer) {
+    @objc func didTap(gesture : UITapGestureRecognizer)
+    {
         //let fullScreenController = self.presentFullScreenController(from: self)
         // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
         //   fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
         
     }
     
+    //MARK: - IBAction Methods
     @IBAction func btnMsgTapped(_ sender: UIButton)
     {
         let vc = mainStoryBrd.instantiateViewController(withIdentifier: "MessagesVC") as! MessagesVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func PosBtnClick(_ sender: UIButton) {
+    @IBAction func PosBtnClick(_ sender: UIButton)
+    {
         let page = self.storyboard?.instantiateViewController(withIdentifier: "NewsFeedPostx") as! NewsFeedPostx
         page.Acklogo={
             () in
@@ -235,7 +266,9 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
         self.navigationController?.pushViewController(page, animated: true)
     }
 }
-class NewsFeedPost: UITableViewCell,ImageSlideshowDelegate {
+
+class NewsFeedPost: UITableViewCell,ImageSlideshowDelegate
+{
     func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {
         print("current page:", page)
         ImageCounter.text=" "+String(page+1)+"/"+String(totalImgCount)+" "
