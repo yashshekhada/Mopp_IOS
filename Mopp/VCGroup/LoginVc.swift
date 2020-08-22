@@ -122,6 +122,7 @@ class LoginVc: UIViewController {
             self.SelectUniDrp.optionArray=arraySS
             
             
+            
         }, BaseUrl:ClS.baseUrl , ApiName: ClS.getunivercity, Prams: parameter)
         
     }
