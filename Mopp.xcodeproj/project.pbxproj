@@ -29,6 +29,9 @@
 		044FD69C24EC150000E96A76 /* NewsFeedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FD69B24EC150000E96A76 /* NewsFeedPost.swift */; };
 		0450863F24DE667C00C3ACB3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450863E24DE667C00C3ACB3 /* TabBarController.swift */; };
 		0450864124DE6AB000C3ACB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450864024DE6AB000C3ACB3 /* SceneDelegate.swift */; };
+		045281D324F269DA006556D8 /* OSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045281D224F269DA006556D8 /* OSDevCenters+GIF.swift */; };
+		045281D524F26A4C006556D8 /* Nodata.gif in Resources */ = {isa = PBXBuildFile; fileRef = 045281D424F26A4B006556D8 /* Nodata.gif */; };
+		045281D724F279C7006556D8 /* PushNotificationSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045281D624F279C7006556D8 /* PushNotificationSender.swift */; };
 		0454C44E24CC358500AB50EB /* TestCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454C44D24CC358500AB50EB /* TestCV.swift */; };
 		045894C624D86AAE00A6025D /* GrantsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045894C524D86AAE00A6025D /* GrantsList.swift */; };
 		04622B6024E15CDD0083E700 /* GetNewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04622B5F24E15CDD0083E700 /* GetNewsFeed.swift */; };
@@ -131,6 +134,9 @@
 		044FD69B24EC150000E96A76 /* NewsFeedPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedPost.swift; sourceTree = "<group>"; };
 		0450863E24DE667C00C3ACB3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0450864024DE6AB000C3ACB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		045281D224F269DA006556D8 /* OSDevCenters+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSDevCenters+GIF.swift"; sourceTree = "<group>"; };
+		045281D424F26A4B006556D8 /* Nodata.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Nodata.gif; sourceTree = "<group>"; };
+		045281D624F279C7006556D8 /* PushNotificationSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationSender.swift; sourceTree = "<group>"; };
 		0454C44D24CC358500AB50EB /* TestCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCV.swift; sourceTree = "<group>"; };
 		045894C524D86AAE00A6025D /* GrantsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantsList.swift; sourceTree = "<group>"; };
 		04622B5F24E15CDD0083E700 /* GetNewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNewsFeed.swift; sourceTree = "<group>"; };
@@ -248,6 +254,8 @@
 				041902CF24DF219D00C47922 /* SlideInTransition.swift */,
 				04B02F2B24EB35970020D48C /* ImagePickerManager.swift */,
 				0462382124EED2FF008C6530 /* PushNotificationManager.swift */,
+				045281D224F269DA006556D8 /* OSDevCenters+GIF.swift */,
+				045281D624F279C7006556D8 /* PushNotificationSender.swift */,
 			);
 			path = CommonClass;
 			sourceTree = "<group>";
@@ -308,6 +316,7 @@
 		04B0221D24D8176C00605ED0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				045281D424F26A4B006556D8 /* Nodata.gif */,
 				04B0221E24D8178600605ED0 /* Roboto-Black.ttf */,
 				04B0221F24D8178700605ED0 /* Roboto-BlackItalic.ttf */,
 				04B0222824D8178B00605ED0 /* Roboto-Bold.ttf */,
@@ -595,6 +604,7 @@
 				04B0223124D8178C00605ED0 /* Roboto-Thin.ttf in Resources */,
 				04B0223324D8178C00605ED0 /* Roboto-ThinItalic.ttf in Resources */,
 				04B0222C24D8178C00605ED0 /* Roboto-BoldItalic.ttf in Resources */,
+				045281D524F26A4C006556D8 /* Nodata.gif in Resources */,
 				04B0222E24D8178C00605ED0 /* Roboto-MediumItalic.ttf in Resources */,
 				A604613324AD9A3100034CAB /* Main.storyboard in Resources */,
 			);
@@ -792,7 +802,9 @@
 				A604610324AD98F900034CAB /* AppDelegate.swift in Sources */,
 				0449D3F824D96D8D0032D253 /* GrantDetailVC.swift in Sources */,
 				1867C62524F1613000F9486F /* MyPostTVCell.swift in Sources */,
+				045281D724F279C7006556D8 /* PushNotificationSender.swift in Sources */,
 				044F7E1C24D92A800042B507 /* MarketList.swift in Sources */,
+				045281D324F269DA006556D8 /* OSDevCenters+GIF.swift in Sources */,
 				04B02F2C24EB35970020D48C /* ImagePickerManager.swift in Sources */,
 				041A394924CBECB8009CD443 /* IPExtension.swift in Sources */,
 				049ABF7324EA38FE0006DD5B /* DrawerViewController.swift in Sources */,

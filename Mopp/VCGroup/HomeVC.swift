@@ -24,10 +24,14 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
     var GetNewsFeedArry=[GetNewsFeed_Data]()
     
     //MARK: - LifeCycle Methods
+    var FindUser = [Messagesx]()
+      
+      
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.SetLayout()
+        //Gifloader()
     }
     override func viewWillAppear(_ animated: Bool)
     {
@@ -164,31 +168,32 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
     //MARK: - Custome Methods
     func SetLayout()
     {
+        // Commented bY yash shekhada
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
         loadingView.tintColor = UIColor.gray
-        
+
         self.MyPortListView.scrollsToTop = true
         self.MyPortListView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
-            
+
             DispatchQueue.global(qos: .background).async {
-                
+
                 DispatchQueue.main.async {
-                   
+                    self!.CurruntPage=1
                     self!.GetPost()
                     self?.MyPortListView.dg_stopLoading()
-                    
+
                 }
             }
-            
+
             }, loadingView: loadingView)
-        
+
         self.MyPortListView.dg_setPullToRefreshFillColor(UIColor.clear)
         self.MyPortListView.dg_setPullToRefreshBackgroundColor(self.MyPortListView.backgroundColor!)
 
         self.MyPortListView.alwaysBounceVertical = true
         self.MyPortListView.bounces  = true
         
-        //self.scrollView.delegate = self
+       // self.scrollView.delegate = self
         
     }
     
@@ -207,8 +212,9 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
             {
                 self.GetNewsFeedArry+=T.data!
                 self.MyPortListView.reloadData()
-                
+               
             }
+                
             else{
 //                let alertController = UIAlertController(title: ClS.App_Name, message:
 //                    T.statusMsg  , preferredStyle: .alert)

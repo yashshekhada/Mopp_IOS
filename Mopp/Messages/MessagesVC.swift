@@ -11,6 +11,7 @@ import JGProgressHUD
 import FirebaseDatabase
 class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource,  UICollectionViewDelegate
 {
+    @IBOutlet weak var MainViewFrag: UIView!
     @IBOutlet weak var cvSegment: UICollectionView!
     @IBOutlet weak var tvMsgList: UITableView!
     var MessagesDict = [String: Messagesx]()
@@ -23,13 +24,20 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     var SelectedFragment = 0
     //MARK: - LifeCycle Methods
     var FindUser = [Messagesx]()
+    @IBOutlet weak var Nodataimageview: UIImageView!
+    
+    func Gifloader(){
+        let jeremyGif = UIImage.gifImageWithName("Nodata")
+        Nodataimageview.image = jeremyGif
+        
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
         ref = Database.database().reference()
         self.cvSegment.dataSource = self
         self.cvSegment.delegate = self
-        
+        // Gifloader()
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         cvSegment.collectionViewLayout = layout
@@ -49,40 +57,45 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     func observeUserMessages(value : Int) {
         
         self.FindUser=[Messagesx]()
-                          
-                                           self.tvMsgList.reloadData()
-           let hud = JGProgressHUD(style: .light)
-                     hud.textLabel.text = "Loading"
-                     hud.show(in: self.view)
-     
+        
+        self.tvMsgList.reloadData()
+        let hud = JGProgressHUD(style: .light)
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
+        
         
         if value == 1{
             let ref = Database.database().reference().child("Students")
-                 let query = ref.queryOrdered(byChild: "uni_id").queryEqual(toValue: ClS.University_id)
+            let query = ref.queryOrdered(byChild: "uni_id").queryEqual(toValue: ClS.University_id)
             query.observe(.value, with: { (snapshot) in
                 
+                
                 if let dict = snapshot.value as? [String: AnyObject] {
-                  
+                    
                     for point in dict{
                         
                         var msg = Messagesx()
+                        // let TypingAndCount=Database.database().reference().child("Chats").child(ClS.Uid).child(snapshot.key)
                         msg.email = String(point.value["email"] as! String)
                         msg.online = point.value["online"] as? Bool
                         msg.uni_id = String(point.value["uni_id"] as! String)
                         msg.name = String(point.value["name"] as! String)
                         msg.last_name = String(point.value["last_name"] as! String)
                         msg.photo = String(point.value["photo"] as! String)
-                             msg.Key_ID = point.key
+                        msg.Key_ID = point.key
                         self.FindUser.append(msg)
                         self.FindUser=self.FindUser.unique()
+                      
                         self.tvMsgList.reloadData()
                     }
-                    
+                    if self.FindUser.count == 0{
+                        self.Nodataimageview.isHidden = false
+                    }
                 }
-                  hud.dismiss()
+                hud.dismiss()
             })
-           // self.FindUser.append(msg)
-                                 
+            // self.FindUser.append(msg)
+            
         }
         else if value == 0{
             
@@ -91,43 +104,48 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             query2.observe(.value, with: { (snapshot) in
                 if let dict = snapshot.value as? [String: AnyObject] {
                     self.FindUser=[Messagesx]()
-                     self.tvMsgList.reloadData()
+                    self.tvMsgList.reloadData()
                     for point in dict{
                         let ChatStudent = Database.database().reference().child("Students").child(point.key)
-                   
+                        
+                        
+                        ChatStudent.observe(.value, with: { (snapshot) in
+                            let StudentData = snapshot.value as? [String:AnyObject]
                             
-                     ChatStudent.observe(.value, with: { (snapshot) in
-                        let StudentData = snapshot.value as? [String:AnyObject]
-                       
-                    // for studPoint in StudentData{
-                        var msg = Messagesx()
-                        msg.email = StudentData!["email"] as! String
-                        msg.online = StudentData!["online"] as! Bool
-                        msg.uni_id = StudentData!["uni_id"] as! String
-                        msg.name = StudentData!["name"] as! String
-                        msg.last_name = StudentData!["last_name"] as! String
-                        msg.photo = StudentData!["photo"] as! String
-                        msg.Key_ID = point.key
-                                self.FindUser.append(msg)
-                           self.FindUser=self.FindUser.unique()
-                           self.tvMsgList.reloadData()
-                       //     }
-                          
+                            // for studPoint in StudentData{
+                            var msg = Messagesx()
+                            msg.email = StudentData!["email"] as! String
+                            msg.online = StudentData!["online"] as! Bool
+                            msg.uni_id = StudentData!["uni_id"] as! String
+                            msg.name = StudentData!["name"] as! String
+                            msg.last_name = StudentData!["last_name"] as! String
+                            msg.photo = StudentData!["photo"] as! String
+                            msg.Key_ID = point.key
+                            self.FindUser.append(msg)
+                            self.FindUser=self.FindUser.unique()
+                         
+                            self.tvMsgList.reloadData()
+                            //     }
+                            
                         })
                         
                     }
-
                     
+                    if ( self.FindUser.count == 0)
+                                             {
+                                                 self.Nodataimageview.isHidden=false
+                                             }else{
+                                                 self.Nodataimageview.isHidden=true
+                                             }
                 }
                 hud.dismiss()
                 
             })
-          
             
-             // self.tvMsgList.reloadData()
+            
+            // self.tvMsgList.reloadData()
         }
     }
-    
     
     
     
@@ -181,17 +199,17 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         if SelectedFragment == 0{
-        let vc = mainStoryBrd.instantiateViewController(withIdentifier: "ChatVC") as! ChatVC
+            let vc = mainStoryBrd.instantiateViewController(withIdentifier: "ChatVC") as! ChatVC
             vc.selectedUSer=self.FindUser[indexPath.row].Key_ID!
-        self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         else{
-        
+            
             let StudentData = ["request_type":"accepted"]
-                //Database.database().reference().child("FriendRequests").setValue(ClS.Uid)
-         // Database.database().reference().child("FriendRequests").child(ClS.Uid).setValue( self.FindUser[indexPath.row].Key_ID)
+            //Database.database().reference().child("FriendRequests").setValue(ClS.Uid)
+            // Database.database().reference().child("FriendRequests").child(ClS.Uid).setValue( self.FindUser[indexPath.row].Key_ID)
             Database.database().reference().child("FriendRequests").child(ClS.Uid).child(self.FindUser[indexPath.row].Key_ID!).setValue(StudentData)
-           
+            
             
             let dict = arrSegment[0] as! NSDictionary
             let name = dict["name"] as! String
@@ -214,12 +232,12 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             }
             SelectedFragment=0
             observeUserMessages(value:0)
-//             let selectedIndexPath = IndexPath(item: 0, section: 0)
-//                                cvSegment.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .left)
+            //             let selectedIndexPath = IndexPath(item: 0, section: 0)
+            //                                cvSegment.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .left)
             cvSegment.reloadData()
-         
-           
-           
+            
+            
+            
         }
         
         

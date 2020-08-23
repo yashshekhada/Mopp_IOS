@@ -11,6 +11,7 @@ import iOTool
 import Alamofire
 import iOSDropDown
 import JGProgressHUD
+import FirebaseDatabase
 import FirebaseAuth
 class LoginVc: UIViewController {
     
@@ -174,7 +175,9 @@ class LoginVc: UIViewController {
                             
                             ud.set(String(T.data!.univercity_id!), forKey: "uni_id")
                             ud.synchronize()
-                            
+                            let data : [String : Any] =
+                                      ["device_token": ClS.FCMtoken ]
+                            Database.database().reference().child("Tokens").child(user.uid).setValue(data)
                             if self.RememberMeBtn.currentImage == #imageLiteral(resourceName: "check-box"){
                                 iOTool.SavePref(Name: ClS.sf_password, Value: password)
                                 DispatchQueue.main.async {

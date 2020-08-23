@@ -39,7 +39,22 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         Database.database().reference().child("Messages").child(ClS.Uid).child(selectedUSer).child(id!).setValue(data)
        //     Database.database().reference().child("Messages").child(ClS.Uid).child(selectedUSer).setValue(Mail)
         Database.database().reference().child("Messages").child(selectedUSer).child(ClS.Uid).child(id!).setValue(data)
-              
+            
+        let ref2 = Database.database().reference().child("Tokens").child(selectedUSer)
+           
+                 ref2.observe(.value, with: { (snapshot) in
+                     if let dict = snapshot.value as? [String: AnyObject] {
+                      
+                            let Token = dict["device_token"] as! String
+                            let DetailValue = self.txtMessage.text!
+                            self.txtMessage.text = ""
+                            if DetailValue.count != 0 {
+                                 let sender = PushNotificationSender()
+                            sender.sendPushNotification(to:Token, title: "Notification title", body: DetailValue, ServerKey: ClS.serverKEY)
+                            }
+                     
+                    }
+        })
     }
     override func viewDidLoad()
     {
@@ -66,7 +81,8 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                     msg.message = (point.value["message"] as! String)
                     msg.messageFrom = (point.value["messageFrom"] as! String)
                     msg.messageId = (point.value["messageId"] as! String)
-                    msg.messageTime = (point.value["messageTime"] as! Int)
+                   // msg.messageTime =
+                    msg.messageTime = self.getDateFromTimeStamp(timeStamp: point.value["messageTime"] as! Double).timeAgoSinceDate()
                     msg.messageType = point.value["messageType"] as! String
                     
                     
@@ -92,6 +108,24 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         })
     }
     
+    func getDateFromTimeStamp(timeStamp : Double) -> Date {
+
+      
+            let x = timeStamp / 1000
+            let date = NSDate(timeIntervalSince1970: x)
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            formatter.timeStyle = .medium
+
+         
+      
+
+      //  let dateString = date as Date
+       
+        return date as Date
+    }
+    
+    
     //MARK: - IBAction Methods
     
     @IBAction func btnBack(_ sender: UIButton)
@@ -113,12 +147,12 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
             var    Lcell = tableView.dequeueReusableCell(withIdentifier: "Sender", for: indexPath) as! Sender
             //        cell.imgBubbleSender.tintColor = UIColor.init(hexString: "F6356F")
             Lcell.SenderSms.text=MsgDaata[indexPath.row].message
-            Lcell.SenderTime.text=""//MsgDaata[indexPath.row].messageTime
+            Lcell.SenderTime.text=""+MsgDaata[indexPath.row].messageTime!
             return Lcell
         }else{
             var  Rcell = tableView.dequeueReusableCell(withIdentifier: "Rechiver", for: indexPath) as! Rechiver
             Rcell.ReciverMsg.text=MsgDaata[indexPath.row].message
-            Rcell.RechiverTime.text=""//MsgDaata[indexPath.row].messageTime
+            Rcell.RechiverTime.text=""+MsgDaata[indexPath.row].messageTime!
             return Rcell
         }
         //  return cell

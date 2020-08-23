@@ -13,6 +13,7 @@ public  class ClS{
     
     public static var App_Name = "Mopp: Only What Matters"
     public static var baseUrl="http://mopp.impm.in/api/"//"http://mopp.virenmshah.com/api/";
+    public static var serverKEY="AAAALkXbBIM:APA91bE4M_oAw1XM8rJ6j5AkZPNFmfWtMaZ4As968WCPBn7DqmlEcDCeY47DK9E5thNywn58NZ8WpQwavjaNumVCCuQTGidDCiacJDKrw997wDqsk0NOEb85x_icZgQIrP3bt1eYFLfr"
     public static var ImageUrl="http://mopp.impm.in/images/";
     public static var getunivercity="getunivercity?";
     public static var login="login?";
@@ -51,7 +52,7 @@ public  class ClS{
     public static var Token = iOTool.GetPref(Name: ClS.sf_Token)
     public static var University_id = iOTool.GetPref(Name: ClS.sf_University_id)
     public static var user_id = iOTool.GetPref(Name: ClS.sf_User_id)
-        public static var Uid = iOTool.GetPref(Name: ClS.sf_Uid)
+    public static var Uid = iOTool.GetPref(Name: ClS.sf_Uid)
     public static var FCMtoken=""// = iOTool.GetPref(Name: ClS.sf_Token)
     
     
@@ -76,4 +77,106 @@ extension Data {
         }
     }
     var html2String: String { html2AttributedString?.string ?? "" }
+}
+extension Date {
+    func getElapsedInterval() -> String {
+        
+        var calendar = Calendar.current
+        calendar.locale = Locale(identifier: Bundle.main.preferredLocalizations[0])
+        // IF THE USER HAVE THE PHONE IN SPANISH BUT YOUR APP ONLY SUPPORTS I.E. ENGLISH AND GERMAN
+        // WE SHOULD CHANGE THE LOCALE OF THE FORMATTER TO THE PREFERRED ONE
+        // (IS THE LOCALE THAT THE USER IS SEEING THE APP), IF NOT, THIS ELAPSED TIME
+        // IS GOING TO APPEAR IN SPANISH
+        
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
+        formatter.maximumUnitCount = 1
+        formatter.calendar = calendar
+        
+        var dateString: String?
+        
+        let interval = calendar.dateComponents([.year, .month, .weekOfYear, .day], from: self, to: Date())
+        
+        if let year = interval.year, year > 0 {
+            formatter.allowedUnits = [.year] //2 years
+        } else if let month = interval.month, month > 0 {
+            formatter.allowedUnits = [.month] //1 month
+        } else if let week = interval.weekOfYear, week > 0 {
+            formatter.allowedUnits = [.weekOfMonth] //3 weeks
+        } else if let day = interval.day, day > 0 {
+            formatter.allowedUnits = [.day] // 6 days
+        } else {
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: Bundle.main.preferredLocalizations[0]) //--> IF THE USER HAVE THE PHONE IN SPANISH BUT YOUR APP ONLY SUPPORTS I.E. ENGLISH AND GERMAN WE SHOULD CHANGE THE LOCALE OF THE FORMATTER TO THE PREFERRED ONE (IS THE LOCALE THAT THE USER IS SEEING THE APP), IF NOT, THIS ELAPSED TIME IS GOING TO APPEAR IN SPANISH
+            dateFormatter.dateStyle = .medium
+            dateFormatter.doesRelativeDateFormatting = true
+            
+            dateString = dateFormatter.string(from: self) // IS GOING TO SHOW 'TODAY'
+        }
+        
+        if dateString == nil {
+            dateString = formatter.string(from: self, to: Date())
+        }
+        
+        return dateString!
+    }
+}
+extension Date {
+
+    func timeAgoSinceDate() -> String {
+
+        // From Time
+        let fromDate = self
+
+        // To Time
+        let toDate = Date()
+
+        // Estimation
+        // Year
+        if let interval = Calendar.current.dateComponents([.year], from: fromDate, to: toDate).year, interval > 0  {
+
+            return interval == 1 ? "\(interval)" + " " + "year ago" : "\(interval)" + " " + "years ago"
+        }
+
+        // Month
+        if let interval = Calendar.current.dateComponents([.month], from: fromDate, to: toDate).month, interval > 0  {
+
+            return interval == 1 ? "\(interval)" + " " + "month ago" : "\(interval)" + " " + "months ago"
+        }
+
+        // Day
+        if let interval = Calendar.current.dateComponents([.day], from: fromDate, to: toDate).day, interval > 0  {
+
+            return interval == 1 ? "\(interval)" + " " + "day ago" : "\(interval)" + " " + "days ago"
+        }
+
+        // Hours
+        if let interval = Calendar.current.dateComponents([.hour], from: fromDate, to: toDate).hour, interval > 0 {
+
+            return interval == 1 ? "\(interval)" + " " + "hour ago" : "\(interval)" + " " + "hours ago"
+        }
+
+        // Minute
+        if let interval = Calendar.current.dateComponents([.minute], from: fromDate, to: toDate).minute, interval > 0 {
+
+            return interval == 1 ? "\(interval)" + " " + "minute ago" : "\(interval)" + " " + "minutes ago"
+        }
+
+        return "a moment ago"
+    }
+}
+extension String {
+
+    func toDate(withFormat format: String = "yyyy-MM-dd HH:mm:ss")-> Date?{
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(identifier: "Asia/Tehran")
+        dateFormatter.locale = Locale(identifier: "fa-IR")
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.dateFormat = format
+        let date = dateFormatter.date(from: self)
+
+        return date
+
+    }
 }

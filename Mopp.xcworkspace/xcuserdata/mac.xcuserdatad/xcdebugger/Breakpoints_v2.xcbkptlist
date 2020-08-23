@@ -78,9 +78,9 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "Selected_Univercity(_:)"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "LoginAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -94,8 +94,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "LoginVc"
             landmarkType = "3">
             <Locations>
@@ -142,9 +142,9 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "SetStatusofRememberme()"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "Selected_Univercity(_:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -190,10 +190,10 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "SetStatusofRememberme()"
-            landmarkType = "7">
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "LoginVc"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -206,10 +206,10 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "SetStatusofRememberme()"
-            landmarkType = "7">
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "LoginVc"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "35092B1C-FFB9-4DD4-8ED4-1D0CDD90E967 - b690c0c27795a56"
@@ -254,9 +254,9 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "SetStatusofRememberme()"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "MovetoForgotPsw(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -270,9 +270,9 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "SetStatusofRememberme()"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "MovetoForgotPsw(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -286,9 +286,9 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "Selected_Univercity(_:)"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "LoginAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -414,8 +414,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "GetUniverSity()"
             landmarkType = "7">
             <Locations>
@@ -478,10 +478,10 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "LoginVc"
-            landmarkType = "3">
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "MovetoForgotPsw(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -494,9 +494,9 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "GetUniverSity()"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "SetStatusofRememberme()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -510,10 +510,10 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "GetUniverSity()"
-            landmarkType = "7">
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "LoginVc"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -526,9 +526,9 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "GetUniverSity()"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "SetStatusofRememberme()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -542,9 +542,9 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "GetUniverSity()"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "SetStatusofRememberme()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1054,9 +1054,9 @@
             filePath = "Mopp/VCGroup/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "GetPost()"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1070,9 +1070,9 @@
             filePath = "Mopp/VCGroup/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "GetPost()"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1086,9 +1086,9 @@
             filePath = "Mopp/VCGroup/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
-            landmarkName = "GetPost()"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1102,10 +1102,10 @@
             filePath = "Mopp/VCGroup/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "GetPost()"
-            landmarkType = "7">
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "HomeVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1342,9 +1342,9 @@
             filePath = "Mopp/VCGroup/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "tableView(_:willDisplay:forRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1566,9 +1566,9 @@
             filePath = "Mopp/VCGroup/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "GetPost()"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1582,9 +1582,9 @@
             filePath = "Mopp/VCGroup/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "GetPost()"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1598,9 +1598,9 @@
             filePath = "Mopp/VCGroup/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "GetPost()"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -2094,10 +2094,10 @@
             filePath = "Mopp/VCGroup/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
-            landmarkName = "GetPost()"
-            landmarkType = "7">
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "HomeVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2312,15 +2312,15 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "834B37A2-F09C-46B8-8CDE-A031CDF1A2E6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mopp/VCGroup/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
-            landmarkName = "PostLike(post_id:like:)"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "SetLayout()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2328,96 +2328,32 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B08B2953-09B8-4AE2-B11E-9AF6D78A0689"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mopp/VCGroup/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
-            landmarkName = "PostLike(post_id:like:)"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "SetLayout()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B08B2953-09B8-4AE2-B11E-9AF6D78A0689 - 549fe1d4a428006"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Mopp__Only_What_Matters.HomeVC.PostLike(post_id: Swift.String, like: Swift.String) -&gt; ()"
-                  moduleName = "Mopp: Only What Matters"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Documents/GitHub/Mopp_IOS/Mopp/VCGroup/HomeVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "188"
-                  endingLineNumber = "188"
-                  offsetFromSymbolStart = "1056">
-               </Location>
-               <Location
-                  uuid = "B08B2953-09B8-4AE2-B11E-9AF6D78A0689 - fa462259a40c17f3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Mopp__Only_What_Matters.StatusModel2) -&gt; () in Mopp__Only_What_Matters.HomeVC.PostLike(post_id: Swift.String, like: Swift.String) -&gt; ()"
-                  moduleName = "Mopp: Only What Matters"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Documents/GitHub/Mopp_IOS/Mopp/VCGroup/HomeVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "195"
-                  endingLineNumber = "195"
-                  offsetFromSymbolStart = "132">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B5AA8397-A30D-43B8-BEA7-CC0C40BFA4A9"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mopp/VCGroup/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
-            landmarkName = "PostLike(post_id:like:)"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "SetLayout()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B5AA8397-A30D-43B8-BEA7-CC0C40BFA4A9 - 549fe1d4a428006"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Mopp__Only_What_Matters.HomeVC.PostLike(post_id: Swift.String, like: Swift.String) -&gt; ()"
-                  moduleName = "Mopp: Only What Matters"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Documents/GitHub/Mopp_IOS/Mopp/VCGroup/HomeVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "188"
-                  endingLineNumber = "188"
-                  offsetFromSymbolStart = "1056">
-               </Location>
-               <Location
-                  uuid = "B5AA8397-A30D-43B8-BEA7-CC0C40BFA4A9 - fa462259a40c17f3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Mopp__Only_What_Matters.StatusModel2) -&gt; () in Mopp__Only_What_Matters.HomeVC.PostLike(post_id: Swift.String, like: Swift.String) -&gt; ()"
-                  moduleName = "Mopp: Only What Matters"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Documents/GitHub/Mopp_IOS/Mopp/VCGroup/HomeVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "195"
-                  endingLineNumber = "195"
-                  offsetFromSymbolStart = "132">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2478,9 +2414,9 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "GetUniverSity()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2494,9 +2430,9 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "GetUniverSity()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -2542,9 +2478,9 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "GetUniverSity()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2558,9 +2494,9 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "GetUniverSity()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2574,9 +2510,9 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "GetUniverSity()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -2686,9 +2622,9 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "GetUniverSity()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2702,8 +2638,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "LoginApi(username:password:UniversityType:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2718,8 +2654,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "LoginApi(username:password:UniversityType:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2734,8 +2670,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "observeUserMessages(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2750,8 +2686,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "observeUserMessages(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2766,8 +2702,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "observeUserMessages(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2782,8 +2718,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "observeUserMessages(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2798,8 +2734,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "observeUserMessages(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2814,8 +2750,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "observeUserMessages(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2830,8 +2766,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "observeUserMessages(value:)"
             landmarkType = "7">
             <Locations>
@@ -2878,8 +2814,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "observeUserMessages(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2894,8 +2830,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "observeUserMessages(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2910,8 +2846,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "observeUserMessages(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2926,8 +2862,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2942,8 +2878,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2958,8 +2894,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2974,8 +2910,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "observeUserMessages(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2990,8 +2926,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "observeUserMessages(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3006,8 +2942,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "observeUserMessages(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3022,8 +2958,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "observeUserMessages(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3038,8 +2974,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "observeUserMessages(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3054,8 +2990,8 @@
             filePath = "Mopp/Messages/MessagesVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3070,8 +3006,8 @@
             filePath = "Mopp/Chat/ChatVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3086,8 +3022,8 @@
             filePath = "Mopp/Chat/ChatVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
@@ -3134,8 +3070,8 @@
             filePath = "Mopp/Chat/ChatVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3150,8 +3086,8 @@
             filePath = "Mopp/Chat/ChatVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3166,8 +3102,8 @@
             filePath = "Mopp/Chat/ChatVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3182,8 +3118,8 @@
             filePath = "Mopp/Chat/ChatVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3198,8 +3134,8 @@
             filePath = "Mopp/Chat/ChatVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3214,8 +3150,8 @@
             filePath = "Mopp/Chat/ChatVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -3224,7 +3160,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "40240CFD-2C2C-441A-870A-EDD33A24DDD8"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mopp/Chat/ChatVC.swift"
@@ -3240,7 +3176,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "153411C6-D36C-487C-9109-EA85650B3D63"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mopp/Chat/ChatVC.swift"
@@ -3256,7 +3192,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "430C61DB-1EB3-40B4-8473-A590E4124138"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mopp/Chat/ChatVC.swift"
@@ -3272,7 +3208,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "157EA473-7D82-4B12-989C-E33F78C0B3E1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mopp/Chat/ChatVC.swift"
@@ -3288,7 +3224,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "704CD2DF-3989-4E5D-82FA-E27FDFA83237"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mopp/Chat/ChatVC.swift"
@@ -3304,7 +3240,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F00AEDDC-F6D2-4E85-A7C5-632F3D8BE4A0"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mopp/Chat/ChatVC.swift"
@@ -3320,7 +3256,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E8D7D9EF-0635-4625-A5D2-F9064A88439A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mopp/Chat/ChatVC.swift"
@@ -3329,6 +3265,182 @@
             startingLineNumber = "26"
             endingLineNumber = "26"
             landmarkName = "SendBtnAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C59F9A3C-8DEC-4005-BA2A-D58460951E52"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mopp/Chat/ChatVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "getDateFromTimeStamp(timeStamp:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "44934778-DFA3-4EF5-8C87-FE0011640DA6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mopp/Chat/ChatVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "getDateFromTimeStamp(timeStamp:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB98B0CC-ED52-4AD4-A8B4-A22AA2904996"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mopp/Chat/ChatVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "getDateFromTimeStamp(timeStamp:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A7C7279E-766D-4BAD-9D40-3264D6DA2B98"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mopp/CommonClass/PushNotificationSender.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "sendPushNotification(to:title:body:ServerKey:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FE6A1406-936C-42C6-BCD6-5619021E56BF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mopp/CommonClass/PushNotificationSender.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "sendPushNotification(to:title:body:ServerKey:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "428EB7CC-99B1-4C89-B090-568DE9024FE6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mopp/CommonClass/PushNotificationSender.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "sendPushNotification(to:title:body:ServerKey:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9B44901-3757-48F1-B5F7-ED0B6A95CFD1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mopp/Chat/ChatVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "SendBtnAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "84BA3882-FAF5-48C4-8E7E-837DD759DE38"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mopp/Chat/ChatVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "SendBtnAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD9D0985-46E7-48E2-8F5C-02F244F6487D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mopp/Chat/ChatVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "SendBtnAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "00C468CB-E352-462B-98A5-E6536E7ADB57"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mopp/Chat/ChatVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "SendBtnAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1159502D-478C-443D-8B05-9C69FD2A30FE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mopp/CommonClass/PushNotificationSender.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "sendPushNotification(to:title:body:ServerKey:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

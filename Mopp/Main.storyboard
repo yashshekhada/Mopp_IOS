@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fvF-gU-Ull">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fvF-gU-Ull">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -167,13 +167,13 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$17,200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aJ-fS-CsN">
-                                                                    <rect key="frame" x="132" y="158" width="48" height="16"/>
+                                                                    <rect key="frame" x="132" y="158" width="47" height="16"/>
                                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="13"/>
                                                                     <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deadline : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h33-xd-E4t">
-                                                                    <rect key="frame" x="188" y="158" width="62" height="16"/>
+                                                                    <rect key="frame" x="190" y="158" width="62" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="hbU-Q6-XC3"/>
                                                                     </constraints>
@@ -182,7 +182,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29-07-2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oF-Zd-y9W">
-                                                                    <rect key="frame" x="250" y="158" width="70" height="16"/>
+                                                                    <rect key="frame" x="252" y="158" width="68" height="16"/>
                                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="13"/>
                                                                     <color key="textColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -803,7 +803,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$17,200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmQ-WW-GKD">
-                                                                            <rect key="frame" x="104" y="108" width="48" height="16"/>
+                                                                            <rect key="frame" x="104" y="108" width="47" height="16"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="16" id="Rvs-KO-Sjg"/>
                                                                             </constraints>
@@ -812,7 +812,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deadline : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pv-ko-qyb">
-                                                                            <rect key="frame" x="188" y="108" width="62" height="16"/>
+                                                                            <rect key="frame" x="190" y="108" width="62" height="16"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="16" id="fX9-Un-AJh"/>
                                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="iwY-oc-28m"/>
@@ -822,7 +822,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29-07-2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3G1-LA-ZXU">
-                                                                            <rect key="frame" x="250" y="108" width="70" height="16"/>
+                                                                            <rect key="frame" x="252" y="108" width="68" height="16"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="16" id="FUC-YO-zKC"/>
                                                                             </constraints>
@@ -1169,13 +1169,13 @@
                                                                     <rect key="frame" x="0.0" y="25" width="327" height="25"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact info : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMt-UF-QEh">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="75.5" height="25"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="76" height="25"/>
                                                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
                                                                             <color key="textColor" red="0.2156862745" green="0.23137254900000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="xxxxx@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gn7-dq-3bP">
-                                                                            <rect key="frame" x="75.5" y="0.0" width="251.5" height="25"/>
+                                                                            <rect key="frame" x="76" y="0.0" width="251" height="25"/>
                                                                             <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
                                                                             <color key="textColor" red="0.62352941179999999" green="0.64705882349999999" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -3390,7 +3390,7 @@ your post: «Awesome 🔥» </string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s17-qW-IED">
-                                                                    <rect key="frame" x="72" y="38" width="273" height="18"/>
+                                                                    <rect key="frame" x="72" y="38" width="273" height="17.5"/>
                                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                                     <color key="textColor" red="0.41176470588235292" green="0.43529411764705883" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4697,13 +4697,20 @@ Please check your email for OTP.</string>
                                                             </tableViewCell>
                                                         </prototypes>
                                                     </tableView>
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1O5-c8-oaa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="1O5-c8-oaa" firstAttribute="top" secondItem="mpX-Ha-d3Y" secondAttribute="top" id="Aty-48-FcG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1O5-c8-oaa" secondAttribute="trailing" id="BXu-c2-GEL"/>
+                                                    <constraint firstItem="1O5-c8-oaa" firstAttribute="leading" secondItem="mpX-Ha-d3Y" secondAttribute="leading" id="UkA-Nb-reA"/>
                                                     <constraint firstAttribute="bottom" secondItem="qSU-6J-nxt" secondAttribute="bottom" id="YqQ-F0-jUV"/>
                                                     <constraint firstItem="qSU-6J-nxt" firstAttribute="leading" secondItem="mpX-Ha-d3Y" secondAttribute="leading" id="l5o-HZ-DYq"/>
                                                     <constraint firstItem="qSU-6J-nxt" firstAttribute="top" secondItem="mpX-Ha-d3Y" secondAttribute="top" id="lBx-Nd-tcX"/>
                                                     <constraint firstAttribute="trailing" secondItem="qSU-6J-nxt" secondAttribute="trailing" id="mAg-jz-l25"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1O5-c8-oaa" secondAttribute="bottom" id="zJM-Tq-AJS"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -4774,6 +4781,8 @@ Please check your email for OTP.</string>
                     </view>
                     <navigationItem key="navigationItem" id="nbu-a5-Hdx"/>
                     <connections>
+                        <outlet property="MainViewFrag" destination="Kn1-RD-AGY" id="rwN-Th-UZf"/>
+                        <outlet property="Nodataimageview" destination="1O5-c8-oaa" id="j6e-li-Uz4"/>
                         <outlet property="cvSegment" destination="fSR-kJ-ebz" id="tTM-W6-zu7"/>
                         <outlet property="tvMsgList" destination="qSU-6J-nxt" id="tCU-Bb-p9U"/>
                     </connections>
