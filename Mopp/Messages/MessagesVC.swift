@@ -77,7 +77,7 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                         var msg = Messagesx()
                         // let TypingAndCount=Database.database().reference().child("Chats").child(ClS.Uid).child(snapshot.key)
                         msg.email = String(point.value["email"] as! String)
-                        msg.online = point.value["online"] as? Bool
+                        msg.online = (point.value["online"] as? Bool)!
                         msg.uni_id = String(point.value["uni_id"] as! String)
                         msg.name = String(point.value["name"] as! String)
                         msg.last_name = String(point.value["last_name"] as! String)
@@ -115,7 +115,7 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                             // for studPoint in StudentData{
                             var msg = Messagesx()
                             msg.email = StudentData!["email"] as! String
-                            msg.online = StudentData!["online"] as! Bool
+                            msg.online = StudentData!["online"] as? Bool
                             msg.uni_id = StudentData!["uni_id"] as! String
                             msg.name = StudentData!["name"] as! String
                             msg.last_name = StudentData!["last_name"] as! String

@@ -144,8 +144,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
             endingLineNumber = "100"
-            landmarkName = "LoginVc"
-            landmarkType = "3">
+            landmarkName = "Selected_Univercity(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "DA86B756-560E-43AD-B30C-8615C5CCFAAB - b690c0c27795a56"
@@ -480,8 +480,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
             endingLineNumber = "105"
-            landmarkName = "LoginVc"
-            landmarkType = "3">
+            landmarkName = "MovetoForgotPsw(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2624,7 +2624,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
             endingLineNumber = "147"
-            landmarkName = "LoginApi(username:password:UniversityType:)"
+            landmarkName = "GetUniverSity()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
