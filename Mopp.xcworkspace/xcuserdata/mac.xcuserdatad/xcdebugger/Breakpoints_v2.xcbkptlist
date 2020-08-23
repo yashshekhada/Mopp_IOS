@@ -78,8 +78,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "LoginAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,10 +94,10 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "LoginVc"
-            landmarkType = "3">
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "SelectRmemberMe(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "5EBB82B9-4ADD-46CD-BC3C-F0A27A9B5BE7 - 5cf6e015046d7b44"
@@ -142,10 +142,10 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "Selected_Univercity(_:)"
-            landmarkType = "7">
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "LoginVc"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "DA86B756-560E-43AD-B30C-8615C5CCFAAB - b690c0c27795a56"
@@ -190,8 +190,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "LoginVc"
             landmarkType = "3">
          </BreakpointContent>
@@ -206,10 +206,10 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "LoginVc"
-            landmarkType = "3">
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "MovetoForgotPsw(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "35092B1C-FFB9-4DD4-8ED4-1D0CDD90E967 - b690c0c27795a56"
@@ -254,8 +254,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "MovetoForgotPsw(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "MovetoForgotPsw(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,8 +286,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "LoginAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -414,8 +414,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "GetUniverSity()"
             landmarkType = "7">
             <Locations>
@@ -478,10 +478,10 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "MovetoForgotPsw(_:)"
-            landmarkType = "7">
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "LoginVc"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -494,8 +494,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "SetStatusofRememberme()"
             landmarkType = "7">
          </BreakpointContent>
@@ -510,8 +510,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "LoginVc"
             landmarkType = "3">
          </BreakpointContent>
@@ -526,8 +526,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "SetStatusofRememberme()"
             landmarkType = "7">
          </BreakpointContent>
@@ -542,8 +542,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "SetStatusofRememberme()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2414,8 +2414,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "GetUniverSity()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2430,8 +2430,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "GetUniverSity()"
             landmarkType = "7">
             <Locations>
@@ -2478,8 +2478,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "GetUniverSity()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2494,8 +2494,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "GetUniverSity()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2510,8 +2510,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "GetUniverSity()"
             landmarkType = "7">
             <Locations>
@@ -2622,9 +2622,9 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "GetUniverSity()"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "LoginApi(username:password:UniversityType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2638,8 +2638,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "LoginApi(username:password:UniversityType:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2654,8 +2654,8 @@
             filePath = "Mopp/VCGroup/LoginVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "LoginApi(username:password:UniversityType:)"
             landmarkType = "7">
          </BreakpointContent>
