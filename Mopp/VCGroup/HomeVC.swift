@@ -58,7 +58,7 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
     {
         let page = tableView.dequeueReusableCell(withIdentifier: "NewsFeedPost", for: indexPath) as! NewsFeedPost
         // page.slideshow.slideshowInterval = 5.0
-        page.NameLbl.text = GetNewsFeedArry[indexPath.row].name
+        
         page.Description.text = GetNewsFeedArry[indexPath.row].description
         page.slideshow.pageIndicatorPosition = .init(horizontal: .center, vertical: .customBottom(padding: -40))
         page.slideshow.contentScaleMode = UIViewContentMode.scaleAspectFit
@@ -91,7 +91,41 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
             page.LikeBtn.setImage(UIImage.init(named: "Selectedthumb"), for: .normal)
             page.LikeBtn.setTitleColor(UIColor.init(named: "SelectedColor"), for: .normal)
         }
-          page.ImageViewProfile.sd_setImage(with: URL(string: ClS.ImageUrl+GetNewsFeedArry[indexPath.row].image!), placeholderImage: UIImage(named: "user-icon"))
+        
+        page.ImageViewProfile.layer.cornerRadius = page.ImageViewProfile.frame.size.height / 2
+        page.ImageViewProfile.layer.masksToBounds = true
+        page.lblSingleLatter.layer.cornerRadius = page.lblSingleLatter.frame.size.height / 2
+        page.lblSingleLatter.layer.masksToBounds = true
+        
+        page.lblSingleLatter.isHidden = true
+        page.ImageViewProfile.isHidden = true
+        page.lblSingleLatter.backgroundColor = .systemBlue
+        
+        let isanonymous = GetNewsFeedArry[indexPath.row].isanonymous ?? "0"
+        let imgUrl = GetNewsFeedArry[indexPath.row].image ?? ""
+        let nm:String = GetNewsFeedArry[indexPath.row].name ?? ""
+        if imgUrl != "" {
+            page.ImageViewProfile.sd_setImage(with: URL(string: ClS.ImageUrl+GetNewsFeedArry[indexPath.row].image!), placeholderImage: UIImage(named: "user-icon"))
+            page.ImageViewProfile.isHidden = false
+            page.lblSingleLatter.isHidden = true
+        }else {
+            page.lblSingleLatter.text = String((nm.first!).uppercased())
+            page.lblSingleLatter.isHidden = false
+            page.ImageViewProfile.isHidden = true
+        }
+        
+        if isanonymous == "0" {
+            page.NameLbl.text = nm
+            page.ImageViewProfile.isHidden = false
+            page.lblSingleLatter.isHidden = true
+        }
+        else {
+            page.NameLbl.text = "Anonymous"
+            page.lblSingleLatter.text = "A"
+            page.lblSingleLatter.isHidden = false
+            page.ImageViewProfile.isHidden = true
+        }
+        
         page.ThumbCount.setTitle(" "+String(self.GetNewsFeedArry[indexPath.row].likes!), for: .normal)
         DispatchQueue.main.async {
             
@@ -108,13 +142,13 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
                 if self.GetNewsFeedArry[indexPath.row].is_like == 0{
                     
                     
-                    self.GetNewsFeedArry[indexPath.row]=GetNewsFeed_Data.init(id: EventModel.id, description: EventModel.description, post_images_array: EventModel.post_images_array, likes: EventModel.likes! + 1, comments: EventModel.comments, numberofimages: EventModel.numberofimages, code: EventModel.code, s_id: EventModel.s_id, u_id: EventModel.u_id, status: EventModel.status, created_by: EventModel.created_by, updated_by: EventModel.updated_by, created_at: EventModel.created_at, updated_at: EventModel.updated_at, name: EventModel.name, image: EventModel.image, is_like: 1)
+                    self.GetNewsFeedArry[indexPath.row]=GetNewsFeed_Data.init(id: EventModel.id, description: EventModel.description, post_images_array: EventModel.post_images_array, likes: EventModel.likes! + 1, comments: EventModel.comments, numberofimages: EventModel.numberofimages, code: EventModel.code, s_id: EventModel.s_id, u_id: EventModel.u_id, status: EventModel.status, created_by: EventModel.created_by, updated_by: EventModel.updated_by, created_at: EventModel.created_at, updated_at: EventModel.updated_at, name: EventModel.name, image: EventModel.image, is_like: 1, isanonymous: EventModel.isanonymous)
                     page.ThumbCount.setTitle(" "+String(self.GetNewsFeedArry[indexPath.row].likes!), for: .normal)
                     page.LikeBtn.setImage(UIImage.init(named: "Selectedthumb"), for: .normal)
                     page.LikeBtn.setTitleColor(UIColor.init(named: "SelectedColor"), for: .normal)
                     self.PostLike(post_id: String(EventModel.id!),like: "1")
                 }else{
-                    self.GetNewsFeedArry[indexPath.row]=GetNewsFeed_Data.init(id: EventModel.id, description: EventModel.description, post_images_array: EventModel.post_images_array, likes: EventModel.likes! - 1, comments: EventModel.comments, numberofimages: EventModel.numberofimages, code: EventModel.code, s_id: EventModel.s_id, u_id: EventModel.u_id, status: EventModel.status, created_by: EventModel.created_by, updated_by: EventModel.updated_by, created_at: EventModel.created_at, updated_at: EventModel.updated_at, name: EventModel.name, image: EventModel.image, is_like: 0)
+                    self.GetNewsFeedArry[indexPath.row]=GetNewsFeed_Data.init(id: EventModel.id, description: EventModel.description, post_images_array: EventModel.post_images_array, likes: EventModel.likes! - 1, comments: EventModel.comments, numberofimages: EventModel.numberofimages, code: EventModel.code, s_id: EventModel.s_id, u_id: EventModel.u_id, status: EventModel.status, created_by: EventModel.created_by, updated_by: EventModel.updated_by, created_at: EventModel.created_at, updated_at: EventModel.updated_at, name: EventModel.name, image: EventModel.image, is_like: 0, isanonymous: EventModel.isanonymous)
                     page.ThumbCount.setTitle(" "+String(self.GetNewsFeedArry[indexPath.row].likes!), for: .normal)
                     page.LikeBtn.setImage(UIImage.init(named: "Thumb_like"), for: .normal)//818181
                     page.LikeBtn.setTitleColor(UIColor.init(named: "unselectedTextColor"), for: .normal)
@@ -204,7 +238,7 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
         hud.show(in: self.view)
         //   var GetUnivercityData:GetUnivercity"
          let  University_id = iOTool.GetPref(Name: ClS.sf_University_id)
-        let parameter:[String:Any]=["issearch":"0","univercity_id": String(University_id),"session_token":ClS.Token,"paginate": ClS.PageSize,"page":CurruntPage]
+        let parameter:[String:Any]=["issearch":"0","univercity_id": String(University_id),"session_token":ClS.Token,"paginate": ClS.PageSize,"page":CurruntPage,"student_id":""]
         
         NetWorkCall.get_Post_Api_Call(completion: { (T: GetNewsFeed) in
             hud.dismiss()
@@ -287,6 +321,7 @@ class NewsFeedPost: UITableViewCell,ImageSlideshowDelegate
     @IBOutlet weak var slideshow: ImageSlideshow!
     @IBOutlet weak var Description: UILabel!
     @IBOutlet weak var NameLbl: UILabel!
+    @IBOutlet weak var lblSingleLatter: UILabel!
     @IBOutlet weak var ImageViewProfile: UIImageView!
     
     @IBAction func CkickEventForComment(_ sender: UIButton) {

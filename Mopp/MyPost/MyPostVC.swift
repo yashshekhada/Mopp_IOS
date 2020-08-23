@@ -192,19 +192,31 @@ class MyPostVC: UIViewController, UITableViewDataSource, UITableViewDelegate,Ima
         cell.lblSingleLater.layer.cornerRadius = cell.lblSingleLater.frame.size.height / 2
         cell.lblSingleLater.layer.masksToBounds = true
         
-        let isanonymous = dict["isanonymous"] as? Int ?? 0
-        if isanonymous == 0 {
-            let imgUrl = dict["image"] as? String ?? ""
+        cell.lblSingleLater.isHidden = true
+        cell.imgUserProfile.isHidden = true
+        cell.lblSingleLater.backgroundColor = .systemBlue
+        
+        let isanonymous = dict["isanonymous"] as? String ?? "0"
+        let imgUrl = dict["image"] as? String ?? ""
+        let nm = dict["name"] as? String ?? ""
+        if imgUrl != "" {
             cell.imgUserProfile.sd_setImage(with: URL(string: ClS.ImageUrl+imgUrl), placeholderImage: UIImage(named: "user-icon"))
-            cell.lblName.text = dict["name"] as? String ?? ""
-            cell.lblSingleLater.isHidden = true
             cell.imgUserProfile.isHidden = false
+            cell.lblSingleLater.isHidden = true
+        }else {
+            cell.lblSingleLater.text = String((nm.first!).uppercased())
+            cell.lblSingleLater.isHidden = false
+            cell.imgUserProfile.isHidden = true
+        }
+        
+        if isanonymous == "0" {
+            cell.lblName.text = nm
+            cell.imgUserProfile.isHidden = false
+            cell.lblSingleLater.isHidden = true
         }
         else {
             cell.lblName.text = "Anonymous"
-            let nm = dict["name"] as! String
-            cell.lblSingleLater.text = String((nm.first!).uppercased())
-            cell.lblSingleLater.backgroundColor = .systemBlue
+            cell.lblSingleLater.text = "A"
             cell.lblSingleLater.isHidden = false
             cell.imgUserProfile.isHidden = true
         }
@@ -253,6 +265,7 @@ class MyPostVC: UIViewController, UITableViewDataSource, UITableViewDelegate,Ima
             param = ["session_token":ClS.Token,
                      "univercity_id":University_id,
                      "paginate":"\(ClS.PageSize)",
+                     "student_id":ClS.user_id,
                      "page":"\(page)",
                      "issearch":"0",
                      "searchby":""]

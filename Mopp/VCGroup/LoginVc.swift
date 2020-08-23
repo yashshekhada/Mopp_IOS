@@ -11,7 +11,6 @@ import iOTool
 import Alamofire
 import iOSDropDown
 import JGProgressHUD
-import FirebaseDatabase
 import FirebaseAuth
 class LoginVc: UIViewController {
     
@@ -174,10 +173,12 @@ class LoginVc: UIViewController {
                             iOTool.SavePref(Name: ClS.sf_University_id, Value: String(T.data!.univercity_id!))
                             
                             ud.set(String(T.data!.univercity_id!), forKey: "uni_id")
+                                                        
+                            let dict:NSDictionary = ["id":T.data!.id!,"image":T.data!.image!,"name":T.data!.name!,"l_name":T.data!.l_name!,"username":T.data!.username!,"univercity_id":T.data!.univercity_id!,"univercity_name":T.data!.univercity_name!,"email":T.data!.email!,"dob":T.data!.dob!,"gender":T.data!.gender!,"qualification":T.data!.qualification!,"country":T.data!.country!,"city":T.data!.city!,"phone_number":T.data!.phone_number!]
+                            ud.set(dict, forKey: "LoginData")
                             ud.synchronize()
-                            let data : [String : Any] =
-                                      ["device_token": ClS.FCMtoken ]
-                            Database.database().reference().child("Tokens").child(user.uid).setValue(data)
+                            
+                            print(ud.value(forKey: "LoginData") as! NSDictionary)
                             if self.RememberMeBtn.currentImage == #imageLiteral(resourceName: "check-box"){
                                 iOTool.SavePref(Name: ClS.sf_password, Value: password)
                                 DispatchQueue.main.async {
@@ -193,6 +194,7 @@ class LoginVc: UIViewController {
                         
                         self.dismiss(animated: true, completion: nil)
                     }else {
+                        
                     }
                 })
                 

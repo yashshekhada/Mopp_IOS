@@ -39,6 +39,8 @@ public  class ClS{
     public static var createpost="createpost"
     public static var jobapply="jobapply"
     public static var scholarshipapply="scholarshipapply"
+    public static var updateprofile="updateprofile"
+    
     // SF Data
     public static var sf_Token = "Token"
     public static var sf_User_id = "User_id"

@@ -28,6 +28,8 @@ class DrawerViewController: UIViewController
     
     @IBAction func btnProfileTapped(_ sender: UIButton)
     {
+        let page = mainStoryBrd.instantiateViewController(withIdentifier: "EditProfile") as! EditProfile
+        self.navigationController?.pushViewController(page, animated: true)
     }
     
     @IBAction func btnMyPostTapped(_ sender: UIButton)

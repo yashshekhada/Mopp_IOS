@@ -71,6 +71,10 @@
 		182AE3D424ECD6F200DA1FE0 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182AE3D324ECD6F200DA1FE0 /* Util.swift */; };
 		182AE3D824ECD71600DA1FE0 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182AE3D724ECD71600DA1FE0 /* Toast.swift */; };
 		182AE3DA24ECDAD200DA1FE0 /* VerifyOTPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182AE3D924ECDAD200DA1FE0 /* VerifyOTPVC.swift */; };
+		1830585724F2461200D57F88 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830585624F2461100D57F88 /* EditProfile.swift */; };
+		1830585B24F26C3700D57F88 /* UIViewController+MaryPopin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1830585A24F26C3700D57F88 /* UIViewController+MaryPopin.m */; };
+		1830585E24F26C6600D57F88 /* GenderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1830585C24F26C6600D57F88 /* GenderVC.xib */; };
+		1830585F24F26C6600D57F88 /* GenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830585D24F26C6600D57F88 /* GenderVC.swift */; };
 		18312D4724EFAC32001A93D0 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18312D4524EFAC32001A93D0 /* ChatVC.swift */; };
 		18312D4824EFAC32001A93D0 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18312D4624EFAC32001A93D0 /* ChatCell.swift */; };
 		1867C62524F1613000F9486F /* MyPostTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867C62324F1613000F9486F /* MyPostTVCell.swift */; };
@@ -178,6 +182,11 @@
 		182AE3D324ECD6F200DA1FE0 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		182AE3D724ECD71600DA1FE0 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		182AE3D924ECDAD200DA1FE0 /* VerifyOTPVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyOTPVC.swift; sourceTree = "<group>"; };
+		1830585624F2461100D57F88 /* EditProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
+		1830585924F26C3700D57F88 /* UIViewController+MaryPopin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MaryPopin.h"; sourceTree = "<group>"; };
+		1830585A24F26C3700D57F88 /* UIViewController+MaryPopin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MaryPopin.m"; sourceTree = "<group>"; };
+		1830585C24F26C6600D57F88 /* GenderVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GenderVC.xib; sourceTree = "<group>"; };
+		1830585D24F26C6600D57F88 /* GenderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderVC.swift; sourceTree = "<group>"; };
 		18312D4524EFAC32001A93D0 /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		18312D4624EFAC32001A93D0 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		1867C62324F1613000F9486F /* MyPostTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostTVCell.swift; sourceTree = "<group>"; };
@@ -344,6 +353,7 @@
 		182AE3D524ECD71600DA1FE0 /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				1830585824F26C3700D57F88 /* Mary Popin */,
 				1867C62724F1619000F9486F /* DGElasticPullToRefresh */,
 				182AE3D624ECD71600DA1FE0 /* ToastMessage */,
 			);
@@ -356,6 +366,25 @@
 				182AE3D724ECD71600DA1FE0 /* Toast.swift */,
 			);
 			path = ToastMessage;
+			sourceTree = "<group>";
+		};
+		1830585524F2461100D57F88 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1830585624F2461100D57F88 /* EditProfile.swift */,
+				1830585D24F26C6600D57F88 /* GenderVC.swift */,
+				1830585C24F26C6600D57F88 /* GenderVC.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		1830585824F26C3700D57F88 /* Mary Popin */ = {
+			isa = PBXGroup;
+			children = (
+				1830585924F26C3700D57F88 /* UIViewController+MaryPopin.h */,
+				1830585A24F26C3700D57F88 /* UIViewController+MaryPopin.m */,
+			);
+			path = "Mary Popin";
 			sourceTree = "<group>";
 		};
 		18312D4424EFAC32001A93D0 /* Chat */ = {
@@ -436,6 +465,7 @@
 				182AE3CE24ECD56100DA1FE0 /* Messages */,
 				18312D4424EFAC32001A93D0 /* Chat */,
 				1867C62224F1613000F9486F /* MyPost */,
+				1830585524F2461100D57F88 /* Profile */,
 				A604610224AD98F900034CAB /* AppDelegate.swift */,
 				A604610624AD98F900034CAB /* SelectUniversity.swift */,
 				A604613224AD9A3100034CAB /* Main.storyboard */,
@@ -607,6 +637,7 @@
 				045281D524F26A4C006556D8 /* Nodata.gif in Resources */,
 				04B0222E24D8178C00605ED0 /* Roboto-MediumItalic.ttf in Resources */,
 				A604613324AD9A3100034CAB /* Main.storyboard in Resources */,
+				1830585E24F26C6600D57F88 /* GenderVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,6 +822,7 @@
 				04CB147E24DBFC6900F5B81D /* HomeVC.swift in Sources */,
 				049ABF7524EA3C5F0006DD5B /* HomeNavBar.swift in Sources */,
 				041A394824CBECB8009CD443 /* MReservationChartAreaWise.swift in Sources */,
+				1830585724F2461200D57F88 /* EditProfile.swift in Sources */,
 				18312D4824EFAC32001A93D0 /* ChatCell.swift in Sources */,
 				1867C62624F1613000F9486F /* MyPostVC.swift in Sources */,
 				044BF41D24E822CD00628B83 /* GetproductModel.swift in Sources */,
@@ -799,6 +831,7 @@
 				1867C62E24F1619000F9486F /* DGElasticPullToRefreshView.swift in Sources */,
 				041A394A24CBECB8009CD443 /* IPGlobal.swift in Sources */,
 				182AE3D824ECD71600DA1FE0 /* Toast.swift in Sources */,
+				1830585B24F26C3700D57F88 /* UIViewController+MaryPopin.m in Sources */,
 				A604610324AD98F900034CAB /* AppDelegate.swift in Sources */,
 				0449D3F824D96D8D0032D253 /* GrantDetailVC.swift in Sources */,
 				1867C62524F1613000F9486F /* MyPostTVCell.swift in Sources */,
@@ -811,6 +844,7 @@
 				0449D3F424D953340032D253 /* JobDetailVC.swift in Sources */,
 				049ABF6D24E951860006DD5B /* getcommentModel.swift in Sources */,
 				041A394E24CBED04009CD443 /* GetUnivercity.swift in Sources */,
+				1830585F24F26C6600D57F88 /* GenderVC.swift in Sources */,
 				041A394624CBECB8009CD443 /* IPConstant.swift in Sources */,
 				18312D4724EFAC32001A93D0 /* ChatVC.swift in Sources */,
 				041A394B24CBECB8009CD443 /* IPText.swift in Sources */,
