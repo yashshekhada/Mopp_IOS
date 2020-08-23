@@ -45,6 +45,20 @@ func isValidEmailAddress(emailAddressString: String) -> Bool
     return  returnValue
 }
 
+//MARK: - ALert
+func createAlertViewController(title:String, message: String, viewController: UIViewController)
+{
+    let alert = UIAlertController(title: title, message: message,
+                                  preferredStyle: UIAlertController.Style.alert)
+
+    let okAction = UIAlertAction(title: "OK", style:
+        UIAlertAction.Style.default, handler: nil)
+
+    alert.addAction(okAction)
+
+    viewController.present(alert, animated: true, completion: nil)
+}
+
 //MARK: - UIView cornerRadius
 extension UIView
 {
