@@ -43,6 +43,10 @@ class EditProfile: UIViewController,UIScrollViewDelegate,UIImagePickerController
         scrollView.delegate = self
         
         self.setData()
+        
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
+        
     }
     override func viewWillAppear(_ animated: Bool)
     {

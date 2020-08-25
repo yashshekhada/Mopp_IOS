@@ -72,3 +72,17 @@ extension UIView
         self.layer.mask = shapeLayer
     }
 }
+
+//MARK: - ScreenShot Method
+func takeScreenshot(_ shouldSave: Bool = false) -> UIImage?
+{
+    var screenshotImage :UIImage?
+    let layer = UIApplication.shared.keyWindow!.layer
+    let scale = UIScreen.main.scale
+    UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
+    guard let context = UIGraphicsGetCurrentContext() else {return nil}
+    layer.render(in:context)
+    screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return screenshotImage
+}

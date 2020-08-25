@@ -84,6 +84,7 @@
 		1867C62F24F1619000F9486F /* DGElasticPullToRefreshConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867C62A24F1619000F9486F /* DGElasticPullToRefreshConstants.swift */; };
 		1867C63024F1619000F9486F /* DGElasticPullToRefreshExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867C62B24F1619000F9486F /* DGElasticPullToRefreshExtensions.swift */; };
 		1867C63124F1619000F9486F /* DGElasticPullToRefreshLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867C62C24F1619000F9486F /* DGElasticPullToRefreshLoadingView.swift */; };
+		18A4766324F5400800DA4760 /* SelectUniversityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A4766224F5400800DA4760 /* SelectUniversityVC.swift */; };
 		1B4299A177901A5322DB23CF /* Pods_MoppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E258436F72C129B182E00D8 /* Pods_MoppTests.framework */; };
 		A604610324AD98F900034CAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604610224AD98F900034CAB /* AppDelegate.swift */; };
 		A604610724AD98F900034CAB /* SelectUniversity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604610624AD98F900034CAB /* SelectUniversity.swift */; };
@@ -196,6 +197,7 @@
 		1867C62A24F1619000F9486F /* DGElasticPullToRefreshConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshConstants.swift; sourceTree = "<group>"; };
 		1867C62B24F1619000F9486F /* DGElasticPullToRefreshExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshExtensions.swift; sourceTree = "<group>"; };
 		1867C62C24F1619000F9486F /* DGElasticPullToRefreshLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshLoadingView.swift; sourceTree = "<group>"; };
+		18A4766224F5400800DA4760 /* SelectUniversityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUniversityVC.swift; sourceTree = "<group>"; };
 		33CECD04D33ED50AA3A1FE2E /* Pods-Mopp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mopp.debug.xcconfig"; path = "Target Support Files/Pods-Mopp/Pods-Mopp.debug.xcconfig"; sourceTree = "<group>"; };
 		5C1826A36D8EB26A1310EA8B /* Pods-Mopp-MoppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mopp-MoppUITests.release.xcconfig"; path = "Target Support Files/Pods-Mopp-MoppUITests/Pods-Mopp-MoppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7E258436F72C129B182E00D8 /* Pods_MoppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -417,6 +419,14 @@
 			path = DGElasticPullToRefresh;
 			sourceTree = "<group>";
 		};
+		18A4766124F5400800DA4760 /* SelectUniversity */ = {
+			isa = PBXGroup;
+			children = (
+				18A4766224F5400800DA4760 /* SelectUniversityVC.swift */,
+			);
+			path = SelectUniversity;
+			sourceTree = "<group>";
+		};
 		1FD5952896E58DBF6573BD46 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,10 +476,11 @@
 				18312D4424EFAC32001A93D0 /* Chat */,
 				1867C62224F1613000F9486F /* MyPost */,
 				1830585524F2461100D57F88 /* Profile */,
+				18A4766124F5400800DA4760 /* SelectUniversity */,
 				A604610224AD98F900034CAB /* AppDelegate.swift */,
 				A604610624AD98F900034CAB /* SelectUniversity.swift */,
-				A604613224AD9A3100034CAB /* Main.storyboard */,
 				0450864024DE6AB000C3ACB3 /* SceneDelegate.swift */,
+				A604613224AD9A3100034CAB /* Main.storyboard */,
 				A604610B24AD98FD00034CAB /* Assets.xcassets */,
 				A604610D24AD98FD00034CAB /* LaunchScreen.storyboard */,
 				A604611024AD98FD00034CAB /* Info.plist */,
@@ -816,6 +827,7 @@
 				A604610724AD98F900034CAB /* SelectUniversity.swift in Sources */,
 				04CB148024DC2FDF00F5B81D /* ColumnFlowLayout.swift in Sources */,
 				182AE3D024ECD56100DA1FE0 /* MessagesVC.swift in Sources */,
+				18A4766324F5400800DA4760 /* SelectUniversityVC.swift in Sources */,
 				0462382224EED2FF008C6530 /* PushNotificationManager.swift in Sources */,
 				041A395724CBF3CA009CD443 /* NetWorkCall.swift in Sources */,
 				04B02F2824EB279F0020D48C /* MyproductVc.swift in Sources */,
