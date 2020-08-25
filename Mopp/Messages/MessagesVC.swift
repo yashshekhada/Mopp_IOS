@@ -35,6 +35,7 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     {
         super.viewDidLoad()
         ref = Database.database().reference()
+        observeUserMessages(value : 0)
         self.cvSegment.dataSource = self
         self.cvSegment.delegate = self
         // Gifloader()
@@ -52,8 +53,9 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         self.tvMsgList.rowHeight = UITableView.automaticDimension
         self.tvMsgList.tableFooterView = UIView()
         self.tvMsgList.backgroundColor = .clear
-        observeUserMessages(value : 0)
+        
     }
+    
     func observeUserMessages(value : Int) {
         
         self.FindUser=[Messagesx]()
@@ -65,85 +67,142 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         
         
         if value == 1{
-            let ref = Database.database().reference().child("Students")
-            let query = ref.queryOrdered(byChild: "uni_id").queryEqual(toValue: ClS.University_id)
+            
+            
+            let ref2 = ref.child("Students")
+            
+            
+            let query = ref2.queryOrdered(byChild: "uni_id").queryEqual(toValue: ClS.University_id)
             query.observe(.value, with: { (snapshot) in
                 
                 
                 if let dict = snapshot.value as? [String: AnyObject] {
                     
                     for point in dict{
-                        
-                        var msg = Messagesx()
-                        // let TypingAndCount=Database.database().reference().child("Chats").child(ClS.Uid).child(snapshot.key)
-                        msg.email = String(point.value["email"] as! String)
-                        msg.online = (point.value["online"] as? Bool)!
-                        msg.uni_id = String(point.value["uni_id"] as! String)
-                        msg.name = String(point.value["name"] as! String)
-                        msg.last_name = String(point.value["last_name"] as! String)
-                        msg.photo = String(point.value["photo"] as! String)
-                        msg.Key_ID = point.key
-                        self.FindUser.append(msg)
-                        self.FindUser=self.FindUser.unique()
-                      
-                        self.tvMsgList.reloadData()
+                        if snapshot.key != ClS.Uid  {
+                            
+                            
+                            var msg = Messagesx()
+                            // let TypingAndCount=Database.database().reference().child("Chats").child(ClS.Uid).child(snapshot.key)
+                            msg.email = String(point.value["email"] as! String)
+                            
+                            msg.online =  Bool(point.value["online"] as! Bool)
+                            
+                            msg.uni_id = String(point.value["uni_id"] as! String)
+                            msg.name = String(point.value["name"] as! String)
+                            msg.last_name = String(point.value["last_name"] as! String)
+                            msg.photo = String(point.value["photo"] as! String)
+                            msg.Key_ID = point.key
+                            self.FindUser.append(msg)
+                            self.FindUser=self.FindUser.unique()
+                            
+                            self.tvMsgList.reloadData()
+                            
+                            
+                        }
                     }
                     if self.FindUser.count == 0{
                         self.Nodataimageview.isHidden = false
                     }
                 }
-                hud.dismiss()
+                
             })
+            
+            hud.dismiss()
+            
+            
             // self.FindUser.append(msg)
             
         }
         else if value == 0{
             
-            let ref2 = Database.database().reference().child("FriendRequests").child(ClS.Uid)
-            let query2 = ref2.queryOrdered(byChild: "request_type").queryEqual(toValue: "accepted")
-            query2.observe(.value, with: { (snapshot) in
-                if let dict = snapshot.value as? [String: AnyObject] {
-                    self.FindUser=[Messagesx]()
-                    self.tvMsgList.reloadData()
-                    for point in dict{
-                        let ChatStudent = Database.database().reference().child("Students").child(point.key)
-                        
-                        
-                        ChatStudent.observe(.value, with: { (snapshot) in
-                            let StudentData = snapshot.value as? [String:AnyObject]
+            if ClS.Uid.count != 0{
+                let ref2 = ref.child("FriendRequests").child(ClS.Uid)
+                let query2 = ref2.queryOrdered(byChild: "request_type").queryEqual(toValue: "accepted")
+                query2.observe(.value, with: { (snapshot) in
+                    if let dict = snapshot.value as? [String: AnyObject] {
+                        self.FindUser=[Messagesx]()
+                        self.tvMsgList.reloadData()
+                        for point in dict{
+                            let ChatStudent = Database.database().reference().child("Students").child(point.key)
                             
-                            // for studPoint in StudentData{
-                            var msg = Messagesx()
-                            msg.email = StudentData!["email"] as! String
-                            msg.online = StudentData!["online"] as? Bool
-                            msg.uni_id = StudentData!["uni_id"] as! String
-                            msg.name = StudentData!["name"] as! String
-                            msg.last_name = StudentData!["last_name"] as! String
-                            msg.photo = StudentData!["photo"] as! String
-                            msg.Key_ID = point.key
-                            self.FindUser.append(msg)
-                            self.FindUser=self.FindUser.unique()
-                         
-                            self.tvMsgList.reloadData()
-                            //     }
                             
-                        })
+                            ChatStudent.observe(.value, with: { (snapshot) in
+                                let StudentData = snapshot.value as? [String:AnyObject]
+                                if snapshot.key != ClS.Uid{
+                                    // for studPoint in StudentData{
+                                    var lastmsf=""
+                                    var Count=0
+                                    Database.database().reference()
+                                        .child("Chats").child(ClS.Uid).child(snapshot.key).observe(DataEventType.value, with: {
+                                            (snapshot) in
+                                            let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+                                            if postDict["last_message"] != nil{
+                                                lastmsf=postDict["last_message"] as! String
+                                                //  Count=postDict["unread_count"] as! Int
+                                            }
+                                            if postDict["unread_count"] != nil{
+                                                Count=postDict["unread_count"] as! Int
+                                            }
+                                            var istyping = false
+                                            if postDict["typing"] != nil{
+                                                
+                                                
+                                                if postDict["typing"] as! String == "0"
+                                                {
+                                                    istyping=false
+                                                }else{
+                                                    istyping==true
+                                                }
+                                                
+                                            }
+                                            
+                                            
+                                            // if you have some completion return retrieved array of stations
+                                            if StudentData != nil{
+                                                
+                                                
+                                                self.FindUser =  self.FindUser.filter { $0.Key_ID != point.key }
+                                                var msg = Messagesx()
+                                                
+                                                if StudentData!["email"] != nil{
+                                                    msg.email = StudentData!["email"] as! String
+                                                }
+                                                msg.online = (StudentData!["online"] as? Bool)
+                                                
+                                                msg.uni_id = StudentData!["uni_id"] as! String
+                                                msg.name = StudentData!["name"] as! String
+                                                msg.last_name = StudentData!["last_name"] as! String
+                                                msg.photo = StudentData!["photo"] as! String
+                                                msg.Count = Count
+                                                msg.TypingStatus = istyping
+                                                
+                                                msg.Last_msg=lastmsf
+                                                msg.Key_ID = point.key
+                                                self.FindUser.append(msg)
+                                                self.FindUser=self.FindUser.unique()
+                                                
+                                                self.tvMsgList.reloadData()
+                                            }
+                                        })
+                                    //     }
+                                }
+                                
+                            })
+                            
+                        }
                         
+                        if ( self.FindUser.count == 0)
+                        {
+                            self.Nodataimageview.isHidden=false
+                        }else{
+                            self.Nodataimageview.isHidden=true
+                        }
                     }
+                    hud.dismiss()
                     
-                    if ( self.FindUser.count == 0)
-                                             {
-                                                 self.Nodataimageview.isHidden=false
-                                             }else{
-                                                 self.Nodataimageview.isHidden=true
-                                             }
-                }
-                hud.dismiss()
-                
-            })
-            
-            
-            // self.tvMsgList.reloadData()
+                })
+            }
         }
     }
     
@@ -174,10 +233,24 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         //  let isSelected = dict["isSelect"] as! Int
         //  if isSelected == 1
         //   {//
+        
         lblName.text=self.FindUser[indexPath.row].name
         if self.FindUser[indexPath.row].online == false{
             lblGreenDot.backgroundColor = UIColor.gray
             lblTime.text=""
+        }
+        if self.FindUser[indexPath.row].Count == 0{
+            
+            lblCounter.isHidden=true
+        }else{
+            lblCounter.isHidden=false
+            lblCounter.text = String( self.FindUser[indexPath.row].Count!)
+        }
+        if self.FindUser[indexPath.row].TypingStatus! {
+            lblMsg.text="Typing..."
+        }
+        else{
+            lblMsg.text=self.FindUser[indexPath.row].Last_msg
         }
         // }
         imgProfile.layer.cornerRadius = imgProfile.frame.size.height / 2
@@ -209,7 +282,7 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
             //Database.database().reference().child("FriendRequests").setValue(ClS.Uid)
             // Database.database().reference().child("FriendRequests").child(ClS.Uid).setValue( self.FindUser[indexPath.row].Key_ID)
             Database.database().reference().child("FriendRequests").child(ClS.Uid).child(self.FindUser[indexPath.row].Key_ID!).setValue(StudentData)
-            
+            Database.database().reference().child("FriendRequests").child(self.FindUser[indexPath.row].Key_ID!).child(ClS.Uid).setValue(StudentData)
             
             let dict = arrSegment[0] as! NSDictionary
             let name = dict["name"] as! String

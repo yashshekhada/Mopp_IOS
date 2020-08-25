@@ -21,12 +21,27 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     var  MsgDaata=[Messages]()
     //MARK: - LifeCycle Methods
     
+    
+    
     @IBAction func SendBtnAction(_ sender: UIButton) {
-         //   let ref1 = Database.database().reference().child("Messages").child(ClS.Uid).child(selectedUSer)
+        //   let ref1 = Database.database().reference().child("Messages").child(ClS.Uid).child(selectedUSer)
         //let ref2 = Database.database().reference().child("Messages").child(selectedUSer).child(ClS.Uid)
-  
-       // ref2.setValue(dic)
-       
+        
+        // ref2.setValue(dic)
+        
+        let GetUserData = Database.database().reference().child("Chats").child(selectedUSer).child(ClS.Uid)
+             
+             GetUserData.observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                if let dict = snapshot.value as? [String: AnyObject] {
+                    var CountV = dict["unread_count"] as! Int
+                    var CountVs = CountV+1
+                    Database.database().reference().child("Chats").child(self.selectedUSer).child(ClS.Uid).updateChildValues(["unread_count": CountVs])
+            }
+        })
+        
+        if txtMessage.text?.count != 0{
+        
         let id = Database.database().reference().childByAutoId().key
         let data : [String : Any] =
             ["messageFrom": ClS.Uid,
@@ -35,33 +50,59 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
              "messageType": "text",
              "message": txtMessage.text]
         
-     //   ref1.setValue(Mail)
+        //   ref1.setValue(Mail)
         Database.database().reference().child("Messages").child(ClS.Uid).child(selectedUSer).child(id!).setValue(data)
-       //     Database.database().reference().child("Messages").child(ClS.Uid).child(selectedUSer).setValue(Mail)
+        //     Database.database().reference().child("Messages").child(ClS.Uid).child(selectedUSer).setValue(Mail)
         Database.database().reference().child("Messages").child(selectedUSer).child(ClS.Uid).child(id!).setValue(data)
-            
+        
         let ref2 = Database.database().reference().child("Tokens").child(selectedUSer)
-           
-                 ref2.observe(.value, with: { (snapshot) in
-                     if let dict = snapshot.value as? [String: AnyObject] {
-                      
-                            let Token = dict["device_token"] as! String
-                            let DetailValue = self.txtMessage.text!
-                            self.txtMessage.text = ""
-                            if DetailValue.count != 0 {
-                                 let sender = PushNotificationSender()
-                            sender.sendPushNotification(to:Token, title: "Notification title", body: DetailValue, ServerKey: ClS.serverKEY)
-                            }
-                     
-                    }
+        
+        ref2.observe(.value, with: { (snapshot) in
+            if let dict = snapshot.value as? [String: AnyObject] {
+                
+                let Token = dict["device_token"] as! String
+                let DetailValue = self.txtMessage.text!
+                self.txtMessage.text = ""
+                if DetailValue.count != 0 {
+                    let sender = PushNotificationSender()
+                    sender.sendPushNotification(to:Token, title: "Notification title", body: DetailValue, ServerKey: ClS.serverKEY)
+                }
+                
+            }
         })
+        } 
     }
+    var  name = ""
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         tvChat.delegate = self
         tvChat.dataSource = self
+        
+        
+        Database.database().reference().child("Chats").child(ClS.Uid).child(selectedUSer).updateChildValues(["unread_count": 0])
+        
+        
+        
+        
+        
+        let GetUserData = Database.database().reference().child("Students").child(selectedUSer)
+        
+        GetUserData.observe(.value, with: { (snapshot) in
+            if let dict = snapshot.value as? [String: AnyObject] {
+                
+                let Status = dict["online"] as! Bool
+                
+                self.lblName.text = dict["name"] as! String
+                
+                if Status{
+                self.lblStatus.text = "Online"
+                }else{
+                    self.lblStatus.text = "Ofline"
+                }
+                
+            }})
         self.tvChat.tableFooterView = UIView(frame: .zero)
         let hud = JGProgressHUD(style: .light)
         hud.textLabel.text = "Loading"
@@ -81,14 +122,14 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                     msg.message = (point.value["message"] as! String)
                     msg.messageFrom = (point.value["messageFrom"] as! String)
                     msg.messageId = (point.value["messageId"] as! String)
-                   // msg.messageTime =
+                    // msg.messageTime =
                     msg.messageTime = self.getDateFromTimeStamp(timeStamp: point.value["messageTime"] as! Double).timeAgoSinceDate()
                     msg.messageType = point.value["messageType"] as! String
                     
                     
                     self.MsgDaata.append(msg)
-                 //   self.MsgDaata.sort{String($0.messageTime) < String($1.messageTime)}
-                     self.MsgDaata.sort(by: {String($0.messageTime!) < String($1.messageTime!) })
+                    //   self.MsgDaata.sort{String($0.messageTime) < String($1.messageTime)}
+                    self.MsgDaata.sort(by: {String($0.messageTime!) < String($1.messageTime!) })
                     
                     self.tvChat.reloadData()
                     if  self.MsgDaata.count > 0{
@@ -109,22 +150,27 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     }
     
     func getDateFromTimeStamp(timeStamp : Double) -> Date {
-
-      
-            let x = timeStamp / 1000
-            let date = NSDate(timeIntervalSince1970: x)
-            let formatter = DateFormatter()
-            formatter.dateStyle = .long
-            formatter.timeStyle = .medium
-
-         
-      
-
-      //  let dateString = date as Date
-       
+        
+        
+        let x = timeStamp / 1000
+        let date = NSDate(timeIntervalSince1970: x)
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .medium
+        
+        
+        
+        
+        //  let dateString = date as Date
+        
         return date as Date
     }
     
+    @IBAction func IstypingAction(_ sender: UITextField) {
+    }
+    @IBAction func TypingEnd(_ sender: UITextField) {
+       // Database.database().reference().child("chats").child(messagePartner).child(loggedInUserID).updateChildValues(["isTyping": false])
+    }
     
     //MARK: - IBAction Methods
     
@@ -168,6 +214,8 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         return UITableView.automaticDimension
     }
 }
+
+
 class Sender: UITableViewCell
 {
     

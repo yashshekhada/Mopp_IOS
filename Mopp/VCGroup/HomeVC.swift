@@ -25,8 +25,8 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
     
     //MARK: - LifeCycle Methods
     var FindUser = [Messagesx]()
-      
-      
+    
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -152,7 +152,7 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
                     page.ThumbCount.setTitle(" "+String(self.GetNewsFeedArry[indexPath.row].likes!), for: .normal)
                     page.LikeBtn.setImage(UIImage.init(named: "Thumb_like"), for: .normal)//818181
                     page.LikeBtn.setTitleColor(UIColor.init(named: "unselectedTextColor"), for: .normal)
-                      self.PostLike(post_id: String(EventModel.id!),like: "0")
+                    self.PostLike(post_id: String(EventModel.id!),like: "0")
                 }
             }
             //    let url = URL(string: ClS.ImageUrl+self.GetNewsFeedArry[indexPath.row].image!)
@@ -205,29 +205,30 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
         // Commented bY yash shekhada
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
         loadingView.tintColor = UIColor.gray
-
+        
         self.MyPortListView.scrollsToTop = true
         self.MyPortListView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
-
+            
             DispatchQueue.global(qos: .background).async {
-
+                
                 DispatchQueue.main.async {
+                    self!.GetNewsFeedArry.removeAll()
                     self!.CurruntPage=1
                     self!.GetPost()
                     self?.MyPortListView.dg_stopLoading()
-
+                    
                 }
             }
-
+            
             }, loadingView: loadingView)
-
+        
         self.MyPortListView.dg_setPullToRefreshFillColor(UIColor.clear)
         self.MyPortListView.dg_setPullToRefreshBackgroundColor(self.MyPortListView.backgroundColor!)
-
+        
         self.MyPortListView.alwaysBounceVertical = true
         self.MyPortListView.bounces  = true
         
-       // self.scrollView.delegate = self
+        // self.scrollView.delegate = self
         
     }
     
@@ -237,7 +238,7 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
         hud.textLabel.text = "Loading"
         hud.show(in: self.view)
         //   var GetUnivercityData:GetUnivercity"
-         let  University_id = iOTool.GetPref(Name: ClS.sf_University_id)
+        let  University_id = iOTool.GetPref(Name: ClS.sf_University_id)
         let parameter:[String:Any]=["issearch":"0","univercity_id": String(University_id),"session_token":ClS.Token,"paginate": ClS.PageSize,"page":CurruntPage,"student_id":""]
         
         NetWorkCall.get_Post_Api_Call(completion: { (T: GetNewsFeed) in
@@ -246,17 +247,17 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
             {
                 self.GetNewsFeedArry+=T.data!
                 self.MyPortListView.reloadData()
-               
+                
             }
                 
             else{
-//                let alertController = UIAlertController(title: ClS.App_Name, message:
-//                    T.statusMsg  , preferredStyle: .alert)
-//                alertController.addAction(UIAlertAction(title: "OK", style: .default))
-//
-//                self.present(alertController, animated: true, completion: nil)
+                //                let alertController = UIAlertController(title: ClS.App_Name, message:
+                //                    T.statusMsg  , preferredStyle: .alert)
+                //                alertController.addAction(UIAlertAction(title: "OK", style: .default))
+                //
+                //                self.present(alertController, animated: true, completion: nil)
                 
-          //      iOTool.SavePref(Name: ClS.sf_Status, Value: "0")
+                //      iOTool.SavePref(Name: ClS.sf_Status, Value: "0")
                 
             }
             
@@ -267,19 +268,19 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
     
     func PostLike(post_id:String,like:String)
     {
-           let hud = JGProgressHUD(style: .light)
-           hud.textLabel.text = "Loading"
-          // hud.show(in: self.view)
-           //   var GetUnivercityData:GetUnivercity"
-           let  University_id = iOTool.GetPref(Name: ClS.sf_University_id)
+        let hud = JGProgressHUD(style: .light)
+        hud.textLabel.text = "Loading"
+        // hud.show(in: self.view)
+        //   var GetUnivercityData:GetUnivercity"
+        let  University_id = iOTool.GetPref(Name: ClS.sf_University_id)
         let parameter:[String:Any]=["post_id":post_id,"likeby": ClS.user_id,"like":like,"session_token":ClS.Token]
-           
-           NetWorkCall.get_Post_Api_Call(completion: { (T: StatusModel2) in
+        
+        NetWorkCall.get_Post_Api_Call(completion: { (T: StatusModel2) in
             //   hud.dismiss()
-               
-           }, BaseUrl:ClS.baseUrl , ApiName: ClS.postlike, Prams: parameter)
-           
-       }
+            
+        }, BaseUrl:ClS.baseUrl , ApiName: ClS.postlike, Prams: parameter)
+        
+    }
     
     @objc func didTap(gesture : UITapGestureRecognizer)
     {

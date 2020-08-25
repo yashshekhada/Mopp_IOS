@@ -4950,23 +4950,33 @@ Please check your email for OTP.</string>
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79L-Ci-vSE">
+                                                                            <rect key="frame" x="338" y="4" width="31" height="25"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="25" id="G0U-DM-rpP"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="clU-O7-xsJ">
                                                                             <rect key="frame" x="314.5" y="0.0" width="54.5" height="115"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8SG-nJ-X23">
-                                                                                    <rect key="frame" x="0.0" y="8" width="39.5" height="14.5"/>
+                                                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8SG-nJ-X23">
+                                                                                    <rect key="frame" x="0.0" y="10" width="54.5" height="14.5"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="14.5" id="FFh-Se-tDW"/>
                                                                                     </constraints>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
+                                                                                    <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </label>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sds-Gt-iR2">
-                                                                                    <rect key="frame" x="0.0" y="22.5" width="54.5" height="92.5"/>
+                                                                                    <rect key="frame" x="0.0" y="24.5" width="54.5" height="90.5"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3O-6t-LAx">
-                                                                                            <rect key="frame" x="7" y="5" width="39.5" height="82.5"/>
+                                                                                            <rect key="frame" x="7" y="5" width="39.5" height="80.5"/>
                                                                                             <color key="backgroundColor" red="0.85979455709999997" green="0.95810431240000005" blue="0.99302679299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                                             <nil key="textColor"/>
@@ -4977,7 +4987,7 @@ Please check your email for OTP.</string>
                                                                                     <constraints>
                                                                                         <constraint firstItem="h3O-6t-LAx" firstAttribute="top" secondItem="sds-Gt-iR2" secondAttribute="top" constant="5" id="1C8-1k-Sk1"/>
                                                                                         <constraint firstAttribute="trailing" secondItem="h3O-6t-LAx" secondAttribute="trailing" constant="8" id="JCp-fH-Scd"/>
-                                                                                        <constraint firstItem="h3O-6t-LAx" firstAttribute="leading" secondItem="sds-Gt-iR2" secondAttribute="leading" constant="7" id="TLp-Fl-qA9"/>
+                                                                                        <constraint firstItem="h3O-6t-LAx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sds-Gt-iR2" secondAttribute="leading" constant="7" id="TLp-Fl-qA9"/>
                                                                                         <constraint firstAttribute="bottom" secondItem="h3O-6t-LAx" secondAttribute="bottom" constant="5" id="rAs-QW-bNf"/>
                                                                                     </constraints>
                                                                                     <userDefinedRuntimeAttributes>
@@ -4995,8 +5005,8 @@ Please check your email for OTP.</string>
                                                                             </subviews>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
-                                                                                <constraint firstItem="8SG-nJ-X23" firstAttribute="top" secondItem="clU-O7-xsJ" secondAttribute="top" constant="8" id="EXs-nW-BLd"/>
-                                                                                <constraint firstAttribute="trailing" secondItem="8SG-nJ-X23" secondAttribute="trailing" constant="15" id="H38-ro-fMF"/>
+                                                                                <constraint firstItem="8SG-nJ-X23" firstAttribute="top" secondItem="clU-O7-xsJ" secondAttribute="top" constant="10" id="EXs-nW-BLd"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="8SG-nJ-X23" secondAttribute="trailing" id="H38-ro-fMF"/>
                                                                                 <constraint firstItem="sds-Gt-iR2" firstAttribute="top" secondItem="8SG-nJ-X23" secondAttribute="bottom" id="IIq-tY-j90"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="sds-Gt-iR2" secondAttribute="trailing" id="aLd-BO-u7f"/>
                                                                                 <constraint firstItem="8SG-nJ-X23" firstAttribute="leading" secondItem="clU-O7-xsJ" secondAttribute="leading" id="g5X-8h-A9d"/>
@@ -5009,14 +5019,16 @@ Please check your email for OTP.</string>
                                                                     <constraints>
                                                                         <constraint firstAttribute="trailing" secondItem="clU-O7-xsJ" secondAttribute="trailing" constant="6" id="IrB-VC-nbe"/>
                                                                         <constraint firstAttribute="bottom" secondItem="clU-O7-xsJ" secondAttribute="bottom" id="Ref-i0-CdC"/>
-                                                                        <constraint firstItem="clU-O7-xsJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Yl-o4-EYK" secondAttribute="leading" constant="128" id="XSZ-6f-qvb"/>
+                                                                        <constraint firstItem="clU-O7-xsJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Yl-o4-EYK" secondAttribute="leading" id="XSZ-6f-qvb"/>
+                                                                        <constraint firstItem="79L-Ci-vSE" firstAttribute="top" secondItem="6Yl-o4-EYK" secondAttribute="top" constant="4" id="ZTl-7A-PGD"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="79L-Ci-vSE" secondAttribute="trailing" constant="6" id="axR-7k-hgU"/>
                                                                         <constraint firstItem="clU-O7-xsJ" firstAttribute="top" secondItem="6Yl-o4-EYK" secondAttribute="top" id="gKq-i9-J40"/>
                                                                     </constraints>
                                                                 </tableViewCellContentView>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
                                                                     <outlet property="SenderSms" destination="h3O-6t-LAx" id="nZv-ZP-4Cb"/>
-                                                                    <outlet property="SenderTime" destination="8SG-nJ-X23" id="iZv-Us-3vW"/>
+                                                                    <outlet property="SenderTime" destination="79L-Ci-vSE" id="0b2-8p-3U2"/>
                                                                 </connections>
                                                             </tableViewCell>
                                                         </prototypes>
@@ -5028,13 +5040,13 @@ Please check your email for OTP.</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="064-ks-p9i">
                                                         <rect key="frame" x="0.0" y="506" width="375" height="97"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2S-1O-ymv">
-                                                                <rect key="frame" x="334" y="17" width="26" height="26"/>
+                                                            <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2S-1O-ymv">
+                                                                <rect key="frame" x="324" y="0.0" width="51" height="56"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="26" id="AqS-Ao-upy"/>
-                                                                    <constraint firstAttribute="height" constant="26" id="Er4-dj-XmM"/>
+                                                                    <constraint firstAttribute="width" constant="51" id="AqS-Ao-upy"/>
+                                                                    <constraint firstAttribute="height" constant="56" id="Er4-dj-XmM"/>
                                                                 </constraints>
-                                                                <state key="normal" backgroundImage="SendComment"/>
+                                                                <state key="normal" image="SendComment"/>
                                                                 <connections>
                                                                     <action selector="SendBtnAction:" destination="bEI-pG-IKl" eventType="touchUpInside" id="A06-TB-n77"/>
                                                                 </connections>
@@ -5046,22 +5058,26 @@ Please check your email for OTP.</string>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="IstypingAction:" destination="bEI-pG-IKl" eventType="editingDidBegin" id="c2I-Yg-3SZ"/>
+                                                                    <action selector="TypingEnd:" destination="bEI-pG-IKl" eventType="editingDidEnd" id="nSM-Z4-XoE"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="Z2S-1O-ymv" firstAttribute="top" secondItem="064-ks-p9i" secondAttribute="top" constant="17" id="3Qb-iy-91T"/>
+                                                            <constraint firstItem="Z2S-1O-ymv" firstAttribute="top" secondItem="064-ks-p9i" secondAttribute="top" id="3Qb-iy-91T"/>
                                                             <constraint firstAttribute="bottom" secondItem="aHD-oN-fFS" secondAttribute="bottom" constant="50" id="8wt-gr-GPn"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Z2S-1O-ymv" secondAttribute="trailing" constant="15" id="FjF-dL-pbj"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Z2S-1O-ymv" secondAttribute="trailing" id="FjF-dL-pbj"/>
                                                             <constraint firstAttribute="height" constant="97" id="PL4-Ft-yyk"/>
                                                             <constraint firstItem="aHD-oN-fFS" firstAttribute="leading" secondItem="064-ks-p9i" secondAttribute="leading" constant="10" id="aka-hW-ubk"/>
                                                             <constraint firstItem="aHD-oN-fFS" firstAttribute="top" secondItem="064-ks-p9i" secondAttribute="top" constant="13" id="fy6-bb-5DQ"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Z2S-1O-ymv" secondAttribute="bottom" constant="54" id="grr-X3-Dun"/>
-                                                            <constraint firstItem="Z2S-1O-ymv" firstAttribute="leading" secondItem="aHD-oN-fFS" secondAttribute="trailing" constant="8" id="map-t5-PhV"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Z2S-1O-ymv" secondAttribute="bottom" constant="41" id="grr-X3-Dun"/>
+                                                            <constraint firstItem="Z2S-1O-ymv" firstAttribute="leading" secondItem="aHD-oN-fFS" secondAttribute="trailing" constant="-2" id="map-t5-PhV"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="064-ks-p9i" secondAttribute="trailing" id="2Lc-3v-Oyr"/>
                                                     <constraint firstItem="ju9-Wh-UiA" firstAttribute="top" secondItem="yor-nN-Hyu" secondAttribute="top" id="4dx-fX-HJy"/>
@@ -5075,6 +5091,7 @@ Please check your email for OTP.</string>
                                                 </constraints>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="yor-nN-Hyu" secondAttribute="trailing" id="1SC-29-702"/>
                                             <constraint firstAttribute="bottom" secondItem="yor-nN-Hyu" secondAttribute="bottom" id="2ml-dm-tcZ"/>
@@ -5138,7 +5155,7 @@ Please check your email for OTP.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibB-oY-il0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1324" y="707"/>
+            <point key="canvasLocation" x="-1324" y="706.59670164917543"/>
         </scene>
         <!--My PostVC-->
         <scene sceneID="PdC-5R-hoh">
@@ -5216,7 +5233,7 @@ Please check your email for OTP.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9s-dq-FjM">
-                                                    <rect key="frame" x="72" y="38" width="273" height="18"/>
+                                                    <rect key="frame" x="72" y="38" width="273" height="17.5"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                     <color key="textColor" red="0.41176470590000003" green="0.43529411759999997" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5420,7 +5437,7 @@ Please check your email for OTP.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsy-tq-1Ma">
-                                <rect key="frame" x="148" y="29.5" width="79.5" height="28"/>
+                                <rect key="frame" x="149" y="29.5" width="77.5" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="VcW-bl-b48"/>
                                 </constraints>
@@ -5460,7 +5477,7 @@ Please check your email for OTP.</string>
                                         </connections>
                                     </button>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luy-M0-Hey">
-                                        <rect key="frame" x="0.0" y="51" width="375" height="1032"/>
+                                        <rect key="frame" x="7.5" y="51" width="360" height="1032"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CB-jl-1uE">
                                                 <rect key="frame" x="20" y="15" width="73.5" height="20"/>
@@ -5472,7 +5489,7 @@ Please check your email for OTP.</string>
                                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rxi-Ux-h6W">
-                                                <rect key="frame" x="20" y="43" width="335" height="40"/>
+                                                <rect key="frame" x="20" y="43" width="320" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="u1T-H8-iV9"/>
                                                 </constraints>
@@ -5489,7 +5506,7 @@ Please check your email for OTP.</string>
                                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zzy-Rb-eep">
-                                                <rect key="frame" x="20" y="126" width="335" height="40"/>
+                                                <rect key="frame" x="20" y="126" width="320" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="V7A-Us-ozh"/>
                                                 </constraints>
@@ -5506,7 +5523,7 @@ Please check your email for OTP.</string>
                                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ce-1g-QxK">
-                                                <rect key="frame" x="20" y="209" width="335" height="40"/>
+                                                <rect key="frame" x="20" y="209" width="320" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="W3I-L3-Dq3"/>
                                                 </constraints>
@@ -5514,7 +5531,7 @@ Please check your email for OTP.</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Univercity / College" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viJ-qJ-TzA">
-                                                <rect key="frame" x="20" y="264" width="174" height="20"/>
+                                                <rect key="frame" x="20" y="264" width="177" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="29S-Hn-euf"/>
                                                 </constraints>
@@ -5523,7 +5540,7 @@ Please check your email for OTP.</string>
                                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Select Univercity / College" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OzF-QN-BCi">
-                                                <rect key="frame" x="20" y="292" width="335" height="40"/>
+                                                <rect key="frame" x="20" y="292" width="320" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="REM-MV-yG0"/>
                                                 </constraints>
@@ -5540,7 +5557,7 @@ Please check your email for OTP.</string>
                                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tKO-rF-WRx">
-                                                <rect key="frame" x="20" y="375" width="335" height="40"/>
+                                                <rect key="frame" x="20" y="375" width="320" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="6n7-Cm-QOj"/>
                                                 </constraints>
@@ -5548,7 +5565,7 @@ Please check your email for OTP.</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birth Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9h-AX-ysf">
-                                                <rect key="frame" x="20" y="430" width="66.5" height="20"/>
+                                                <rect key="frame" x="20" y="430" width="67.5" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="i3p-QC-5nC"/>
                                                 </constraints>
@@ -5557,7 +5574,7 @@ Please check your email for OTP.</string>
                                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0jq-Tf-iI0">
-                                                <rect key="frame" x="20" y="458" width="335" height="40"/>
+                                                <rect key="frame" x="20" y="458" width="320" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="hd1-6C-SPu"/>
                                                 </constraints>
@@ -5565,7 +5582,7 @@ Please check your email for OTP.</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcI-gK-xFg">
-                                                <rect key="frame" x="20" y="458" width="335" height="40"/>
+                                                <rect key="frame" x="20" y="458" width="320" height="40"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                 <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Birth Date">
@@ -5576,7 +5593,7 @@ Please check your email for OTP.</string>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9W5-jR-uXU">
-                                                <rect key="frame" x="20" y="513" width="48" height="20"/>
+                                                <rect key="frame" x="20" y="513" width="50" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="elN-AA-oPV"/>
                                                 </constraints>
@@ -5585,7 +5602,7 @@ Please check your email for OTP.</string>
                                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D8H-yI-vWa">
-                                                <rect key="frame" x="20" y="541" width="335" height="40"/>
+                                                <rect key="frame" x="20" y="541" width="320" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="6bo-ag-FDf"/>
                                                 </constraints>
@@ -5593,7 +5610,7 @@ Please check your email for OTP.</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZyL-zg-ITA">
-                                                <rect key="frame" x="20" y="541" width="335" height="40"/>
+                                                <rect key="frame" x="20" y="541" width="320" height="40"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                 <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Gender">
@@ -5613,7 +5630,7 @@ Please check your email for OTP.</string>
                                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Qualification" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fhN-s0-Jtp">
-                                                <rect key="frame" x="20" y="624" width="335" height="40"/>
+                                                <rect key="frame" x="20" y="624" width="320" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="QyM-mX-VnG"/>
                                                 </constraints>
@@ -5621,7 +5638,7 @@ Please check your email for OTP.</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBw-Im-WAl">
-                                                <rect key="frame" x="20" y="679" width="52.5" height="20"/>
+                                                <rect key="frame" x="20" y="679" width="53.5" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="OuG-6i-3ER"/>
                                                 </constraints>
@@ -5630,7 +5647,7 @@ Please check your email for OTP.</string>
                                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JHd-ac-iWw">
-                                                <rect key="frame" x="20" y="707" width="335" height="40"/>
+                                                <rect key="frame" x="20" y="707" width="320" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="dGn-7t-y4U"/>
                                                 </constraints>
@@ -5638,7 +5655,7 @@ Please check your email for OTP.</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2GU-Y6-prd">
-                                                <rect key="frame" x="20" y="762" width="25.5" height="20"/>
+                                                <rect key="frame" x="20" y="762" width="26.5" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="yGn-Pb-GOC"/>
                                                 </constraints>
@@ -5647,7 +5664,7 @@ Please check your email for OTP.</string>
                                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nNo-jY-s6t">
-                                                <rect key="frame" x="20" y="790" width="335" height="40"/>
+                                                <rect key="frame" x="20" y="790" width="320" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="aAF-Nz-mef"/>
                                                 </constraints>
@@ -5655,7 +5672,7 @@ Please check your email for OTP.</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tb4-oj-7X2">
-                                                <rect key="frame" x="20" y="845" width="65.5" height="20"/>
+                                                <rect key="frame" x="20" y="845" width="67" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="KMl-TY-5po"/>
                                                 </constraints>
@@ -5664,7 +5681,7 @@ Please check your email for OTP.</string>
                                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w2d-HU-e8U">
-                                                <rect key="frame" x="20" y="873" width="335" height="40"/>
+                                                <rect key="frame" x="20" y="873" width="320" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="fBs-uR-7hk"/>
                                                 </constraints>
@@ -5672,7 +5689,7 @@ Please check your email for OTP.</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3n-oT-uaU">
-                                                <rect key="frame" x="30" y="947" width="320" height="50"/>
+                                                <rect key="frame" x="30" y="947" width="305" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Xtu-Bv-21v"/>
                                                 </constraints>
@@ -5761,30 +5778,30 @@ Please check your email for OTP.</string>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="YZ3-ax-TYY" firstAttribute="bottom" secondItem="kZp-BI-UK4" secondAttribute="bottom" id="8ib-aj-J0s"/>
-                                    <constraint firstItem="kZp-BI-UK4" firstAttribute="centerX" secondItem="tPv-cH-w76" secondAttribute="centerX" id="98U-bq-pfa"/>
-                                    <constraint firstAttribute="bottom" secondItem="luy-M0-Hey" secondAttribute="bottom" id="MdU-Ix-LRG"/>
+                                    <constraint firstItem="luy-M0-Hey" firstAttribute="centerX" secondItem="kZp-BI-UK4" secondAttribute="centerX" id="CgF-81-8Ff"/>
+                                    <constraint firstItem="luy-M0-Hey" firstAttribute="centerX" secondItem="tPv-cH-w76" secondAttribute="centerX" id="CqX-6Y-bGZ"/>
                                     <constraint firstItem="YZ3-ax-TYY" firstAttribute="trailing" secondItem="kZp-BI-UK4" secondAttribute="trailing" id="X3X-3r-Fog"/>
-                                    <constraint firstAttribute="trailing" secondItem="luy-M0-Hey" secondAttribute="trailing" id="fkQ-ks-hp9"/>
-                                    <constraint firstItem="luy-M0-Hey" firstAttribute="leading" secondItem="tPv-cH-w76" secondAttribute="leading" id="fpg-l5-rqN"/>
+                                    <constraint firstAttribute="bottom" secondItem="luy-M0-Hey" secondAttribute="bottom" id="biy-sb-Eh8"/>
                                     <constraint firstItem="luy-M0-Hey" firstAttribute="top" secondItem="kZp-BI-UK4" secondAttribute="bottom" constant="1" id="igq-fF-X5W"/>
-                                    <constraint firstItem="kZp-BI-UK4" firstAttribute="top" secondItem="tPv-cH-w76" secondAttribute="top" constant="-40" id="nz2-yq-41a"/>
+                                    <constraint firstItem="luy-M0-Hey" firstAttribute="top" secondItem="tPv-cH-w76" secondAttribute="top" constant="51" id="xmC-BE-7UQ"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="gEf-b9-bMW" firstAttribute="top" secondItem="V66-B3-Dnx" secondAttribute="top" constant="25" id="6Tq-vr-Aej"/>
+                            <constraint firstItem="tPv-cH-w76" firstAttribute="width" secondItem="T4R-Fw-7eJ" secondAttribute="width" id="Afq-Ol-xxH"/>
+                            <constraint firstItem="tPv-cH-w76" firstAttribute="leading" secondItem="V66-B3-Dnx" secondAttribute="leading" id="BpS-ag-lgl"/>
                             <constraint firstItem="fsy-tq-1Ma" firstAttribute="centerY" secondItem="gEf-b9-bMW" secondAttribute="centerY" id="DQO-Mf-UVE"/>
-                            <constraint firstAttribute="bottom" secondItem="tPv-cH-w76" secondAttribute="bottom" id="G1s-i3-exf"/>
-                            <constraint firstAttribute="trailing" secondItem="tPv-cH-w76" secondAttribute="trailing" id="Jv8-7j-z1I"/>
+                            <constraint firstItem="tPv-cH-w76" firstAttribute="trailing" secondItem="V66-B3-Dnx" secondAttribute="trailing" id="Ewf-2W-Ete"/>
                             <constraint firstItem="AVQ-tC-Jnr" firstAttribute="bottom" secondItem="T4R-Fw-7eJ" secondAttribute="bottom" id="NMD-l8-4dM"/>
+                            <constraint firstItem="tPv-cH-w76" firstAttribute="bottom" secondItem="V66-B3-Dnx" secondAttribute="bottom" id="Ptq-sw-e8K"/>
                             <constraint firstItem="AVQ-tC-Jnr" firstAttribute="trailing" secondItem="T4R-Fw-7eJ" secondAttribute="trailing" id="a6o-Oj-aff"/>
                             <constraint firstItem="AVQ-tC-Jnr" firstAttribute="top" secondItem="T4R-Fw-7eJ" secondAttribute="top" constant="-20" id="cjO-Is-RTx"/>
-                            <constraint firstItem="tPv-cH-w76" firstAttribute="leading" secondItem="T4R-Fw-7eJ" secondAttribute="leading" id="g9f-tU-w0c"/>
                             <constraint firstItem="fsy-tq-1Ma" firstAttribute="centerX" secondItem="T4R-Fw-7eJ" secondAttribute="centerX" id="nRx-C0-wtq"/>
                             <constraint firstItem="AVQ-tC-Jnr" firstAttribute="leading" secondItem="T4R-Fw-7eJ" secondAttribute="leading" id="naU-Nd-VnU"/>
-                            <constraint firstItem="tPv-cH-w76" firstAttribute="top" secondItem="gEf-b9-bMW" secondAttribute="bottom" constant="55" id="nfD-N1-MFI"/>
                             <constraint firstItem="gEf-b9-bMW" firstAttribute="leading" secondItem="V66-B3-Dnx" secondAttribute="leading" constant="25" id="s3w-ZM-wrv"/>
+                            <constraint firstItem="tPv-cH-w76" firstAttribute="top" secondItem="gEf-b9-bMW" secondAttribute="bottom" constant="55" id="zHV-dH-OcE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="V66-B3-Dnx"/>
                     </view>

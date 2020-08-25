@@ -164,7 +164,9 @@ class LoginVc: UIViewController {
                         if let user = authResult?.user {
                             
                             let uisd = user.uid
-                            iOTool.SavePref(Name: ClS.sf_Uid, Value: uisd)
+                            guard let userID = Auth.auth().currentUser?.uid else { return }
+                            ClS.Uid =  userID
+                            iOTool.SavePref(Name: ClS.sf_Uid, Value: userID)
                             iOTool.SavePref(Name: ClS.sf_Token, Value: T.data!.api_token!)
                             iOTool.SavePref(Name: ClS.sf_Name, Value: T.data!.name!)
                             iOTool.SavePref(Name: ClS.sf_Email, Value: T.data!.email!)
