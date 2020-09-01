@@ -12,6 +12,7 @@ import Alamofire
 import iOSDropDown
 import JGProgressHUD
 import FirebaseAuth
+import  FirebaseDatabase
 class LoginVc: UIViewController,selectUniversity {
         
     @IBOutlet weak var EmailAddreshTxt: UITextField!
@@ -213,13 +214,14 @@ class LoginVc: UIViewController,selectUniversity {
                             iOTool.SavePref(Name: ClS.sf_User_id, Value: String(T.data!.id!))
                             iOTool.SavePref(Name: ClS.sf_Status, Value: "1")
                             iOTool.SavePref(Name: ClS.sf_University_id, Value: String(T.data!.univercity_id!))
-                            
+                            ClS.Uid=user.uid
                             ud.set(String(T.data!.univercity_id!), forKey: "uni_id")
                                                         
                             let dict:NSDictionary = ["id":T.data!.id!,"image":T.data!.image!,"name":T.data!.name!,"l_name":T.data!.l_name!,"username":T.data!.username!,"univercity_id":T.data!.univercity_id!,"univercity_name":T.data!.univercity_name!,"email":T.data!.email!,"dob":T.data!.dob!,"gender":T.data!.gender!,"qualification":T.data!.qualification!,"country":T.data!.country!,"city":T.data!.city!,"phone_number":T.data!.phone_number!]
                             ud.set(dict, forKey: "LoginData")
                             ud.synchronize()
                             
+                            Database.database().reference().child("Tokens").child(user.uid).setValue(["device_token":ClS.FCMtoken])//("online")
                             print(ud.value(forKey: "LoginData") as! NSDictionary)
                             if self.RememberMeBtn.currentImage == #imageLiteral(resourceName: "check-box"){
                                 iOTool.SavePref(Name: ClS.sf_password, Value: password)

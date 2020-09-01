@@ -9,6 +9,7 @@
 import UIKit
 import JGProgressHUD
 import FirebaseDatabase
+import iOTool
 class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     @IBOutlet weak var btnImgProfile: UIButton!
@@ -65,7 +66,7 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                 self.txtMessage.text = ""
                 if DetailValue.count != 0 {
                     let sender = PushNotificationSender()
-                    sender.sendPushNotification(to:Token, title: "Notification title", body: DetailValue, ServerKey: ClS.serverKEY)
+                    sender.sendPushNotification(to:Token, title: "Message sent by >>"+iOTool.GetPref(Name:ClS.sf_Name), body: DetailValue, ServerKey: ClS.serverKEY)
                 }
                 
             }

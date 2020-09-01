@@ -12,9 +12,9 @@ public  class ClS{
     public static let head = ["Content-Type": "application/json"]
     
     public static var App_Name = "Mopp: Only What Matters"
-    public static var baseUrl="http://mopp.impm.in/api/"//"http://mopp.virenmshah.com/api/";
+    public static var baseUrl="http://mopp.rtechnogiants.com/api/"//"http://mopp.virenmshah.com/api/";
     public static var serverKEY="AAAALkXbBIM:APA91bE4M_oAw1XM8rJ6j5AkZPNFmfWtMaZ4As968WCPBn7DqmlEcDCeY47DK9E5thNywn58NZ8WpQwavjaNumVCCuQTGidDCiacJDKrw997wDqsk0NOEb85x_icZgQIrP3bt1eYFLfr"
-    public static var ImageUrl="http://mopp.impm.in/images/";
+    public static var ImageUrl="http://mopp.rtechnogiants.com/images/";
     public static var getunivercity="getunivercity?";
     public static var login="login?";
     public static var campusjob="campusjob?";

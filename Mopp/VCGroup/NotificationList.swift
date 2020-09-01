@@ -10,19 +10,32 @@ import UIKit
 
 class NotificationList: UIViewController,  UITableViewDataSource,UITableViewDelegate {
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 8
+    return arrData.count
    }
    
     @IBOutlet weak var NotificationList: UITableView!
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "NotificatioCell", for: indexPath) as! NotificatioCell
-       
+        cell.Title.text=arrData[indexPath.row].header!+": "+arrData[indexPath.row].details
+        //  cell.TimeLbl.text=arrData[indexPath.row].details
        return cell
    }
+        var arrData = [DefaultNotificationHistory]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+     
+        
+           
+        
         // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+         if let decoded  = UserDefault.data(forKey: LocalNotification) {
+                       self.arrData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! [DefaultNotificationHistory]
+                       self.arrData.reverse()
+                             }
+               
+                   self.NotificationList.reloadData()
     }
     
     @IBAction func Back(_ sender: Any) {
@@ -42,4 +55,7 @@ class NotificationList: UIViewController,  UITableViewDataSource,UITableViewDele
 }
 class NotificatioCell: UITableViewCell {
     
+    @IBOutlet weak var ImageView: UIImageView!
+    @IBOutlet weak var TimeLbl: UILabel!
+    @IBOutlet weak var Title: UILabel!
 }

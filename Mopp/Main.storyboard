@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fvF-gU-Ull">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fvF-gU-Ull">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1442,6 +1442,7 @@ your post: «Awesome 🔥» </string>
                                                                 <constraint firstAttribute="bottom" secondItem="V5X-ko-AIO" secondAttribute="bottom" constant="8" id="JVr-WT-Ac1"/>
                                                                 <constraint firstItem="dkO-ZM-S1M" firstAttribute="top" secondItem="a3Q-Kc-a98" secondAttribute="top" constant="8" id="LpW-2e-Lky"/>
                                                                 <constraint firstAttribute="trailing" secondItem="V5X-ko-AIO" secondAttribute="trailing" constant="8" id="OgL-WO-TRy"/>
+                                                                <constraint firstItem="V5X-ko-AIO" firstAttribute="top" secondItem="dkO-ZM-S1M" secondAttribute="bottom" constant="6" id="Pa8-8n-3fm"/>
                                                                 <constraint firstItem="2W7-zC-zWo" firstAttribute="leading" secondItem="a3Q-Kc-a98" secondAttribute="leading" constant="8" id="Ry6-Sj-NDn"/>
                                                                 <constraint firstAttribute="bottom" secondItem="2W7-zC-zWo" secondAttribute="bottom" constant="8" id="aXl-O4-54g"/>
                                                                 <constraint firstItem="2W7-zC-zWo" firstAttribute="top" secondItem="a3Q-Kc-a98" secondAttribute="top" constant="8" id="e9K-FP-lsj"/>
@@ -1460,6 +1461,11 @@ your post: «Awesome 🔥» </string>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="ImageView" destination="2W7-zC-zWo" id="EmM-EN-nPQ"/>
+                                                    <outlet property="TimeLbl" destination="V5X-ko-AIO" id="k3w-fy-gmg"/>
+                                                    <outlet property="Title" destination="dkO-ZM-S1M" id="rON-J7-Dv4"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
