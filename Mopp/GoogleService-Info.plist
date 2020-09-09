@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>198740477059-dtfklqqc0d499o3jbkvebdu94aljoajc.apps.googleusercontent.com</string>
+	<string>545613794107-foqi8asf8ritodn48qk489m4i7f3q45n.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.198740477059-dtfklqqc0d499o3jbkvebdu94aljoajc</string>
+	<string>com.googleusercontent.apps.545613794107-foqi8asf8ritodn48qk489m4i7f3q45n</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>198740477059-t5piv8ibr3het9ks6tffdjg6m9vb6ldv.apps.googleusercontent.com</string>
+	<string>545613794107-s8iom0cqo8bhi6kpasdughials01f18r.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBLizZZee0lGBgyFd3LhxpEjFHOrDVB0a0</string>
+	<string>AIzaSyAus3LCSMmc0QbFxq26kkFSDQ9NzC62Ydg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>198740477059</string>
+	<string>545613794107</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.masa.mopp</string>
 	<key>PROJECT_ID</key>
-	<string>mopp-mcolledge</string>
+	<string>mopp-9ea81</string>
 	<key>STORAGE_BUCKET</key>
-	<string>mopp-mcolledge.appspot.com</string>
+	<string>mopp-9ea81.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,8 +31,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:198740477059:ios:7c80efa1dcde07d34247b6</string>
+	<string>1:545613794107:ios:373e1a793afffc048f451e</string>
 	<key>DATABASE_URL</key>
-	<string>https://mopp-mcolledge.firebaseio.com</string>
+	<string>https://mopp-9ea81.firebaseio.com</string>
 </dict>
 </plist>

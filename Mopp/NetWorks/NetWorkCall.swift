@@ -20,7 +20,7 @@ public class NetWorkCall{
         
         //   var Array=[GetUnivercity]()
         if Utill.reachable() {
-            let url =  URL(string: ClS.baseUrl+ApiName)!
+            let url =  URL(string: BaseUrl+ApiName)!
             // Utill.showProgress()
         
             AF.request(url, method: .get, encoding: JSONEncoding.default).responseJSON { (response) -> Void in
@@ -64,7 +64,7 @@ public class NetWorkCall{
                     }
                     
                 case .failure(_):
-                    //     Utill.showToastWith("Error")
+                        Utill.showToastWith("Error")
                     break
                 }
             }

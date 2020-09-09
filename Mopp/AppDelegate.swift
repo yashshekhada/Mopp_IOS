@@ -14,7 +14,7 @@ import MapKit
 import iOTool
 import IQKeyboardManagerSwift
 import UserNotifications
-
+import JGProgressHUD
 import iOTool
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate  {
@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     var enableAllOrientation = false
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        GetURL()
         
         IQKeyboardManager.shared.enable = true
         // FirebaseApp.configure()
@@ -248,7 +248,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     //        print("received remote notification")
     //    }
     
-    
+    func GetURL() {
+      
+        //   var GetUnivercityData:GetUnivercity
+        let parameter:[String:Any]=["":""]
+        NetWorkCall.get_Api_Call(completion: { (T: GetbaseUrl) in
+          ClS.DomainName = T.BaseUrl!
+               
+            
+        }, BaseUrl:"https://jdevio.com/DomainController.php" , ApiName: "", Prams: parameter)
+        
+    }
     
 }
 struct OnlineOfflineService {
@@ -395,6 +405,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         
         completionHandler()
     }
+    
 }
 // [END ios_10_message_handling]
 
