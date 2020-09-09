@@ -109,4 +109,8 @@ class DrawerViewController: UIViewController
             }
         }
     }
+    @IBAction func SupportBtn(_ sender: Any) {
+        let page = storyboard?.instantiateViewController(withIdentifier: "SupportVC") as! SupportVC
+              self.navigationController?.pushViewController(page, animated: true)
+    }
 }

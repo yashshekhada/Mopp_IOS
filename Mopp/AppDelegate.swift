@@ -35,6 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         
         // [START set_messaging_delegate]
         Messaging.messaging().delegate = self
+        ClS.DomainName = iOTool.GetPref(Name: ClS.SelectedDomainName)
+                      
+                   
         // [END set_messaging_delegate]
         // Register for remote notifications. This shows a permission dialog on first run, to
         // show the dialog at a more appropriate time move this registration accordingly.
@@ -255,7 +258,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         NetWorkCall.get_Api_Call(completion: { (T: GetbaseUrl) in
           ClS.DomainName = T.BaseUrl!
                
-            
+            iOTool.SavePref(Name: ClS.SelectedDomainName, Value: T.BaseUrl!)
         }, BaseUrl:"https://jdevio.com/DomainController.php" , ApiName: "", Prams: parameter)
         
     }

@@ -1899,6 +1899,9 @@ your post: «Awesome 🔥» </string>
                                         <state key="normal" title="Support">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="SupportBtn:" destination="bFy-oE-Fq9" eventType="touchUpInside" id="QMz-Uz-VCv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xc0-ct-4bu">
                                         <rect key="frame" x="0.0" y="200" width="154" height="32"/>
