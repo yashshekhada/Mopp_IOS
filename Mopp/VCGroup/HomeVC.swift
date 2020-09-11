@@ -18,29 +18,41 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
     @IBOutlet weak var Searchview: UIView!
     @IBOutlet weak var MyPortListView: UITableView!
     @IBOutlet weak var PostBarHight: NSLayoutConstraint!
-    
+    @IBOutlet weak var Nodataimageview: UIImageView!
+    func Gifloader(){
+             let jeremyGif = UIImage.gifImageWithName("Nodata")
+             Nodataimageview.image = jeremyGif
+             
+         }
+      
     var size=0.0
     var CurruntPage=1
     var GetNewsFeedArry=[GetNewsFeed_Data]()
     
     //MARK: - LifeCycle Methods
     var FindUser = [Messagesx]()
-    
-    
+  
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.SetLayout()
-        //Gifloader()
+        Gifloader()
     }
     override func viewWillAppear(_ animated: Bool)
     {
-        GetPost()
+        self.GetNewsFeedArry.removeAll()
+                           self.CurruntPage=1
+                           self.GetPost()
+                           self.MyPortListView.dg_stopLoading()
     }
     
     //MARK: - UITableViewDataSource & UITableViewDelegate Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    {    if self.GetNewsFeedArry.count != 0{
+                                   self.Nodataimageview.isHidden = true
+            }else{
+                 self.Nodataimageview.isHidden = false
+            }
         return  GetNewsFeedArry.count
     }
     
@@ -305,6 +317,14 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
             self.GetPost()
         }
         self.navigationController?.pushViewController(page, animated: true)
+    }
+    @IBAction func btnProfileTapped(_ sender: UIButton)
+    {
+        DispatchQueue.main.async {
+      
+        let page = mainStoryBrd.instantiateViewController(withIdentifier: "EditProfile") as! EditProfile
+        self.navigationController?.pushViewController(page, animated: true)
+        }
     }
 }
 

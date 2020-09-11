@@ -12,6 +12,13 @@ import JGProgressHUD
 class GrantsList: UIViewController,UITableViewDataSource, UITableViewDelegate {
   var GrantValue = [GrantsModel_Data]()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if  self.GrantValue.count > 0
+        {
+            Nodataimageview.isHidden=true
+            
+        }else{
+             Nodataimageview.isHidden=false
+        }
         return   self.GrantValue.count
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -46,9 +53,15 @@ class GrantsList: UIViewController,UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         GetGrants(searchby:"")
-        
+        Gifloader()
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var Nodataimageview: UIImageView!
+    func Gifloader(){
+             let jeremyGif = UIImage.gifImageWithName("Nodata")
+             Nodataimageview.image = jeremyGif
+             
+         }
     var Count=1
     func GetGrants(searchby:String) {
            let hud = JGProgressHUD(style: .light)

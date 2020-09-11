@@ -217,7 +217,7 @@ class SignUpVC: UIViewController
             self.view.makeToast("Please Fill All Mandatory fields..")
         }
     }
-    
+    public static var dataCompose = [String : Any]()
     //MARK: - AICalling Methods
     func APICallingRegister()
     {
@@ -236,6 +236,7 @@ class SignUpVC: UIViewController
                      "university_id":String(GetUnivercityData[SelectUniDrp.selectedIndex!].id!),
                      "dob":self.Birthdat_Txt.text!,
                      "device_token":ud.value(forKey: "deviceToken") as? String ?? ""]
+            SignUpVC.dataCompose = param
             
             print(param)
             let apiUrl:String = ClS.baseUrl + "register"

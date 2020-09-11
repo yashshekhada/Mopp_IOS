@@ -28,8 +28,11 @@ class DrawerViewController: UIViewController
     
     @IBAction func btnProfileTapped(_ sender: UIButton)
     {
+        DispatchQueue.main.async {
+      
         let page = mainStoryBrd.instantiateViewController(withIdentifier: "EditProfile") as! EditProfile
         self.navigationController?.pushViewController(page, animated: true)
+        }
     }
     
     @IBAction func btnMyPostTapped(_ sender: UIButton)
@@ -75,7 +78,7 @@ class DrawerViewController: UIViewController
                         
                         if let statusCode = dict["statusCode"] as? NSNumber
                         {
-                            if statusCode == 0
+                            if statusCode == 1
                             {
                            //     let vc = mainStoryBrd.instantiateViewController(withIdentifier: "NavLogin") as! NavigationController
                              //   self.navigationController?.pushViewController(vc, animated: true)
@@ -90,14 +93,14 @@ class DrawerViewController: UIViewController
                                  let vc = story.instantiateViewController(withIdentifier: "NavigationController") as! NavigationController
                                  UIApplication.shared.windows.first?.rootViewController = vc
                                  UIApplication.shared.windows.first?.makeKeyAndVisible()
-                            }
-                            else
-                            {
-                                var alertController = UIAlertController()
-                                alertController = UIAlertController(title: ClS.App_Name, message: statusMsg, preferredStyle: .alert)
-                                alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-
-                                self.present(alertController, animated: true, completion: nil)
+//                            }
+//                            else
+//                            {
+//                                var alertController = UIAlertController()
+//                                alertController = UIAlertController(title: ClS.App_Name, message: statusMsg, preferredStyle: .alert)
+//                                alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+//
+//                                self.present(alertController, animated: true, completion: nil)
                             }
                         }
                     }

@@ -10,6 +10,12 @@ import UIKit
 
 class NotificationList: UIViewController,  UITableViewDataSource,UITableViewDelegate {
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if arrData.count > 0
+    {
+           Nodataimageview.isHidden=true
+    }else{
+        Nodataimageview.isHidden=false
+    }
     return arrData.count
    }
    
@@ -23,7 +29,7 @@ class NotificationList: UIViewController,  UITableViewDataSource,UITableViewDele
         var arrData = [DefaultNotificationHistory]()
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+     Gifloader()
         
            
         
@@ -51,6 +57,13 @@ class NotificationList: UIViewController,  UITableViewDataSource,UITableViewDele
         // Pass the selected object to the new view controller.
     }
     */
+    @IBOutlet weak var Nodataimageview: UIImageView!
+       func Gifloader(){
+                let jeremyGif = UIImage.gifImageWithName("Nodata")
+                Nodataimageview.image = jeremyGif
+                
+            }
+         
 
 }
 class NotificatioCell: UITableViewCell {

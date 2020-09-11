@@ -13,6 +13,10 @@ class SupportVC:  UIViewController {
     {
         super.viewDidLoad()
     }
+    
+    @IBAction func BackPop(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     @IBAction func SubmitForm(_ sender: Any) {
         if (FeedbackForm.text != nil && EmailID.text != nil &&  FeedbackForm.text != "" && EmailID.text != ""){
         let hud = JGProgressHUD(style: .light)

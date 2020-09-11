@@ -38,7 +38,7 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         observeUserMessages(value : 0)
         self.cvSegment.dataSource = self
         self.cvSegment.delegate = self
-        // Gifloader()
+         Gifloader()
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         cvSegment.collectionViewLayout = layout
@@ -101,9 +101,7 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                             
                         }
                     }
-                    if self.FindUser.count == 0{
-                        self.Nodataimageview.isHidden = false
-                    }
+                   
                 }
                 
             })
@@ -191,13 +189,13 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
                             })
                             
                         }
-                        
-                        if ( self.FindUser.count == 0)
-                        {
-                            self.Nodataimageview.isHidden=false
-                        }else{
-                            self.Nodataimageview.isHidden=true
-                        }
+//
+//                        if ( self.FindUser.count == 0)
+//                        {
+//                            self.Nodataimageview.isHidden=true
+//                        }else{
+//                            self.Nodataimageview.isHidden=false
+//                        }
                     }
                     hud.dismiss()
                     
@@ -214,6 +212,11 @@ class MessagesVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     //MARK: - UITableViewDelegate & UITableViewDataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        if self.FindUser.count != 0{
+                               self.Nodataimageview.isHidden = true
+        }else{
+             self.Nodataimageview.isHidden = false
+        }
         return  self.FindUser.count///self.arrMsgs.count
     }
     

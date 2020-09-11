@@ -12,9 +12,21 @@ import JGProgressHUD
 class MarketList: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
  var ProductLis_Data=[GetproductModel_Data]()
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if ProductLis_Data.count > 0{
+            Nodataimageview.isHidden=true
+            
+        }else{
+            Nodataimageview.isHidden=false
+        }
         return ProductLis_Data.count
     }
-    
+    @IBOutlet weak var Nodataimageview: UIImageView!
+       func Gifloader(){
+                let jeremyGif = UIImage.gifImageWithName("Nodata")
+                Nodataimageview.image = jeremyGif
+                
+            }
+         
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as!ProductCell
                //cell.backgroundColor = UIColor.orange
@@ -72,8 +84,15 @@ class MarketList: UIViewController, UICollectionViewDataSource,UICollectionViewD
         ProductList?.collectionViewLayout = columnLayout
         ProductList?.contentInsetAdjustmentBehavior = .always
         ProductList?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        Gifloader()
     }
-
+ 
+    override func viewDidAppear(_ animated: Bool) {
+            GetProductList(Searchtext: "")
+            ProductList?.collectionViewLayout = columnLayout
+            ProductList?.contentInsetAdjustmentBehavior = .always
+            ProductList?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+    }
    
 
 

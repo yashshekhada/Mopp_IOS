@@ -56,6 +56,7 @@ class ChatVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         //     Database.database().reference().child("Messages").child(ClS.Uid).child(selectedUSer).setValue(Mail)
         Database.database().reference().child("Messages").child(selectedUSer).child(ClS.Uid).child(id!).setValue(data)
         
+            
         let ref2 = Database.database().reference().child("Tokens").child(selectedUSer)
         
         ref2.observe(.value, with: { (snapshot) in

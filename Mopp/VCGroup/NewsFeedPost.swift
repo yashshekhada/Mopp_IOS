@@ -20,6 +20,7 @@ class NewsFeedPostx: UIViewController
     @IBOutlet weak var CommentText: UITextView!
     @IBOutlet weak var BackView: UIImageView!
     @IBOutlet weak var switchAno: UISwitch!
+    @IBOutlet weak var DeleteBtn: UIButton!
     
     var Acklogo:(()->())?
     var curruntImageIndex=0
@@ -34,7 +35,7 @@ class NewsFeedPostx: UIViewController
         super.viewDidLoad()
 
         SliderView.pageIndicatorPosition = .init(horizontal: .center, vertical: .under)
-        SliderView.contentScaleMode = UIViewContentMode.scaleAspectFit
+        SliderView.contentScaleMode = UIViewContentMode.scaleAspectFill
 
         let pageControl = UIPageControl()
         pageControl.currentPageIndicatorTintColor = UIColor.lightGray
@@ -47,11 +48,48 @@ class NewsFeedPostx: UIViewController
 
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(NewsFeedPostx.didTap))
             //SliderView.addGestureRecognizer(recognizer)
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        SliderView.addGestureRecognizer(tap)
         self.switchAno.isOn = true
         self.anonymous = 1
     }
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        let imagePicker = OpalImagePickerController()
 
+               //Change color of selection overlay to white
+               imagePicker.selectionTintColor = UIColor.white.withAlphaComponent(0.7)
+
+               //Change color of image tint to black
+               imagePicker.selectionImageTintColor = UIColor.black
+
+               //Change image to X rather than checkmark
+               imagePicker.selectionImage = UIImage(named: "x_image")
+
+               //Change status bar style
+               imagePicker.statusBarPreference = UIStatusBarStyle.lightContent
+
+               //Limit maximum allowed selections to 5
+               imagePicker.maximumSelectionsAllowed = 10
+
+               //Only allow image media type assets
+               imagePicker.allowedMediaTypes = Set([PHAssetMediaType.image])
+
+               //Change default localized strings displayed to the user
+               let configuration = OpalImagePickerConfiguration()
+               configuration.maximumSelectionsAllowedMessage = NSLocalizedString("You cannot select that many images!", comment: "")
+               imagePicker.configuration = configuration
+               presentOpalImagePickerController(imagePicker, animated: true,
+                   select: { (assets) in
+                       self.ImageResource = self.getAssetThumbnail(asset: assets)
+                       self.SliderView.setImageInputs(self.ImageResource)
+                       self.UIImageResource = self.getAssetThumbnailUI(assets: assets)
+                       self.SliderView.reloadInputViews()
+                    
+                   imagePicker.dismiss(animated: true, completion: nil)
+                   }, cancel: {
+                       //Cancel
+                   })
+    }
     @objc func didTap()
     {
         let fullScreenController = SliderView.presentFullScreenController(from: self)
@@ -71,8 +109,14 @@ class NewsFeedPostx: UIViewController
     
     @IBAction func DeleteImage(_ sender: UIButton)
     {
+   
         ImageResource.remove(at: curruntImageIndex)
         UIImageResource.remove(at: curruntImageIndex)
+        if ImageResource.count > 0 {
+                     DeleteBtn.isHidden=false
+                 }else{
+                        DeleteBtn.isHidden=true
+                 }
         self.SliderView.setImageInputs(ImageResource)
         self.SliderView.reloadInputViews()
     }
@@ -130,12 +174,17 @@ class NewsFeedPostx: UIViewController
     func getAssetThumbnail(asset: [PHAsset]) -> [InputSource]
     {
         var imganeth = [InputSource]()
+        if asset.count > 0 {
+            DeleteBtn.isHidden=false
+        }else{
+               DeleteBtn.isHidden=true
+        }
         for point  in asset {
         let manager = PHImageManager.default()
         let option = PHImageRequestOptions()
         var thumbnail = UIImage()
         option.isSynchronous = true
-        manager.requestImage(for: point, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+        manager.requestImage(for: point, targetSize: CGSize(width: 600, height: 400), contentMode: .aspectFill, options: option, resultHandler: {(result, info)->Void in
                 thumbnail = result!
         })
          var dtast =  ImageSource(image:thumbnail)
@@ -152,7 +201,7 @@ class NewsFeedPostx: UIViewController
             let option = PHImageRequestOptions()
             var image = UIImage()
             option.isSynchronous = true
-            manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+            manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFill, options: option, resultHandler: {(result, info)->Void in
                  image = result!
                  arrayOfImages.append(image)
             })

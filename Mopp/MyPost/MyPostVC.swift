@@ -21,12 +21,17 @@ class MyPostVC: UIViewController, UITableViewDataSource, UITableViewDelegate,Ima
     var size=0.0
     var CurruntPage=1
     var arrPost:NSMutableArray = []
-    
+    @IBOutlet weak var Nodataimageview: UIImageView!
+          func Gifloader(){
+                   let jeremyGif = UIImage.gifImageWithName("Nodata")
+                   Nodataimageview.image = jeremyGif
+                   
+               }
     //MARK: - LifeCycle Methods
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        Gifloader()
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
         
@@ -123,6 +128,11 @@ class MyPostVC: UIViewController, UITableViewDataSource, UITableViewDelegate,Ima
     //MARK: - UITableView DataSource and Delegate Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        if self.arrPost.count > 0 {
+             Nodataimageview.isHidden=true
+        }else{
+            Nodataimageview.isHidden=false
+        }
         return self.arrPost.count
     }
     

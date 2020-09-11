@@ -216,7 +216,7 @@ class LoginVc: UIViewController,selectUniversity {
                             iOTool.SavePref(Name: ClS.sf_University_id, Value: String(T.data!.univercity_id!))
                             ClS.Uid=user.uid
                             ud.set(String(T.data!.univercity_id!), forKey: "uni_id")
-                                                        
+                                     ClS.Token = iOTool.GetPref(Name: ClS.sf_Token)
                             let dict:NSDictionary = ["id":T.data!.id!,"image":T.data!.image!,"name":T.data!.name!,"l_name":T.data!.l_name!,"username":T.data!.username!,"univercity_id":T.data!.univercity_id!,"univercity_name":T.data!.univercity_name!,"email":T.data!.email!,"dob":T.data!.dob!,"gender":T.data!.gender!,"qualification":T.data!.qualification!,"country":T.data!.country!,"city":T.data!.city!,"phone_number":T.data!.phone_number!]
                             ud.set(dict, forKey: "LoginData")
                             ud.synchronize()

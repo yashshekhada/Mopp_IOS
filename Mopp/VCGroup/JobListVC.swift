@@ -12,6 +12,11 @@ import JGProgressHUD
 class JobListVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
    // var CurruntJob
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if JoblValue.count > 0{
+               Nodataimageview.isHidden=true
+        }else{
+               Nodataimageview.isHidden=false
+        }
         return JoblValue.count
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -49,10 +54,17 @@ class JobListVC: UIViewController,UITableViewDataSource, UITableViewDelegate {
         var datasdas=ClS.Token
         ClS.Token=ClS.Token
          GetJobList(searchby:"")
+        Gifloader()
         // Do any additional setup after loading the view.
     }
     
- 
+ @IBOutlet weak var Nodataimageview: UIImageView!
+ func Gifloader(){
+          let jeremyGif = UIImage.gifImageWithName("Nodata")
+          Nodataimageview.image = jeremyGif
+          
+      }
+   
        var Count=1
         func GetJobList(searchby:String) {
                let hud = JGProgressHUD(style: .light)

@@ -13,9 +13,20 @@ import iOTool
 class MyproductVc: UIViewController ,UICollectionViewDataSource,UICollectionViewDelegate {
     var ProductLis_Data=[GetproductModel_Data]()
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if ProductLis_Data.count > 0{
+             Nodataimageview.isHidden=true
+        }else{
+            Nodataimageview.isHidden=false
+        }
         return ProductLis_Data.count
     }
     
+    @IBOutlet weak var Nodataimageview: UIImageView!
+          func Gifloader(){
+                   let jeremyGif = UIImage.gifImageWithName("Nodata")
+                   Nodataimageview.image = jeremyGif
+                   
+               }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyproductVc_Cell", for: indexPath) as! MyproductVc_Cell
         //cell.backgroundColor = UIColor.orange
@@ -69,15 +80,28 @@ class MyproductVc: UIViewController ,UICollectionViewDataSource,UICollectionView
     @IBOutlet weak var MyproductCollectionview: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        GetProductList()
-        let longPressGR = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(longPressGR:)))
-        longPressGR.minimumPressDuration = 0.5
-        longPressGR.delaysTouchesBegan = true
-        self.MyproductCollectionview.addGestureRecognizer(longPressGR)
-        MyproductCollectionview?.collectionViewLayout = columnLayout
-        MyproductCollectionview?.contentInsetAdjustmentBehavior = .always
-        MyproductCollectionview?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-        // Do any additional setup after loading the view.
+//        GetProductList()
+//        let longPressGR = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(longPressGR:)))
+//        longPressGR.minimumPressDuration = 0.5
+//        longPressGR.delaysTouchesBegan = true
+//        self.MyproductCollectionview.addGestureRecognizer(longPressGR)
+//        MyproductCollectionview?.collectionViewLayout = columnLayout
+//        MyproductCollectionview?.contentInsetAdjustmentBehavior = .always
+//        MyproductCollectionview?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+//        // Do any additional setup after loading the view.
+//        Gifloader()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+         GetProductList()
+               let longPressGR = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(longPressGR:)))
+               longPressGR.minimumPressDuration = 0.5
+               longPressGR.delaysTouchesBegan = true
+               self.MyproductCollectionview.addGestureRecognizer(longPressGR)
+               MyproductCollectionview?.collectionViewLayout = columnLayout
+               MyproductCollectionview?.contentInsetAdjustmentBehavior = .always
+               MyproductCollectionview?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+               // Do any additional setup after loading the view.
+               Gifloader()
     }
     
     @IBAction func PostNewProduct(_ sender: UIButton) {
