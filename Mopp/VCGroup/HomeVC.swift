@@ -95,12 +95,22 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
         }
         if self.GetNewsFeedArry[indexPath.row].is_like == 0
         {
-            page.LikeBtn.setImage(UIImage.init(named: "Thumb_like"), for: .normal)//818181
+            if #available(iOS 13.0, *) {
+                page.LikeBtn.setImage(UIImage.init(systemName: "heart"), for: .normal)
+            } else {
+                // Fallback on earlier versions
+            }//818181
+             page.LikeBtn.tintColor=(UIColor.init(named: "unselectedTextColor"))
             page.LikeBtn.setTitleColor(UIColor.init(named: "unselectedTextColor"), for: .normal)
         }
         else{
             
-            page.LikeBtn.setImage(UIImage.init(named: "Selectedthumb"), for: .normal)
+            if #available(iOS 13.0, *) {
+                page.LikeBtn.setImage(UIImage.init(systemName: "heart.fill"), for: .normal)
+            } else {
+                // Fallback on earlier versions
+            }
+                  page.LikeBtn.tintColor=(UIColor.init(named: "SelectedColor"))
             page.LikeBtn.setTitleColor(UIColor.init(named: "SelectedColor"), for: .normal)
         }
         
@@ -156,13 +166,24 @@ class HomeVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UIScrol
                     
                     self.GetNewsFeedArry[indexPath.row]=GetNewsFeed_Data.init(id: EventModel.id, description: EventModel.description, post_images_array: EventModel.post_images_array, likes: EventModel.likes! + 1, comments: EventModel.comments, numberofimages: EventModel.numberofimages, code: EventModel.code, s_id: EventModel.s_id, u_id: EventModel.u_id, status: EventModel.status, created_by: EventModel.created_by, updated_by: EventModel.updated_by, created_at: EventModel.created_at, updated_at: EventModel.updated_at, name: EventModel.name, image: EventModel.image, is_like: 1, isanonymous: EventModel.isanonymous)
                     page.ThumbCount.setTitle(" "+String(self.GetNewsFeedArry[indexPath.row].likes!), for: .normal)
-                    page.LikeBtn.setImage(UIImage.init(named: "Selectedthumb"), for: .normal)
+                    if #available(iOS 13.0, *) {
+                        page.LikeBtn.setImage( UIImage.init(systemName:"heart.fill"), for: .normal)
+                    } else {
+                        // Fallback on earlier versions
+                    }
                     page.LikeBtn.setTitleColor(UIColor.init(named: "SelectedColor"), for: .normal)
+                            page.LikeBtn.tintColor=(UIColor.init(named: "SelectedColor"))
                     self.PostLike(post_id: String(EventModel.id!),like: "1")
                 }else{
                     self.GetNewsFeedArry[indexPath.row]=GetNewsFeed_Data.init(id: EventModel.id, description: EventModel.description, post_images_array: EventModel.post_images_array, likes: EventModel.likes! - 1, comments: EventModel.comments, numberofimages: EventModel.numberofimages, code: EventModel.code, s_id: EventModel.s_id, u_id: EventModel.u_id, status: EventModel.status, created_by: EventModel.created_by, updated_by: EventModel.updated_by, created_at: EventModel.created_at, updated_at: EventModel.updated_at, name: EventModel.name, image: EventModel.image, is_like: 0, isanonymous: EventModel.isanonymous)
                     page.ThumbCount.setTitle(" "+String(self.GetNewsFeedArry[indexPath.row].likes!), for: .normal)
-                    page.LikeBtn.setImage(UIImage.init(named: "Thumb_like"), for: .normal)//818181
+                //    UIImage.init(imageLiteralResourceName: "heart")
+                    if #available(iOS 13.0, *) {
+                        page.LikeBtn.setImage( UIImage.init(systemName: "heart"), for: .normal)
+                    } else {
+                        // Fallback on earlier versions
+                    }//818181
+                    page.LikeBtn.tintColor=(UIColor.init(named: "unselectedTextColor"))
                     page.LikeBtn.setTitleColor(UIColor.init(named: "unselectedTextColor"), for: .normal)
                     self.PostLike(post_id: String(EventModel.id!),like: "0")
                 }
