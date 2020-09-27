@@ -31,6 +31,7 @@ class MarketList: UIViewController, UICollectionViewDataSource,UICollectionViewD
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as!ProductCell
                //cell.backgroundColor = UIColor.orange
         cell.ProductImageView.sd_setImage(with: URL(string: ClS.ImageUrl+ProductLis_Data[indexPath.row].image!), placeholderImage: UIImage(named: "DefaultProductImage"))
+        cell.pricelbl.text="$ "+String(ProductLis_Data[indexPath.row].price!)
         cell.Descriptontxt.text=ProductLis_Data[indexPath.row].desc!
             cell.Nametxt.text=ProductLis_Data[indexPath.row].title!
                return cell
@@ -72,7 +73,7 @@ class MarketList: UIViewController, UICollectionViewDataSource,UICollectionViewD
     @IBOutlet weak var ProductList: UICollectionView!
     
     let columnLayout = ColumnFlowLayout(
-        cellsPerRow: 2,
+        cellsPerRow: 1,
         minimumInteritemSpacing: 10,
         minimumLineSpacing: 10,
         sectionInset: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -81,7 +82,7 @@ class MarketList: UIViewController, UICollectionViewDataSource,UICollectionViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         GetProductList(Searchtext: "")
-        ProductList?.collectionViewLayout = columnLayout
+       // ProductList?.collectionViewLayout = columnLayout
         ProductList?.contentInsetAdjustmentBehavior = .always
         ProductList?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         Gifloader()
@@ -89,7 +90,7 @@ class MarketList: UIViewController, UICollectionViewDataSource,UICollectionViewD
  
     override func viewDidAppear(_ animated: Bool) {
             GetProductList(Searchtext: "")
-            ProductList?.collectionViewLayout = columnLayout
+            //ProductList?.collectionViewLayout = columnLayout
             ProductList?.contentInsetAdjustmentBehavior = .always
             ProductList?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
     }
@@ -119,6 +120,7 @@ class MarketList: UIViewController, UICollectionViewDataSource,UICollectionViewD
 }
 class  ProductCell: UICollectionViewCell {
     
+    @IBOutlet weak var pricelbl: UILabel!
     @IBOutlet weak var Descriptontxt: UILabel!
     @IBOutlet weak var Nametxt: UILabel!
     @IBOutlet weak var ProductImageView: UIImageView!

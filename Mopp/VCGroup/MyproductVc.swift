@@ -33,6 +33,7 @@ class MyproductVc: UIViewController ,UICollectionViewDataSource,UICollectionView
         cell.ProductImage.sd_setImage(with: URL(string: ClS.ImageUrl+ProductLis_Data[indexPath.row].image!), placeholderImage: UIImage(named: "DefaultProductImage"))
         cell.DescLbl.text=ProductLis_Data[indexPath.row].desc!
         cell.TitleLbl.text=ProductLis_Data[indexPath.row].title!
+        cell.PriceLbl.text="$ "+String(ProductLis_Data[indexPath.row].price!)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -44,12 +45,7 @@ class MyproductVc: UIViewController ,UICollectionViewDataSource,UICollectionView
             self.navigationController?.pushViewController(page, animated: true)
         })
     }
-    let columnLayout = ColumnFlowLayout(
-        cellsPerRow: 2,
-        minimumInteritemSpacing: 10,
-        minimumLineSpacing: 10,
-        sectionInset: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-    )
+    
     func GetProductList() {
         let hud = JGProgressHUD(style: .light)
         hud.textLabel.text = "Loading"
@@ -97,7 +93,7 @@ class MyproductVc: UIViewController ,UICollectionViewDataSource,UICollectionView
                longPressGR.minimumPressDuration = 0.5
                longPressGR.delaysTouchesBegan = true
                self.MyproductCollectionview.addGestureRecognizer(longPressGR)
-               MyproductCollectionview?.collectionViewLayout = columnLayout
+           //    MyproductCollectionview?.collectionViewLayout = columnLayout
                MyproductCollectionview?.contentInsetAdjustmentBehavior = .always
                MyproductCollectionview?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
                // Do any additional setup after loading the view.
@@ -182,6 +178,7 @@ class MyproductVc: UIViewController ,UICollectionViewDataSource,UICollectionView
 class MyproductVc_Cell: UICollectionViewCell {
     @IBOutlet weak var ProductImage: UIImageView!
     @IBOutlet weak var DescLbl: UILabel!
+    @IBOutlet weak var PriceLbl: UILabel!
     
     @IBOutlet weak var TitleLbl: UILabel!
 }
